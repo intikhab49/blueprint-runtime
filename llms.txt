@@ -20,6 +20,7 @@ Every behavior it supports was observed in a real Make run; anything else is ref
 ## Links
 
 - [Repository and README](https://github.com/intikhab49/blueprint-runtime)
+- [npm package](https://www.npmjs.com/package/blueprint-runtime): `npm install -g blueprint-runtime` (Node 24+), or `npx blueprint-runtime inspect file.json`
 - [Recorded Make behavior (NOTES)](https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md)
 - [Broken-mapping example](https://github.com/intikhab49/blueprint-runtime/tree/main/examples/broken-mapping)
 - [HTTP fixture example](https://github.com/intikhab49/blueprint-runtime/tree/main/examples/http-fixture)

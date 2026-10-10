@@ -1,7 +1,6 @@
 {
   "name": "blueprint-runtime",
   "version": "0.3.1",
-  "private": true,
   "description": "Test Make.com (Integromat) scenarios offline: run exported blueprints locally, replay real Make runs and catch broken mappings before deploy. CLI test runner and blueprint validator, CI ready.",
   "keywords": [
     "make",

@@ -28,7 +28,8 @@
       "license": "https://opensource.org/licenses/MIT",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "url": "https://intikhab49.github.io/blueprint-runtime/",
-      "downloadUrl": "https://github.com/intikhab49/blueprint-runtime",
+      "downloadUrl": "https://www.npmjs.com/package/blueprint-runtime",
+      "codeRepository": "https://github.com/intikhab49/blueprint-runtime",
       "softwareVersion": "0.3.1",
       "keywords": "Make.com, Integromat, Make scenario testing, Make blueprint validator, no-code testing, workflow automation, regression testing, CI",
       "author": { "@type": "Person", "name": "Intikhab Azam", "url": "https://github.com/intikhab49" }
@@ -102,15 +103,17 @@ FAIL  A-002-plain   module 2 input bundle 1 at /value: Make had "ADA LOVELACE", 
 </ul>
 
 <h2>Quick start</h2>
+<pre><code>npm install -g blueprint-runtime
+bpr inspect your-scenario.blueprint.json        # can it run offline?</code></pre>
+<p>Or without installing: <code>npx blueprint-runtime inspect your-scenario.blueprint.json</code>. To replay the 79 recorded Make runs and the examples, clone the repository:</p>
 <pre><code>git clone https://github.com/intikhab49/blueprint-runtime
 cd blueprint-runtime
 npm ci
 npm run build &amp;&amp; npm link
 
 bpr test corpus/reference --allow-unsupported   # replay all 79 recorded Make runs
-bpr test examples/broken-mapping                # a broken mapping, caught
-bpr inspect your-scenario.blueprint.json        # can it run offline?</code></pre>
-<p>Requires Node 24 or newer. MIT licensed, zero runtime dependencies.</p>
+bpr test examples/broken-mapping                # a broken mapping, caught</code></pre>
+<p>Requires Node 24 or newer. MIT licensed, zero runtime dependencies. <a href="https://www.npmjs.com/package/blueprint-runtime">On npm</a>.</p>
 
 <h2>FAQ</h2>
 <h3>How do I test a Make.com scenario without running it in Make?</h3>

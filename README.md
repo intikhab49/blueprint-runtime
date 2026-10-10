@@ -6,6 +6,7 @@
 
 **An offline test runner for Make.com (formerly Integromat) scenario blueprints. Replay real Make runs on your own machine, in CI, and see the first value that changed: no Make account, no credits, no network. Every behavior it claims was recorded in a real Make run; anything else is refused, never guessed.**
 
+[![npm](https://img.shields.io/npm/v/blueprint-runtime?style=for-the-badge&logo=npm&color=2a78d6)](https://www.npmjs.com/package/blueprint-runtime)
 [![License](https://img.shields.io/badge/license-MIT-2a78d6?style=for-the-badge)](LICENSE)
 [![Node](https://img.shields.io/badge/node-24%2B-2a78d6?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![Make runs](https://img.shields.io/badge/real%20Make%20runs-71%2F79%20match%2C%200%20differ-1baf7a?style=for-the-badge)](corpus/NOTES.md)
@@ -56,7 +57,14 @@ On top of the runs, 225 single formulas were recorded through probe sets (D2, D3
 
 ## Quick start
 
-Requires Node 24 or newer (it runs the TypeScript source directly).
+Requires Node 24 or newer.
+
+```
+npm install -g blueprint-runtime                   # puts `bpr` on your PATH
+bpr inspect your-scenario.blueprint.json           # can it run offline? (or: npx blueprint-runtime inspect …)
+```
+
+To replay the 79 recorded Make runs and the examples, clone the repository (it runs the TypeScript source directly):
 
 ```
 git clone https://github.com/intikhab49/blueprint-runtime

@@ -73,14 +73,14 @@ No Make account is needed for any of this. The recorded runs are in the reposito
 
 ```mermaid
 flowchart LR
-    BP[blueprint.json<br/>exported from Make] --> INS[inspect<br/>strict importer + plan]
-    INS --> RUN[scheduler<br/>routers · filters · iterators<br/>typed expression engine]
-    IN[input.json<br/>webhook payload] --> RUN
-    FX[fixtures.json<br/>HTTP + app modules] --> RUN
-    RUN --> TR[local trace]
-    REF[reference.json<br/>Make's recorded run] --> CMP[compare<br/>first divergence]
+    BP["blueprint.json<br/>exported from Make"] --> INS["inspect<br/>strict importer + plan"]
+    INS --> RUN["scheduler<br/>routers · filters · iterators<br/>typed expression engine"]
+    IN["input.json<br/>webhook payload"] --> RUN
+    FX["fixtures.json<br/>HTTP + app modules"] --> RUN
+    RUN --> TR["local trace"]
+    REF["reference.json<br/>Make's recorded run"] --> CMP["compare<br/>first divergence"]
     TR --> CMP
-    CMP --> OUT[PASS / FAIL<br/>module · bundle · JSON path]
+    CMP --> OUT["PASS / FAIL<br/>module · bundle · JSON path"]
 
     style RUN fill:#2a78d6,color:#ffffff,stroke:#2a78d6
     style OUT fill:#1baf7a,color:#ffffff,stroke:#1baf7a

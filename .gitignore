@@ -16,3 +16,6 @@ corpus/survey/cache/
 
 # Live webhook URLs of the corpus scenarios (anyone with one can trigger runs)
 .make-hooks.json
+
+# Python bytecode from the docs/ generators
+__pycache__/

@@ -1,0 +1,16 @@
+{"case":"C-01-three-all-pass","items":[{"name":"a","qty":1},{"name":"b","qty":2},{"name":"c","qty":3}]}
+{"case":"C-02-some-filtered","items":[{"name":"a","qty":0},{"name":"b","qty":5},{"name":"c","qty":-1},{"name":"d","qty":2}]}
+{"case":"C-03-all-filtered","items":[{"name":"a","qty":0},{"name":"b","qty":-2}]}
+{"case":"C-04-empty-array","items":[]}
+{"case":"C-05-missing-items"}
+{"case":"C-06-single-item","items":[{"name":"solo","qty":7}]}
+{"case":"C-07-qty-string","items":[{"name":"s","qty":"4"},{"name":"t","qty":"0"}]}
+{"case":"C-08-qty-decimal","items":[{"name":"d","qty":1.5},{"name":"e","qty":0.1}]}
+{"case":"C-09-missing-name","items":[{"qty":3},{"name":null,"qty":2}]}
+{"case":"C-10-missing-qty","items":[{"name":"noq"},{"name":"nullq","qty":null}]}
+{"case":"C-11-pipe-in-name","items":[{"name":"a|b","qty":1},{"name":"c","qty":1}]}
+{"case":"C-12-unicode","items":[{"name":"café","qty":1},{"name":"日本","qty":2},{"name":"😀","qty":3}]}
+{"case":"C-13-items-not-array","items":"hello"}
+{"case":"C-14-items-object","items":{"name":"obj","qty":9}}
+{"case":"C-15-many-items","items":[{"name":"i1","qty":1},{"name":"i2","qty":2},{"name":"i3","qty":3},{"name":"i4","qty":4},{"name":"i5","qty":5},{"name":"i6","qty":6},{"name":"i7","qty":7},{"name":"i8","qty":8}]}
+{"case":"C-16-big-number","items":[{"name":"big","qty":9007199254740993},{"name":"exp","qty":1e21}]}

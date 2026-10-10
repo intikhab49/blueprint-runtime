@@ -1,0 +1,55 @@
+{
+  "name": "E",
+  "scenarioId": 7872022,
+  "hook": "C",
+  "restore": "corpus/engine-logs/C.live.blueprint.json",
+  "targets": [
+    {
+      "scenarioId": 7871965,
+      "blueprint": "corpus/engine-logs/live-A-echo.json",
+      "restore": "corpus/engine-logs/A.live.blueprint.json"
+    }
+  ],
+  "variants": [
+    {
+      "blueprint": "corpus/engine-logs/live-E-json.import.json",
+      "payloads": [
+        {
+          "case": "E-json-01",
+          "name": "x",
+          "status": 200
+        },
+        {
+          "case": "E-json-02-status-201",
+          "name": "w",
+          "status": 201
+        },
+        {
+          "case": "E-json-03-status-404",
+          "name": "v",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/engine-logs/live-E-text.import.json",
+      "payloads": [
+        {
+          "case": "E-text-01",
+          "name": "y",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/engine-logs/live-E-get.import.json",
+      "payloads": [
+        {
+          "case": "E-get-01",
+          "name": "z",
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

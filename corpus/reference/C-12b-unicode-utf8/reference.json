@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "3377dda0ea504596b5fdfc1d5fcc4732",
+  "recordedAt": "2026-10-10T01:10:43.382Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-12b-unicode-utf8",
+          "items": [
+            {
+              "name": "café",
+              "qty": 1
+            },
+            {
+              "name": "日本",
+              "qty": 2
+            },
+            {
+              "name": "😀",
+              "qty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "café",
+              "qty": 1
+            },
+            {
+              "name": "日本",
+              "qty": 2
+            },
+            {
+              "name": "😀",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "café",
+          "qty": 1,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 3
+        },
+        {
+          "name": "日本",
+          "qty": 2,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 3
+        },
+        {
+          "name": "😀",
+          "qty": 3,
+          "__IMTINDEX__": 3,
+          "__IMTLENGTH__": 3
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "café:2"
+        }
+      ],
+      "output": [
+        {
+          "line": "café:2"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "日本:4"
+        }
+      ],
+      "output": [
+        {
+          "line": "日本:4"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": "😀:6"
+        }
+      ],
+      "output": [
+        {
+          "line": "😀:6"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "café:2"
+        },
+        {
+          "value": "日本:4"
+        },
+        {
+          "value": "😀:6"
+        }
+      ],
+      "output": [
+        {
+          "text": "café:2|日本:4|😀:6"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[café:2|日本:4|😀:6]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[café:2|日本:4|😀:6]"
+  }
+}

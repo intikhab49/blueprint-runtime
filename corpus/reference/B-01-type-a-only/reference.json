@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872008,
+  "runId": "d9fafb69e59d4acca4cd73322a397df4",
+  "recordedAt": "2026-10-10T00:56:09.385Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "B-01-type-a-only",
+          "type": "a",
+          "amount": 50
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "route",
+          "value": "r1-type-a"
+        }
+      ],
+      "output": [
+        {
+          "route": "r1-type-a"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 4,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "Accepted"
+  }
+}

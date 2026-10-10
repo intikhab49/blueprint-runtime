@@ -1,0 +1,192 @@
+{
+    "name": "bpr Scenario B",
+    "flow": [
+        {
+            "id": 1,
+            "module": "gateway:CustomWebHook",
+            "version": 1,
+            "parameters": {
+                "hook": 3874682,
+                "maxResults": 1
+            },
+            "mapper": {},
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                },
+                "setupValidation": {
+                    "result": {
+                        "valid": true,
+                        "fields": []
+                    },
+                    "version": 1,
+                    "configuration": "9a12110d6766694d"
+                },
+                "restore": {
+                    "parameters": {
+                        "hook": {
+                            "data": {
+                                "editable": "true"
+                            },
+                            "label": "bpr-scenario-B"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "hook",
+                        "type": "hook:gateway-webhook",
+                        "label": "Webhook",
+                        "required": true
+                    },
+                    {
+                        "name": "maxResults",
+                        "type": "number",
+                        "label": "Maximum number of results"
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "case",
+                        "type": "text"
+                    },
+                    {
+                        "name": "type",
+                        "type": "text"
+                    },
+                    {
+                        "name": "amount",
+                        "type": "number"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "builtin:BasicRouter",
+            "version": 1,
+            "parameters": {
+                "else": 2
+            },
+            "mapper": null,
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0
+                }
+            },
+            "routes": [
+                {
+                    "flow": [
+                        {
+                            "id": 3,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "type = a",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.type}}",
+                                            "b": "a",
+                                            "o": "text:equal"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "name": "route",
+                                "value": "r1-type-a"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": -200
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 4,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "amount > 100",
+                                "conditions": [
+                                    [
+                                        {
+                                            "a": "{{1.amount}}",
+                                            "b": "100",
+                                            "o": "number:greater"
+                                        }
+                                    ]
+                                ]
+                            },
+                            "mapper": {
+                                "name": "route",
+                                "value": "r2-amount-gt-100"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 0
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "flow": [
+                        {
+                            "id": 5,
+                            "module": "util:SetVariable2",
+                            "version": 1,
+                            "parameters": {},
+                            "filter": {
+                                "name": "fallback",
+                                "conditions": []
+                            },
+                            "mapper": {
+                                "name": "route",
+                                "value": "r3-fallback"
+                            },
+                            "metadata": {
+                                "designer": {
+                                    "x": 600,
+                                    "y": 200
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "metadata": {
+        "instant": true,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu1.make.com",
+        "notes": []
+    }
+}

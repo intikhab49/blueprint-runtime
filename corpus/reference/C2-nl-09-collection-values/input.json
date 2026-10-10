@@ -1,0 +1,16 @@
+{
+  "case": "C2-nl-09-collection-values",
+  "items": [
+    {
+      "value": {
+        "k": 1
+      }
+    },
+    {
+      "value": [
+        1,
+        "b"
+      ]
+    }
+  ]
+}

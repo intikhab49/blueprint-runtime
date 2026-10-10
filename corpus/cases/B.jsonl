@@ -1,0 +1,16 @@
+{"case":"B-01-type-a-only","type":"a","amount":50}
+{"case":"B-02-amount-gt-only","type":"x","amount":150}
+{"case":"B-03-both-match","type":"a","amount":150}
+{"case":"B-04-neither-fallback","type":"x","amount":50}
+{"case":"B-05-type-uppercase-A","type":"A","amount":50}
+{"case":"B-06-amount-exactly-100","type":"x","amount":100}
+{"case":"B-07-amount-string-150","type":"x","amount":"150"}
+{"case":"B-08-amount-string-abc","type":"x","amount":"abc"}
+{"case":"B-09-amount-null","type":"x","amount":null}
+{"case":"B-10-missing-both"}
+{"case":"B-11-type-empty-string","type":"","amount":0}
+{"case":"B-12-amount-decimal-100.5","type":"x","amount":100.5}
+{"case":"B-13-amount-negative","type":"x","amount":-500}
+{"case":"B-14-amount-string-1e3","type":"x","amount":"1e3"}
+{"case":"B-15-type-a-with-space","type":" a","amount":50}
+{"case":"B-16-type-number-1","type":1,"amount":101}

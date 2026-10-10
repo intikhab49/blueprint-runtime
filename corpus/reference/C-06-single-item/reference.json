@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "685ab3551e1d40fe98e93607e6798aae",
+  "recordedAt": "2026-10-10T01:01:12.558Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-06-single-item",
+          "items": [
+            {
+              "name": "solo",
+              "qty": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "solo",
+              "qty": 7
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "solo",
+          "qty": 7,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 1
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "solo:14"
+        }
+      ],
+      "output": [
+        {
+          "line": "solo:14"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "solo:14"
+        }
+      ],
+      "output": [
+        {
+          "text": "solo:14"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[solo:14]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[solo:14]"
+  }
+}

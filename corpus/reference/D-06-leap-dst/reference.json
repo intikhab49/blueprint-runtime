@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872039,
+  "runId": "af64b1addd46472ab49e2b9d3d045657",
+  "recordedAt": "2026-10-10T01:08:18.750Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "D-06-leap-dst",
+          "s": "hello world",
+          "n": 42,
+          "sn": "42",
+          "f": 3.7,
+          "eu": "1.234,56",
+          "html": "<b>Hi</b> & <i>you</i>",
+          "b": true,
+          "empty": "",
+          "nul": null,
+          "arr": [
+            "c",
+            "a",
+            "b"
+          ],
+          "dup": [
+            "x",
+            "y",
+            "x",
+            1,
+            "1"
+          ],
+          "nested": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              [
+                4
+              ]
+            ]
+          ],
+          "nums": [
+            1,
+            2,
+            3,
+            10
+          ],
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30
+            },
+            {
+              "name": "Bob",
+              "age": 25
+            }
+          ],
+          "obj": {
+            "k1": "v1",
+            "k2": 2
+          },
+          "d": "2024-02-29",
+          "iso": "2024-02-29T23:30:00.000Z",
+          "eom": "2024-01-31T00:00:00.000Z",
+          "pad": "  abcdef  "
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "body": "upper=<<HELLO WORLD>>\nlower=<<hello world>>\ncapitalize=<<Hello world>>\nstartcase=<<Hello World>>\nlength_s=<<11>>\ntrim=<<abcdef>>\nsubstring=<<ell>>\nindexOf_bare=<<-1>>\nindexOf_q=<<4>>\nreplace_bare=<<hello world>>\nreplace_q=<<hell0 w0rld>>\nreplace_regex=<<hello world>>\ncontains_s=<<true>>\nsplit=<<hello|world>>\nsplit_len=<<2>>\ntoString_n=<<42>>\nencodeURL=<<hello%20world>>\ndecodeURL=<<hello world>>\nescapeHTML=<<&lt;b&gt;Hi&lt;/b&gt; &amp; &lt;i&gt;you&lt;/i&gt;>>\nstripHTML=<<Hi & you>>\nbase64=<<aGVsbG8gd29ybGQ=>>\nmd5=<<5eb63bbbe01eeed093cb22bb8f5acdc3>>\nsha1=<<2aae6c35c94fcfb415dbe95f408b9ce91ee846ed>>\nsha256=<<b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9>>\nascii=<<hello world>>\nescapeMarkdown=<<hello world>>\ntoBinary_hex=<<68656c6c6f20776f726c64>>\nplus=<<43>>\nconcat_plus=<<hello world1>>\nminus=<<41.5>>\ntimes=<<126>>\ndiv=<<14>>\ndiv0=<<Infinity>>\nmod=<<0>>\nsn_plus=<<421>>\nsn_times=<<42>>\nround=<<4>>\nround_neg=<<-2>>\nround_half=<<3>>\nceil=<<4>>\nfloor=<<3>>\nmax=<<42>>\nmin=<<3>>\nsum=<<16>>\naverage=<<4>>\nmax_arr=<<10>>\nparseNumber=<<1234.56>>\nformatNumber=<<3,70>>\nfloat_add=<<0.3>>\neq=<<true>>\neq_str=<<true>>\nneq=<<false>>\ngt=<<true>>\ngt_str=<<true>>\nand=<<true>>\nor=<<true>>\nif_true=<<yes>>\nif_empty_str=<<no>>\nif_zero=<<no>>\nifempty_empty=<<fallback>>\nifempty_null=<<fallback>>\nifempty_missing=<<fallback>>\nswitch=<<matched>>\narr_join=<<c-a-b>>\narr_len=<<3>>\narr_first=<<c>>\narr_last=<<b>>\narr_reverse=<<b,a,c>>\narr_sort=<<a,b,c>>\narr_sort_desc=<<c,b,a>>\narr_slice=<<a,b>>\narr_contains=<<true>>\narr_dedupe=<<x,y,1>>\narr_add=<<c,a,b,z>>\narr_remove=<<c,a>>\narr_index=<<a>>\narr_merge=<<c,a,b,x,y,x,1,1>>\narr_flatten=<<1,2,3,4>>\narr_raw=<<c, a, b>>\nnums_raw=<<1, 2, 3, 10>>\nmap=<<Ann,Bob>>\nmap_filter=<<Ann>>\nkeys=<<k1,k2>>\nget=<<v1>>\nget_path=<<Ann>>\nobj_raw=<<{\"k1\":\"v1\",\"k2\":2}>>\ntoArray=<<2>>\nnull_raw=<<>>\nmissing_raw=<<>>\nbool_raw=<<true>>\nparseDate=<<2024-02-28T19:00:00.000Z>>\nformatDate=<<01.03.2024 04:30>>\nformatDate_tz=<<2024-02-29 23:30 +00:00>>\naddDays=<<2024-03-01T23:30:00.000Z>>\naddMonths_eom=<<2024-02-29>>\naddHours=<<2024-02-29T18:30:00.000Z>>\nsetDay=<<2024-02-26>>\ndate_raw=<<2024-02-29T23:30:00.000Z>>\ndate_cmp=<<true>>\nformatDate_X=<<1709249400>>\nliteral_quoted=<<quoted>>\nempty_call=<<0>>\nnested=<<ABC>>\npick=<<k1>>\nomit=<<k2>>\nemptystring_kw=<<0>>\nspace_kw=<<1>>",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "upper=<<HELLO WORLD>>\nlower=<<hello world>>\ncapitalize=<<Hello world>>\nstartcase=<<Hello World>>\nlength_s=<<11>>\ntrim=<<abcdef>>\nsubstring=<<ell>>\nindexOf_bare=<<-1>>\nindexOf_q=<<4>>\nreplace_bare=<<hello world>>\nreplace_q=<<hell0 w0rld>>\nreplace_regex=<<hello world>>\ncontains_s=<<true>>\nsplit=<<hello|world>>\nsplit_len=<<2>>\ntoString_n=<<42>>\nencodeURL=<<hello%20world>>\ndecodeURL=<<hello world>>\nescapeHTML=<<&lt;b&gt;Hi&lt;/b&gt; &amp; &lt;i&gt;you&lt;/i&gt;>>\nstripHTML=<<Hi & you>>\nbase64=<<aGVsbG8gd29ybGQ=>>\nmd5=<<5eb63bbbe01eeed093cb22bb8f5acdc3>>\nsha1=<<2aae6c35c94fcfb415dbe95f408b9ce91ee846ed>>\nsha256=<<b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9>>\nascii=<<hello world>>\nescapeMarkdown=<<hello world>>\ntoBinary_hex=<<68656c6c6f20776f726c64>>\nplus=<<43>>\nconcat_plus=<<hello world1>>\nminus=<<41.5>>\ntimes=<<126>>\ndiv=<<14>>\ndiv0=<<Infinity>>\nmod=<<0>>\nsn_plus=<<421>>\nsn_times=<<42>>\nround=<<4>>\nround_neg=<<-2>>\nround_half=<<3>>\nceil=<<4>>\nfloor=<<3>>\nmax=<<42>>\nmin=<<3>>\nsum=<<16>>\naverage=<<4>>\nmax_arr=<<10>>\nparseNumber=<<1234.56>>\nformatNumber=<<3,70>>\nfloat_add=<<0.3>>\neq=<<true>>\neq_str=<<true>>\nneq=<<false>>\ngt=<<true>>\ngt_str=<<true>>\nand=<<true>>\nor=<<true>>\nif_true=<<yes>>\nif_empty_str=<<no>>\nif_zero=<<no>>\nifempty_empty=<<fallback>>\nifempty_null=<<fallback>>\nifempty_missing=<<fallback>>\nswitch=<<matched>>\narr_join=<<c-a-b>>\narr_len=<<3>>\narr_first=<<c>>\narr_last=<<b>>\narr_reverse=<<b,a,c>>\narr_sort=<<a,b,c>>\narr_sort_desc=<<c,b,a>>\narr_slice=<<a,b>>\narr_contains=<<true>>\narr_dedupe=<<x,y,1>>\narr_add=<<c,a,b,z>>\narr_remove=<<c,a>>\narr_index=<<a>>\narr_merge=<<c,a,b,x,y,x,1,1>>\narr_flatten=<<1,2,3,4>>\narr_raw=<<c, a, b>>\nnums_raw=<<1, 2, 3, 10>>\nmap=<<Ann,Bob>>\nmap_filter=<<Ann>>\nkeys=<<k1,k2>>\nget=<<v1>>\nget_path=<<Ann>>\nobj_raw=<<{\"k1\":\"v1\",\"k2\":2}>>\ntoArray=<<2>>\nnull_raw=<<>>\nmissing_raw=<<>>\nbool_raw=<<true>>\nparseDate=<<2024-02-28T19:00:00.000Z>>\nformatDate=<<01.03.2024 04:30>>\nformatDate_tz=<<2024-02-29 23:30 +00:00>>\naddDays=<<2024-03-01T23:30:00.000Z>>\naddMonths_eom=<<2024-02-29>>\naddHours=<<2024-02-29T18:30:00.000Z>>\nsetDay=<<2024-02-26>>\ndate_raw=<<2024-02-29T23:30:00.000Z>>\ndate_cmp=<<true>>\nformatDate_X=<<1709249400>>\nliteral_quoted=<<quoted>>\nempty_call=<<0>>\nnested=<<ABC>>\npick=<<k1>>\nomit=<<k2>>\nemptystring_kw=<<0>>\nspace_kw=<<1>>"
+  }
+}

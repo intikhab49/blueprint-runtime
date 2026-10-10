@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "31ebc57b252449f8a0ca7e786248a704",
+  "recordedAt": "2026-10-10T10:46:35.591Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-nl-01-text",
+          "items": [
+            "x",
+            "y",
+            "z"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            "x",
+            "y",
+            "z"
+          ]
+        }
+      ],
+      "output": [
+        "x",
+        "y",
+        "z"
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "x"
+        }
+      ],
+      "output": [
+        {
+          "line": "x"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "y"
+        }
+      ],
+      "output": [
+        {
+          "line": "y"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": "z"
+        }
+      ],
+      "output": [
+        {
+          "line": "z"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "x"
+        },
+        {
+          "value": "y"
+        },
+        {
+          "value": "z"
+        }
+      ],
+      "output": [
+        {
+          "text": "x\ny\nz"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[x\ny\nz]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[x\ny\nz]"
+  }
+}

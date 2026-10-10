@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7871965,
+  "runId": "5b1cc675b860497cb14d8fd5d070f1a4",
+  "recordedAt": "2026-10-10T02:02:44.369Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "A-003-unicode",
+          "name": "straße café 日本 😀",
+          "count": 2,
+          "tags": [
+            "x"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "upper_name",
+          "value": "STRASSE CAFÉ 日本 😀"
+        }
+      ],
+      "output": [
+        {
+          "upper_name": "STRASSE CAFÉ 日本 😀"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "body": "STRASSE CAFÉ 日本 😀",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "STRASSE CAFÉ 日本 😀"
+  }
+}

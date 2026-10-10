@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "1c9e30dbc1b24b688d04e695117c1f6c",
+  "recordedAt": "2026-10-10T01:01:11.724Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-05-missing-items"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": null
+        }
+      ],
+      "output": []
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[]"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "case": "A-008-extra-fields",
+  "name": "x",
+  "count": 9,
+  "tags": [
+    "p",
+    "q"
+  ],
+  "extra": {
+    "nested": [
+      1,
+      2
+    ],
+    "flag": true
+  }
+}

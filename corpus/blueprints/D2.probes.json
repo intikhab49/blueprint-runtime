@@ -1,0 +1,328 @@
+{
+ "name": "D2-semantics",
+ "payload": {
+  "case": "D2-01",
+  "s": "hello world",
+  "n": 42,
+  "sn": "42",
+  "b": true,
+  "nul": null,
+  "arr": [
+   "c",
+   "a",
+   "b"
+  ],
+  "nested": [
+   [
+    1,
+    2
+   ],
+   [
+    3,
+    [
+     4
+    ]
+   ]
+  ],
+  "nums": [
+   1,
+   2,
+   3,
+   10
+  ],
+  "people": [
+   {
+    "name": "Ann",
+    "age": 30
+   },
+   {
+    "name": "Bob",
+    "age": 25
+   }
+  ],
+  "obj": {
+   "k1": "v1"
+  },
+  "fa": 0.1,
+  "fb": 0.2,
+  "fl": [
+   0.1,
+   0.2
+  ],
+  "emptyarr": [],
+  "emptyobj": {},
+  "zero": 0,
+  "sfalse": "false",
+  "notarr": "notarray"
+ },
+ "probes": [
+  [
+   "f_add1",
+   "0.1 + 0.7"
+  ],
+  [
+   "f_sub1",
+   "0.3 - 0.1"
+  ],
+  [
+   "f_add2",
+   "1.1 + 2.2"
+  ],
+  [
+   "f_mul1",
+   "0.1 * 3"
+  ],
+  [
+   "f_mul2",
+   "1.005 * 1000"
+  ],
+  [
+   "f_sub2",
+   "100.1 - 100"
+  ],
+  [
+   "f_fields",
+   "1.fa + 1.fb"
+  ],
+  [
+   "f_sum",
+   "sum(1.fl)"
+  ],
+  [
+   "f_add3",
+   "42 + 0.1"
+  ],
+  [
+   "f_div1",
+   "1 / 3"
+  ],
+  [
+   "f_add4",
+   "0.1 + 0.2"
+  ],
+  [
+   "f_round",
+   "round(0.1 + 0.2)"
+  ],
+  [
+   "p_add_mul",
+   "1 + 2 * 3"
+  ],
+  [
+   "p_mul_add",
+   "2 * 3 + 4"
+  ],
+  [
+   "p_sub_sub",
+   "10 - 4 - 3"
+  ],
+  [
+   "p_div_div",
+   "8 / 4 / 2"
+  ],
+  [
+   "p_sub_add",
+   "1 - 2 + 3"
+  ],
+  [
+   "p_mul_mod",
+   "2 * 3 % 4"
+  ],
+  [
+   "p_or_and",
+   "true | false & false"
+  ],
+  [
+   "p_add_eq",
+   "1 + 2 = 3"
+  ],
+  [
+   "p_lt_eq",
+   "1 < 2 = true"
+  ],
+  [
+   "p_paren",
+   "(1 + 2) * 3"
+  ],
+  [
+   "t_sfalse",
+   "if(1.sfalse; \"T\"; \"F\")"
+  ],
+  [
+   "t_text",
+   "if(\"abc\"; \"T\"; \"F\")"
+  ],
+  [
+   "t_szero",
+   "if(\"0\"; \"T\"; \"F\")"
+  ],
+  [
+   "t_null",
+   "if(1.nul; \"T\"; \"F\")"
+  ],
+  [
+   "t_missing",
+   "if(1.nope; \"T\"; \"F\")"
+  ],
+  [
+   "t_arr",
+   "if(1.arr; \"T\"; \"F\")"
+  ],
+  [
+   "t_emptyarr",
+   "if(1.emptyarr; \"T\"; \"F\")"
+  ],
+  [
+   "t_obj",
+   "if(1.obj; \"T\"; \"F\")"
+  ],
+  [
+   "t_emptyobj",
+   "if(1.emptyobj; \"T\"; \"F\")"
+  ],
+  [
+   "t_neg",
+   "if(-1; \"T\"; \"F\")"
+  ],
+  [
+   "fl_len",
+   "length(flatten(1.nested))"
+  ],
+  [
+   "j_nested",
+   "join(1.nested; \"|\")"
+  ],
+  [
+   "people_raw",
+   "1.people"
+  ],
+  [
+   "nested_raw",
+   "1.nested"
+  ],
+  [
+   "r_q1",
+   "replace(1.s; \"/o/g\"; \"0\")"
+  ],
+  [
+   "r_q2",
+   "replace(1.s; \"/O/gi\"; \"0\")"
+  ],
+  [
+   "r_q3",
+   "replace(1.s; \"/l+/\"; \"L\")"
+  ],
+  [
+   "r_q4",
+   "replace(1.s; \"/o/\"; \"0\")"
+  ],
+  [
+   "m_upper",
+   "upper(1.nope)"
+  ],
+  [
+   "m_length",
+   "length(1.nope)"
+  ],
+  [
+   "m_lower_null",
+   "lower(1.nul)"
+  ],
+  [
+   "m_trim",
+   "trim(1.nope)"
+  ],
+  [
+   "m_join",
+   "join(1.nope; \",\")"
+  ],
+  [
+   "m_len_null",
+   "length(1.nul)"
+  ],
+  [
+   "e_null_missing",
+   "1.nul = 1.nope"
+  ],
+  [
+   "e_bool_text",
+   "1.b = \"true\""
+  ],
+  [
+   "e_num_text_dec",
+   "1.n = \"42.0\""
+  ],
+  [
+   "e_case",
+   "\"a\" = \"A\""
+  ],
+  [
+   "e_missing_empty",
+   "1.nope = \"\""
+  ],
+  [
+   "e_null_empty",
+   "1.nul = \"\""
+  ],
+  [
+   "e_zero_false",
+   "1.zero = false"
+  ],
+  [
+   "s_nums",
+   "join(sort(1.nums); \",\")"
+  ],
+  [
+   "s_nums_desc",
+   "join(sort(1.nums; \"desc\"); \",\")"
+  ],
+  [
+   "ie_emptyarr",
+   "ifempty(1.emptyarr; \"fb\")"
+  ],
+  [
+   "ie_emptyobj",
+   "ifempty(1.emptyobj; \"fb\")"
+  ],
+  [
+   "ie_zero",
+   "ifempty(1.zero; \"fb\")"
+  ],
+  [
+   "ie_false",
+   "ifempty(false; \"fb\")"
+  ],
+  [
+   "o_missing_plus",
+   "1.nope + 1"
+  ],
+  [
+   "o_bool_plus",
+   "true + 1"
+  ],
+  [
+   "o_text_times",
+   "\"abc\" * 2"
+  ],
+  [
+   "o_missing_times",
+   "1.nope * 2"
+  ],
+  [
+   "o_null_plus",
+   "1.nul + 1"
+  ],
+  [
+   "o_arr_plus",
+   "1.arr + 1"
+  ],
+  [
+   "lazy_if",
+   "if(true; \"picked\"; first(1.notarr))"
+  ],
+  [
+   "esc_quote",
+   "\"a\\\"b\""
+  ]
+ ]
+}

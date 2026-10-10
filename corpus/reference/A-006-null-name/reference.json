@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7871965,
+  "runId": "7d959b0645184639b3bf2a06f7406e2f",
+  "recordedAt": "2026-10-10T02:03:26.859Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "A-006-null-name",
+          "name": null,
+          "count": 1
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "upper_name",
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "upper_name": null
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "body": null,
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "Accepted"
+  }
+}

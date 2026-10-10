@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "28c1785c2d0949f5a05548b687d80366",
+  "recordedAt": "2026-10-10T10:46:53.022Z",
+  "timezone": "Asia/Karachi",
+  "status": "error",
+  "error": {
+    "moduleId": 2,
+    "name": "TypeError",
+    "message": "Cannot convert undefined or null to object"
+  },
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-nl-03-mixed",
+          "items": [
+            "a",
+            {
+              "value": "obj"
+            },
+            3,
+            true,
+            null,
+            false
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            "a",
+            {
+              "value": "obj"
+            },
+            3,
+            true,
+            null,
+            false
+          ]
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 500,
+    "body": "Scenario failed to complete."
+  }
+}

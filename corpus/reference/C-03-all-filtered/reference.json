@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "b8a7d0df16bc49728a3c3183610d5518",
+  "recordedAt": "2026-10-10T01:01:10.294Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-03-all-filtered",
+          "items": [
+            {
+              "name": "a",
+              "qty": 0
+            },
+            {
+              "name": "b",
+              "qty": -2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "a",
+              "qty": 0
+            },
+            {
+              "name": "b",
+              "qty": -2
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "a",
+          "qty": 0,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 2
+        },
+        {
+          "name": "b",
+          "qty": -2,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 2
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "text": ""
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[]"
+  }
+}

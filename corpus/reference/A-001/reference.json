@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7871965,
+  "runId": "390bab8de6dc46f9b2108131e8509a4d",
+  "recordedAt": "2026-10-10T00:46:48.034Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "name": "test",
+          "count": 3,
+          "tags": [
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "upper_name",
+          "value": "TEST"
+        }
+      ],
+      "output": [
+        {
+          "upper_name": "TEST"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "body": "TEST",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "TEST"
+  }
+}

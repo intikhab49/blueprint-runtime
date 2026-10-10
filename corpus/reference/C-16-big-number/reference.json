@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "10c847c9c82f4ebcb59362dd4f79fc94",
+  "recordedAt": "2026-10-10T01:01:20.512Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-16-big-number",
+          "items": [
+            {
+              "name": "big",
+              "qty": 9007199254740992
+            },
+            {
+              "name": "exp",
+              "qty": 1e+21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "big",
+              "qty": 9007199254740992
+            },
+            {
+              "name": "exp",
+              "qty": 1e+21
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "big",
+          "qty": 9007199254740992,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 2
+        },
+        {
+          "name": "exp",
+          "qty": 1e+21,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 2
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "big:18014398509481984"
+        }
+      ],
+      "output": [
+        {
+          "line": "big:18014398509481984"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "exp:2e+21"
+        }
+      ],
+      "output": [
+        {
+          "line": "exp:2e+21"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "big:18014398509481984"
+        },
+        {
+          "value": "exp:2e+21"
+        }
+      ],
+      "output": [
+        {
+          "text": "big:18014398509481984|exp:2e+21"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[big:18014398509481984|exp:2e+21]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[big:18014398509481984|exp:2e+21]"
+  }
+}

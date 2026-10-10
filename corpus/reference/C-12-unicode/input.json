@@ -1,0 +1,17 @@
+{
+  "case": "C-12-unicode",
+  "items": [
+    {
+      "name": "caf�",
+      "qty": 1
+    },
+    {
+      "name": "??",
+      "qty": 2
+    },
+    {
+      "name": "??",
+      "qty": 3
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "d1d89dd034834ea3b837e0b8c39925f6",
+  "recordedAt": "2026-10-10T01:01:13.422Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-07-qty-string",
+          "items": [
+            {
+              "name": "s",
+              "qty": "4"
+            },
+            {
+              "name": "t",
+              "qty": "0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "s",
+              "qty": "4"
+            },
+            {
+              "name": "t",
+              "qty": "0"
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "s",
+          "qty": "4",
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 2
+        },
+        {
+          "name": "t",
+          "qty": "0",
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 2
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "s:8"
+        }
+      ],
+      "output": [
+        {
+          "line": "s:8"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "s:8"
+        }
+      ],
+      "output": [
+        {
+          "text": "s:8"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[s:8]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[s:8]"
+  }
+}

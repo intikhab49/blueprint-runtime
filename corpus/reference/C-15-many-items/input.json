@@ -1,0 +1,37 @@
+{
+  "case": "C-15-many-items",
+  "items": [
+    {
+      "name": "i1",
+      "qty": 1
+    },
+    {
+      "name": "i2",
+      "qty": 2
+    },
+    {
+      "name": "i3",
+      "qty": 3
+    },
+    {
+      "name": "i4",
+      "qty": 4
+    },
+    {
+      "name": "i5",
+      "qty": 5
+    },
+    {
+      "name": "i6",
+      "qty": 6
+    },
+    {
+      "name": "i7",
+      "qty": 7
+    },
+    {
+      "name": "i8",
+      "qty": 8
+    }
+  ]
+}

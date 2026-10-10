@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872039,
+  "runId": "d9134a57a2034402bfc7afca977bde66",
+  "recordedAt": "2026-10-10T01:06:45.858Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "D-02-unicode",
+          "s": "café ÜBER straße 日本 😀",
+          "n": 42,
+          "sn": "42",
+          "f": 3.7,
+          "eu": "1.234,56",
+          "html": "<b>Hi</b> & <i>you</i>",
+          "b": true,
+          "empty": "",
+          "nul": null,
+          "arr": [
+            "é",
+            "e",
+            "z",
+            "É"
+          ],
+          "dup": [
+            "x",
+            "y",
+            "x",
+            1,
+            "1"
+          ],
+          "nested": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              [
+                4
+              ]
+            ]
+          ],
+          "nums": [
+            1,
+            2,
+            3,
+            10
+          ],
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30
+            },
+            {
+              "name": "Bob",
+              "age": 25
+            }
+          ],
+          "obj": {
+            "k1": "v1",
+            "k2": 2
+          },
+          "d": "2026-01-31",
+          "iso": "2026-01-31T15:04:05.000Z",
+          "eom": "2026-01-31T00:00:00.000Z",
+          "pad": "  abcdef  "
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "body": "upper=<<CAFÉ ÜBER STRASSE 日本 😀>>\nlower=<<café über straße 日本 😀>>\ncapitalize=<<Café ÜBER straße 日本 😀>>\nstartcase=<<Café Über Straße 日本 😀>>\nlength_s=<<22>>\ntrim=<<abcdef>>\nsubstring=<<afé>>\nindexOf_bare=<<-1>>\nindexOf_q=<<-1>>\nreplace_bare=<<café ÜBER straße 日本 😀>>\nreplace_q=<<café ÜBER straße 日本 😀>>\nreplace_regex=<<café ÜBER straße 日本 😀>>\ncontains_s=<<false>>\nsplit=<<café|ÜBER|straße|日本|😀>>\nsplit_len=<<5>>\ntoString_n=<<42>>\nencodeURL=<<caf%C3%A9%20%C3%9CBER%20stra%C3%9Fe%20%E6%97%A5%E6%9C%AC%20%F0%9F%98%80>>\ndecodeURL=<<café ÜBER straße 日本 😀>>\nescapeHTML=<<&lt;b&gt;Hi&lt;/b&gt; &amp; &lt;i&gt;you&lt;/i&gt;>>\nstripHTML=<<Hi & you>>\nbase64=<<Y2Fmw6kgw5xCRVIgc3RyYcOfZSDml6XmnKwg8J+YgA==>>\nmd5=<<c4d3d0eccbb9d5713f29dd1f25f45902>>\nsha1=<<01fc573772327deb490961486de75b28eef51543>>\nsha256=<<74f2c89b9c9bdfa9ed601bce3085eb6fedc5c386039a3b859aa2365cb5123ace>>\nascii=<<caf BER strae  >>\nescapeMarkdown=<<café ÜBER straße 日本 😀>>\ntoBinary_hex=<<636166c3a920c39c4245522073747261c39f6520e697a5e69cac20f09f9880>>\nplus=<<43>>\nconcat_plus=<<café ÜBER straße 日本 😀1>>\nminus=<<41.5>>\ntimes=<<126>>\ndiv=<<14>>\ndiv0=<<Infinity>>\nmod=<<0>>\nsn_plus=<<421>>\nsn_times=<<42>>\nround=<<4>>\nround_neg=<<-2>>\nround_half=<<3>>\nceil=<<4>>\nfloor=<<3>>\nmax=<<42>>\nmin=<<3>>\nsum=<<16>>\naverage=<<4>>\nmax_arr=<<10>>\nparseNumber=<<1234.56>>\nformatNumber=<<3,70>>\nfloat_add=<<0.3>>\neq=<<true>>\neq_str=<<true>>\nneq=<<false>>\ngt=<<true>>\ngt_str=<<true>>\nand=<<true>>\nor=<<true>>\nif_true=<<yes>>\nif_empty_str=<<no>>\nif_zero=<<no>>\nifempty_empty=<<fallback>>\nifempty_null=<<fallback>>\nifempty_missing=<<fallback>>\nswitch=<<other>>\narr_join=<<é-e-z-É>>\narr_len=<<4>>\narr_first=<<é>>\narr_last=<<É>>\narr_reverse=<<É,z,e,é>>\narr_sort=<<e,z,É,é>>\narr_sort_desc=<<é,É,z,e>>\narr_slice=<<e,z>>\narr_contains=<<false>>\narr_dedupe=<<x,y,1>>\narr_add=<<é,e,z,É,z>>\narr_remove=<<é,e,z,É>>\narr_index=<<e>>\narr_merge=<<é,e,z,É,x,y,x,1,1>>\narr_flatten=<<1,2,3,4>>\narr_raw=<<é, e, z, É>>\nnums_raw=<<1, 2, 3, 10>>\nmap=<<Ann,Bob>>\nmap_filter=<<Ann>>\nkeys=<<k1,k2>>\nget=<<v1>>\nget_path=<<Ann>>\nobj_raw=<<{\"k1\":\"v1\",\"k2\":2}>>\ntoArray=<<2>>\nnull_raw=<<>>\nmissing_raw=<<>>\nbool_raw=<<true>>\nparseDate=<<2026-01-30T19:00:00.000Z>>\nformatDate=<<31.01.2026 20:04>>\nformatDate_tz=<<2026-01-31 15:04 +00:00>>\naddDays=<<2026-02-01T15:04:05.000Z>>\naddMonths_eom=<<2026-02-28>>\naddHours=<<2026-01-31T10:04:05.000Z>>\nsetDay=<<2026-01-26>>\ndate_raw=<<2026-01-31T15:04:05.000Z>>\ndate_cmp=<<true>>\nformatDate_X=<<1769871845>>\nliteral_quoted=<<quoted>>\nempty_call=<<0>>\nnested=<<ABC>>\npick=<<k1>>\nomit=<<k2>>\nemptystring_kw=<<0>>\nspace_kw=<<1>>",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "upper=<<CAFÉ ÜBER STRASSE 日本 😀>>\nlower=<<café über straße 日本 😀>>\ncapitalize=<<Café ÜBER straße 日本 😀>>\nstartcase=<<Café Über Straße 日本 😀>>\nlength_s=<<22>>\ntrim=<<abcdef>>\nsubstring=<<afé>>\nindexOf_bare=<<-1>>\nindexOf_q=<<-1>>\nreplace_bare=<<café ÜBER straße 日本 😀>>\nreplace_q=<<café ÜBER straße 日本 😀>>\nreplace_regex=<<café ÜBER straße 日本 😀>>\ncontains_s=<<false>>\nsplit=<<café|ÜBER|straße|日本|😀>>\nsplit_len=<<5>>\ntoString_n=<<42>>\nencodeURL=<<caf%C3%A9%20%C3%9CBER%20stra%C3%9Fe%20%E6%97%A5%E6%9C%AC%20%F0%9F%98%80>>\ndecodeURL=<<café ÜBER straße 日本 😀>>\nescapeHTML=<<&lt;b&gt;Hi&lt;/b&gt; &amp; &lt;i&gt;you&lt;/i&gt;>>\nstripHTML=<<Hi & you>>\nbase64=<<Y2Fmw6kgw5xCRVIgc3RyYcOfZSDml6XmnKwg8J+YgA==>>\nmd5=<<c4d3d0eccbb9d5713f29dd1f25f45902>>\nsha1=<<01fc573772327deb490961486de75b28eef51543>>\nsha256=<<74f2c89b9c9bdfa9ed601bce3085eb6fedc5c386039a3b859aa2365cb5123ace>>\nascii=<<caf BER strae  >>\nescapeMarkdown=<<café ÜBER straße 日本 😀>>\ntoBinary_hex=<<636166c3a920c39c4245522073747261c39f6520e697a5e69cac20f09f9880>>\nplus=<<43>>\nconcat_plus=<<café ÜBER straße 日本 😀1>>\nminus=<<41.5>>\ntimes=<<126>>\ndiv=<<14>>\ndiv0=<<Infinity>>\nmod=<<0>>\nsn_plus=<<421>>\nsn_times=<<42>>\nround=<<4>>\nround_neg=<<-2>>\nround_half=<<3>>\nceil=<<4>>\nfloor=<<3>>\nmax=<<42>>\nmin=<<3>>\nsum=<<16>>\naverage=<<4>>\nmax_arr=<<10>>\nparseNumber=<<1234.56>>\nformatNumber=<<3,70>>\nfloat_add=<<0.3>>\neq=<<true>>\neq_str=<<true>>\nneq=<<false>>\ngt=<<true>>\ngt_str=<<true>>\nand=<<true>>\nor=<<true>>\nif_true=<<yes>>\nif_empty_str=<<no>>\nif_zero=<<no>>\nifempty_empty=<<fallback>>\nifempty_null=<<fallback>>\nifempty_missing=<<fallback>>\nswitch=<<other>>\narr_join=<<é-e-z-É>>\narr_len=<<4>>\narr_first=<<é>>\narr_last=<<É>>\narr_reverse=<<É,z,e,é>>\narr_sort=<<e,z,É,é>>\narr_sort_desc=<<é,É,z,e>>\narr_slice=<<e,z>>\narr_contains=<<false>>\narr_dedupe=<<x,y,1>>\narr_add=<<é,e,z,É,z>>\narr_remove=<<é,e,z,É>>\narr_index=<<e>>\narr_merge=<<é,e,z,É,x,y,x,1,1>>\narr_flatten=<<1,2,3,4>>\narr_raw=<<é, e, z, É>>\nnums_raw=<<1, 2, 3, 10>>\nmap=<<Ann,Bob>>\nmap_filter=<<Ann>>\nkeys=<<k1,k2>>\nget=<<v1>>\nget_path=<<Ann>>\nobj_raw=<<{\"k1\":\"v1\",\"k2\":2}>>\ntoArray=<<2>>\nnull_raw=<<>>\nmissing_raw=<<>>\nbool_raw=<<true>>\nparseDate=<<2026-01-30T19:00:00.000Z>>\nformatDate=<<31.01.2026 20:04>>\nformatDate_tz=<<2026-01-31 15:04 +00:00>>\naddDays=<<2026-02-01T15:04:05.000Z>>\naddMonths_eom=<<2026-02-28>>\naddHours=<<2026-01-31T10:04:05.000Z>>\nsetDay=<<2026-01-26>>\ndate_raw=<<2026-01-31T15:04:05.000Z>>\ndate_cmp=<<true>>\nformatDate_X=<<1769871845>>\nliteral_quoted=<<quoted>>\nempty_call=<<0>>\nnested=<<ABC>>\npick=<<k1>>\nomit=<<k2>>\nemptystring_kw=<<0>>\nspace_kw=<<1>>"
+  }
+}

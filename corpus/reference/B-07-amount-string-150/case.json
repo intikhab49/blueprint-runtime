@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "B-07-amount-string-150",
+  "blueprint": "../../blueprints/B.blueprint.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

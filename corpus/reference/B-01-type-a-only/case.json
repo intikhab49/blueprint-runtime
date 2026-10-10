@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "B-01-type-a-only",
+  "blueprint": "../../blueprints/B.blueprint.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

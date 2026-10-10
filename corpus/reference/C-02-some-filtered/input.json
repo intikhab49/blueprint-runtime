@@ -1,0 +1,21 @@
+{
+  "case": "C-02-some-filtered",
+  "items": [
+    {
+      "name": "a",
+      "qty": 0
+    },
+    {
+      "name": "b",
+      "qty": 5
+    },
+    {
+      "name": "c",
+      "qty": -1
+    },
+    {
+      "name": "d",
+      "qty": 2
+    }
+  ]
+}

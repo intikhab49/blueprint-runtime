@@ -1,0 +1,430 @@
+[
+ [
+  "upper",
+  "upper(1.s)"
+ ],
+ [
+  "lower",
+  "lower(1.s)"
+ ],
+ [
+  "capitalize",
+  "capitalize(1.s)"
+ ],
+ [
+  "startcase",
+  "startcase(1.s)"
+ ],
+ [
+  "length_s",
+  "length(1.s)"
+ ],
+ [
+  "trim",
+  "trim(1.pad)"
+ ],
+ [
+  "substring",
+  "substring(1.s; 1; 4)"
+ ],
+ [
+  "indexOf_bare",
+  "indexOf(1.s; o)"
+ ],
+ [
+  "indexOf_q",
+  "indexOf(1.s; \"o\")"
+ ],
+ [
+  "replace_bare",
+  "replace(1.s; o; 0)"
+ ],
+ [
+  "replace_q",
+  "replace(1.s; \"o\"; \"0\")"
+ ],
+ [
+  "replace_regex",
+  "replace(1.s; /o/g; \"0\")"
+ ],
+ [
+  "contains_s",
+  "contains(1.s; \"ell\")"
+ ],
+ [
+  "split",
+  "join(split(1.s; \" \"); \"|\")"
+ ],
+ [
+  "split_len",
+  "length(split(1.s; \" \"))"
+ ],
+ [
+  "toString_n",
+  "toString(1.n)"
+ ],
+ [
+  "encodeURL",
+  "encodeURL(1.s)"
+ ],
+ [
+  "decodeURL",
+  "decodeURL(encodeURL(1.s))"
+ ],
+ [
+  "escapeHTML",
+  "escapeHTML(1.html)"
+ ],
+ [
+  "stripHTML",
+  "stripHTML(1.html)"
+ ],
+ [
+  "base64",
+  "base64(1.s)"
+ ],
+ [
+  "md5",
+  "md5(1.s)"
+ ],
+ [
+  "sha1",
+  "sha1(1.s)"
+ ],
+ [
+  "sha256",
+  "sha256(1.s)"
+ ],
+ [
+  "ascii",
+  "ascii(1.s)"
+ ],
+ [
+  "escapeMarkdown",
+  "escapeMarkdown(1.s)"
+ ],
+ [
+  "toBinary_hex",
+  "toString(toBinary(1.s); \"hex\")"
+ ],
+ [
+  "plus",
+  "1.n + 1"
+ ],
+ [
+  "concat_plus",
+  "1.s + 1"
+ ],
+ [
+  "minus",
+  "1.n - 0.5"
+ ],
+ [
+  "times",
+  "1.n * 3"
+ ],
+ [
+  "div",
+  "1.n / 3"
+ ],
+ [
+  "div0",
+  "1.n / 0"
+ ],
+ [
+  "mod",
+  "1.n % 3"
+ ],
+ [
+  "sn_plus",
+  "1.sn + 1"
+ ],
+ [
+  "sn_times",
+  "1.sn * 1"
+ ],
+ [
+  "round",
+  "round(1.f)"
+ ],
+ [
+  "round_neg",
+  "round(-2.5)"
+ ],
+ [
+  "round_half",
+  "round(2.5)"
+ ],
+ [
+  "ceil",
+  "ceil(1.f)"
+ ],
+ [
+  "floor",
+  "floor(1.f)"
+ ],
+ [
+  "max",
+  "max(1.n; 7; 3)"
+ ],
+ [
+  "min",
+  "min(1.n; 7; 3)"
+ ],
+ [
+  "sum",
+  "sum(1.nums)"
+ ],
+ [
+  "average",
+  "average(1.nums)"
+ ],
+ [
+  "max_arr",
+  "max(1.nums)"
+ ],
+ [
+  "parseNumber",
+  "parseNumber(1.eu; \",\")"
+ ],
+ [
+  "formatNumber",
+  "formatNumber(1.f; 2; \",\"; \".\")"
+ ],
+ [
+  "float_add",
+  "0.1 + 0.2"
+ ],
+ [
+  "eq",
+  "1.n = 42"
+ ],
+ [
+  "eq_str",
+  "1.sn = 42"
+ ],
+ [
+  "neq",
+  "1.n != 42"
+ ],
+ [
+  "gt",
+  "1.n > 9"
+ ],
+ [
+  "gt_str",
+  "1.sn > 9"
+ ],
+ [
+  "and",
+  "1.b & true"
+ ],
+ [
+  "or",
+  "false | 1.b"
+ ],
+ [
+  "if_true",
+  "if(1.b; \"yes\"; \"no\")"
+ ],
+ [
+  "if_empty_str",
+  "if(1.empty; \"yes\"; \"no\")"
+ ],
+ [
+  "if_zero",
+  "if(0; \"yes\"; \"no\")"
+ ],
+ [
+  "ifempty_empty",
+  "ifempty(1.empty; \"fallback\")"
+ ],
+ [
+  "ifempty_null",
+  "ifempty(1.nul; \"fallback\")"
+ ],
+ [
+  "ifempty_missing",
+  "ifempty(1.nope; \"fallback\")"
+ ],
+ [
+  "switch",
+  "switch(1.s; \"hello world\"; \"matched\"; \"other\")"
+ ],
+ [
+  "arr_join",
+  "join(1.arr; \"-\")"
+ ],
+ [
+  "arr_len",
+  "length(1.arr)"
+ ],
+ [
+  "arr_first",
+  "first(1.arr)"
+ ],
+ [
+  "arr_last",
+  "last(1.arr)"
+ ],
+ [
+  "arr_reverse",
+  "join(reverse(1.arr); \",\")"
+ ],
+ [
+  "arr_sort",
+  "join(sort(1.arr); \",\")"
+ ],
+ [
+  "arr_sort_desc",
+  "join(sort(1.arr; \"desc\"); \",\")"
+ ],
+ [
+  "arr_slice",
+  "join(slice(1.arr; 1; 3); \",\")"
+ ],
+ [
+  "arr_contains",
+  "contains(1.arr; \"b\")"
+ ],
+ [
+  "arr_dedupe",
+  "join(deduplicate(1.dup); \",\")"
+ ],
+ [
+  "arr_add",
+  "join(add(1.arr; \"z\"); \",\")"
+ ],
+ [
+  "arr_remove",
+  "join(remove(1.arr; \"b\"); \",\")"
+ ],
+ [
+  "arr_index",
+  "1.arr[2]"
+ ],
+ [
+  "arr_merge",
+  "join(merge(1.arr; 1.dup); \",\")"
+ ],
+ [
+  "arr_flatten",
+  "join(flatten(1.nested); \",\")"
+ ],
+ [
+  "arr_raw",
+  "1.arr"
+ ],
+ [
+  "nums_raw",
+  "1.nums"
+ ],
+ [
+  "map",
+  "join(map(1.people; \"name\"); \",\")"
+ ],
+ [
+  "map_filter",
+  "join(map(1.people; \"name\"; \"age\"; 30); \",\")"
+ ],
+ [
+  "keys",
+  "join(keys(1.obj); \",\")"
+ ],
+ [
+  "get",
+  "get(1.obj; \"k1\")"
+ ],
+ [
+  "get_path",
+  "get(1.people; \"1.name\")"
+ ],
+ [
+  "obj_raw",
+  "1.obj"
+ ],
+ [
+  "toArray",
+  "length(toArray(1.obj))"
+ ],
+ [
+  "null_raw",
+  "1.nul"
+ ],
+ [
+  "missing_raw",
+  "1.nope"
+ ],
+ [
+  "bool_raw",
+  "1.b"
+ ],
+ [
+  "parseDate",
+  "parseDate(1.d; \"YYYY-MM-DD\")"
+ ],
+ [
+  "formatDate",
+  "formatDate(1.iso; \"DD.MM.YYYY HH:mm\")"
+ ],
+ [
+  "formatDate_tz",
+  "formatDate(1.iso; \"YYYY-MM-DD HH:mm Z\"; \"UTC\")"
+ ],
+ [
+  "addDays",
+  "addDays(1.iso; 1)"
+ ],
+ [
+  "addMonths_eom",
+  "formatDate(addMonths(1.eom; 1); \"YYYY-MM-DD\")"
+ ],
+ [
+  "addHours",
+  "addHours(1.iso; -5)"
+ ],
+ [
+  "setDay",
+  "formatDate(setDay(1.iso; \"monday\"); \"YYYY-MM-DD\")"
+ ],
+ [
+  "date_raw",
+  "1.iso"
+ ],
+ [
+  "date_cmp",
+  "1.iso > 1.d"
+ ],
+ [
+  "formatDate_X",
+  "formatDate(1.iso; \"X\")"
+ ],
+ [
+  "literal_quoted",
+  "\"quoted\""
+ ],
+ [
+  "empty_call",
+  "length(1.empty)"
+ ],
+ [
+  "nested",
+  "upper(substring(trim(1.pad); 0; 3))"
+ ],
+ [
+  "pick",
+  "join(keys(pick(1.obj; \"k1\")); \",\")"
+ ],
+ [
+  "omit",
+  "join(keys(omit(1.obj; \"k1\")); \",\")"
+ ],
+ [
+  "emptystring_kw",
+  "length(emptystring)"
+ ],
+ [
+  "space_kw",
+  "length(space)"
+ ]
+]

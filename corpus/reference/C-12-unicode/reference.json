@@ -1,0 +1,197 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "e59404029e0942f583ebff8e44e7b103",
+  "recordedAt": "2026-10-10T01:01:17.410Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-12-unicode",
+          "items": [
+            {
+              "name": "caf�",
+              "qty": 1
+            },
+            {
+              "name": "??",
+              "qty": 2
+            },
+            {
+              "name": "??",
+              "qty": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "caf�",
+              "qty": 1
+            },
+            {
+              "name": "??",
+              "qty": 2
+            },
+            {
+              "name": "??",
+              "qty": 3
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "caf�",
+          "qty": 1,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 3
+        },
+        {
+          "name": "??",
+          "qty": 2,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 3
+        },
+        {
+          "name": "??",
+          "qty": 3,
+          "__IMTINDEX__": 3,
+          "__IMTLENGTH__": 3
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "caf�:2"
+        }
+      ],
+      "output": [
+        {
+          "line": "caf�:2"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "??:4"
+        }
+      ],
+      "output": [
+        {
+          "line": "??:4"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": "??:6"
+        }
+      ],
+      "output": [
+        {
+          "line": "??:6"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "caf�:2"
+        },
+        {
+          "value": "??:4"
+        },
+        {
+          "value": "??:6"
+        }
+      ],
+      "output": [
+        {
+          "text": "caf�:2|??:4|??:6"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[caf�:2|??:4|??:6]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[caf�:2|??:4|??:6]"
+  }
+}

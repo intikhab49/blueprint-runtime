@@ -1,0 +1,13 @@
+{
+  "case": "C2-nl-03-mixed",
+  "items": [
+    "a",
+    {
+      "value": "obj"
+    },
+    3,
+    true,
+    null,
+    false
+  ]
+}

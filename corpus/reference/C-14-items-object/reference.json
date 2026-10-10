@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "4fc7297cf8c74e30995353ec6aec1b42",
+  "recordedAt": "2026-10-10T01:01:18.865Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-14-items-object",
+          "items": {
+            "name": "obj",
+            "qty": 9
+          }
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": {
+            "name": "obj",
+            "qty": 9
+          }
+        }
+      ],
+      "output": [
+        {
+          "name": "obj",
+          "qty": 9,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 1
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "obj:18"
+        }
+      ],
+      "output": [
+        {
+          "line": "obj:18"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "obj:18"
+        }
+      ],
+      "output": [
+        {
+          "text": "obj:18"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[obj:18]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[obj:18]"
+  }
+}

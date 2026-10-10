@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7871965,
+  "runId": "d7061895db2444b783b76596a2083623",
+  "recordedAt": "2026-10-10T02:02:41.316Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "A-002-plain",
+          "name": "Ada Lovelace",
+          "count": 1,
+          "tags": []
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "upper_name",
+          "value": "ADA LOVELACE"
+        }
+      ],
+      "output": [
+        {
+          "upper_name": "ADA LOVELACE"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "body": "ADA LOVELACE",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "ADA LOVELACE"
+  }
+}

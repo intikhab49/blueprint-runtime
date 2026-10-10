@@ -1,0 +1,17 @@
+{
+  "case": "C-01-three-all-pass",
+  "items": [
+    {
+      "name": "a",
+      "qty": 1
+    },
+    {
+      "name": "b",
+      "qty": 2
+    },
+    {
+      "name": "c",
+      "qty": 3
+    }
+  ]
+}

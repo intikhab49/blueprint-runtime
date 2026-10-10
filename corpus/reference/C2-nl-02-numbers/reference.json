@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "991274b39ea143e6a0534e4697e4e889",
+  "recordedAt": "2026-10-10T10:46:44.544Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-nl-02-numbers",
+          "items": [
+            1,
+            2.5,
+            0,
+            -3
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            1,
+            2.5,
+            0,
+            -3
+          ]
+        }
+      ],
+      "output": [
+        1,
+        2.5,
+        0,
+        -3
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": 1
+        }
+      ],
+      "output": [
+        {
+          "line": 1
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": 2.5
+        }
+      ],
+      "output": [
+        {
+          "line": 2.5
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": 2.5
+        }
+      ],
+      "output": [
+        {
+          "line": 2.5
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 4,
+      "input": [
+        {
+          "name": "line",
+          "value": -3
+        }
+      ],
+      "output": [
+        {
+          "line": -3
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "1"
+        },
+        {
+          "value": "2.5"
+        },
+        {
+          "value": "2.5"
+        },
+        {
+          "value": "-3"
+        }
+      ],
+      "output": [
+        {
+          "text": "1\n2.5\n2.5\n-3"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[1\n2.5\n2.5\n-3]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[1\n2.5\n2.5\n-3]"
+  }
+}

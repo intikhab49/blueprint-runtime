@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "C2-after-01",
+  "blueprint": "../../blueprints/C2-after.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

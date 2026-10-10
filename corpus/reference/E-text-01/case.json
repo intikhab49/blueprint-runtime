@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "name": "E-text-01",
+  "blueprint": "../../blueprints/E-text.import.json",
+  "input": "./input.json",
+  "fixtures": "./fixtures.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

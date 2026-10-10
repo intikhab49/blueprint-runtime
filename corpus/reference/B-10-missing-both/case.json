@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "B-10-missing-both",
+  "blueprint": "../../blueprints/B.blueprint.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

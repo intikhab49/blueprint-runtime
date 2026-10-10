@@ -1,0 +1,795 @@
+{
+ "name": "F1-filters",
+ "payloads": {
+  "F-01": {
+   "case": "F-01",
+   "s": "Hello World",
+   "n": 42,
+   "sn": "42",
+   "e": "",
+   "nul": null,
+   "b": true,
+   "bs": "true",
+   "sx": "150abc",
+   "zero": 0,
+   "emptyarr": [],
+   "arr": [
+    "a",
+    "B"
+   ],
+   "d": "2026-01-31T15:04:05.000Z",
+   "small": 7
+  },
+  "F-02": {
+   "case": "F-02",
+   "s": "hello world",
+   "n": 41,
+   "sn": "41",
+   "e": "x",
+   "nul": 0,
+   "b": false,
+   "bs": "false",
+   "sx": "50abc",
+   "zero": "",
+   "emptyarr": [
+    1
+   ],
+   "arr": [
+    "A",
+    "b"
+   ],
+   "d": "2026-02-02T00:00:00.000Z",
+   "small": 99
+  }
+ },
+ "probes": [
+  {
+   "key": "te",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "Hello World"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "te_ci",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal:ci",
+      "b": "hello world"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "te_num_text",
+   "conditions": [
+    [
+     {
+      "a": "{{1.n}}",
+      "o": "text:equal",
+      "b": "42"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "te_missing_empty",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nope}}",
+      "o": "text:equal",
+      "b": ""
+     }
+    ]
+   ]
+  },
+  {
+   "key": "te_null_empty",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nul}}",
+      "o": "text:equal",
+      "b": ""
+     }
+    ]
+   ]
+  },
+  {
+   "key": "te_empty_empty",
+   "conditions": [
+    [
+     {
+      "a": "{{1.e}}",
+      "o": "text:equal",
+      "b": ""
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tne",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:notequal",
+      "b": "x"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tne_missing",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nope}}",
+      "o": "text:notequal",
+      "b": "x"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tne_ci",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:notequal:ci",
+      "b": "hello world"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tc",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:contain",
+      "b": "World"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tc_case",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:contain",
+      "b": "world"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tc_ci",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:contain:ci",
+      "b": "world"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tc_missing",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nope}}",
+      "o": "text:contain",
+      "b": ""
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tnc",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:notcontain",
+      "b": "zzz"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tnc_ci",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:notcontain:ci",
+      "b": "WORLD"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tsw",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:startwith",
+      "b": "Hello"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tsw_case",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:startwith",
+      "b": "hello"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tsw_ci",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:startwith:ci",
+      "b": "hello"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tnsw",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:notstartwith",
+      "b": "x"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tew",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:endwith",
+      "b": "World"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tew_ci",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:endwith:ci",
+      "b": "world"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tnew",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:notendwith",
+      "b": "x"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tp",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:pattern",
+      "b": "^Hel+o"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tp_case",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:pattern",
+      "b": "^hel+o"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tp_ci",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:pattern:ci",
+      "b": "^hel+o"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "tnp",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:notpattern",
+      "b": "xyz"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ne",
+   "conditions": [
+    [
+     {
+      "a": "{{1.n}}",
+      "o": "number:equal",
+      "b": "42"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ne_text_dec",
+   "conditions": [
+    [
+     {
+      "a": "{{1.sn}}",
+      "o": "number:equal",
+      "b": "42.0"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "nne",
+   "conditions": [
+    [
+     {
+      "a": "{{1.n}}",
+      "o": "number:notequal",
+      "b": "41"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "nl",
+   "conditions": [
+    [
+     {
+      "a": "{{1.n}}",
+      "o": "number:less",
+      "b": "100"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "nge",
+   "conditions": [
+    [
+     {
+      "a": "{{1.n}}",
+      "o": "number:greaterorequal",
+      "b": "42"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "nle",
+   "conditions": [
+    [
+     {
+      "a": "{{1.n}}",
+      "o": "number:lessorequal",
+      "b": "42"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ng_empty",
+   "conditions": [
+    [
+     {
+      "a": "{{1.e}}",
+      "o": "number:greater",
+      "b": "-1"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ng_null",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nul}}",
+      "o": "number:greater",
+      "b": "-1"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ng_missing",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nope}}",
+      "o": "number:greater",
+      "b": "-1"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ng_suffix",
+   "conditions": [
+    [
+     {
+      "a": "{{1.sx}}",
+      "o": "number:greater",
+      "b": "100"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ng_bool",
+   "conditions": [
+    [
+     {
+      "a": "{{1.b}}",
+      "o": "number:greater",
+      "b": "0"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ng_b_expr",
+   "conditions": [
+    [
+     {
+      "a": "{{1.n}}",
+      "o": "number:greater",
+      "b": "{{1.small}}"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ex",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "exist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ex_empty",
+   "conditions": [
+    [
+     {
+      "a": "{{1.e}}",
+      "o": "exist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ex_null",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nul}}",
+      "o": "exist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ex_missing",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nope}}",
+      "o": "exist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ex_zero",
+   "conditions": [
+    [
+     {
+      "a": "{{1.zero}}",
+      "o": "exist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ex_emptyarr",
+   "conditions": [
+    [
+     {
+      "a": "{{1.emptyarr}}",
+      "o": "exist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "nex_missing",
+   "conditions": [
+    [
+     {
+      "a": "{{1.nope}}",
+      "o": "notexist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "nex_empty",
+   "conditions": [
+    [
+     {
+      "a": "{{1.e}}",
+      "o": "notexist"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "be",
+   "conditions": [
+    [
+     {
+      "a": "{{1.b}}",
+      "o": "boolean:equal",
+      "b": "true"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "be_text",
+   "conditions": [
+    [
+     {
+      "a": "{{1.bs}}",
+      "o": "boolean:equal",
+      "b": "true"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "bne",
+   "conditions": [
+    [
+     {
+      "a": "{{1.b}}",
+      "o": "boolean:notequal",
+      "b": "false"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ac",
+   "conditions": [
+    [
+     {
+      "a": "{{1.arr}}",
+      "o": "array:contain",
+      "b": "a"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "ac_case",
+   "conditions": [
+    [
+     {
+      "a": "{{1.arr}}",
+      "o": "array:contain",
+      "b": "b"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "anc",
+   "conditions": [
+    [
+     {
+      "a": "{{1.arr}}",
+      "o": "array:notcontain",
+      "b": "z"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "dg",
+   "conditions": [
+    [
+     {
+      "a": "{{1.d}}",
+      "o": "date:greater",
+      "b": "2026-01-01"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "dl",
+   "conditions": [
+    [
+     {
+      "a": "{{1.d}}",
+      "o": "date:less",
+      "b": "2026-02-01"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "dg_same",
+   "conditions": [
+    [
+     {
+      "a": "{{1.d}}",
+      "o": "date:greater",
+      "b": "2026-01-31T15:04:05.000Z"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "and_tt",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "Hello World"
+     },
+     {
+      "a": "{{1.n}}",
+      "o": "number:equal",
+      "b": "42"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "and_tf",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "Hello World"
+     },
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "nope"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "or_ft",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "nope"
+     }
+    ],
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "Hello World"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "or_ff",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "nope"
+     }
+    ],
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "nope"
+     }
+    ]
+   ]
+  },
+  {
+   "key": "or_and",
+   "conditions": [
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "nope"
+     },
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "Hello World"
+     }
+    ],
+    [
+     {
+      "a": "{{1.s}}",
+      "o": "text:equal",
+      "b": "Hello World"
+     }
+    ]
+   ]
+  }
+ ]
+}

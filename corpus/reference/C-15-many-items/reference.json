@@ -1,0 +1,412 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "334c235d81064a7aa41c45e3e0dbd130",
+  "recordedAt": "2026-10-10T01:01:19.741Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-15-many-items",
+          "items": [
+            {
+              "name": "i1",
+              "qty": 1
+            },
+            {
+              "name": "i2",
+              "qty": 2
+            },
+            {
+              "name": "i3",
+              "qty": 3
+            },
+            {
+              "name": "i4",
+              "qty": 4
+            },
+            {
+              "name": "i5",
+              "qty": 5
+            },
+            {
+              "name": "i6",
+              "qty": 6
+            },
+            {
+              "name": "i7",
+              "qty": 7
+            },
+            {
+              "name": "i8",
+              "qty": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "i1",
+              "qty": 1
+            },
+            {
+              "name": "i2",
+              "qty": 2
+            },
+            {
+              "name": "i3",
+              "qty": 3
+            },
+            {
+              "name": "i4",
+              "qty": 4
+            },
+            {
+              "name": "i5",
+              "qty": 5
+            },
+            {
+              "name": "i6",
+              "qty": 6
+            },
+            {
+              "name": "i7",
+              "qty": 7
+            },
+            {
+              "name": "i8",
+              "qty": 8
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "i1",
+          "qty": 1,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 8
+        },
+        {
+          "name": "i2",
+          "qty": 2,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 8
+        },
+        {
+          "name": "i3",
+          "qty": 3,
+          "__IMTINDEX__": 3,
+          "__IMTLENGTH__": 8
+        },
+        {
+          "name": "i4",
+          "qty": 4,
+          "__IMTINDEX__": 4,
+          "__IMTLENGTH__": 8
+        },
+        {
+          "name": "i5",
+          "qty": 5,
+          "__IMTINDEX__": 5,
+          "__IMTLENGTH__": 8
+        },
+        {
+          "name": "i6",
+          "qty": 6,
+          "__IMTINDEX__": 6,
+          "__IMTLENGTH__": 8
+        },
+        {
+          "name": "i7",
+          "qty": 7,
+          "__IMTINDEX__": 7,
+          "__IMTLENGTH__": 8
+        },
+        {
+          "name": "i8",
+          "qty": 8,
+          "__IMTINDEX__": 8,
+          "__IMTLENGTH__": 8
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "i1:2"
+        }
+      ],
+      "output": [
+        {
+          "line": "i1:2"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "i2:4"
+        }
+      ],
+      "output": [
+        {
+          "line": "i2:4"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": "i3:6"
+        }
+      ],
+      "output": [
+        {
+          "line": "i3:6"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 4,
+      "input": [
+        {
+          "name": "line",
+          "value": "i4:8"
+        }
+      ],
+      "output": [
+        {
+          "line": "i4:8"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 5,
+      "input": [
+        {
+          "name": "line",
+          "value": "i5:10"
+        }
+      ],
+      "output": [
+        {
+          "line": "i5:10"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 6,
+      "input": [
+        {
+          "name": "line",
+          "value": "i6:12"
+        }
+      ],
+      "output": [
+        {
+          "line": "i6:12"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 7,
+      "input": [
+        {
+          "name": "line",
+          "value": "i7:14"
+        }
+      ],
+      "output": [
+        {
+          "line": "i7:14"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 8,
+      "input": [
+        {
+          "name": "line",
+          "value": "i8:16"
+        }
+      ],
+      "output": [
+        {
+          "line": "i8:16"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "i1:2"
+        },
+        {
+          "value": "i2:4"
+        },
+        {
+          "value": "i3:6"
+        },
+        {
+          "value": "i4:8"
+        },
+        {
+          "value": "i5:10"
+        },
+        {
+          "value": "i6:12"
+        },
+        {
+          "value": "i7:14"
+        },
+        {
+          "value": "i8:16"
+        }
+      ],
+      "output": [
+        {
+          "text": "i1:2|i2:4|i3:6|i4:8|i5:10|i6:12|i7:14|i8:16"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[i1:2|i2:4|i3:6|i4:8|i5:10|i6:12|i7:14|i8:16]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[i1:2|i2:4|i3:6|i4:8|i5:10|i6:12|i7:14|i8:16]"
+  }
+}

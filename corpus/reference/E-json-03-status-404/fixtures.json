@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "module": 2,
+      "occurrence": 1,
+      "mode": "http",
+      "request": {
+        "method": "POST",
+        "url": "https://echo.example.test/hook",
+        "contentType": "application/json",
+        "body": "{\"name\":\"v\",\"status\":404}"
+      },
+      "response": {
+        "status": 404,
+        "headers": [
+          [
+            "content-type",
+            "application/json; charset=utf-8"
+          ]
+        ],
+        "body": "{\"echo\":\"v\",\"n\":2,\"list\":[1,\"b\"]}"
+      }
+    }
+  ]
+}

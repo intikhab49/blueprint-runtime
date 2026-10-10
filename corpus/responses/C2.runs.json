@@ -1,0 +1,154 @@
+{
+  "name": "C2",
+  "scenarioId": 7872022,
+  "recordedAt": "2026-10-10T10:48:53.408Z",
+  "runs": [
+    {
+      "case": "C2-nl-01-text",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "31ebc57b252449f8a0ca7e786248a704",
+      "response": {
+        "status": 200,
+        "body": "[x\ny\nz]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-nl-02-numbers",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "991274b39ea143e6a0534e4697e4e889",
+      "response": {
+        "status": 200,
+        "body": "[1\n2.5\n2.5\n-3]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-nl-03-mixed",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "28c1785c2d0949f5a05548b687d80366",
+      "response": {
+        "status": 500,
+        "body": "Scenario failed to complete."
+      },
+      "error": {
+        "name": "TypeError",
+        "message": "Cannot convert undefined or null to object",
+        "causeModule": {
+          "name": "BasicFeeder",
+          "appName": "builtin"
+        }
+      }
+    },
+    {
+      "case": "C2-nl-04-value-objects",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "4ecead6f07d94aaeab65b1fd60357c42",
+      "response": {
+        "status": 200,
+        "body": "[p\n\n\n\nq]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-nl-05-nested",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "7e2aa2c99b29499a90b997bd244414a3",
+      "response": {
+        "status": 200,
+        "body": "[\n\n]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-nl-06-items-empty-text",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "f6fedfc982284f3eb2107e120a10e8b4",
+      "response": {
+        "status": 200,
+        "body": "[]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-nl-07-items-number",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "d4445e12e64a4c4783ac1076ab3d0f23",
+      "response": {
+        "status": 200,
+        "body": "[7]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-nl-08-items-boolean",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "66db5c4387304f6aad8c1f4f22a5f553",
+      "response": {
+        "status": 200,
+        "body": "[true]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-nl-09-collection-values",
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "runId": "92371c9388a649d7a9be74c5be8c98f1",
+      "response": {
+        "status": 200,
+        "body": "[{\"k\":1}\n1, b]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-tab-01-text",
+      "blueprint": "corpus/engine-logs/live-C2-tab.import.json",
+      "runId": "f78af747136a49c3bb1835781f4bad01",
+      "response": {
+        "status": 200,
+        "body": "[x\ty]"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-noagg-01-text",
+      "blueprint": "corpus/engine-logs/live-C2-noagg.import.json",
+      "runId": "e7c1a3845f614bfab23ae894eb715252",
+      "response": {
+        "status": 200,
+        "body": "Accepted"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-noagg-02-empty",
+      "blueprint": "corpus/engine-logs/live-C2-noagg.import.json",
+      "runId": "7101cab08e5d41f4b3f32d24b3800d94",
+      "response": {
+        "status": 200,
+        "body": "Accepted"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-after-01",
+      "blueprint": "corpus/engine-logs/live-C2-after.import.json",
+      "runId": "fc34432e57f449e1812e49b25b86c6f7",
+      "response": {
+        "status": 200,
+        "body": "[a:2|b:4]()()"
+      },
+      "error": null
+    },
+    {
+      "case": "C2-after-02-empty",
+      "blueprint": "corpus/engine-logs/live-C2-after.import.json",
+      "runId": "fc3b9052281a43cabfc437f4f078d2ca",
+      "response": {
+        "status": 200,
+        "body": "[]()()"
+      },
+      "error": null
+    }
+  ]
+}

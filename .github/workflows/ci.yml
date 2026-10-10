@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: inspect the Make reference corpus with the built CLI
+        run: node dist/src/cli.js inspect corpus/blueprints/A.blueprint.json corpus/blueprints/B.blueprint.json corpus/blueprints/C.import.json
+      - name: replay every recorded Make run (cases that cannot run yet are skipped, never guessed)
+        run: node dist/src/cli.js test corpus/reference --allow-unsupported
+      - name: the broken-mapping demo must be caught (exit 1, not a crash)
+        run: |
+          set +e
+          node dist/src/cli.js test examples/broken-mapping
+          test $? -eq 1

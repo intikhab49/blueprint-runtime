@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7871965,
+  "runId": "9d65898601a44968bb66e94fea9f3d0d",
+  "recordedAt": "2026-10-10T02:03:38.943Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "A-008-extra-fields",
+          "name": "x",
+          "count": 9,
+          "tags": [
+            "p",
+            "q"
+          ],
+          "extra": {
+            "nested": [
+              1,
+              2
+            ],
+            "flag": true
+          }
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "upper_name",
+          "value": "X"
+        }
+      ],
+      "output": [
+        {
+          "upper_name": "X"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "body": "X",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "X"
+  }
+}

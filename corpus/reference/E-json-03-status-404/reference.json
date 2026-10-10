@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "e5f76bc257ad4488a0bfe552d33e9b1f",
+  "recordedAt": "2026-10-10T11:05:04.209Z",
+  "timezone": "Asia/Karachi",
+  "status": "error",
+  "error": {
+    "moduleId": 2,
+    "name": "DataError",
+    "message": "Error: 404 Not Found"
+  },
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "E-json-03-status-404",
+          "name": "v",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "ca": null,
+          "qs": [],
+          "url": "https://echo.example.test/hook",
+          "data": "{\"name\":\"v\",\"status\":404}",
+          "gzip": true,
+          "method": "post",
+          "headers": [],
+          "timeout": null,
+          "useMtls": false,
+          "authPass": null,
+          "authUser": null,
+          "bodyType": "raw",
+          "contentType": "application/json",
+          "serializeUrl": false,
+          "shareCookies": false,
+          "parseResponse": true,
+          "followRedirect": true,
+          "useQuerystring": false,
+          "followAllRedirects": false,
+          "rejectUnauthorized": true
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 500,
+    "body": "Scenario failed to complete."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "name": "3-unused-fixture",
+  "blueprint": "../../../../corpus/blueprints/E-json.import.json",
+  "input": "../../../../corpus/reference/E-json-01/input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "../../../../corpus/reference/E-json-01/reference.json",
+  "fixtures": "./fixtures.json"
+}

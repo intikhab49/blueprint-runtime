@@ -1,0 +1,4360 @@
+{
+  "schemaVersion": 1,
+  "surveyedAt": "2026-10-10",
+  "files": 221,
+  "results": [
+    {
+      "repo": "011matthias/agentic-ops1.01",
+      "path": "platform/public/clients/soren-b2b-marketing-automation/b2b-lead-pipeline-blueprint.json",
+      "sha": "3f72e4dbfed69afc27039f5312071bb4d61dbc84",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 http",
+        "5 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded",
+        "module json:ParseJSON"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "22046446Ethan/FYP",
+      "path": "whatsappChatbot/blueprint.json",
+      "sha": "94ff46ae8f83c57b4eed69973759de065a6e5014",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "1 module",
+        "3 http",
+        "2 module",
+        "10 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module json:ParseJSON",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore",
+        "REF_NOT_UPSTREAM"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "2ChatCo/Tutorials",
+      "path": "openai/2Chat-OpenAi-Assistant-blueprint.json",
+      "sha": "149e660b788c207460ffa272a4812a1564460fad",
+      "verdict": "unsupported",
+      "modules": 11,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "9 module",
+        "5 module",
+        "10 module",
+        "7 module",
+        "11 module",
+        "8 module",
+        "13 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AIEINC/liquidity_agentic_terraforming_io",
+      "path": "agents/functions/Findflights.json",
+      "sha": "fbc5c4d72739f582685c53b350a1badc79445b5b",
+      "verdict": "unsupported",
+      "modules": 14,
+      "fixtures": [
+        "8 module",
+        "5 module",
+        "12 module",
+        "15 module"
+      ],
+      "blockers": [
+        "module builtin:BasicAggregator"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Abdifatah-Adam/Email-AI-Agent-Automation",
+      "path": "workflow.json.json",
+      "sha": "25813c9c0c9ddc23e5fbc44c20feecd5c2a5a8f9",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [
+        "1 module",
+        "5 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AbuAli85/Contract-Management-System",
+      "path": "docs/MAKECOM_SIMPLE_CONTRACT_FLOW_WITH_LOCATIONS.json",
+      "sha": "5903998355cb7115493de5cca826d9fe94e3b678",
+      "verdict": "unsupported",
+      "modules": 14,
+      "fixtures": [
+        "57 module",
+        "58 module",
+        "59 module",
+        "4 module",
+        "56 module",
+        "8 module",
+        "9 module",
+        "10 http"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "EXPRESSION_UNSUPPORTED: {{var.…}} reads a Make custom variable or scenario input; those are not supported yet",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AbuAli85/expo-oman",
+      "path": "handle-expo-responses-improved.json",
+      "sha": "883beb677b19d67b294b47f6a1ed613ab978c972",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "1 module",
+        "3 module",
+        "7 module",
+        "9 module",
+        "10 module",
+        "12 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:SetVariables",
+        "EXPRESSION_SYNTAX: Expected a field name after \"…\"",
+        "module builtin:ArrayAggregator",
+        "EXPRESSION_SYNTAX: Unexpected text after the expression",
+        "keyword now",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "function gradient()",
+        "function rgba()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AceCoolGuyDev/caredevi-hackathon-2026-homebound",
+      "path": "workflow/Integration Webhooks, Supabase.blueprint.json",
+      "sha": "2b4659c989e9b8462fa480d6e1b4578f81fe7fc9",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "25 module",
+        "29 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module gateway:CustomMailHook",
+        "module http:MakeRequest",
+        "module json:ParseJSON"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Activi-AI/Lead-aIi-Hoiusefinder--merge",
+      "path": "docs/merged_local_docs/make-lead-ai-blueprint.json",
+      "sha": "fc209f466f5812be4574500fbc7ad5343704ee9a",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_ROUTER_WITHOUT_ROUTES"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AlfonsoSBLA/esic-skills-pack",
+      "path": "skills/vendor/make-official/skills/make-module-configuring/examples/ai-agent-full-blueprint.json",
+      "sha": "c5708edc54c8e8aaebf9b8227c6c485be9a4deda",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AllianceStrategicHoldings/coin-appraisal-register",
+      "path": "make/deal-submit.v2.blueprint.json",
+      "sha": "a24d5c311860b3e36a34e4f005c6d10722615196",
+      "verdict": "unsupported",
+      "modules": 16,
+      "fixtures": [
+        "3 http",
+        "4 http",
+        "5 http",
+        "9 http",
+        "11 http",
+        "12 http",
+        "13 http",
+        "15 http",
+        "16 http"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "keyword now",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "keyword null",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "function addMinutes()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Aman-Gautam67/Flow-Intel",
+      "path": "qa-fixtures/make-per013-1-fail.json",
+      "sha": "0d1caa8290711301b32351d9e4ec7cf6df66f6ae",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AmericaC-dev/Class",
+      "path": "AlertaTemperatura/Codigo/AlertaTemperatura.blueprint.json",
+      "sha": "3eb70f08d05bbad6f7a2dff080891693b7f884ee",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "AmpllifAI-dev/upsurgeiq-frontend",
+      "path": "SocialMediaPosting.blueprint.json",
+      "sha": "b2ac2286e21c57dc7fe84bea4aa483aa0caa488f",
+      "verdict": "eligible",
+      "modules": 6,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module",
+        "6 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "Amrutha154/AI_workflow_automation",
+      "path": "Integration Webhooks.blueprint.json",
+      "sha": "367952fbc3c94a12499cc4124e604c970c1e62ee",
+      "verdict": "eligible",
+      "modules": 4,
+      "fixtures": [
+        "11 module",
+        "14 module",
+        "15 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "Antonimusj/crm-lead-routing-automation",
+      "path": "make_scenario_blueprint.json",
+      "sha": "047e8888125db27a4ddb6ad0df3b41a7086901ed",
+      "verdict": "eligible",
+      "modules": 5,
+      "fixtures": [
+        "11 module",
+        "12 module",
+        "13 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "AsafDafna/make-monday-migrator",
+      "path": "tests/fixtures/nested-routes/before.json",
+      "sha": "36c825c8a1c82a28b2905b46b03b10854ff64166",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [
+        "10 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "AuthiChain2026/AuthiChain",
+      "path": "make-scenarios/contracts-scenario.json",
+      "sha": "eac781fb46260dafdd5580ba17d77e9cd97b2988",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "2 http",
+        "3 module",
+        "4 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Avinash940080/automation-learning-journey",
+      "path": "Day-6/workflow.json/scenario.json",
+      "sha": "ec5b5939f4b622dab1103ab45b6f90fafc98a26f",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "7 module",
+        "8 module",
+        "10 module"
+      ],
+      "blockers": [
+        "module http:MakeRequest"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "BerkshireCar/SpeederBot",
+      "path": "SpeederBot - Tweet Speed - Quiet & Busy Roads (Proximity:Imperial).json",
+      "sha": "fa2105c1803181c71075fe5683a5f5ab47c5ddf1",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "2 http",
+        "19 module",
+        "18 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Bilal-Naeem12/AI-Powered-Skin-Care-Ecommerce",
+      "path": "Frontend/src/component/chatbot/blueprint_chatbot_gemini_refined.json",
+      "sha": "0f0b256ade1ecd074ca27bd32e12af61741841b3",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "2 module",
+        "4 http",
+        "5 module"
+      ],
+      "blockers": [
+        "module json:ParseJSON",
+        "MODULE_CONFIG_UNSUPPORTED: the parameters field \"…\" has not been observed in Make",
+        "module gateway:WebhookResponse"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Blindas31/GRUPO5-2024-PROYINF",
+      "path": "ManejoAPI-H4.json",
+      "sha": "7cfe354d5f9617a338c584db56212708f7b01f3e",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "4 module",
+        "7 http"
+      ],
+      "blockers": [
+        "module json:ParseJSON",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "BusyBee3333/ig-wholesale-automation",
+      "path": "make-scenarios/01-new-reply-processor.json",
+      "sha": "633d7672a758b121bd9333d89502c049ee5472cc",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_MODULE_AFTER_ROUTER"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "CallumBoase/public-knack-snippets",
+      "path": "your-make-webhook-trigger-is-insecure/Make Blueprint - Validated webhook trigger with Knack - starter.json",
+      "sha": "1b532d8d931ed6f459f6d212747a937fc7d30768",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "13 http",
+        "17 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "CamelCod/agentcraft",
+      "path": "clinic-bot/blueprints/scenario-1-inbound.json",
+      "sha": "8730cb2d1670a54f85f9f7388ce7c650a54c83e5",
+      "verdict": "unsupported",
+      "modules": 13,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "3 module",
+        "5 module",
+        "6 module",
+        "7 module",
+        "8 module",
+        "9 module",
+        "10 module",
+        "11 module",
+        "12 module",
+        "13 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "FILTER_OPERATOR_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now",
+        "function uuid()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "CanAISolutions/canai-build",
+      "path": "backend/webhooks/make_scenarios/SAAP Update Project Blueprint.json",
+      "sha": "eae98fe714c9aa88ece2a3152548e178009368e1",
+      "verdict": "unsupported",
+      "modules": 9,
+      "fixtures": [
+        "5 module",
+        "3 module",
+        "7 module",
+        "9 module"
+      ],
+      "blockers": [
+        "module util:FunctionSleep",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "CanAISolutions/canai-cursor-codex-v6.1.4",
+      "path": "infra/make/scenarios/add_client.json",
+      "sha": "3d2b721797094de36b0e52828b407d25ac136eab",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "2 module",
+        "4 module",
+        "5 module",
+        "6 module",
+        "14 module",
+        "9 module",
+        "10 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "CardosoMvs/SegundoCerebroComIA",
+      "path": "Integration Telegram Bot.blueprint.json",
+      "sha": "6fe6f49f54fc7228fd78e91130aff34dd563c4c6",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "1 module",
+        "10 module",
+        "18 module",
+        "13 module",
+        "14 module",
+        "20 module",
+        "23 module",
+        "26 module",
+        "27 module",
+        "28 module",
+        "29 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "keyword now",
+        "keyword newline",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Chad96/Octopad-calculator",
+      "path": "ADD PRICING GROUP (Webhook).blueprint.json",
+      "sha": "318df97d504e8922f3f8ef0caaf0c26bbf2c0877",
+      "verdict": "unsupported",
+      "modules": 20,
+      "fixtures": [
+        "31 module",
+        "6 module",
+        "13 module",
+        "19 module",
+        "20 module",
+        "21 module",
+        "22 module",
+        "23 module",
+        "24 module",
+        "25 module",
+        "26 module",
+        "27 module",
+        "28 module"
+      ],
+      "blockers": [
+        "module http:ActionGetFile",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module regexp:HTMLToText",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore",
+        "module csv:ParseCSV",
+        "keyword newline",
+        "module util:FunctionSleep"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ChinmayBitne/OTT-Voice-Agent",
+      "path": "scenarios/faq.sanitized.blueprint.json",
+      "sha": "5cc00cf6fee8f8726986abaa43fc10b614fd8850",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "4 module",
+        "6 module"
+      ],
+      "blockers": [
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Chuchi254/automation-workflows",
+      "path": "make/Automated_Sales_Content_Engine.blueprint.json",
+      "sha": "24d1a087a3e8712584072ad342305de685e77611",
+      "verdict": "unsupported",
+      "modules": 21,
+      "fixtures": [
+        "17 module",
+        "18 module",
+        "3 module",
+        "4 module",
+        "9 module",
+        "7 module",
+        "8 module",
+        "21 module",
+        "19 module",
+        "22 module",
+        "10 module",
+        "11 module",
+        "23 module",
+        "12 module",
+        "13 module",
+        "24 module",
+        "14 module",
+        "15 module",
+        "25 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
+        "REF_UNKNOWN_MODULE",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "DEENUU1/jarvis-backend",
+      "path": "blueprint/googleCalendar.json",
+      "sha": "fe25c0751694f4a47bf9a6e7249ccf61cc0f7e09",
+      "verdict": "unsupported",
+      "modules": 16,
+      "fixtures": [
+        "19 module",
+        "25 module",
+        "26 module",
+        "5 module",
+        "32 module",
+        "33 module"
+      ],
+      "blockers": [
+        "module json:AggregateToJSON"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Dhananjay-Yadav-00/social-media-chat-model",
+      "path": "make.com/social-leaf-analytics-sync.json",
+      "sha": "009eca9edadca07648b8f97922abfc18f42e788e",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_ROUTER_WITHOUT_ROUTES"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "DigiBP/25DIGIBP2",
+      "path": "Documents/To-Be Process/process-1-training-scheduling/Evaluate Lecturer Responses - MAKE.json",
+      "sha": "4b6dfef5a4cbd7b640b8930e883bdb298cbbcdeb",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "25 module"
+      ],
+      "blockers": [
+        "module builtin:BasicAggregator"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "DigiBP/25DIGIBP4",
+      "path": "To-Be Process/Send PO to Vendor_MAKE.json",
+      "sha": "2981e3240c99503a441e15b330c7e44a8527bd0e",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "DigiBP/26SS_Tierpark_Bern",
+      "path": "TO BE Process/Extract assignments.blueprint_final.json",
+      "sha": "06b4ffc56ca9beb2cdb93d9cfa657a13f005b5b7",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "3 module",
+        "5 module"
+      ],
+      "blockers": [
+        "module http:MakeRequest"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "DigiBP/Chranz",
+      "path": "Artefact/Digitalisation/03_Uclassify.json",
+      "sha": "53975218a72877b77ac6766bc4cf41e0691779b4",
+      "verdict": "unsupported",
+      "modules": 9,
+      "fixtures": [
+        "1 http",
+        "7 module",
+        "11 module",
+        "14 module",
+        "15 module",
+        "16 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "ITERATOR_SCOPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "DigiBP/Plattwurf",
+      "path": "blueprint.json",
+      "sha": "74db6df11492956b9db5cf8640cd15c721338896",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "2 http"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module gateway:CustomMailHook",
+        "module regexp:Parser",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "DigiBP/Team-24DIGIBP2",
+      "path": "TO-BE-PROCESS/MAKE-Blueprint Exports/1.1 Create timesheet from template.json",
+      "sha": "6c93e6341de3e502fe65feb89bd03d0be3f60a78",
+      "verdict": "eligible",
+      "modules": 3,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "DuranJr/ARI-Flow",
+      "path": "ari-flow.blueprint.json",
+      "sha": "5da4fd2e7a80f1f6c1249b53211786875fc5be10",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "5 module",
+        "11 module",
+        "13 module",
+        "14 module",
+        "12 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Elimeleth/bookingBot",
+      "path": "calendly-make.json",
+      "sha": "117ef7d302371edc57f85c7af46c32c1c27131a5",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "24 module",
+        "25 module",
+        "26 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "EricTechPro/Ai-Agent-templates",
+      "path": "Make-Daily-Job-Collector.json",
+      "sha": "20dd53422fbe59a9e26b05fa8bf85d87186de5fd",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_ID"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "F14v1o/monthly-data-pipeline",
+      "path": "newsroom_pipeline_blueprint.json",
+      "sha": "3f563aeaeb78e879cda56646bda04fbe080b359d",
+      "verdict": "unsupported",
+      "modules": 13,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "4 http",
+        "6 module",
+        "8 module",
+        "9 module",
+        "12 module",
+        "13 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:SetVariables",
+        "REF_NOT_UPSTREAM",
+        "keyword now",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module builtin:Aggregator",
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
+        "ITERATOR_SCOPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "FUCKiro/marat",
+      "path": "make_scenario_json.json",
+      "sha": "61dfad7e74bebafafd8c44b275073bdfe7770d59",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "2 module",
+        "3 module",
+        "7 module",
+        "8 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:WatchFiles",
+        "module builtin:BasicIterator",
+        "module builtin:MathOperations",
+        "module builtin:ArrayAggregator",
+        "keyword now",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "function parseFloat()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Farhin-Rahman/OmniRAG",
+      "path": "automation/make-ingest-from-url.json",
+      "sha": "2a1bda93188fcab9522d02ac35300f1af88916c3",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "keyword uuid"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Faus14/NostromoGuardian",
+      "path": "examples/make-templates/whale-alert-discord.json",
+      "sha": "a47a4bbdfd6ea01dba273208500df495169954d2",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "3 module"
+      ],
+      "blockers": [
+        "module gateway:CustomWebHook:filter",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Flowintelli-AI/contentforge",
+      "path": "docs/make-scenarios/flowintelli-instagram-v1.json",
+      "sha": "37dca3b9e87561bdda069e04b909da61a8b17755",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "1 module",
+        "2 http",
+        "13 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module builtin:BasicAggregator"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Fruition-Service/fruition-website-monorepo",
+      "path": "make/marketa-publish-social.json",
+      "sha": "8a40e82e351f5562cd72e9d073684fe9c08c31df",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 http"
+      ],
+      "blockers": [
+        "module json:TransformToJSON",
+        "keyword null",
+        "MODULE_CONFIG_UNSUPPORTED: timeout has not been observed in Make",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Break",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "GarethAtMake/moviestowatch",
+      "path": "Movies to rent.json",
+      "sha": "af9cb74496fe829b5146d8d014ee1d7b14a56bcc",
+      "verdict": "unsupported",
+      "modules": 17,
+      "fixtures": [
+        "1 module",
+        "3 http",
+        "20 http",
+        "40 module",
+        "39 module",
+        "41 module",
+        "42 module",
+        "43 module",
+        "44 module",
+        "45 module"
+      ],
+      "blockers": [
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "module util:FunctionSleep",
+        "module regexp:HTMLParser",
+        "module builtin:BasicAggregator"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Giljacob67/Tax-Group-Hub",
+      "path": "docs/make-scenario-novo-lead.json",
+      "sha": "0e440080615b45c3013904a79a5f340430c01949",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_ID"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Giuliano1993/linkedintotwitter",
+      "path": "blueprint.json",
+      "sha": "cc8f0c0c8f43cf649df5bc229bae548393abb174",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "16 module"
+      ],
+      "blockers": [
+        "module regexp:HTMLTableParser2",
+        "module builtin:BasicAggregator",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Greenmamba29/discovermake-2.0",
+      "path": "public/data/templates/youtube-automation.json",
+      "sha": "ea2fdb70e63c29bdddecf78a3729e442b8485904",
+      "verdict": "unsupported",
+      "modules": 11,
+      "fixtures": [
+        "5 module",
+        "7 http",
+        "9 http",
+        "10 module",
+        "11 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:BasicNote",
+        "module datastore:GetVariable",
+        "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded",
+        "module datastore:SetVariable",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "module builtin:BasicIterator",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "keyword now",
+        "EXPRESSION_SYNTAX: Unexpected text after the expression",
+        "function parseJSON()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Gutter44/Ai-automatic-",
+      "path": "AI Content Generator.json",
+      "sha": "23756cd03ab010be0b50a4842a04ff8ed2001c26",
+      "verdict": "unsupported",
+      "modules": 36,
+      "fixtures": [
+        "57 module",
+        "59 module",
+        "61 module",
+        "29 module",
+        "6 module",
+        "31 module",
+        "9 module",
+        "14 module",
+        "18 module",
+        "24 module",
+        "37 module",
+        "40 http",
+        "48 module",
+        "36 module",
+        "33 module",
+        "54 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:FunctionSleep",
+        "module util:SetVariables",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Break",
+        "module markdown:Compile",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "keyword newline",
+        "keyword random",
+        "module util:GetVariable2",
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "module regexp:Replace",
+        "module json:ParseJSON",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Hai-cyber/ess-admin-ds",
+      "path": "docs/legacies/make.com legacies/Hear Back from Telegram.blueprint (2).json",
+      "sha": "49a1fae67335285a0331d376222e89b0097ab42f",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "4 module",
+        "22 module",
+        "24 module",
+        "23 module",
+        "21 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:SetVariables",
+        "module datastore:UpdateRecord",
+        "keyword now",
+        "module datastore:GetRecord",
+        "module http:MakeRequest"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "HaridharanA/automation-journey",
+      "path": "Integration Webhooks.blueprint.json",
+      "sha": "ec3f3818a6a07d4a2359f8ce129986478fc3c362",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "17 module",
+        "19 module",
+        "16 module"
+      ],
+      "blockers": [
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module http:MakeRequest",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "AGGREGATOR_SOURCE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "HarinManiK/NL",
+      "path": "frontend/public/make_blueprint.json",
+      "sha": "58e690471af46add46bc918124cbc4e074f20ca1",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "Harshithk951/Resume-Flow",
+      "path": "automations/make_inbound_blueprint.json",
+      "sha": "8bd0996b273cc74c4151ec6948066b2db0ef4d39",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [
+        "2 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "HjustonAI/evso",
+      "path": "docs/Make/EVSO_Form_Intake_v2.blueprint.json",
+      "sha": "b49353e4312de4d63c52f661554e53529e5b2c20",
+      "verdict": "unsupported",
+      "modules": 9,
+      "fixtures": [
+        "44 module",
+        "47 module"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "module json:ParseJSON",
+        "EXPRESSION_SYNTAX: Unexpected text after the expression"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "HryhoriiHaponiukQuitCode/Help4Access",
+      "path": "Visit-Parse Domain Info.blueprint.json",
+      "sha": "90a1dfcd0682c48aed738a550eaf6e858ffae4d7",
+      "verdict": "unsupported",
+      "modules": 16,
+      "fixtures": [
+        "3 module",
+        "22 module"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module builtin:Ignore",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "FILTER_OPERATOR_UNSUPPORTED",
+        "module builtin:BasicAggregator",
+        "module http:MakeRequest",
+        "FILTER_SHAPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "JDuwarahavidyan/AI-Powered-Sales-Pipeline-Automation-With-Make",
+      "path": "automation_files/2.2 Stale Lead Flagging & Follow-up Agent.blueprint.json",
+      "sha": "4f1792c05ed4958a2bcebd22e44d3c780ca10e48",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "1 module",
+        "4 module",
+        "7 module",
+        "8 module",
+        "11 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now",
+        "module json:ParseJSON"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Joseyosei/Share-The-Link",
+      "path": "public/blueprints/make-sharethelink-agent.json",
+      "sha": "6106048cc169cb6245a6a551b3bc39e6596c0b92",
+      "verdict": "eligible",
+      "modules": 5,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "Julien218/oliviertrevis-site",
+      "path": "incoming_files/170c448f6_IntegrationWebhooksInstagramforBusinessFacebookloginFacebookPagesYouTubeblueprint.json",
+      "sha": "9d834a83f013befacff00051181754ed8fdb074c",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "JuniorCorzo/handly",
+      "path": "docs/integrations/make/Email_Dispatcher_blueprint.json",
+      "sha": "6a7d35c01a79ef40b85ab0413bed36125723bbdc",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "6 module",
+        "7 module"
+      ],
+      "blockers": [
+        "EXPRESSION_SYNTAX: Unexpected \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Kaherdin/journal-app",
+      "path": "bluerint-fixed.json",
+      "sha": "c2ff7e5084f1e82938eb4dbec2d4d19e823c22d2",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "1 module",
+        "4 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "EXPRESSION_SYNTAX: Unexpected \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "KaoutharBousbaa1/AIProjects",
+      "path": "TravelBot/blueprint.json",
+      "sha": "2081073d08b96599af373474168e98cff16d061e",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "1 module",
+        "2 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:BasicRepeater"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Kisat0/Les-ripeurs-Test",
+      "path": "no-code/blueprint.json",
+      "sha": "d89b9cec726821d181e6ed2d2ddc0a794492c2be",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "3 module"
+      ],
+      "blockers": [
+        "module util:FunctionIncrement"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "LeonY-Automation/AI-Automation-Blueprints",
+      "path": "11.json",
+      "sha": "c2bd736bc01aca02652d6934421e7471895d0dd4",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_ROUTES_ON_NON_ROUTER",
+        "BP_BAD_FILTER",
+        "BP_MODULE_AFTER_ROUTER"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Lucas-F-93/Portfolio",
+      "path": "assets/downloads/payfit-scenario-2.json",
+      "sha": "0dfa80c92518d0965d8465bae65ddb657e46c187",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "43 module",
+        "11 module",
+        "17 module",
+        "45 module",
+        "46 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:BasicAggregator"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Make-OEM/Ops-Consumption",
+      "path": "blueprint_scenario_Get_Org_team_scenario_consumption.json",
+      "sha": "e1d2b6b8e2072e098d034badb5e1a6deaa2f1e0d",
+      "verdict": "unsupported",
+      "modules": 15,
+      "fixtures": [
+        "3 module",
+        "2 module",
+        "4 module",
+        "9 module",
+        "6 module",
+        "1 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module datastore:AddRecord"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Manideep-patell/ai-executive-decision-dashboard",
+      "path": "blueprint/workflow.json",
+      "sha": "23858206846b8e21a601c5c9da3a05fdbbb11178",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "3 module",
+        "7 module",
+        "17 module",
+        "10 module",
+        "15 module",
+        "16 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:BasicAggregator",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "REF_NOT_UPSTREAM",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "MarceLehmann/Tools-MassMailer",
+      "path": "Make.com JSON/wf - MassMailer.blueprint.json",
+      "sha": "d6ed15590f093ba1dab659a935c6d55bca10c291",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [
+        "ITERATOR_SCOPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Margi15/bitacora-del-tiempo",
+      "path": "make_scenario_blueprint.json",
+      "sha": "c3e40ac315302db1193f95af6004aaeb230027e0",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "2 http",
+        "4 http",
+        "6 module",
+        "7 module",
+        "8 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:BasicTrigger",
+        "MODULE_CONFIG_UNSUPPORTED: the parameters field \"…\" has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "MuhammadRaedSiddiqui/agentforge",
+      "path": "ground-truth/configs/make_blueprints/availability.json",
+      "sha": "adc1059a37ddb80faf8fbfb7c43e73abf81c9a5b",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "2 module",
+        "4 http"
+      ],
+      "blockers": [
+        "module json:TransformToJSON",
+        "MODULE_CONFIG_UNSUPPORTED: the parameters field \"…\" has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "MuhammadUmerKhan/Internship-Projects",
+      "path": "Automation/Job Application Tracker/blueprint.json",
+      "sha": "672698ce3d34f4e7820163ee806065594d5d9f75",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "6 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "keyword now",
+        "module builtin:Break"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "MuhammadZafir/GoHighLevel-projects",
+      "path": "MAKE.COM Scenarios/Make Scenarios for Outbound Vapi Bot/Scenario to Place call through vapi.json",
+      "sha": "df4ed5ae457ee6f30f0119466e8b3cd17e1efc92",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [],
+      "blockers": [
+        "module json:CreateJSON",
+        "module http:MakeRequest",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Naidu-Group-Pty-Ltd/aurixa-systems",
+      "path": "docs/integrations/make/waitlist/aurixa-waitlist-stage-2.9590512.json",
+      "sha": "9bd95fb847b7236f4d6d3d6c719ebcb423d6c67a",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [
+        "module http:MakeRequest",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "keyword now",
+        "function addSeconds()",
+        "function escapeJSON()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Nawemediagmail/NAWEMEDIA_REPO_1",
+      "path": "clubos_blueprint.json",
+      "sha": "3feee9aa165f7b4ba84e2685b50f0e8f2ad06aa7",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [],
+      "blockers": [
+        "module http:MakeRequest"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Nexus-It-today/nexus-intake",
+      "path": "reference/make/blueprints/2a -CTNI Woocommerce Data Refresh.blueprint.json",
+      "sha": "d237908cd19656508c1f1c3975fcf2426835c5a7",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "NickJee86/jomkaki-crm",
+      "path": "make-blueprints/consent-automation/S05 - Routine Documents (Consent Excluded).blueprint.json",
+      "sha": "9a4738a0e9b73e65c7709f8de3cdfae2a9f94753",
+      "verdict": "unsupported",
+      "modules": 18,
+      "fixtures": [
+        "2 module",
+        "5 module",
+        "7 module",
+        "8 module",
+        "108 module",
+        "109 module",
+        "110 module",
+        "111 module",
+        "112 module",
+        "113 module",
+        "120 module",
+        "121 module",
+        "122 module",
+        "123 module",
+        "124 module",
+        "125 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:BasicAggregator",
+        "ROUTER_SHAPE_UNSUPPORTED",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "OlegTestov/openant",
+      "path": "make/blueprint.json",
+      "sha": "a7be4dd5131a74a96e8cb2d8816420ecaeefa4bf",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "2 module",
+        "5 module"
+      ],
+      "blockers": [
+        "module builtin:BasicAggregator",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "PAC1euro/PAC-ISO",
+      "path": "make-blueprint.json",
+      "sha": "3ea8a13f6ed9c3c42d450874c90116a5175da4e5",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [
+        "2 http"
+      ],
+      "blockers": [
+        "FILTER_SHAPE_UNSUPPORTED",
+        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "PLTO-App/PLTO",
+      "path": "make_blueprint.json",
+      "sha": "75ff1b25d543e12149a040984c38155db1964d12",
+      "verdict": "eligible",
+      "modules": 6,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module",
+        "6 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "POWERFULMOVES/PMOVES.AI",
+      "path": "docs/Hostingerapi/COS/[v3.4_COS-3.0] AI Output _ Image Generator (BM Approved).json",
+      "sha": "f58769f684818fb7d84fb32fbe8172be61caf8ad",
+      "verdict": "unsupported",
+      "modules": 26,
+      "fixtures": [
+        "3 module",
+        "5 module",
+        "57 module",
+        "42 module",
+        "53 module",
+        "30 module",
+        "31 module",
+        "32 module",
+        "52 module",
+        "37 module",
+        "38 module",
+        "40 module"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module json:TransformToJSON",
+        "module util:FunctionSleep",
+        "module http:ActionSendDataAPIKeyAuth",
+        "function Account()",
+        "function Avatar()",
+        "function Brand()",
+        "function Code()",
+        "function Model()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "PTBYSR/AI-Automation-Projects",
+      "path": "Reporting and Dashboard Automation/workflow.json",
+      "sha": "3a5981b941b04a7e071126ed91d926ef6a8a3bbb",
+      "verdict": "unsupported",
+      "modules": 34,
+      "fixtures": [
+        "15 module",
+        "20 module",
+        "22 module",
+        "99 module",
+        "100 module",
+        "104 module",
+        "103 module"
+      ],
+      "blockers": [
+        "module builtin:BasicAggregator",
+        "FILTER_SHAPE_UNSUPPORTED",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module util:SetVariables",
+        "module code:ExecuteCode",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Break",
+        "module util:GetVariables",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Percy-O/AI-Leads-Generations",
+      "path": "Leads Generation.blueprint.json",
+      "sha": "0455f6f210b3d104357002f171582dec3414eff3",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "1 module",
+        "23 module",
+        "19 module",
+        "21 module",
+        "26 module",
+        "29 module",
+        "30 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now",
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Percy-O/Slack-AI-Researcher",
+      "path": "Slack AI Researcher.blueprint.json",
+      "sha": "a6ae3cb60d6aa4eb9424d3fdbe72562395bd78f7",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "PrzemekZygmanowski/poe",
+      "path": "src/data/models/make.json",
+      "sha": "0f141dcf364397383d6f8490b2391420bc7d2ebf",
+      "verdict": "unsupported",
+      "modules": 57,
+      "fixtures": [
+        "54 module",
+        "21 http",
+        "23 http",
+        "26 module",
+        "2 module",
+        "3 module",
+        "4 module",
+        "8 module",
+        "12 module",
+        "70 module",
+        "66 http",
+        "67 module",
+        "73 module",
+        "42 module",
+        "36 http",
+        "38 http",
+        "39 module",
+        "44 module",
+        "43 module",
+        "46 http",
+        "30 http",
+        "31 module"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module json:CreateJSON",
+        "module util:GetVariable2",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module util:FunctionAggregator2",
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "keyword now",
+        "module builtin:BasicRepeater",
+        "module json:AggregateToJSON",
+        "module json:ParseJSON",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "module regexp:Parser"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Ratim001/Make_Bluprints",
+      "path": "workflows/crypto-watcher/blueprint.json",
+      "sha": "bd7df1ab277f0dc178483b80a922768ab48b484e",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "1 http",
+        "6 module",
+        "8 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Robertzu43/vibe-coders-league-platzi-2026",
+      "path": "reto-04/blueprint.json",
+      "sha": "d18409fa45f4f825c5022bf551a2619ca9861134",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "1 http",
+        "2 http",
+        "4 http",
+        "5 http"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: the parameters field \"…\" has not been observed in Make",
+        "keyword now",
+        "FILTER_OPERATOR_UNSUPPORTED",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "function addMinutes()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Rumblingb/Agentpay",
+      "path": "ops/make-scenario-1-booking-received.json",
+      "sha": "a26d31fff188e0faf9b644b3155ade1aff96073a",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "SaharBarak/make-testground",
+      "path": "examples/lead-intake.blueprint.json",
+      "sha": "06f9b15d848d92853978007ba9383526cfe1068b",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "2 module",
+        "3 module",
+        "5 module"
+      ],
+      "blockers": [
+        "module json:ParseJSON"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Samrudh2006/Ai.agency-workflows-agents-automations-",
+      "path": "workflows/blueprints/make_data_extraction.json",
+      "sha": "055d6571c3fb4bf28d804a13ab90c8c01b29a551",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "3 module"
+      ],
+      "blockers": [
+        "module http:ActionMakeRequest"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Sarthak-2085/Automatic-Tech-News-Sender",
+      "path": "Auto Tech News Sender.blueprint.json",
+      "sha": "029106a5dc9ba4550b6093665c4daa65f4c4e0a6",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "36 module",
+        "46 module",
+        "38 module",
+        "63 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "FILTER_SHAPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Schmidt127/127si-shooting-challenge",
+      "path": "make/blueprints/upload-asset-engine-lambda-prod-v1.template.json",
+      "sha": "fadcedef9043c57bc83de6fbc2adbef11b73ff63",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "SchneiderSix/Augmented-Automation",
+      "path": "blueprint1.json",
+      "sha": "b344a7729a71cc68c04c92069686173f685ef01b",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "1 module",
+        "2 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Rollback"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ShaikhNabeelShabbir/ai-twin-bot",
+      "path": "blueprint (5) (1).json",
+      "sha": "a814c2445447a90a04bff2b64828cedc67a3ce4b",
+      "verdict": "unsupported",
+      "modules": 13,
+      "fixtures": [
+        "6 module",
+        "14 module",
+        "17 module",
+        "18 module",
+        "19 module",
+        "23 module",
+        "24 module",
+        "25 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:GetVariable2",
+        "module util:SetVariables",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now",
+        "module datastore:AddRecord"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ShivaNetha1/SVMB",
+      "path": "make-com-blueprint.json",
+      "sha": "f9a1dca01eda44da81bc30bbbd8dfaf8f55ebbdd",
+      "verdict": "unsupported",
+      "modules": 47,
+      "fixtures": [
+        "1 module",
+        "11 module",
+        "12 module",
+        "13 module",
+        "21 module",
+        "23 module",
+        "24 module",
+        "25 module",
+        "27 module",
+        "28 module",
+        "29 module",
+        "31 module",
+        "33 module",
+        "35 module",
+        "36 module",
+        "37 module",
+        "38 module",
+        "41 module",
+        "42 module",
+        "43 module",
+        "46 module",
+        "47 module",
+        "48 module",
+        "49 module",
+        "51 module",
+        "61 module",
+        "62 module",
+        "64 module",
+        "66 module",
+        "67 module",
+        "68 module",
+        "69 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "FILTER_OPERATOR_UNSUPPORTED",
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected text after the expression",
+        "keyword now",
+        "keyword uuid",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "keyword null",
+        "REF_NOT_UPSTREAM",
+        "function addMinutes()",
+        "function match()",
+        "function nth()",
+        "function test()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "SiyamBhuiya/Portfolio",
+      "path": "src/workflows/shopify-chargeback.json",
+      "sha": "95275cc11ef9ebed92d29496cd2a608dcbdc1747",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "31 module",
+        "9 module",
+        "28 module",
+        "27 module"
+      ],
+      "blockers": [
+        "module builtin:BasicAggregator",
+        "EXPRESSION_SYNTAX: Unexpected \"…\"",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "SquizAI/tron_VF_V2",
+      "path": "blueprint (10)-2.json",
+      "sha": "e3bc8fe4e2878113b5790c18ab0520d6cc34a412",
+      "verdict": "unsupported",
+      "modules": 44,
+      "fixtures": [
+        "3 module",
+        "56 module",
+        "22 module",
+        "57 module",
+        "6 module",
+        "17 module",
+        "31 module",
+        "32 module",
+        "36 module",
+        "37 module",
+        "33 module",
+        "70 module",
+        "10 module",
+        "19 module",
+        "58 module",
+        "20 module",
+        "28 module",
+        "29 module",
+        "30 module",
+        "34 module",
+        "64 module",
+        "35 module",
+        "69 module",
+        "21 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Resume",
+        "module util:FunctionSleep",
+        "module builtin:Break"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "StepForIt/StepForItOps",
+      "path": "packages/core/test/fixtures/make-webhook-http.blueprint.json",
+      "sha": "31a4053bc14728d37cac5433e01ce808fae7dff2",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [],
+      "blockers": [
+        "module http:DownloadFile"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Talhashabir9t/AI_Automation",
+      "path": "3. Create Master sheet (API + Slac).json",
+      "sha": "74c73d41add1f18173367edf58342c20c9aaf0b0",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "10 module",
+        "11 module",
+        "14 module",
+        "16 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Tanavud-mgts/meeting-system",
+      "path": "Integration Webhooks.blueprint_v2.json",
+      "sha": "841595f76b7d3f3c4fd46007f4c6248da58ba282",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "TheSocialEngineer-01/My-Portfolio",
+      "path": "make_scenario_blueprint.json",
+      "sha": "7d16ee5e283da08dcd23b28277d9c09514789d9b",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 module",
+        "3 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module gateway:CustomWebhook",
+        "FILTER_SHAPE_UNSUPPORTED",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Treevu-ai/Agentic-Friendly",
+      "path": "make-geo-bot-blueprint.json",
+      "sha": "7c7db54a8a5918a48409fccd2350710ce966840f",
+      "verdict": "unsupported",
+      "modules": 13,
+      "fixtures": [
+        "1 module",
+        "5 module",
+        "7 module",
+        "9 module",
+        "11 module",
+        "12 module",
+        "13 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "REF_NOT_UPSTREAM",
+        "module datastore:ActionSearchRecords",
+        "module datastore:ActionAddRecord",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "module datastore:ActionUpdateRecord",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "UfukYarisan/redit-make-automation",
+      "path": "redit_notion_automation_flow.json",
+      "sha": "e927b6607b455a081d88dca5b6ff5b24bd2aacf0",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "1 module",
+        "5 module",
+        "2 module",
+        "9 module",
+        "16 module",
+        "10 module",
+        "11 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "REF_NOT_UPSTREAM"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Univium-Inc/Univium-Automation-Tools",
+      "path": "Automation Packages/Trigger Automations with Google Sheets/Make - Send Email Blueprint.json",
+      "sha": "7d58292a7b52f82fc81e272234bc4d6e83eba8d8",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "4 module"
+      ],
+      "blockers": [
+        "module util:SetVariables"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Unnati061/classifier-agent",
+      "path": "sample input files/blueprint.json",
+      "sha": "dabd93ef20a49e1c96ded9855ab68569077484ca",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "3 http",
+        "6 module",
+        "23 module"
+      ],
+      "blockers": [
+        "module json:ParseJSON",
+        "module util:SetVariables"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Weryyy/Repuesta-Automatica-Mails",
+      "path": "asdfasd.json",
+      "sha": "2849b6707f7494d48caa0fa21f983a1845ae8cfc",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "1 module",
+        "3 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "keyword now",
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "AGGREGATOR_SEPARATOR_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "YahyaElghobashy/salla-hubspot-backfill",
+      "path": "blueprints/2026-09-27/5563154_customer_updated.conflict_route.blueprint.json",
+      "sha": "03410b3d61249300abb782d6fb7d4800d60ab7fa",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "1 module",
+        "4 module",
+        "6 module",
+        "23 module",
+        "7 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:FunctionSleep",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "keyword now",
+        "EXPRESSION_SYNTAX: Unexpected \"…\"",
+        "module regexp:Parser",
+        "REF_NOT_UPSTREAM",
+        "module builtin:Break"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "Yoshi420247/makeAIproductdescription",
+      "path": "batch-processing/scenario-2-process-results.json",
+      "sha": "d4d3cb2b8254c5fc76bd72f452a65491991d14af",
+      "verdict": "unsupported",
+      "modules": 10,
+      "fixtures": [
+        "2 http",
+        "4 http",
+        "8 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:GetVariable",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "module util:TextParser",
+        "module builtin:BasicIterator",
+        "keyword newline",
+        "module json:ParseJSON",
+        "module util:Noop"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "YvesNoeBornhauser/Dialogsystem",
+      "path": "Make_Artefacts/Make_Google_Sheets.json",
+      "sha": "331807413e872acc4698cd1a7586dfc0663466b9",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "Zkamal98/Agentic-AI-Workflow",
+      "path": "docs/Agentic-AI-Workflow-blueprint.json",
+      "sha": "6b2d940f4283125f3281d0caf4c89262f4a9b8be",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "4 module",
+        "18 module",
+        "9 module",
+        "22 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:BasicTrigger"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "aayu22010/ConsultBae-AI-Automation-Assignment",
+      "path": "task2_make_flow.json",
+      "sha": "39282f60476b803652364ed87d1c59e9b18bce22",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "4 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ac4lv0p1/NoCode-Automation-Insights",
+      "path": "examples/complex-automation/JuanMecanicoAutomation.json",
+      "sha": "12d387f650d95a9a129c3f5aec06e191c1efac4e",
+      "verdict": "unsupported",
+      "modules": 21,
+      "fixtures": [
+        "1 module",
+        "20 module",
+        "3 module",
+        "23 module",
+        "26 module",
+        "43 module",
+        "46 module",
+        "47 module",
+        "53 module",
+        "55 module",
+        "58 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:Switcher",
+        "module http:ActionSendDataAPIKeyAuth",
+        "module util:SetVariables",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module regexp:AdvancedParser"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "adetuyisamuel/whatsapp-lead-qualification",
+      "path": "whatsapp_lead_qualification_blueprint.json",
+      "sha": "769f2817ddef50ab472c8ffa36ea038d8a264508",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "3 module",
+        "6 module",
+        "7 module",
+        "8 module",
+        "9 module",
+        "10 module",
+        "11 module",
+        "12 module"
+      ],
+      "blockers": [
+        "module util:SetVariables2",
+        "keyword now",
+        "module util:FunctionCall",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "afshansif/Feedback_Router_Google_Forms_to_Gmail_Automation",
+      "path": "Integration Google Forms.blueprint.json",
+      "sha": "2041cc7f922e3b69cb1eae2be8a265e85f37b2d6",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 module",
+        "5 module",
+        "6 module",
+        "11 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "afshansif/Weather-Alert-Webhook",
+      "path": "Weather Alert Webhook.blueprint.json",
+      "sha": "7820d0dedd9397517cfe5b3c5fbad03ca0343ca4",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "8 module",
+        "5 module"
+      ],
+      "blockers": [
+        "module http:MakeRequest",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "REF_NOT_UPSTREAM"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "alexanderafolabi1-afk/Glotemp",
+      "path": "make-blueprints/glotemp-instagram-facebook-daily-post.blueprint.json",
+      "sha": "e950cd9f077ff9bf230761e77f88636cab8cf7cf",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_ROUTE_NOT_OBJECT"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "antonio86itna/smetti-di-chattare-hub",
+      "path": "download/w021.json",
+      "sha": "89f086e5720c33c9d9da0b0076e6fbba49b130f0",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "2 module",
+        "3 module",
+        "4 module"
+      ],
+      "blockers": [
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "areeshausmani/Slack-Alerts-using-Make.com",
+      "path": "Slack-Alerts.json",
+      "sha": "97861ed8a799e6956389cacc4edca64304425d82",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "2 module",
+        "4 module"
+      ],
+      "blockers": [
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ariapioquinto/multichannel-ai-assistant-crm-flow",
+      "path": "multichannel_ai_assistant_crm_flow.json",
+      "sha": "40cbc46a279e4086a4b5be241932f3e29994d2af",
+      "verdict": "unsupported",
+      "modules": 27,
+      "fixtures": [
+        "76 module",
+        "126 module",
+        "106 module",
+        "125 module",
+        "18 module",
+        "36 module",
+        "29 module",
+        "123 module",
+        "116 module",
+        "124 module"
+      ],
+      "blockers": [
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Break",
+        "module regexp:Replace",
+        "keyword newline",
+        "module regexp:Parser",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "askjohngeorge/sales-prompt-creator",
+      "path": "docs/SalesBot Prompt Flow.json",
+      "sha": "79e43b725027dbd3a59cc315591b9f71bc2ff17d",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "6 module",
+        "8 module",
+        "9 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "baruchiro/BcsStudent",
+      "path": "public/static/files/Gmail-OpenAI-Integration-Blueprint.json",
+      "sha": "d12106ab9f5797dd2d68c66f145b9de00c9d8611",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "1 module",
+        "4 module",
+        "12 module",
+        "11 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "AGGREGATOR_SEPARATOR_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "bgillis99-pixel/Mobile-CARB-Compliance-app",
+      "path": "make-blueprints/claude-content-reviewer.json",
+      "sha": "6e6988d9f7077db5e648de1af680b706b2d893cc",
+      "verdict": "unsupported",
+      "modules": 9,
+      "fixtures": [
+        "2 http",
+        "5 module",
+        "7 module",
+        "8 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "module json:ParseJSON",
+        "FILTER_OPERATOR_UNSUPPORTED",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "keyword now",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "function toJSON()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "bluefound/automation-templates",
+      "path": "automation for Client Onboarding Email Automation.json",
+      "sha": "e8f7d39888e05bfb867457e5ef6fa22f26525a85",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "1 module",
+        "3 module",
+        "5 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:SetVariables",
+        "module util:FunctionSleep"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "brentvanroelen/questify",
+      "path": "make-scenarios/painting-funfact-blueprint.json",
+      "sha": "2fe5483e1a3a43b7598c8b3c598c64656cb32c3b",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 http",
+        "3 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ceyre-boop/email-automation",
+      "path": "make/phase1_triage_scenario.json",
+      "sha": "bb0083102d0470e95a6d1b318d33f6dcd297294f",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "5 module",
+        "6 module",
+        "7 module",
+        "8 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "chengyunm1313/hsiang-gege-drink",
+      "path": "docs/享哥哥手搖飲店 vibecoding.blueprint.json",
+      "sha": "ac926d6e8646074b73c0b5ca238b53c7a92278e6",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "2 module",
+        "8 module",
+        "3 module"
+      ],
+      "blockers": [
+        "FILTER_SHAPE_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "chibbss/linkedin-content-gen",
+      "path": "blueprint-4.json",
+      "sha": "0653b1f38f77dabcf113488210f5abb91edfb46d",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "20 module",
+        "21 module",
+        "39 module"
+      ],
+      "blockers": [
+        "module http:ActionGetFile",
+        "module csv:ParseCSV",
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "christ0pher/lifehack-automations",
+      "path": "make_com_blueprints/LinkedIn-Ghostwriter/ghostwriter.json",
+      "sha": "6eeb8446319ea27e2057f7af2f1308f4b8b60afd",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "5 module",
+        "1 module",
+        "2 module",
+        "3 module"
+      ],
+      "blockers": [
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "cljrami/magos",
+      "path": "PRODUCCION/flujo.json",
+      "sha": "81d6e161cf835e99545908393144154eb56dc8f4",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "40 module",
+        "41 http",
+        "43 http",
+        "73 http",
+        "74 module",
+        "75 module",
+        "78 module",
+        "68 module"
+      ],
+      "blockers": [
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "module util:FunctionSleep",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "keyword newline"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "cljrami/soulinmotion",
+      "path": "flujo.json",
+      "sha": "ada1f412d5e65c03584aa865c96caa0c33e2e1af",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "3 module",
+        "2 module",
+        "6 module"
+      ],
+      "blockers": [
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "cljrami/soyautomama",
+      "path": "AutoMama.json",
+      "sha": "b9a7678accb66b049e4f8a1e5681ab0823f5561d",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "12 module"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "FILTER_OPERATOR_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "clubajedrezdelasrozas/peondedama-metrics",
+      "path": "Scenarios/Controlar BOT Instagram.blueprint (2).json",
+      "sha": "e1ba0ed3de88da2a3b1fc6292a232c406eaf67ee",
+      "verdict": "unsupported",
+      "modules": 11,
+      "fixtures": [
+        "1 module",
+        "10 module",
+        "13 module",
+        "15 module",
+        "17 module",
+        "19 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ROUTER_SHAPE_UNSUPPORTED",
+        "module scenario-service:CallSubscenario"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "coder360-crypto/Phone_Call_Assistant",
+      "path": "Appointment Booking Automation.blueprint.json",
+      "sha": "d3252997e04b6f1e59e1777fcd80adced3f5493e",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 module",
+        "3 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "codesandesh/Hyperscaler-all",
+      "path": "CMS-Module1-Content-Management-System.json",
+      "sha": "84328144e2853829d8676848a5d09276a8f575bd",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "4 module",
+        "6 module",
+        "7 module",
+        "9 module",
+        "10 module",
+        "12 module"
+      ],
+      "blockers": [
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "EXPRESSION_SYNTAX: `` on its own is not a reference",
+        "function array()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "codyforbes44/super-connector-app",
+      "path": "docs/make/call-missed-email.json",
+      "sha": "376072656b5ecee51cfffb37fab78a70e78e509a",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "3 module"
+      ],
+      "blockers": [
+        "module code:ExecuteCode"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "csw48/cnb-calculator",
+      "path": "Workflow-CNB-Kalkulacka.json",
+      "sha": "a778f19462a8ce43f23e246ea2f84dbdb44f5c2c",
+      "verdict": "unsupported",
+      "modules": 17,
+      "fixtures": [
+        "3 http",
+        "9 http",
+        "7 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "module util:SetVariables",
+        "module util:ComposeTransformer"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "darkmagicYT/DesarrolloSustentable",
+      "path": "2.1(Ecosistema)/Codigo/Ecosistema.blueprint.json",
+      "sha": "96844b8ab4289b90175e17608a35de393bf5e28c",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "degregar/michalkukla-astro",
+      "path": "public/blueprints/messy-thoughts.json",
+      "sha": "502c6d3f0c63badd56a130da934d1d959eea12df",
+      "verdict": "unsupported",
+      "modules": 25,
+      "fixtures": [
+        "6 module",
+        "26 module",
+        "38 module",
+        "49 module",
+        "28 module",
+        "39 module",
+        "30 module",
+        "40 module",
+        "31 module",
+        "46 module",
+        "32 module",
+        "42 module",
+        "33 module",
+        "43 module",
+        "34 module",
+        "44 module",
+        "35 module",
+        "45 module",
+        "24 module",
+        "37 module",
+        "20 module",
+        "36 module"
+      ],
+      "blockers": [
+        "ROUTER_SHAPE_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module json:ParseJSON",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "FILTER_SHAPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "dsd228/-QueHago-",
+      "path": "QueHago-Google-Calendar.blueprint.json",
+      "sha": "36b77c5ca313daa7e5650794089af9561841a1d3",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "earlyaidopters/gumroad-resources",
+      "path": "resources/boltnew-dating-app-a-z-build/files/Bolt_Cancellation_Demo_Sanitized.json",
+      "sha": "0eeaac84b1466688f9c9a271745e5152a4380b55",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "2 http",
+        "6 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "module regexp:AdvancedParser",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "eleyrot/signals-newsletter",
+      "path": "make/flow-a-blueprint.json",
+      "sha": "0e6e06bbd2264263125e5ddc9615b74dcc842aa9",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "3 module",
+        "4 module",
+        "5 module",
+        "6 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "elior1324/reviewwise-hub",
+      "path": "make-blueprints/integration-webhooks-routed.json",
+      "sha": "09d74887d893f57433ea8b5e1885383480bbe65d",
+      "verdict": "unsupported",
+      "modules": 10,
+      "fixtures": [
+        "10 module",
+        "20 module",
+        "30 module",
+        "40 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "enigmat/Workflow",
+      "path": "Make-blue print/Integration Google Sheets PT 2.json",
+      "sha": "a1e5da1cf8dfb18f66bc0e7982ae41dc1987899d",
+      "verdict": "unsupported",
+      "modules": 25,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "19 module",
+        "22 module",
+        "17 module",
+        "9 module",
+        "13 module",
+        "20 module",
+        "14 module",
+        "6 module",
+        "15 module",
+        "27 module",
+        "7 module",
+        "16 module",
+        "8 module",
+        "12 module",
+        "4 module",
+        "18 module",
+        "10 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module util:GetVariable2"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "eriksjaastad/Smart-Invoice-Follow-Up-Workflow",
+      "path": "Integration HTTP, Google Sheets, Tools, Gmail.blueprint.json",
+      "sha": "7a4464239bda2583a9e1eca15ecd3b117a1d53cf",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ev45ive/medagent-landing",
+      "path": "Medagent.blueprint.json",
+      "sha": "9bae1ee0a4c2ce59ae35519449feed75d2ddb36f",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "6 http",
+        "7 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "eyalway2cu/eyal_scripts",
+      "path": "Make/Blueprints/serverless_html_form.json",
+      "sha": "b7969447034aefe10fc79888f34576ca19ad4584",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [],
+      "blockers": [
+        "module json:ParseJSON",
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "fcesitler/YZTA_Hackathon_NCLC_Team_326",
+      "path": "make-flows/flow-notify.blueprint.json",
+      "sha": "e491c2b221c926ce3e54a2f50ca61f9998aa98af",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "1 http",
+        "2 http",
+        "5 module",
+        "3 http",
+        "4 http"
+      ],
+      "blockers": [
+        "keyword now",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "fernandoxavier02/workflow-automation-showcase",
+      "path": "workflows/make-blueprint.sanitized.json",
+      "sha": "6927aefdbf7754dc551ea4023dc74e5c20eaa959",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "2 module",
+        "3 http",
+        "4 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "firstlinkai/Social-Media-Automation",
+      "path": "Social-Media-Automation.json",
+      "sha": "66a968482c7a3fbccec5cf9854896a9a3e6d0456",
+      "verdict": "unsupported",
+      "modules": 17,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "19 module",
+        "22 module",
+        "17 module",
+        "9 module",
+        "13 module",
+        "20 module",
+        "14 module",
+        "6 module",
+        "15 module",
+        "27 module",
+        "7 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module util:GetVariable2"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "fluxaimarketingdigital-ship-it/fluxai-site",
+      "path": "docs/make_blueprints/06_FLUXAI_META_SYNC_OFICIAL.blueprint.json",
+      "sha": "19a588e633327739895e23e8050bb172e5cf7701",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "fsystemweb/dip-detector",
+      "path": "blueprint.json",
+      "sha": "1165815dcc65bf2e0d47958614f5ff6cfaafc7e5",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "3 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module datastore:SearchRecord",
+        "module http:MakeRequest",
+        "module datastore:UpdateRecord"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "gittradeanchor/Flowio-react-V01",
+      "path": "make-blueprints/S1-crm-router.json",
+      "sha": "e34b63fdab80ca2c0446c8429998841cd889d947",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module"
+      ],
+      "blockers": [
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "gtron/clockify-make-integration",
+      "path": "Scenari/2025 OK - Ferie OK - v20250403.blueprint.json",
+      "sha": "ace9e5ed0d26930e7477e41b5a77b26b61c2a775",
+      "verdict": "unsupported",
+      "modules": 21,
+      "fixtures": [
+        "39 module",
+        "5 module",
+        "29 module",
+        "33 module",
+        "34 module",
+        "36 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:BasicTrigger",
+        "module util:SetVariables",
+        "keyword now",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Resume",
+        "module builtin:BasicRepeater",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module builtin:BasicAggregator",
+        "FILTER_SHAPE_UNSUPPORTED",
+        "FILTER_OPERATOR_UNSUPPORTED",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "EXPRESSION_SYNTAX: Unexpected \"…\"",
+        "function setHour()",
+        "function setMonth()",
+        "function setYear()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "hamzaaoudin-commits/Strawberry-Prod",
+      "path": "make/architecture-narrative-blueprint.json",
+      "sha": "c20d055d47750f87c8d8fe162bf398c8426326f0",
+      "verdict": "unsupported",
+      "modules": 33,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module",
+        "6 module",
+        "7 module",
+        "8 module",
+        "9 module",
+        "10 module",
+        "11 module",
+        "12 module",
+        "16 module",
+        "17 module",
+        "18 module",
+        "19 module",
+        "20 module",
+        "21 module",
+        "22 module",
+        "23 module",
+        "24 module",
+        "25 module",
+        "26 module",
+        "27 module",
+        "28 module",
+        "29 module",
+        "30 module",
+        "31 module",
+        "32 module",
+        "33 module",
+        "15 module"
+      ],
+      "blockers": [
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "module markdown:Compile"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "harsh817/boostspace-cli",
+      "path": "examples/sample-workflow-agreement-generator-no-ai.json",
+      "sha": "50cc5f6c555198c2587444a1743ad876503d1784",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [],
+      "blockers": [
+        "module code:ExecuteCode"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "hcthisen/BAM-VPS-Public",
+      "path": "Make Scripts/00 - ABC Cloning BAM - 00/01 - Site Initiation - Get Info.json",
+      "sha": "40ca3ffa683484f54df8bec5498c545bf0437e3b",
+      "verdict": "unsupported",
+      "modules": 65,
+      "fixtures": [
+        "3 module",
+        "5 http",
+        "68 http",
+        "69 http",
+        "52 http",
+        "71 http",
+        "70 http",
+        "54 http",
+        "6 http",
+        "8 http",
+        "10 module",
+        "12 http",
+        "24 module",
+        "26 module",
+        "31 module",
+        "36 module",
+        "39 module",
+        "66 module",
+        "55 module",
+        "47 http",
+        "61 http",
+        "62 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module builtin:BasicAggregator",
+        "module json:TransformToJSON",
+        "module util:FunctionSleep",
+        "module util:ComposeTransformer",
+        "keyword newline",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Break",
+        "module util:GetVariable2",
+        "module json:ParseJSON",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "heritagecraftmedia-commits/HCM_Main_Website_Files",
+      "path": "hcm-drive-setup/make-scenarios/scenario-1-siding-reminder.json",
+      "sha": "ec7320b7db03c3d7c43edd03fc45c9e51b12aea3",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "houseofichigo/json",
+      "path": "0qf0blCB4Mc_2.json",
+      "sha": "9c343c86a13082274ac87f12bee2586499fec2c5",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_ID"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "humaila0/Remote-Job-Scraper",
+      "path": "Blueprint.json",
+      "sha": "71a6861f8fb49fb8f3d2d1767dfb8deee4947234",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [
+        "1 module",
+        "2 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "iNherjer/GA-Dispatcher-Alpha",
+      "path": "tools/bug-tracker/Integration Webhooks, Gmail - Bugreports fertig.blueprint.json",
+      "sha": "192694bd17dbfa5c3403373abe9e1bce24d4668e",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "iamyogik/Netflix-Cookies-Extractor",
+      "path": "Integromat/gist-blueprint.json",
+      "sha": "04e7d0b86b4de2ee75df7948f9ce0a7f525d5271",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "6 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "idokraicer/optimate-make-cli",
+      "path": "tests/fixtures/simple-blueprint.json",
+      "sha": "653ae44ddeb77534425d4e907ddeae1197579298",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_FLOW_NOT_ARRAY"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "imbadar/ai-dental-front-desk-agent",
+      "path": "Integration Webhooks, Google Gemini AI.blueprint.json",
+      "sha": "4489bac4fe5bf902496c7e5529ae1600172a1ac9",
+      "verdict": "unsupported",
+      "modules": 14,
+      "fixtures": [
+        "29 module",
+        "5 module",
+        "13 module",
+        "15 module",
+        "26 module",
+        "16 module"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module json:ParseJSON",
+        "module builtin:BasicAggregator",
+        "FILTER_SHAPE_UNSUPPORTED",
+        "keyword now",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "module util:FunctionIncrement",
+        "function addMinutes()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "inemavip/inemavip",
+      "path": "data/files/Gerador de Post Canva.blueprint.json",
+      "sha": "5e62e84c8a756b78116e9eb1c502ff73af755311",
+      "verdict": "unsupported",
+      "modules": 10,
+      "fixtures": [
+        "2 module",
+        "32 module",
+        "31 module",
+        "16 module",
+        "21 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:FunctionIncrement"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "jansentanlim-ai/my-automations-project",
+      "path": "airtable-openai-vapi-panda/blueprint.json",
+      "sha": "50ea52a3ef90152ff1601e01667c6c259641a8fc",
+      "verdict": "unsupported",
+      "modules": 19,
+      "fixtures": [
+        "1 module",
+        "30 module",
+        "32 http",
+        "34 http",
+        "37 module",
+        "38 module",
+        "40 module",
+        "42 module",
+        "43 module",
+        "45 module",
+        "46 module",
+        "47 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module regexp:Replace",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "module util:FunctionSleep",
+        "keyword now",
+        "module regexp:Parser",
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "jayalath-jknr/QQuest",
+      "path": "blueprints/QQuest-Quest-Completion-Alert.blueprint.json",
+      "sha": "afba4cbc5b4f403ba1eacb4a7afb7c95b3b1fd9b",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "2 http",
+        "3 http",
+        "5 module",
+        "6 module",
+        "7 module",
+        "8 module"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "function multiply()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "karenpineda-ai/make-automation-flow",
+      "path": "flows/Ai-customer-support.json",
+      "sha": "89b979675a8809313516d68150686d0488e28d2c",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "5 module",
+        "6 module",
+        "7 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
+        "module json:parseJSON",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "kenetbc-afk/hirecar-marketwatch",
+      "path": "automation-configs/make-scenarios/credit-dispute-enrollment-scenario.json",
+      "sha": "b5020e39243152d1c2057f2c506e96d14619c65d",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "3 http",
+        "4 http",
+        "5 http",
+        "6 http",
+        "7 http"
+      ],
+      "blockers": [
+        "module util:SetVariable",
+        "keyword random",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "khalid2866/Fashion-Hub-Ai-Automation-Make.com",
+      "path": "Blueprint/Fashion Hub.blueprint.json",
+      "sha": "3e9eddead35a74ba326f414da9750a6282426f12",
+      "verdict": "unsupported",
+      "modules": 10,
+      "fixtures": [
+        "2 module",
+        "3 module",
+        "15 module",
+        "13 module",
+        "16 module",
+        "18 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module builtin:BasicIfElse",
+        "module builtin:BasicMerge",
+        "module http:DownloadFile"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "koti-pavan-kumar/avotangi-whatsapp-ai-stylist",
+      "path": "make-com-workflow/scenario-blueprint.json",
+      "sha": "948865d2c06499487eebee1bcbc06bfdb8e46b9f",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "3 module",
+        "5 module",
+        "6 module"
+      ],
+      "blockers": [
+        "module http:MakeRequest",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "leanderziehm-wemakefuture/workflows",
+      "path": "public/workflows/send_notification.json",
+      "sha": "eab274a2eca75c57dbffacec0db5392354654186",
+      "verdict": "eligible",
+      "modules": 2,
+      "fixtures": [
+        "5 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "limmieo/brandflow-Ai",
+      "path": "automation/print.json",
+      "sha": "20f2662c6b43d40c6cee128bd8e98b638171245e",
+      "verdict": "unsupported",
+      "modules": 24,
+      "fixtures": [
+        "37 module",
+        "7 http",
+        "63 http",
+        "68 module",
+        "32 module",
+        "41 module",
+        "42 module",
+        "43 module",
+        "46 module",
+        "51 module",
+        "52 module",
+        "53 module",
+        "54 module",
+        "55 module",
+        "56 module",
+        "44 module",
+        "47 module",
+        "49 module",
+        "50 module",
+        "59 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module json:ParseJSON",
+        "module http:ActionGetFile",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "lionzawlwin/LION-JOBS-PLATFORM",
+      "path": "make-blueprint.json",
+      "sha": "af00c3a46edba6fa5c5df2cbcc56d80a26e7a4dd",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module"
+      ],
+      "blockers": [
+        "FILTER_SHAPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "lipetomasz00-beep/v16",
+      "path": "cashmaker_make_scenario.json",
+      "sha": "6e284cbcdbc3687895b7ecaf22c56e6c01805cc5",
+      "verdict": "unsupported",
+      "modules": 14,
+      "fixtures": [
+        "1 module",
+        "99 module",
+        "274 module",
+        "407 module",
+        "412 module",
+        "409 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module json:ParseJSON",
+        "module http:MakeRequest",
+        "module util:FunctionSleep",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "llkd33/nc_new",
+      "path": "make-com-scenario-fixed.json",
+      "sha": "e7c6935b48f177550118dd68f4061b758318c64f",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "1 module",
+        "2 http",
+        "4 module",
+        "5 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "loliba92/Scenario",
+      "path": "assets/make/scenario-weekly.blueprint.json",
+      "sha": "108a213bf9f9db70d77ff61c2bbe9a12e4494d37",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "4 module",
+        "7 module",
+        "8 module",
+        "11 module",
+        "12 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "keyword newline"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mahwoussa-boop/mahwous-scraper-v2",
+      "path": "bp1_fixed.json",
+      "sha": "4ac096397bb1e5628ba21eec4f971d1d4dd985b1",
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "8 module"
+      ],
+      "blockers": [
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore",
+        "REF_NOT_UPSTREAM"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mahwousstore-png/52KB",
+      "path": "make/new_products_blueprint.json",
+      "sha": "0a805ea093aba1e5d4c180cc09e3bd114786e93a",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "3 module"
+      ],
+      "blockers": [
+        "ITERATOR_SCOPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mahwousstore-png/perfume-erp",
+      "path": "mahwous_studio_complete_blueprint.json",
+      "sha": "4943d68b35a0cb7c595ced24b73e4362e79ef488",
+      "verdict": "unsupported",
+      "modules": 14,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module",
+        "6 module",
+        "7 module",
+        "8 module",
+        "9 module",
+        "10 module",
+        "11 module",
+        "12 module",
+        "13 module",
+        "14 module"
+      ],
+      "blockers": [
+        "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mairothugo/Hackaton_WTTJ",
+      "path": "blueprint_message.json",
+      "sha": "10605e4f9d7bf03a9b4a364673217d6007e386e3",
+      "verdict": "unsupported",
+      "modules": 16,
+      "fixtures": [
+        "2 module",
+        "4 module",
+        "7 module",
+        "9 module",
+        "10 module",
+        "12 module",
+        "17 module",
+        "19 module",
+        "15 module",
+        "23 module",
+        "24 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module builtin:BasicAggregator",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "majestikmagik/Automation_Create_post_Instagram_Facebook",
+      "path": "From Google sheets, to IG & FB (only image).blueprint.json",
+      "sha": "2984699b40799519eedece6a07c2470b6b5e3c4c",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "4 module",
+        "2 module",
+        "14 module",
+        "9 module",
+        "16 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "majestikmagik/Automation_Invoice_manage_Make",
+      "path": "blueprint.json",
+      "sha": "32d4cda3f99e548383a588e3b5090b93d4e05fb2",
+      "verdict": "unsupported",
+      "modules": 8,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "3 module",
+        "4 module",
+        "9 module",
+        "7 module",
+        "10 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "marcc16/portfolioanasdef",
+      "path": "src/data/make-dieta.json",
+      "sha": "f192cdc211eafab7d7cac42ad00895572130badd",
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "13 module",
+        "17 module",
+        "19 module",
+        "31 module",
+        "25 module",
+        "32 module",
+        "35 module",
+        "36 module",
+        "39 module",
+        "40 module",
+        "41 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "marequest/lead-outreach-research-system",
+      "path": "blueprints/1_1_Blog_Research_--_Start_and_call_1_2_blueprint.json",
+      "sha": "af6f2e1a0292d5dcea322f49423ab377354e4514",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_BAD_MODULE_VERSION"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "masterDakill/valuecollection",
+      "path": "make-scenario-minimal.json",
+      "sha": "35b0d2d28fceb9a8d9f0365ad830af88cc376adc",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [
+        "keyword now",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mediablink8-star/clinic",
+      "path": "backend/make/workflow_1_appointment_confirmation.json",
+      "sha": "48c4982b2719f313cebd35e5489cef6dafbf1b90",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "4 module"
+      ],
+      "blockers": [
+        "module builtin:SetVariables",
+        "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mhalder-dev/managerium-customer-bot",
+      "path": "Multiclient version 2.0.json",
+      "sha": "ad8a244f4f66f196da3ff14365fe5d28635795f6",
+      "verdict": "unsupported",
+      "modules": 38,
+      "fixtures": [
+        "1 module",
+        "3 module",
+        "16 module",
+        "19 http",
+        "7 module",
+        "26 http",
+        "27 http",
+        "28 http",
+        "44 module",
+        "45 http",
+        "46 http",
+        "47 http",
+        "49 module",
+        "107 http",
+        "83 module",
+        "86 http"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore",
+        "module util:GetVariable2",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "FILTER_SHAPE_UNSUPPORTED",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module builtin:BasicRepeater",
+        "module builtin:Commit",
+        "module util:FunctionSleep"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mlynnf123/AI-SMS",
+      "path": "make-check-leads-supabase.json",
+      "sha": "f5c7bfff3f8dc94a66b320fe27fd9c2353522dce",
+      "verdict": "invalid",
+      "modules": 0,
+      "fixtures": [],
+      "blockers": [
+        "BP_ROUTES_ON_NON_ROUTER"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mohsin1782005/modabot-ai-whatsapp-ecommerce-chatbot",
+      "path": "ModaBot_Ecom_Whatsapp_Chatbot.json",
+      "sha": "0e0c38a7b1ec8565a0f6b10c0a414df1fbb1f479",
+      "verdict": "unsupported",
+      "modules": 10,
+      "fixtures": [
+        "1 module",
+        "4 module",
+        "2 module",
+        "3 module",
+        "8 module",
+        "9 module",
+        "10 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "AGGREGATOR_SEPARATOR_UNSUPPORTED",
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mohsin1782005/monday.com-zapier-iot-operations",
+      "path": "pipeline-A.json",
+      "sha": "5a73a1147340245d6eb737825d2a75d7924a1d9b",
+      "verdict": "unsupported",
+      "modules": 10,
+      "fixtures": [
+        "2 http",
+        "98 module",
+        "5 module",
+        "96 module",
+        "6 module",
+        "95 module"
+      ],
+      "blockers": [
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module util:BreakError",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded",
+        "REF_UNKNOWN_MODULE",
+        "REF_NOT_UPSTREAM",
+        "module json:ParseJSON",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "function escape()",
+        "function lookup()"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "moshehbenavraham/txt2crs",
+      "path": "make-scenarios/[STUDY] Create Course Material from Plain Text (2-3).blueprint.json",
+      "sha": "789cab7b731a5ee053d551ea67b8952a9c5f2b0b",
+      "verdict": "unsupported",
+      "modules": 13,
+      "fixtures": [
+        "27 module",
+        "28 module",
+        "30 module",
+        "32 module",
+        "34 module",
+        "35 module",
+        "38 module",
+        "39 module",
+        "36 module",
+        "33 http"
+      ],
+      "blockers": [
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mrlmbrown/make-blueprints",
+      "path": "Student Engagement Monitor Automation.blueprint.json",
+      "sha": "e34f74ca99a3f547c6ed1e46ada43fc873349565",
+      "verdict": "unsupported",
+      "modules": 16,
+      "fixtures": [
+        "2 module",
+        "27 module",
+        "14 module",
+        "30 module",
+        "15 module",
+        "26 module",
+        "29 module",
+        "24 module",
+        "25 module",
+        "18 module",
+        "19 module",
+        "20 module",
+        "22 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "keyword now",
+        "module util:ComposeTransformer",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "mvxif1/idp",
+      "path": "escenario-get-compras-make.json",
+      "sha": "0d6628cf413de855fdfc0d0769ccad791bdd42e3",
+      "verdict": "eligible",
+      "modules": 3,
+      "fixtures": [
+        "4 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "n-ishfaq/Vapi-Call-Agent",
+      "path": "VAPI --- GHL .blueprint (2).json",
+      "sha": "d78c7cb67c034b6810ea6aa40d4808bc6f84b2ec",
+      "verdict": "unsupported",
+      "modules": 30,
+      "fixtures": [
+        "7 http",
+        "9 http",
+        "12 http",
+        "31 http",
+        "15 http",
+        "17 http",
+        "39 http"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "AGGREGATOR_SEPARATOR_UNSUPPORTED",
+        "module json:ParseJSON",
+        "module json:TransformToJSON",
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "neilastephenson/files",
+      "path": "UserAPIMakeBlueprint-2.json",
+      "sha": "13844225bdf586a7330d64acbe699388888819cb",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [
+        "module builtin:BasicRepeater"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "next-identity/integrations",
+      "path": "ni-get-user-blueprint.json",
+      "sha": "f516a3c3af96263425e16b3eade5acb604516bca",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "19 module",
+        "4 http"
+      ],
+      "blockers": [
+        "EXPRESSION_UNSUPPORTED: {{var.…}} reads a Make custom variable or scenario input; those are not supported yet"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "nini0119/Office-pulse-for-WTJ",
+      "path": "création_message.json",
+      "sha": "3fd17db5b65e59c62a79907a6e47e2e83e831d23",
+      "verdict": "unsupported",
+      "modules": 15,
+      "fixtures": [
+        "2 module",
+        "41 module",
+        "48 module",
+        "18 module",
+        "35 module",
+        "36 module",
+        "39 module",
+        "21 module",
+        "34 module",
+        "44 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:SetVariables",
+        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "nirkons/Basic-Hass-Dash",
+      "path": "Old API (Pre Long Lived Token HASS)/Integromat Automatic Cloud/Action.json",
+      "sha": "5bb4f0be23ab5b5afdbdef5153aa71eb0883013c",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "9 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "notm33na/morningmarket",
+      "path": "blueprints/MarketMorning.blueprint.json",
+      "sha": "d3ecc51f84141ccd36bc6058bd7559faad745353",
+      "verdict": "unsupported",
+      "modules": 34,
+      "fixtures": [
+        "2 module",
+        "14 module",
+        "7 module",
+        "8 module",
+        "9 module",
+        "10 module",
+        "11 module",
+        "12 module",
+        "13 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded",
+        "module builtin:Ignore",
+        "module http:MakeRequest",
+        "module builtin:Resume",
+        "module xml:ParseXML",
+        "keyword emptyarray",
+        "module util:FunctionSleep",
+        "module json:ParseJSON",
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "notquite28/ai-job-agent",
+      "path": "bot.json",
+      "sha": "f334651e3975733deb357249d0d4b89cd51a8770",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "4 http",
+        "6 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module scenario-service:StartSubscenario"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "nswitzer/cf-omnichannel",
+      "path": "blueprint.json",
+      "sha": "2fb3bed9cc79e611ce9af57c1e4799d0c4d24c95",
+      "verdict": "eligible",
+      "modules": 4,
+      "fixtures": [
+        "2 module",
+        "4 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "nwtsrash-lgtm/mahwous-salla-pipeline",
+      "path": "make/update_quantity_blueprint.json",
+      "sha": "b5c09c54a5db64c7424abb39021660a6129e7191",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "3 module"
+      ],
+      "blockers": [
+        "ITERATOR_SCOPE_UNSUPPORTED"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "ochnios/aidevs",
+      "path": "api_tasks/assets/C05L03_google_blueprint.json",
+      "sha": "72f46d386dfb72372c5bc6f63b29f985eb71a581",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "20 module"
+      ],
+      "blockers": [
+        "module http:ActionSendDataAPIKeyAuth",
+        "module json:CreateJSON"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "olenapetrova-da/lublin-events-hub",
+      "path": "integrations/make/2025-11-20_lublin-events_one-http.blueprint_sanitized.json",
+      "sha": "367a9b055e61e1286fe2a7cd71676bcb74665eba",
+      "verdict": "unsupported",
+      "modules": 11,
+      "fixtures": [
+        "16 module",
+        "19 module",
+        "26 module",
+        "20 module",
+        "4 http",
+        "23 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "ROUTER_SHAPE_UNSUPPORTED",
+        "FILTER_SHAPE_UNSUPPORTED",
+        "module util:SetVariables",
+        "keyword now",
+        "keyword newline"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "onunosousa-lang/ai-chatbot-widget",
+      "path": "make-blueprint.json",
+      "sha": "d9005a9bfc78c10beaff79b7e7a548e58f3e1ec3",
+      "verdict": "eligible",
+      "modules": 3,
+      "fixtures": [
+        "2 module",
+        "3 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "pablofelipe01/Vos-a-datos",
+      "path": "base_vos_a_Datos.json",
+      "sha": "912933c0efa4c9c82cd569f68dee25d8a9a9ca07",
+      "verdict": "unsupported",
+      "modules": 28,
+      "fixtures": [
+        "44 module",
+        "46 module",
+        "97 module",
+        "58 module",
+        "59 module",
+        "60 module",
+        "61 module",
+        "62 module",
+        "63 module",
+        "64 module",
+        "65 module",
+        "66 module",
+        "67 module",
+        "71 module",
+        "69 module",
+        "90 module"
+      ],
+      "blockers": [
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "EXPRESSION_SYNTAX: Expected \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "pandaluvly/google-review-auto-reply",
+      "path": "make-blueprints/04_verify_replies.blueprint.json",
+      "sha": "c71b3e654b163aad155e3196a14bd14d126bb997",
+      "verdict": "unsupported",
+      "modules": 6,
+      "fixtures": [
+        "1 module",
+        "2 module",
+        "6 module",
+        "9 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "keyword now",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Resume"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "patel-y/resume-screening-automation",
+      "path": "make_com_resume_screening_workflow.blueprint.json",
+      "sha": "0472f366b2e3b2e138b65c50e7f95d5a989ab2d9",
+      "verdict": "unsupported",
+      "modules": 10,
+      "fixtures": [
+        "20 module",
+        "10 module",
+        "17 module",
+        "2 module"
+      ],
+      "blockers": [
+        "module util:SetVariables",
+        "module builtin:BasicAggregator",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module json:ParseJSON",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "peewweee/novacare",
+      "path": "novacare-make-blueprint-phase0.json",
+      "sha": "02031f99365105a12f30bae22ea30cc897aea892",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "5 module"
+      ],
+      "blockers": [
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "pidemo/make-scenarios",
+      "path": "webflow-chatgpt-blueprint.json",
+      "sha": "65e0f47b7d10df0be8f56237f5594088acda011c",
+      "verdict": "unsupported",
+      "modules": 3,
+      "fixtures": [
+        "2 module"
+      ],
+      "blockers": [
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "plusz/LLM_to_kindle",
+      "path": "blueprint_make_kindle.json",
+      "sha": "c21ef2e093981ad7183a5ff0959b8ef148514a70",
+      "verdict": "unsupported",
+      "modules": 14,
+      "fixtures": [
+        "68 module",
+        "40 module",
+        "2 module",
+        "46 module",
+        "80 module",
+        "72 module",
+        "73 module",
+        "79 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "keyword now",
+        "module regexp:Replace",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "module json:ParseJSON"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "psapir/mwd-25-agentforce-workshop",
+      "path": "make/Integration Webhooks, Google Docs.blueprint.json",
+      "sha": "f5ec785a63ec9a6b055bde87e8c49fb34d85450b",
+      "verdict": "eligible",
+      "modules": 3,
+      "fixtures": [
+        "4 module"
+      ],
+      "blockers": [],
+      "smoke": "ran (success)"
+    },
+    {
+      "repo": "rajkonkret/chat_gpt_excel_24_10_2025",
+      "path": "Integration Tools, Google Sheets, CSV, Gmail.blueprint (1).json",
+      "sha": "9108d7d8bc119d85e10cc0d668f9858102d57a4d",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "3 module",
+        "6 module",
+        "10 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:BasicTrigger",
+        "module csv:ParseCSV",
+        "module builtin:BasicAggregator"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "rajkonkret/chtgptexcel_7-11-2025",
+      "path": "Integration Google Sheets.blueprint.json",
+      "sha": "8bc0c809b26bfa3371d4d3fb7a7b0162958c425a",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "1 module",
+        "4 module",
+        "7 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:BasicTrigger",
+        "module csv:ParseCSV",
+        "module builtin:BasicAggregator",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "rawdela/og-studios-donation-automation",
+      "path": "automation/make/make-blueprint-sanitized.json",
+      "sha": "830bf95c3736bc269e4f9a418cb7505c7f61fb49",
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "3 module",
+        "4 module",
+        "6 module"
+      ],
+      "blockers": [
+        "keyword now"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "rcoco78/reality-academy-audit",
+      "path": "automatisation-make-blueprints/Calendly Esteban.blueprint.json",
+      "sha": "64048807239342dec839ba4abdca36082d99080d",
+      "verdict": "unsupported",
+      "modules": 23,
+      "fixtures": [
+        "38 module",
+        "19 module",
+        "34 module",
+        "57 module",
+        "21 module",
+        "22 module",
+        "24 module",
+        "27 module",
+        "30 module",
+        "33 module",
+        "54 module"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:SetVariables",
+        "keyword newline",
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        "keyword now",
+        "module util:FunctionSleep",
+        "module util:GetVariables"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "redlanternstudios/thelanterndaily",
+      "path": "make-blueprints/04_beehiiv_sync.json",
+      "sha": "705189dc9461aa961bfb4f448841780ce3c51195",
+      "verdict": "unsupported",
+      "modules": 2,
+      "fixtures": [
+        "2 http"
+      ],
+      "blockers": [
+        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\""
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "rehmanul/Employer-Profile-Automation",
+      "path": "COMPLETE_BLUEPRINT.json",
+      "sha": "ec1da5672cd5cc346d54e8a074050de4d61962eb",
+      "verdict": "unsupported",
+      "modules": 17,
+      "fixtures": [
+        "25 module",
+        "100 module",
+        "104 module",
+        "109 module",
+        "26 module"
+      ],
+      "blockers": [
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "module http:MakeRequest",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module builtin:BasicAggregator",
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
+      ],
+      "smoke": null
+    },
+    {
+      "repo": "rileyrichter/okforok",
+      "path": "submit-a-business.json",
+      "sha": "c68e2a360abceb61f426898fddb2f4f04758741e",
+      "verdict": "unsupported",
+      "modules": 7,
+      "fixtures": [
+        "20 module",
+        "17 http"
+      ],
+      "blockers": [
+        "a polling or app trigger instead of a Custom webhook",
+        "module util:SetVariable",
+        "EXPRESSION_SYNTAX: Expected \"…\"",
+        "module util:ComposeTransformer",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make"
+      ],
+      "smoke": null
+    }
+  ]
+}

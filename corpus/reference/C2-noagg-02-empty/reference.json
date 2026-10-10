@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "7101cab08e5d41f4b3f32d24b3800d94",
+  "recordedAt": "2026-10-10T10:48:20.186Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-noagg-02-empty",
+          "items": []
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": []
+        }
+      ],
+      "output": []
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "Accepted"
+  }
+}

@@ -1,0 +1,1390 @@
+[
+ {
+  "scenario": 7871965,
+  "run": "390bab8de6dc46f9b2108131e8509a4d",
+  "case": null,
+  "status": 1,
+  "ops": 3,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1,
+   "3": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872008,
+  "run": "d9fafb69e59d4acca4cd73322a397df4",
+  "case": "B-01-type-a-only",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 1,
+   "4": 0,
+   "5": 0
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r1-type-a"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "a7ff4ae3a09d4a868210133d843c8c1d",
+  "case": "B-02-amount-gt-only",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 1,
+   "5": 0
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r2-amount-gt-100"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "528871f787d541b4991626fc4b43003b",
+  "case": "B-03-both-match",
+  "status": 1,
+  "ops": 3,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 1,
+   "4": 1,
+   "5": 0
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    4,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r1-type-a",
+   "r2-amount-gt-100"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "6f7234241b7a45d69a736ffe86be20fe",
+  "case": "B-04-neither-fallback",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "d833322d80cb418e9e4d154ac9d03b3b",
+  "case": "B-05-type-uppercase-A",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "04d939206f7c4e07812279b34c8c0d6d",
+  "case": "B-06-amount-exactly-100",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "ada8753c394d46c2857e38ab93ee5a47",
+  "case": "B-07-amount-string-150",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 1,
+   "5": 0
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r2-amount-gt-100"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "cffa230f53d04a71957ac93490573a04",
+  "case": "B-08-amount-string-abc",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "65aded7203cd4e20b497f3fcc5da8ac2",
+  "case": "B-09-amount-null",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "28583ef6fae74729b1924186df282066",
+  "case": "B-10-missing-both",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "07fa50113e8549afa304f173e20de439",
+  "case": "B-11-type-empty-string",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "bf009951512f42b9b32febe407aa5ea8",
+  "case": "B-12-amount-decimal-100.5",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 1,
+   "5": 0
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r2-amount-gt-100"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "a129b4befdb54528aa241648dcf2d1b1",
+  "case": "B-13-amount-negative",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "3b29d0847eb9435f848dad1b8ad8fcc3",
+  "case": "B-14-amount-string-1e3",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 1,
+   "5": 0
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r2-amount-gt-100"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "0cad8d245af74e3d9f12795d08908a27",
+  "case": "B-15-type-a-with-space",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    5,
+    18,
+    []
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r3-fallback"
+  ]
+ },
+ {
+  "scenario": 7872008,
+  "run": "cf881f0216294e35810d6b8d88f0eabc",
+  "case": "B-16-type-number-1",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 1,
+   "5": 0
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    4,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0,
+  "routes_taken": [
+   "r2-amount-gt-100"
+  ]
+ },
+ {
+  "scenario": 7872022,
+  "run": "6a488790b6ef4312b9892295c2d79e6b",
+  "case": "C-01-three-all-pass",
+  "status": 1,
+  "ops": 7,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 3,
+   "3": 3,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "91c4b13b44c041d2ac12a385e209bfb5",
+  "case": "C-02-some-filtered",
+  "status": 1,
+  "ops": 6,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 4,
+   "3": 2,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "b8a7d0df16bc49728a3c3183610d5518",
+  "case": "C-03-all-filtered",
+  "status": 1,
+  "ops": 4,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 2,
+   "3": 0,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "febc090ac45a4afb9078b5ed812c8b54",
+  "case": "C-04-empty-array",
+  "status": 1,
+  "ops": 4,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "1c9e30dbc1b24b688d04e695117c1f6c",
+  "case": "C-05-missing-items",
+  "status": 1,
+  "ops": 4,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 0,
+   "3": 0,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "685ab3551e1d40fe98e93607e6798aae",
+  "case": "C-06-single-item",
+  "status": 1,
+  "ops": 5,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1,
+   "3": 1,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "d1d89dd034834ea3b837e0b8c39925f6",
+  "case": "C-07-qty-string",
+  "status": 1,
+  "ops": 5,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 2,
+   "3": 1,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "fcdc0f4a79974a1f92fd48c9a16dd332",
+  "case": "C-08-qty-decimal",
+  "status": 1,
+  "ops": 6,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 2,
+   "3": 2,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "38580c71200043cbbae16fa75c1ac888",
+  "case": "C-09-missing-name",
+  "status": 1,
+  "ops": 6,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 2,
+   "3": 2,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "ea26136c633f40a286dcd296acc0de32",
+  "case": "C-10-missing-qty",
+  "status": 1,
+  "ops": 4,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 2,
+   "3": 0,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ],
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "f04b2de5866d44688f763adfee54b3c0",
+  "case": "C-11-pipe-in-name",
+  "status": 1,
+  "ops": 6,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 2,
+   "3": 2,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "e59404029e0942f583ebff8e44e7b103",
+  "case": "C-12-unicode",
+  "status": 1,
+  "ops": 7,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 3,
+   "3": 3,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "603ce3a06f05429a925a2cb277747a24",
+  "case": "C-13-items-not-array",
+  "status": 1,
+  "ops": 4,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1,
+   "3": 0,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    14,
+    [
+     [
+      false
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "4fc7297cf8c74e30995353ec6aec1b42",
+  "case": "C-14-items-object",
+  "status": 1,
+  "ops": 5,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1,
+   "3": 1,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "334c235d81064a7aa41c45e3e0dbd130",
+  "case": "C-15-many-items",
+  "status": 1,
+  "ops": 12,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 8,
+   "3": 8,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "10c847c9c82f4ebcb59362dd4f79fc94",
+  "case": "C-16-big-number",
+  "status": 1,
+  "ops": 6,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 2,
+   "3": 2,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872022,
+  "run": "3377dda0ea504596b5fdfc1d5fcc4732",
+  "case": "C-12b-unicode-utf8",
+  "status": 1,
+  "ops": 7,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 3,
+   "3": 3,
+   "4": 1,
+   "5": 1
+  },
+  "filters": [
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ],
+   [
+    3,
+    18,
+    [
+     [
+      true
+     ]
+    ]
+   ]
+  ],
+  "errors": 0
+ },
+ {
+  "scenario": 7872039,
+  "run": "a3b45b5b35a043e08c051d482f808d1c",
+  "case": "D-01-base",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872039,
+  "run": "d9134a57a2034402bfc7afca977bde66",
+  "case": "D-02-unicode",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872039,
+  "run": "2504191db18f409a9f335c9ce1e5a166",
+  "case": "D-03-numbers-edge",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872039,
+  "run": "baf200923a654623b058d19efb84a343",
+  "case": "D-04-empties",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872039,
+  "run": "76be5fed5f5b4b7d96cc9320929953b9",
+  "case": "D-05-types-swapped",
+  "status": 3,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872039,
+  "run": "e658dd68445043bbb0dac0e96721fcbe",
+  "case": "D-05b-types-swapped-s-string",
+  "status": 3,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1
+  },
+  "filters": [],
+  "errors": 0
+ },
+ {
+  "scenario": 7872039,
+  "run": "af64b1addd46472ab49e2b9d3d045657",
+  "case": "D-06-leap-dst",
+  "status": 1,
+  "ops": 2,
+  "out_bundles_per_module": {
+   "1": 1,
+   "2": 1
+  },
+  "filters": [],
+  "errors": 0
+ }
+]

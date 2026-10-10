@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "B-13-amount-negative",
+  "blueprint": "../../blueprints/B.blueprint.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

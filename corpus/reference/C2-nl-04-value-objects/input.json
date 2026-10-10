@@ -1,0 +1,20 @@
+{
+  "case": "C2-nl-04-value-objects",
+  "items": [
+    {
+      "value": "p"
+    },
+    {
+      "value": ""
+    },
+    {
+      "other": 1
+    },
+    {
+      "value": null
+    },
+    {
+      "value": "q"
+    }
+  ]
+}

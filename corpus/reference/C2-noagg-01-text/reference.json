@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "e7c1a3845f614bfab23ae894eb715252",
+  "recordedAt": "2026-10-10T10:48:12.072Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-noagg-01-text",
+          "items": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            "a",
+            "b",
+            "c"
+          ]
+        }
+      ],
+      "output": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "a"
+        }
+      ],
+      "output": [
+        {
+          "line": "a"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "name": "second",
+          "value": "a-a"
+        }
+      ],
+      "output": [
+        {
+          "second": "a-a"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "b"
+        }
+      ],
+      "output": [
+        {
+          "line": "b"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 2,
+      "input": [
+        {
+          "name": "second",
+          "value": "b-b"
+        }
+      ],
+      "output": [
+        {
+          "second": "b-b"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": "c"
+        }
+      ],
+      "output": [
+        {
+          "line": "c"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 3,
+      "input": [
+        {
+          "name": "second",
+          "value": "c-c"
+        }
+      ],
+      "output": [
+        {
+          "second": "c-c"
+        }
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "Accepted"
+  }
+}

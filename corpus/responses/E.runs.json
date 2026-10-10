@@ -1,0 +1,64 @@
+{
+  "name": "E",
+  "scenarioId": 7872022,
+  "recordedAt": "2026-10-10T11:05:55.106Z",
+  "runs": [
+    {
+      "case": "E-json-01",
+      "blueprint": "corpus/engine-logs/live-E-json.import.json",
+      "runId": "a75d694d8bc64c2faeb59e5ea3d1a9c9",
+      "response": {
+        "status": 200,
+        "body": "[200][x]"
+      },
+      "error": null
+    },
+    {
+      "case": "E-json-02-status-201",
+      "blueprint": "corpus/engine-logs/live-E-json.import.json",
+      "runId": "f235f44e32584ba7b52aae72a061b759",
+      "response": {
+        "status": 200,
+        "body": "[201][w]"
+      },
+      "error": null
+    },
+    {
+      "case": "E-json-03-status-404",
+      "blueprint": "corpus/engine-logs/live-E-json.import.json",
+      "runId": "e5f76bc257ad4488a0bfe552d33e9b1f",
+      "response": {
+        "status": 500,
+        "body": "Scenario failed to complete."
+      },
+      "error": {
+        "name": "DataError",
+        "message": "Error: 404 Not Found",
+        "causeModule": {
+          "name": "ActionSendData",
+          "appName": "http"
+        }
+      }
+    },
+    {
+      "case": "E-text-01",
+      "blueprint": "corpus/engine-logs/live-E-text.import.json",
+      "runId": "f9589fcf6e6e4b5cb1d1b163cfe52ca8",
+      "response": {
+        "status": 200,
+        "body": "[200][{\"echo\":\"y\",\"n\":2,\"list\":[1,\"b\"]}]"
+      },
+      "error": null
+    },
+    {
+      "case": "E-get-01",
+      "blueprint": "corpus/engine-logs/live-E-get.import.json",
+      "runId": "b099a8287dbe40149f7846398b5350f1",
+      "response": {
+        "status": 200,
+        "body": "[200][z]"
+      },
+      "error": null
+    }
+  ]
+}

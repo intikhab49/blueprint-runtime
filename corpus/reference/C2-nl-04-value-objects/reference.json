@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "4ecead6f07d94aaeab65b1fd60357c42",
+  "recordedAt": "2026-10-10T10:47:01.896Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-nl-04-value-objects",
+          "items": [
+            {
+              "value": "p"
+            },
+            {
+              "value": ""
+            },
+            {
+              "other": 1
+            },
+            {
+              "value": null
+            },
+            {
+              "value": "q"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "value": "p"
+            },
+            {
+              "value": ""
+            },
+            {
+              "other": 1
+            },
+            {
+              "value": null
+            },
+            {
+              "value": "q"
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "value": "p",
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 5
+        },
+        {
+          "value": "",
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 5
+        },
+        {
+          "other": 1,
+          "__IMTINDEX__": 3,
+          "__IMTLENGTH__": 5
+        },
+        {
+          "value": null,
+          "__IMTINDEX__": 4,
+          "__IMTLENGTH__": 5
+        },
+        {
+          "value": "q",
+          "__IMTINDEX__": 5,
+          "__IMTLENGTH__": 5
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "p"
+        }
+      ],
+      "output": [
+        {
+          "line": "p"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "line": null
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "line": null
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 4,
+      "input": [
+        {
+          "name": "line",
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "line": null
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 5,
+      "input": [
+        {
+          "name": "line",
+          "value": "q"
+        }
+      ],
+      "output": [
+        {
+          "line": "q"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "p"
+        },
+        {
+          "value": null
+        },
+        {
+          "value": null
+        },
+        {
+          "value": null
+        },
+        {
+          "value": "q"
+        }
+      ],
+      "output": [
+        {
+          "text": "p\n\n\n\nq"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[p\n\n\n\nq]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[p\n\n\n\nq]"
+  }
+}

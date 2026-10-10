@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872008,
+  "runId": "04d939206f7c4e07812279b34c8c0d6d",
+  "recordedAt": "2026-10-10T00:56:20.605Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "B-06-amount-exactly-100",
+          "type": "x",
+          "amount": 100
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 4,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 5,
+      "passed": true,
+      "report": []
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "name": "route",
+          "value": "r3-fallback"
+        }
+      ],
+      "output": [
+        {
+          "route": "r3-fallback"
+        }
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "Accepted"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "case": "C-16-big-number",
+  "items": [
+    {
+      "name": "big",
+      "qty": 9007199254740992
+    },
+    {
+      "name": "exp",
+      "qty": 1e+21
+    }
+  ]
+}

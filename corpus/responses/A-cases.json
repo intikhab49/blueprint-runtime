@@ -1,0 +1,63 @@
+{
+  "scenarioId": 7871965,
+  "recordedAt": "2026-10-10T02:03:45.531Z",
+  "results": {
+    "A-002-plain": {
+      "response": {
+        "status": 200,
+        "body": "ADA LOVELACE"
+      },
+      "error": null
+    },
+    "A-003-unicode": {
+      "response": {
+        "status": 200,
+        "body": "STRASSE CAFÉ 日本 😀"
+      },
+      "error": null
+    },
+    "A-004-empty-name": {
+      "response": {
+        "status": 200,
+        "body": "Accepted"
+      },
+      "error": null,
+      "note": "run succeeded (3 operations); an empty response body reaches the caller as \"Accepted\""
+    },
+    "A-005-missing-name": {
+      "response": {
+        "status": 200,
+        "body": "Accepted"
+      },
+      "error": null
+    },
+    "A-006-null-name": {
+      "response": {
+        "status": 200,
+        "body": "Accepted"
+      },
+      "error": null
+    },
+    "A-007-number-name": {
+      "response": {
+        "status": 200,
+        "body": "123"
+      },
+      "error": null
+    },
+    "A-008-extra-fields": {
+      "response": {
+        "status": 200,
+        "body": "X"
+      },
+      "error": null
+    },
+    "A-009-array-name": {
+      "response": {
+        "status": 200,
+        "body": "A,B"
+      },
+      "error": null
+    }
+  }
+}

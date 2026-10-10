@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "92371c9388a649d7a9be74c5be8c98f1",
+  "recordedAt": "2026-10-10T10:47:43.691Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-nl-09-collection-values",
+          "items": [
+            {
+              "value": {
+                "k": 1
+              }
+            },
+            {
+              "value": [
+                1,
+                "b"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "value": {
+                "k": 1
+              }
+            },
+            {
+              "value": [
+                1,
+                "b"
+              ]
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "value": {
+            "k": 1
+          },
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 2
+        },
+        {
+          "value": [
+            1,
+            "b"
+          ],
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 2
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": {
+            "k": 1
+          }
+        }
+      ],
+      "output": [
+        {
+          "line": {
+            "k": 1
+          }
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": [
+            1,
+            "b"
+          ]
+        }
+      ],
+      "output": [
+        {
+          "line": [
+            1,
+            "b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "{\"k\":1}"
+        },
+        {
+          "value": "1, b"
+        }
+      ],
+      "output": [
+        {
+          "text": "{\"k\":1}\n1, b"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[{\"k\":1}\n1, b]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[{\"k\":1}\n1, b]"
+  }
+}

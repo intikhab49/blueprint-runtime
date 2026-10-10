@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "C2-nl-08-items-boolean",
+  "blueprint": "../../blueprints/C2-nl.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

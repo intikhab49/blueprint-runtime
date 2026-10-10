@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "C-07-qty-string",
+  "blueprint": "../../blueprints/C.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "D-02-unicode",
+  "blueprint": "../../blueprints/D.blueprint.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

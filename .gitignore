@@ -1,0 +1,18 @@
+node_modules/
+dist/
+
+# Make API token (never commit)
+.make-token
+
+# Raw engine logs contain the Make account email, org/team ids and webhook ids.
+# Scrub before committing.
+corpus/engine-logs/
+
+# Public blueprints without a license: local testing only, do not redistribute.
+corpus/public-unlicensed/
+
+# Public survey downloads (third-party files, most without a license): never commit.
+corpus/survey/cache/
+
+# Live webhook URLs of the corpus scenarios (anyone with one can trigger runs)
+.make-hooks.json

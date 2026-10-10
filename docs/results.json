@@ -1,0 +1,82 @@
+{
+  "conformance": {
+    "A": {
+      "recorded": 9,
+      "matched": 9,
+      "differ": 0,
+      "refused": 0
+    },
+    "B": {
+      "recorded": 16,
+      "matched": 16,
+      "differ": 0,
+      "refused": 0
+    },
+    "C": {
+      "recorded": 17,
+      "matched": 17,
+      "differ": 0,
+      "refused": 0
+    },
+    "C2": {
+      "recorded": 14,
+      "matched": 13,
+      "differ": 0,
+      "refused": 1
+    },
+    "D": {
+      "recorded": 7,
+      "matched": 0,
+      "differ": 0,
+      "refused": 7
+    },
+    "E": {
+      "recorded": 5,
+      "matched": 5,
+      "differ": 0,
+      "refused": 0
+    }
+  },
+  "survey": {
+    "files": 221,
+    "eligible": 18,
+    "unsupported": 182,
+    "invalid": 21,
+    "eligibleRefusedAtRuntime": 0,
+    "topBlockers": [
+      [
+        "a polling or app trigger instead of a Custom webhook",
+        83
+      ],
+      [
+        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
+        61
+      ],
+      [
+        "keyword now",
+        52
+      ],
+      [
+        "module json:ParseJSON",
+        32
+      ],
+      [
+        "ERROR_HANDLER_UNSUPPORTED",
+        31
+      ],
+      [
+        "module util:SetVariables",
+        25
+      ],
+      [
+        "MODULE_CONFIG_UNSUPPORTED: \"\u2026\" switched off has not been observed in Make",
+        24
+      ],
+      [
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        22
+      ]
+    ],
+    "surveyedAt": "2026-10-10"
+  }
+}

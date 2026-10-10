@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "module": 2,
+      "occurrence": 1,
+      "mode": "http",
+      "request": {
+        "method": "POST",
+        "url": "https://echo.example.test/hook",
+        "contentType": "application/json",
+        "body": "{\"name\":\"w\",\"status\":201}"
+      },
+      "response": {
+        "status": 201,
+        "headers": [
+          [
+            "date",
+            "Sat, 10 Oct 2026 11:04:55 GMT"
+          ],
+          [
+            "content-type",
+            "application/json; charset=utf-8"
+          ],
+          [
+            "content-length",
+            "33"
+          ],
+          [
+            "connection",
+            "keep-alive"
+          ],
+          [
+            "server",
+            "cloudflare"
+          ],
+          [
+            "x-powered-by",
+            "Make Gateway/production"
+          ],
+          [
+            "access-control-allow-origin",
+            "*"
+          ],
+          [
+            "x-make-scenario-execution-id",
+            "<execution-id>"
+          ],
+          [
+            "make-actual-status",
+            "200"
+          ],
+          [
+            "strict-transport-security",
+            "max-age=31536000; includeSubDomains"
+          ],
+          [
+            "cf-cache-status",
+            "DYNAMIC"
+          ],
+          [
+            "set-cookie",
+            "__cf_bm=<redacted>; HttpOnly; SameSite=None; Secure; Path=/; Domain=eu1.make.com; Expires=Sat, 10 Oct 2026 11:34:55 GMT"
+          ],
+          [
+            "cf-ray",
+            "a48525a44c79be01-DUB"
+          ]
+        ],
+        "body": "{\"echo\":\"w\",\"n\":2,\"list\":[1,\"b\"]}"
+      }
+    }
+  ]
+}

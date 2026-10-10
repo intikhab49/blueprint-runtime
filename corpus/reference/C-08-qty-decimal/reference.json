@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "fcdc0f4a79974a1f92fd48c9a16dd332",
+  "recordedAt": "2026-10-10T01:01:14.249Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-08-qty-decimal",
+          "items": [
+            {
+              "name": "d",
+              "qty": 1.5
+            },
+            {
+              "name": "e",
+              "qty": 0.1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "d",
+              "qty": 1.5
+            },
+            {
+              "name": "e",
+              "qty": 0.1
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "d",
+          "qty": 1.5,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 2
+        },
+        {
+          "name": "e",
+          "qty": 0.1,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 2
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "d:3"
+        }
+      ],
+      "output": [
+        {
+          "line": "d:3"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "e:0.2"
+        }
+      ],
+      "output": [
+        {
+          "line": "e:0.2"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "d:3"
+        },
+        {
+          "value": "e:0.2"
+        }
+      ],
+      "output": [
+        {
+          "text": "d:3|e:0.2"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[d:3|e:0.2]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[d:3|e:0.2]"
+  }
+}

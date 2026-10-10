@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340"
+     viewBox="0 0 1200 340" role="img"
+     aria-label="blueprint-runtime: run and test Make scenario blueprints offline.
+     60 of 68 real Make runs reproduced exactly, 0 differ.">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFB020"/>
+      <stop offset="55%" stop-color="#FF6B4A"/>
+      <stop offset="100%" stop-color="#FF4E88"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF6B4A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0A0A14" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0 L0 0 0 28" fill="none" stroke="#FFFFFF" stroke-opacity="0.04"
+            stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="340" fill="#0A0A14"/>
+  <rect width="1200" height="340" fill="url(#grid)"/>
+  <circle cx="1040" cy="70" r="240" fill="url(#fade)"/>
+
+  <text x="64" y="86" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+        font-size="13" letter-spacing="3.5" fill="#A3E635">MAKE BLUEPRINTS
+        &#183; OFFLINE TEST RUNNER</text>
+
+  <text x="60" y="164" font-family="Georgia,'Times New Roman',serif"
+        font-size="64" font-weight="700" fill="url(#grad)">blueprint-runtime</text>
+
+  <text x="64" y="204" font-family="-apple-system,Segoe UI,Helvetica,sans-serif"
+        font-size="19" fill="#E8E8F0">Run and test Make scenarios on your machine.</text>
+  <text x="64" y="232" font-family="-apple-system,Segoe UI,Helvetica,sans-serif"
+        font-size="19" fill="#8B8BA7">Every behavior checked against a real Make run.
+        No guesses.</text>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12">
+    <rect x="64" y="262" width="160" height="28" rx="14" fill="none"
+          stroke="#FFB020" stroke-opacity="0.55"/>
+    <text x="144" y="281" fill="#FFB020" text-anchor="middle">60/68 RUNS MATCH</text>
+
+    <rect x="236" y="262" width="96" height="28" rx="14" fill="none"
+          stroke="#A3E635" stroke-opacity="0.55"/>
+    <text x="284" y="281" fill="#A3E635" text-anchor="middle">0 DIFFER</text>
+
+    <rect x="344" y="262" width="120" height="28" rx="14" fill="none"
+          stroke="#5B9BFF" stroke-opacity="0.55"/>
+    <text x="404" y="281" fill="#5B9BFF" text-anchor="middle">NO NETWORK</text>
+
+    <rect x="476" y="262" width="128" height="28" rx="14" fill="none"
+          stroke="#FF4E88" stroke-opacity="0.55"/>
+    <text x="540" y="281" fill="#FF4E88" text-anchor="middle">0 RUNTIME DEPS</text>
+  </g>
+
+  <text x="800" y="74" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
+        font-size="11" letter-spacing="2" fill="#8B8BA7">REAL MAKE RUNS REPRODUCED</text>
+  <g>
+    <rect x="800" y="92.0" width="105.9" height="25.2" rx="3" fill="url(#grad)"/>
+    <text x="915.9" y="108.6" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">9/9  A straight line</text>
+    <rect x="800" y="126.2" width="188.2" height="25.2" rx="3" fill="url(#grad)"/>
+    <text x="998.2" y="142.8" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">16/16  B router</text>
+    <rect x="800" y="160.3" width="200.0" height="25.2" rx="3" fill="url(#grad)"/>
+    <text x="1010.0" y="176.9" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">17/17  C iterator</text>
+    <rect x="800" y="194.5" width="152.9" height="25.2" rx="3" fill="url(#grad)"/>
+    <rect x="952.9" y="194.5" width="11.8" height="25.2" rx="3" fill="#8B8BA7" opacity="0.35"/>
+    <text x="974.7" y="211.1" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#8B8BA7" font-weight="400">13/14  C2 probes</text>
+    <rect x="800" y="228.7" width="58.8" height="25.2" rx="3" fill="url(#grad)"/>
+    <text x="868.8" y="245.3" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">5/5  E HTTP</text>
+    <rect x="800.0" y="262.8" width="82.4" height="25.2" rx="3" fill="#8B8BA7" opacity="0.35"/>
+    <text x="892.4" y="279.4" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#8B8BA7" font-weight="400">0/7  D formulas</text>
+  </g>
+</svg>

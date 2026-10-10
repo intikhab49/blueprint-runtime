@@ -1,0 +1,13 @@
+{
+  "case": "C-08-qty-decimal",
+  "items": [
+    {
+      "name": "d",
+      "qty": 1.5
+    },
+    {
+      "name": "e",
+      "qty": 0.1
+    }
+  ]
+}

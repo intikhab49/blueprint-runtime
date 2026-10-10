@@ -1,0 +1,17 @@
+{
+  "case": "C2-after-01",
+  "items": [
+    {
+      "name": "a",
+      "qty": 1
+    },
+    {
+      "name": "b",
+      "qty": 2
+    },
+    {
+      "name": "c",
+      "qty": 0
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "case": "C-06-single-item",
+  "items": [
+    {
+      "name": "solo",
+      "qty": 7
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "91c4b13b44c041d2ac12a385e209bfb5",
+  "recordedAt": "2026-10-10T01:01:09.506Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-02-some-filtered",
+          "items": [
+            {
+              "name": "a",
+              "qty": 0
+            },
+            {
+              "name": "b",
+              "qty": 5
+            },
+            {
+              "name": "c",
+              "qty": -1
+            },
+            {
+              "name": "d",
+              "qty": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "a",
+              "qty": 0
+            },
+            {
+              "name": "b",
+              "qty": 5
+            },
+            {
+              "name": "c",
+              "qty": -1
+            },
+            {
+              "name": "d",
+              "qty": 2
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "a",
+          "qty": 0,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 4
+        },
+        {
+          "name": "b",
+          "qty": 5,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 4
+        },
+        {
+          "name": "c",
+          "qty": -1,
+          "__IMTINDEX__": 3,
+          "__IMTLENGTH__": 4
+        },
+        {
+          "name": "d",
+          "qty": 2,
+          "__IMTINDEX__": 4,
+          "__IMTLENGTH__": 4
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "b:10"
+        }
+      ],
+      "output": [
+        {
+          "line": "b:10"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": false,
+      "report": [
+        [
+          false
+        ]
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "d:4"
+        }
+      ],
+      "output": [
+        {
+          "line": "d:4"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "b:10"
+        },
+        {
+          "value": "d:4"
+        }
+      ],
+      "output": [
+        {
+          "text": "b:10|d:4"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[b:10|d:4]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[b:10|d:4]"
+  }
+}

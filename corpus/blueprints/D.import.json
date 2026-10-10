@@ -1,0 +1,57 @@
+{
+  "name": "bpr Scenario D (function probe)",
+  "flow": [
+    {
+      "id": 1,
+      "module": "gateway:CustomWebHook",
+      "version": 1,
+      "parameters": {
+        "maxResults": 1
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "gateway:WebhookRespond",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "body": "upper=<<{{upper(1.s)}}>>\nlower=<<{{lower(1.s)}}>>\ncapitalize=<<{{capitalize(1.s)}}>>\nstartcase=<<{{startcase(1.s)}}>>\nlength_s=<<{{length(1.s)}}>>\ntrim=<<{{trim(1.pad)}}>>\nsubstring=<<{{substring(1.s; 1; 4)}}>>\nindexOf_bare=<<{{indexOf(1.s; o)}}>>\nindexOf_q=<<{{indexOf(1.s; \"o\")}}>>\nreplace_bare=<<{{replace(1.s; o; 0)}}>>\nreplace_q=<<{{replace(1.s; \"o\"; \"0\")}}>>\nreplace_regex=<<{{replace(1.s; /o/g; \"0\")}}>>\ncontains_s=<<{{contains(1.s; \"ell\")}}>>\nsplit=<<{{join(split(1.s; \" \"); \"|\")}}>>\nsplit_len=<<{{length(split(1.s; \" \"))}}>>\ntoString_n=<<{{toString(1.n)}}>>\nencodeURL=<<{{encodeURL(1.s)}}>>\ndecodeURL=<<{{decodeURL(encodeURL(1.s))}}>>\nescapeHTML=<<{{escapeHTML(1.html)}}>>\nstripHTML=<<{{stripHTML(1.html)}}>>\nbase64=<<{{base64(1.s)}}>>\nmd5=<<{{md5(1.s)}}>>\nsha1=<<{{sha1(1.s)}}>>\nsha256=<<{{sha256(1.s)}}>>\nascii=<<{{ascii(1.s)}}>>\nescapeMarkdown=<<{{escapeMarkdown(1.s)}}>>\ntoBinary_hex=<<{{toString(toBinary(1.s); \"hex\")}}>>\nplus=<<{{1.n + 1}}>>\nconcat_plus=<<{{1.s + 1}}>>\nminus=<<{{1.n - 0.5}}>>\ntimes=<<{{1.n * 3}}>>\ndiv=<<{{1.n / 3}}>>\ndiv0=<<{{1.n / 0}}>>\nmod=<<{{1.n % 3}}>>\nsn_plus=<<{{1.sn + 1}}>>\nsn_times=<<{{1.sn * 1}}>>\nround=<<{{round(1.f)}}>>\nround_neg=<<{{round(-2.5)}}>>\nround_half=<<{{round(2.5)}}>>\nceil=<<{{ceil(1.f)}}>>\nfloor=<<{{floor(1.f)}}>>\nmax=<<{{max(1.n; 7; 3)}}>>\nmin=<<{{min(1.n; 7; 3)}}>>\nsum=<<{{sum(1.nums)}}>>\naverage=<<{{average(1.nums)}}>>\nmax_arr=<<{{max(1.nums)}}>>\nparseNumber=<<{{parseNumber(1.eu; \",\")}}>>\nformatNumber=<<{{formatNumber(1.f; 2; \",\"; \".\")}}>>\nfloat_add=<<{{0.1 + 0.2}}>>\neq=<<{{1.n = 42}}>>\neq_str=<<{{1.sn = 42}}>>\nneq=<<{{1.n != 42}}>>\ngt=<<{{1.n > 9}}>>\ngt_str=<<{{1.sn > 9}}>>\nand=<<{{1.b & true}}>>\nor=<<{{false | 1.b}}>>\nif_true=<<{{if(1.b; \"yes\"; \"no\")}}>>\nif_empty_str=<<{{if(1.empty; \"yes\"; \"no\")}}>>\nif_zero=<<{{if(0; \"yes\"; \"no\")}}>>\nifempty_empty=<<{{ifempty(1.empty; \"fallback\")}}>>\nifempty_null=<<{{ifempty(1.nul; \"fallback\")}}>>\nifempty_missing=<<{{ifempty(1.nope; \"fallback\")}}>>\nswitch=<<{{switch(1.s; \"hello world\"; \"matched\"; \"other\")}}>>\narr_join=<<{{join(1.arr; \"-\")}}>>\narr_len=<<{{length(1.arr)}}>>\narr_first=<<{{first(1.arr)}}>>\narr_last=<<{{last(1.arr)}}>>\narr_reverse=<<{{join(reverse(1.arr); \",\")}}>>\narr_sort=<<{{join(sort(1.arr); \",\")}}>>\narr_sort_desc=<<{{join(sort(1.arr; \"desc\"); \",\")}}>>\narr_slice=<<{{join(slice(1.arr; 1; 3); \",\")}}>>\narr_contains=<<{{contains(1.arr; \"b\")}}>>\narr_dedupe=<<{{join(deduplicate(1.dup); \",\")}}>>\narr_add=<<{{join(add(1.arr; \"z\"); \",\")}}>>\narr_remove=<<{{join(remove(1.arr; \"b\"); \",\")}}>>\narr_index=<<{{1.arr[2]}}>>\narr_merge=<<{{join(merge(1.arr; 1.dup); \",\")}}>>\narr_flatten=<<{{join(flatten(1.nested); \",\")}}>>\narr_raw=<<{{1.arr}}>>\nnums_raw=<<{{1.nums}}>>\nmap=<<{{join(map(1.people; \"name\"); \",\")}}>>\nmap_filter=<<{{join(map(1.people; \"name\"; \"age\"; 30); \",\")}}>>\nkeys=<<{{join(keys(1.obj); \",\")}}>>\nget=<<{{get(1.obj; \"k1\")}}>>\nget_path=<<{{get(1.people; \"1.name\")}}>>\nobj_raw=<<{{1.obj}}>>\ntoArray=<<{{length(toArray(1.obj))}}>>\nnull_raw=<<{{1.nul}}>>\nmissing_raw=<<{{1.nope}}>>\nbool_raw=<<{{1.b}}>>\nparseDate=<<{{parseDate(1.d; \"YYYY-MM-DD\")}}>>\nformatDate=<<{{formatDate(1.iso; \"DD.MM.YYYY HH:mm\")}}>>\nformatDate_tz=<<{{formatDate(1.iso; \"YYYY-MM-DD HH:mm Z\"; \"UTC\")}}>>\naddDays=<<{{addDays(1.iso; 1)}}>>\naddMonths_eom=<<{{formatDate(addMonths(1.eom; 1); \"YYYY-MM-DD\")}}>>\naddHours=<<{{addHours(1.iso; -5)}}>>\nsetDay=<<{{formatDate(setDay(1.iso; \"monday\"); \"YYYY-MM-DD\")}}>>\ndate_raw=<<{{1.iso}}>>\ndate_cmp=<<{{1.iso > 1.d}}>>\nformatDate_X=<<{{formatDate(1.iso; \"X\")}}>>\nliteral_quoted=<<{{\"quoted\"}}>>\nempty_call=<<{{length(1.empty)}}>>\nnested=<<{{upper(substring(trim(1.pad); 0; 3))}}>>\npick=<<{{join(keys(pick(1.obj; \"k1\")); \",\")}}>>\nomit=<<{{join(keys(omit(1.obj; \"k1\")); \",\")}}>>\nemptystring_kw=<<{{length(emptystring)}}>>\nspace_kw=<<{{length(space)}}>>",
+        "status": "200",
+        "headers": []
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": false,
+      "slots": null,
+      "confidential": false,
+      "dataloss": false,
+      "dlq": false,
+      "freshVariables": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "eu1.make.com"
+  }
+}

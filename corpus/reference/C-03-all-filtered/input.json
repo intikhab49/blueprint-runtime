@@ -1,0 +1,13 @@
+{
+  "case": "C-03-all-filtered",
+  "items": [
+    {
+      "name": "a",
+      "qty": 0
+    },
+    {
+      "name": "b",
+      "qty": -2
+    }
+  ]
+}

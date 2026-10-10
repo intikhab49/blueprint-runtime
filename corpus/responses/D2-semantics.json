@@ -1,0 +1,334 @@
+{
+  "name": "D2-semantics",
+  "recordedAt": "2026-10-10T01:54:24.914Z",
+  "timezone": "Asia/Karachi",
+  "payload": {
+    "case": "D2-01",
+    "s": "hello world",
+    "n": 42,
+    "sn": "42",
+    "b": true,
+    "nul": null,
+    "arr": [
+      "c",
+      "a",
+      "b"
+    ],
+    "nested": [
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        [
+          4
+        ]
+      ]
+    ],
+    "nums": [
+      1,
+      2,
+      3,
+      10
+    ],
+    "people": [
+      {
+        "name": "Ann",
+        "age": 30
+      },
+      {
+        "name": "Bob",
+        "age": 25
+      }
+    ],
+    "obj": {
+      "k1": "v1"
+    },
+    "fa": 0.1,
+    "fb": 0.2,
+    "fl": [
+      0.1,
+      0.2
+    ],
+    "emptyarr": [],
+    "emptyobj": {},
+    "zero": 0,
+    "sfalse": "false",
+    "notarr": "notarray"
+  },
+  "answers": {
+    "f_add1": {
+      "expr": "0.1 + 0.7",
+      "value": "0.8"
+    },
+    "f_sub1": {
+      "expr": "0.3 - 0.1",
+      "value": "0.2"
+    },
+    "f_add2": {
+      "expr": "1.1 + 2.2",
+      "value": "3.3"
+    },
+    "f_mul1": {
+      "expr": "0.1 * 3",
+      "value": "0.3"
+    },
+    "f_mul2": {
+      "expr": "1.005 * 1000",
+      "value": "1005"
+    },
+    "f_sub2": {
+      "expr": "100.1 - 100",
+      "value": "0.1"
+    },
+    "f_fields": {
+      "expr": "1.fa + 1.fb",
+      "value": "0.3"
+    },
+    "f_sum": {
+      "expr": "sum(1.fl)",
+      "value": "0.30000000000000004"
+    },
+    "f_add3": {
+      "expr": "42 + 0.1",
+      "value": "42.1"
+    },
+    "f_div1": {
+      "expr": "1 / 3",
+      "value": "0.3333333333333333"
+    },
+    "f_add4": {
+      "expr": "0.1 + 0.2",
+      "value": "0.3"
+    },
+    "f_round": {
+      "expr": "round(0.1 + 0.2)",
+      "value": "0"
+    },
+    "p_add_mul": {
+      "expr": "1 + 2 * 3",
+      "value": "7"
+    },
+    "p_mul_add": {
+      "expr": "2 * 3 + 4",
+      "value": "10"
+    },
+    "p_sub_sub": {
+      "expr": "10 - 4 - 3",
+      "value": "3"
+    },
+    "p_div_div": {
+      "expr": "8 / 4 / 2",
+      "value": "1"
+    },
+    "p_sub_add": {
+      "expr": "1 - 2 + 3",
+      "value": "2"
+    },
+    "p_mul_mod": {
+      "expr": "2 * 3 % 4",
+      "value": "2"
+    },
+    "p_or_and": {
+      "expr": "true | false & false",
+      "value": "true"
+    },
+    "p_add_eq": {
+      "expr": "1 + 2 = 3",
+      "value": "true"
+    },
+    "p_lt_eq": {
+      "expr": "1 < 2 = true",
+      "value": "true"
+    },
+    "p_paren": {
+      "expr": "(1 + 2) * 3",
+      "value": "9"
+    },
+    "t_sfalse": {
+      "expr": "if(1.sfalse; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "t_text": {
+      "expr": "if(\"abc\"; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "t_szero": {
+      "expr": "if(\"0\"; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "t_null": {
+      "expr": "if(1.nul; \"T\"; \"F\")",
+      "value": "F"
+    },
+    "t_missing": {
+      "expr": "if(1.nope; \"T\"; \"F\")",
+      "value": "F"
+    },
+    "t_arr": {
+      "expr": "if(1.arr; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "t_emptyarr": {
+      "expr": "if(1.emptyarr; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "t_obj": {
+      "expr": "if(1.obj; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "t_emptyobj": {
+      "expr": "if(1.emptyobj; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "t_neg": {
+      "expr": "if(-1; \"T\"; \"F\")",
+      "value": "T"
+    },
+    "fl_len": {
+      "expr": "length(flatten(1.nested))",
+      "value": "4"
+    },
+    "j_nested": {
+      "expr": "join(1.nested; \"|\")",
+      "value": "1|2|3|4"
+    },
+    "people_raw": {
+      "expr": "1.people",
+      "value": "{\"name\":\"Ann\",\"age\":30}, {\"name\":\"Bob\",\"age\":25}"
+    },
+    "nested_raw": {
+      "expr": "1.nested",
+      "value": "1, 2, 3, 4"
+    },
+    "r_q1": {
+      "expr": "replace(1.s; \"/o/g\"; \"0\")",
+      "value": "hell0 w0rld"
+    },
+    "r_q2": {
+      "expr": "replace(1.s; \"/O/gi\"; \"0\")",
+      "value": "hello world"
+    },
+    "r_q3": {
+      "expr": "replace(1.s; \"/l+/\"; \"L\")",
+      "value": "heLo world"
+    },
+    "r_q4": {
+      "expr": "replace(1.s; \"/o/\"; \"0\")",
+      "value": "hell0 world"
+    },
+    "m_upper": {
+      "expr": "upper(1.nope)",
+      "value": ""
+    },
+    "m_length": {
+      "expr": "length(1.nope)",
+      "value": "0"
+    },
+    "m_lower_null": {
+      "expr": "lower(1.nul)",
+      "value": ""
+    },
+    "m_trim": {
+      "expr": "trim(1.nope)",
+      "value": ""
+    },
+    "m_join": {
+      "expr": "join(1.nope; \",\")",
+      "value": ""
+    },
+    "m_len_null": {
+      "expr": "length(1.nul)",
+      "value": "0"
+    },
+    "e_null_missing": {
+      "expr": "1.nul = 1.nope",
+      "value": "true"
+    },
+    "e_bool_text": {
+      "expr": "1.b = \"true\"",
+      "value": "false"
+    },
+    "e_num_text_dec": {
+      "expr": "1.n = \"42.0\"",
+      "value": "true"
+    },
+    "e_case": {
+      "expr": "\"a\" = \"A\"",
+      "value": "false"
+    },
+    "e_missing_empty": {
+      "expr": "1.nope = \"\"",
+      "value": "false"
+    },
+    "e_null_empty": {
+      "expr": "1.nul = \"\"",
+      "value": "false"
+    },
+    "e_zero_false": {
+      "expr": "1.zero = false",
+      "value": "true"
+    },
+    "s_nums": {
+      "expr": "join(sort(1.nums); \",\")",
+      "value": "1,2,3,10"
+    },
+    "s_nums_desc": {
+      "expr": "join(sort(1.nums; \"desc\"); \",\")",
+      "value": "10,3,2,1"
+    },
+    "ie_emptyarr": {
+      "expr": "ifempty(1.emptyarr; \"fb\")",
+      "value": ""
+    },
+    "ie_emptyobj": {
+      "expr": "ifempty(1.emptyobj; \"fb\")",
+      "value": "{}"
+    },
+    "ie_zero": {
+      "expr": "ifempty(1.zero; \"fb\")",
+      "value": "0"
+    },
+    "ie_false": {
+      "expr": "ifempty(false; \"fb\")",
+      "value": "false"
+    },
+    "o_missing_plus": {
+      "expr": "1.nope + 1",
+      "value": "1"
+    },
+    "o_bool_plus": {
+      "expr": "true + 1",
+      "value": "true1"
+    },
+    "o_text_times": {
+      "expr": "\"abc\" * 2",
+      "value": "NaN"
+    },
+    "o_missing_times": {
+      "expr": "1.nope * 2",
+      "value": "0"
+    },
+    "o_null_plus": {
+      "expr": "1.nul + 1",
+      "value": "1"
+    },
+    "o_arr_plus": {
+      "expr": "1.arr + 1",
+      "value": "c, a, b1"
+    },
+    "lazy_if": {
+      "expr": "if(true; \"picked\"; first(1.notarr))",
+      "value": "picked"
+    },
+    "esc_quote": {
+      "expr": "\"a\\\"b\"",
+      "error": {
+        "name": "BlueprintValidationError",
+        "message": "Cannot initialize the scenario because of the reason 'Scenario validation failed - 1 problem(s) found.'"
+      }
+    }
+  },
+  "missing": []
+}

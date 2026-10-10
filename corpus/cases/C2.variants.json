@@ -1,0 +1,159 @@
+{
+  "name": "C2",
+  "scenarioId": 7872022,
+  "hook": "C",
+  "restore": "corpus/engine-logs/C.live.blueprint.json",
+  "variants": [
+    {
+      "blueprint": "corpus/engine-logs/live-C2-nl.import.json",
+      "payloads": [
+        {
+          "case": "C2-nl-01-text",
+          "items": [
+            "x",
+            "y",
+            "z"
+          ]
+        },
+        {
+          "case": "C2-nl-02-numbers",
+          "items": [
+            1,
+            2.5,
+            0,
+            -3
+          ]
+        },
+        {
+          "case": "C2-nl-03-mixed",
+          "items": [
+            "a",
+            {
+              "value": "obj"
+            },
+            3,
+            true,
+            null,
+            false
+          ]
+        },
+        {
+          "case": "C2-nl-04-value-objects",
+          "items": [
+            {
+              "value": "p"
+            },
+            {
+              "value": ""
+            },
+            {
+              "other": 1
+            },
+            {
+              "value": null
+            },
+            {
+              "value": "q"
+            }
+          ]
+        },
+        {
+          "case": "C2-nl-05-nested",
+          "items": [
+            [
+              1,
+              2
+            ],
+            [
+              "a"
+            ],
+            []
+          ]
+        },
+        {
+          "case": "C2-nl-06-items-empty-text",
+          "items": ""
+        },
+        {
+          "case": "C2-nl-07-items-number",
+          "items": 7
+        },
+        {
+          "case": "C2-nl-08-items-boolean",
+          "items": true
+        },
+        {
+          "case": "C2-nl-09-collection-values",
+          "items": [
+            {
+              "value": {
+                "k": 1
+              }
+            },
+            {
+              "value": [
+                1,
+                "b"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/engine-logs/live-C2-tab.import.json",
+      "payloads": [
+        {
+          "case": "C2-tab-01-text",
+          "items": [
+            "x",
+            "y"
+          ]
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/engine-logs/live-C2-noagg.import.json",
+      "payloads": [
+        {
+          "case": "C2-noagg-01-text",
+          "items": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        {
+          "case": "C2-noagg-02-empty",
+          "items": []
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/engine-logs/live-C2-after.import.json",
+      "payloads": [
+        {
+          "case": "C2-after-01",
+          "items": [
+            {
+              "name": "a",
+              "qty": 1
+            },
+            {
+              "name": "b",
+              "qty": 2
+            },
+            {
+              "name": "c",
+              "qty": 0
+            }
+          ]
+        },
+        {
+          "case": "C2-after-02-empty",
+          "items": []
+        }
+      ]
+    }
+  ]
+}

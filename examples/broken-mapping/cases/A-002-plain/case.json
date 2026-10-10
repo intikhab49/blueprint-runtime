@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "A-002-plain",
+  "blueprint": "../../scenario.blueprint.json",
+  "input": "../../../../corpus/reference/A-002-plain/input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "../../../../corpus/reference/A-002-plain/reference.json"
+}

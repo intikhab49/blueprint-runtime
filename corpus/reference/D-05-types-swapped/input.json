@@ -1,0 +1,56 @@
+{
+  "case": "D-05-types-swapped",
+  "s": 123,
+  "n": "notanumber",
+  "sn": "42",
+  "f": 3.7,
+  "eu": "1.234,56",
+  "html": "<b>Hi</b> & <i>you</i>",
+  "b": "false",
+  "empty": "",
+  "nul": null,
+  "arr": "notarray",
+  "dup": [
+    "x",
+    "y",
+    "x",
+    1,
+    "1"
+  ],
+  "nested": [
+    [
+      1,
+      2
+    ],
+    [
+      3,
+      [
+        4
+      ]
+    ]
+  ],
+  "nums": [
+    1,
+    2,
+    3,
+    10
+  ],
+  "people": [
+    {
+      "name": "Ann",
+      "age": 30
+    },
+    {
+      "name": "Bob",
+      "age": 25
+    }
+  ],
+  "obj": {
+    "k1": "v1",
+    "k2": 2
+  },
+  "d": "31/01/2026",
+  "iso": "garbage",
+  "eom": "2026-01-31T00:00:00.000Z",
+  "pad": "  abcdef  "
+}

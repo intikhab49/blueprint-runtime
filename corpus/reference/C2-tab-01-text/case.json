@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "C2-tab-01-text",
+  "blueprint": "../../blueprints/C2-tab.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

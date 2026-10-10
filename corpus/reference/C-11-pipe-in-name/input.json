@@ -1,0 +1,13 @@
+{
+  "case": "C-11-pipe-in-name",
+  "items": [
+    {
+      "name": "a|b",
+      "qty": 1
+    },
+    {
+      "name": "c",
+      "qty": 1
+    }
+  ]
+}

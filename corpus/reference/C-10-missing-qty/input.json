@@ -1,0 +1,12 @@
+{
+  "case": "C-10-missing-qty",
+  "items": [
+    {
+      "name": "noq"
+    },
+    {
+      "name": "nullq",
+      "qty": null
+    }
+  ]
+}

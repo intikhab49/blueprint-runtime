@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "7e2aa2c99b29499a90b997bd244414a3",
+  "recordedAt": "2026-10-10T10:47:10.190Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C2-nl-05-nested",
+          "items": [
+            [
+              1,
+              2
+            ],
+            [
+              "a"
+            ],
+            []
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            [
+              1,
+              2
+            ],
+            [
+              "a"
+            ],
+            []
+          ]
+        }
+      ],
+      "output": [
+        [
+          1,
+          2
+        ],
+        [
+          "a"
+        ],
+        []
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "line": null
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "line": null
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "line": null
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": null
+        },
+        {
+          "value": null
+        },
+        {
+          "value": null
+        }
+      ],
+      "output": [
+        {
+          "text": "\n\n"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[\n\n]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[\n\n]"
+  }
+}

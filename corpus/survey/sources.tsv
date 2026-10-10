@@ -1,0 +1,222 @@
+# repo	path	blob sha (one Make blueprint per repository; how they were picked: corpus/survey/README.md)
+011matthias/agentic-ops1.01	platform/public/clients/soren-b2b-marketing-automation/b2b-lead-pipeline-blueprint.json	3f72e4dbfed69afc27039f5312071bb4d61dbc84
+22046446Ethan/FYP	whatsappChatbot/blueprint.json	94ff46ae8f83c57b4eed69973759de065a6e5014
+2ChatCo/Tutorials	openai/2Chat-OpenAi-Assistant-blueprint.json	149e660b788c207460ffa272a4812a1564460fad
+AIEINC/liquidity_agentic_terraforming_io	agents/functions/Findflights.json	fbc5c4d72739f582685c53b350a1badc79445b5b
+Abdifatah-Adam/Email-AI-Agent-Automation	workflow.json.json	25813c9c0c9ddc23e5fbc44c20feecd5c2a5a8f9
+AbuAli85/Contract-Management-System	docs/MAKECOM_SIMPLE_CONTRACT_FLOW_WITH_LOCATIONS.json	5903998355cb7115493de5cca826d9fe94e3b678
+AbuAli85/expo-oman	handle-expo-responses-improved.json	883beb677b19d67b294b47f6a1ed613ab978c972
+AceCoolGuyDev/caredevi-hackathon-2026-homebound	workflow/Integration Webhooks, Supabase.blueprint.json	2b4659c989e9b8462fa480d6e1b4578f81fe7fc9
+Activi-AI/Lead-aIi-Hoiusefinder--merge	docs/merged_local_docs/make-lead-ai-blueprint.json	fc209f466f5812be4574500fbc7ad5343704ee9a
+AlfonsoSBLA/esic-skills-pack	skills/vendor/make-official/skills/make-module-configuring/examples/ai-agent-full-blueprint.json	c5708edc54c8e8aaebf9b8227c6c485be9a4deda
+AllianceStrategicHoldings/coin-appraisal-register	make/deal-submit.v2.blueprint.json	a24d5c311860b3e36a34e4f005c6d10722615196
+Aman-Gautam67/Flow-Intel	qa-fixtures/make-per013-1-fail.json	0d1caa8290711301b32351d9e4ec7cf6df66f6ae
+AmericaC-dev/Class	AlertaTemperatura/Codigo/AlertaTemperatura.blueprint.json	3eb70f08d05bbad6f7a2dff080891693b7f884ee
+AmpllifAI-dev/upsurgeiq-frontend	SocialMediaPosting.blueprint.json	b2ac2286e21c57dc7fe84bea4aa483aa0caa488f
+Amrutha154/AI_workflow_automation	Integration Webhooks.blueprint.json	367952fbc3c94a12499cc4124e604c970c1e62ee
+Antonimusj/crm-lead-routing-automation	make_scenario_blueprint.json	047e8888125db27a4ddb6ad0df3b41a7086901ed
+AsafDafna/make-monday-migrator	tests/fixtures/nested-routes/before.json	36c825c8a1c82a28b2905b46b03b10854ff64166
+AuthiChain2026/AuthiChain	make-scenarios/contracts-scenario.json	eac781fb46260dafdd5580ba17d77e9cd97b2988
+Avinash940080/automation-learning-journey	Day-6/workflow.json/scenario.json	ec5b5939f4b622dab1103ab45b6f90fafc98a26f
+BerkshireCar/SpeederBot	SpeederBot - Tweet Speed - Quiet & Busy Roads (Proximity:Imperial).json	fa2105c1803181c71075fe5683a5f5ab47c5ddf1
+Bilal-Naeem12/AI-Powered-Skin-Care-Ecommerce	Frontend/src/component/chatbot/blueprint_chatbot_gemini_refined.json	0f0b256ade1ecd074ca27bd32e12af61741841b3
+Blindas31/GRUPO5-2024-PROYINF	ManejoAPI-H4.json	7cfe354d5f9617a338c584db56212708f7b01f3e
+BusyBee3333/ig-wholesale-automation	make-scenarios/01-new-reply-processor.json	633d7672a758b121bd9333d89502c049ee5472cc
+CallumBoase/public-knack-snippets	your-make-webhook-trigger-is-insecure/Make Blueprint - Validated webhook trigger with Knack - starter.json	1b532d8d931ed6f459f6d212747a937fc7d30768
+CamelCod/agentcraft	clinic-bot/blueprints/scenario-1-inbound.json	8730cb2d1670a54f85f9f7388ce7c650a54c83e5
+CanAISolutions/canai-build	backend/webhooks/make_scenarios/SAAP Update Project Blueprint.json	eae98fe714c9aa88ece2a3152548e178009368e1
+CanAISolutions/canai-cursor-codex-v6.1.4	infra/make/scenarios/add_client.json	3d2b721797094de36b0e52828b407d25ac136eab
+CardosoMvs/SegundoCerebroComIA	Integration Telegram Bot.blueprint.json	6fe6f49f54fc7228fd78e91130aff34dd563c4c6
+Chad96/Octopad-calculator	ADD PRICING GROUP (Webhook).blueprint.json	318df97d504e8922f3f8ef0caaf0c26bbf2c0877
+ChinmayBitne/OTT-Voice-Agent	scenarios/faq.sanitized.blueprint.json	5cc00cf6fee8f8726986abaa43fc10b614fd8850
+Chuchi254/automation-workflows	make/Automated_Sales_Content_Engine.blueprint.json	24d1a087a3e8712584072ad342305de685e77611
+DEENUU1/jarvis-backend	blueprint/googleCalendar.json	fe25c0751694f4a47bf9a6e7249ccf61cc0f7e09
+Dhananjay-Yadav-00/social-media-chat-model	make.com/social-leaf-analytics-sync.json	009eca9edadca07648b8f97922abfc18f42e788e
+DigiBP/25DIGIBP2	Documents/To-Be Process/process-1-training-scheduling/Evaluate Lecturer Responses - MAKE.json	4b6dfef5a4cbd7b640b8930e883bdb298cbbcdeb
+DigiBP/25DIGIBP4	To-Be Process/Send PO to Vendor_MAKE.json	2981e3240c99503a441e15b330c7e44a8527bd0e
+DigiBP/26SS_Tierpark_Bern	TO BE Process/Extract assignments.blueprint_final.json	06b4ffc56ca9beb2cdb93d9cfa657a13f005b5b7
+DigiBP/Chranz	Artefact/Digitalisation/03_Uclassify.json	53975218a72877b77ac6766bc4cf41e0691779b4
+DigiBP/Plattwurf	blueprint.json	74db6df11492956b9db5cf8640cd15c721338896
+DigiBP/Team-24DIGIBP2	TO-BE-PROCESS/MAKE-Blueprint Exports/1.1 Create timesheet from template.json	6c93e6341de3e502fe65feb89bd03d0be3f60a78
+DuranJr/ARI-Flow	ari-flow.blueprint.json	5da4fd2e7a80f1f6c1249b53211786875fc5be10
+Elimeleth/bookingBot	calendly-make.json	117ef7d302371edc57f85c7af46c32c1c27131a5
+EricTechPro/Ai-Agent-templates	Make-Daily-Job-Collector.json	20dd53422fbe59a9e26b05fa8bf85d87186de5fd
+F14v1o/monthly-data-pipeline	newsroom_pipeline_blueprint.json	3f563aeaeb78e879cda56646bda04fbe080b359d
+FUCKiro/marat	make_scenario_json.json	61dfad7e74bebafafd8c44b275073bdfe7770d59
+Farhin-Rahman/OmniRAG	automation/make-ingest-from-url.json	2a1bda93188fcab9522d02ac35300f1af88916c3
+Faus14/NostromoGuardian	examples/make-templates/whale-alert-discord.json	a47a4bbdfd6ea01dba273208500df495169954d2
+Flowintelli-AI/contentforge	docs/make-scenarios/flowintelli-instagram-v1.json	37dca3b9e87561bdda069e04b909da61a8b17755
+Fruition-Service/fruition-website-monorepo	make/marketa-publish-social.json	8a40e82e351f5562cd72e9d073684fe9c08c31df
+GarethAtMake/moviestowatch	Movies to rent.json	af9cb74496fe829b5146d8d014ee1d7b14a56bcc
+Giljacob67/Tax-Group-Hub	docs/make-scenario-novo-lead.json	0e440080615b45c3013904a79a5f340430c01949
+Giuliano1993/linkedintotwitter	blueprint.json	cc8f0c0c8f43cf649df5bc229bae548393abb174
+Greenmamba29/discovermake-2.0	public/data/templates/youtube-automation.json	ea2fdb70e63c29bdddecf78a3729e442b8485904
+Gutter44/Ai-automatic-	AI Content Generator.json	23756cd03ab010be0b50a4842a04ff8ed2001c26
+Hai-cyber/ess-admin-ds	docs/legacies/make.com legacies/Hear Back from Telegram.blueprint (2).json	49a1fae67335285a0331d376222e89b0097ab42f
+HaridharanA/automation-journey	Integration Webhooks.blueprint.json	ec3f3818a6a07d4a2359f8ce129986478fc3c362
+HarinManiK/NL	frontend/public/make_blueprint.json	58e690471af46add46bc918124cbc4e074f20ca1
+Harshithk951/Resume-Flow	automations/make_inbound_blueprint.json	8bd0996b273cc74c4151ec6948066b2db0ef4d39
+HjustonAI/evso	docs/Make/EVSO_Form_Intake_v2.blueprint.json	b49353e4312de4d63c52f661554e53529e5b2c20
+HryhoriiHaponiukQuitCode/Help4Access	Visit-Parse Domain Info.blueprint.json	90a1dfcd0682c48aed738a550eaf6e858ffae4d7
+JDuwarahavidyan/AI-Powered-Sales-Pipeline-Automation-With-Make	automation_files/2.2 Stale Lead Flagging & Follow-up Agent.blueprint.json	4f1792c05ed4958a2bcebd22e44d3c780ca10e48
+Joseyosei/Share-The-Link	public/blueprints/make-sharethelink-agent.json	6106048cc169cb6245a6a551b3bc39e6596c0b92
+Julien218/oliviertrevis-site	incoming_files/170c448f6_IntegrationWebhooksInstagramforBusinessFacebookloginFacebookPagesYouTubeblueprint.json	9d834a83f013befacff00051181754ed8fdb074c
+JuniorCorzo/handly	docs/integrations/make/Email_Dispatcher_blueprint.json	6a7d35c01a79ef40b85ab0413bed36125723bbdc
+Kaherdin/journal-app	bluerint-fixed.json	c2ff7e5084f1e82938eb4dbec2d4d19e823c22d2
+KaoutharBousbaa1/AIProjects	TravelBot/blueprint.json	2081073d08b96599af373474168e98cff16d061e
+Kisat0/Les-ripeurs-Test	no-code/blueprint.json	d89b9cec726821d181e6ed2d2ddc0a794492c2be
+LeonY-Automation/AI-Automation-Blueprints	11.json	c2bd736bc01aca02652d6934421e7471895d0dd4
+Lucas-F-93/Portfolio	assets/downloads/payfit-scenario-2.json	0dfa80c92518d0965d8465bae65ddb657e46c187
+Make-OEM/Ops-Consumption	blueprint_scenario_Get_Org_team_scenario_consumption.json	e1d2b6b8e2072e098d034badb5e1a6deaa2f1e0d
+Manideep-patell/ai-executive-decision-dashboard	blueprint/workflow.json	23858206846b8e21a601c5c9da3a05fdbbb11178
+MarceLehmann/Tools-MassMailer	Make.com JSON/wf - MassMailer.blueprint.json	d6ed15590f093ba1dab659a935c6d55bca10c291
+Margi15/bitacora-del-tiempo	make_scenario_blueprint.json	c3e40ac315302db1193f95af6004aaeb230027e0
+MuhammadRaedSiddiqui/agentforge	ground-truth/configs/make_blueprints/availability.json	adc1059a37ddb80faf8fbfb7c43e73abf81c9a5b
+MuhammadUmerKhan/Internship-Projects	Automation/Job Application Tracker/blueprint.json	672698ce3d34f4e7820163ee806065594d5d9f75
+MuhammadZafir/GoHighLevel-projects	MAKE.COM Scenarios/Make Scenarios for Outbound Vapi Bot/Scenario to Place call through vapi.json	df4ed5ae457ee6f30f0119466e8b3cd17e1efc92
+Naidu-Group-Pty-Ltd/aurixa-systems	docs/integrations/make/waitlist/aurixa-waitlist-stage-2.9590512.json	9bd95fb847b7236f4d6d3d6c719ebcb423d6c67a
+Nawemediagmail/NAWEMEDIA_REPO_1	clubos_blueprint.json	3feee9aa165f7b4ba84e2685b50f0e8f2ad06aa7
+Nexus-It-today/nexus-intake	reference/make/blueprints/2a -CTNI Woocommerce Data Refresh.blueprint.json	d237908cd19656508c1f1c3975fcf2426835c5a7
+NickJee86/jomkaki-crm	make-blueprints/consent-automation/S05 - Routine Documents (Consent Excluded).blueprint.json	9a4738a0e9b73e65c7709f8de3cdfae2a9f94753
+OlegTestov/openant	make/blueprint.json	a7be4dd5131a74a96e8cb2d8816420ecaeefa4bf
+PAC1euro/PAC-ISO	make-blueprint.json	3ea8a13f6ed9c3c42d450874c90116a5175da4e5
+PLTO-App/PLTO	make_blueprint.json	75ff1b25d543e12149a040984c38155db1964d12
+POWERFULMOVES/PMOVES.AI	docs/Hostingerapi/COS/[v3.4_COS-3.0] AI Output _ Image Generator (BM Approved).json	f58769f684818fb7d84fb32fbe8172be61caf8ad
+PTBYSR/AI-Automation-Projects	Reporting and Dashboard Automation/workflow.json	3a5981b941b04a7e071126ed91d926ef6a8a3bbb
+Percy-O/AI-Leads-Generations	Leads Generation.blueprint.json	0455f6f210b3d104357002f171582dec3414eff3
+Percy-O/Slack-AI-Researcher	Slack AI Researcher.blueprint.json	a6ae3cb60d6aa4eb9424d3fdbe72562395bd78f7
+PrzemekZygmanowski/poe	src/data/models/make.json	0f141dcf364397383d6f8490b2391420bc7d2ebf
+Ratim001/Make_Bluprints	workflows/crypto-watcher/blueprint.json	bd7df1ab277f0dc178483b80a922768ab48b484e
+Robertzu43/vibe-coders-league-platzi-2026	reto-04/blueprint.json	d18409fa45f4f825c5022bf551a2619ca9861134
+Rumblingb/Agentpay	ops/make-scenario-1-booking-received.json	a26d31fff188e0faf9b644b3155ade1aff96073a
+SaharBarak/make-testground	examples/lead-intake.blueprint.json	06f9b15d848d92853978007ba9383526cfe1068b
+Samrudh2006/Ai.agency-workflows-agents-automations-	workflows/blueprints/make_data_extraction.json	055d6571c3fb4bf28d804a13ab90c8c01b29a551
+Sarthak-2085/Automatic-Tech-News-Sender	Auto Tech News Sender.blueprint.json	029106a5dc9ba4550b6093665c4daa65f4c4e0a6
+Schmidt127/127si-shooting-challenge	make/blueprints/upload-asset-engine-lambda-prod-v1.template.json	fadcedef9043c57bc83de6fbc2adbef11b73ff63
+SchneiderSix/Augmented-Automation	blueprint1.json	b344a7729a71cc68c04c92069686173f685ef01b
+ShaikhNabeelShabbir/ai-twin-bot	blueprint (5) (1).json	a814c2445447a90a04bff2b64828cedc67a3ce4b
+ShivaNetha1/SVMB	make-com-blueprint.json	f9a1dca01eda44da81bc30bbbd8dfaf8f55ebbdd
+SiyamBhuiya/Portfolio	src/workflows/shopify-chargeback.json	95275cc11ef9ebed92d29496cd2a608dcbdc1747
+SquizAI/tron_VF_V2	blueprint (10)-2.json	e3bc8fe4e2878113b5790c18ab0520d6cc34a412
+StepForIt/StepForItOps	packages/core/test/fixtures/make-webhook-http.blueprint.json	31a4053bc14728d37cac5433e01ce808fae7dff2
+Talhashabir9t/AI_Automation	3. Create Master sheet (API + Slac).json	74c73d41add1f18173367edf58342c20c9aaf0b0
+Tanavud-mgts/meeting-system	Integration Webhooks.blueprint_v2.json	841595f76b7d3f3c4fd46007f4c6248da58ba282
+TheSocialEngineer-01/My-Portfolio	make_scenario_blueprint.json	7d16ee5e283da08dcd23b28277d9c09514789d9b
+Treevu-ai/Agentic-Friendly	make-geo-bot-blueprint.json	7c7db54a8a5918a48409fccd2350710ce966840f
+UfukYarisan/redit-make-automation	redit_notion_automation_flow.json	e927b6607b455a081d88dca5b6ff5b24bd2aacf0
+Univium-Inc/Univium-Automation-Tools	Automation Packages/Trigger Automations with Google Sheets/Make - Send Email Blueprint.json	7d58292a7b52f82fc81e272234bc4d6e83eba8d8
+Unnati061/classifier-agent	sample input files/blueprint.json	dabd93ef20a49e1c96ded9855ab68569077484ca
+Weryyy/Repuesta-Automatica-Mails	asdfasd.json	2849b6707f7494d48caa0fa21f983a1845ae8cfc
+YahyaElghobashy/salla-hubspot-backfill	blueprints/2026-09-27/5563154_customer_updated.conflict_route.blueprint.json	03410b3d61249300abb782d6fb7d4800d60ab7fa
+Yoshi420247/makeAIproductdescription	batch-processing/scenario-2-process-results.json	d4d3cb2b8254c5fc76bd72f452a65491991d14af
+YvesNoeBornhauser/Dialogsystem	Make_Artefacts/Make_Google_Sheets.json	331807413e872acc4698cd1a7586dfc0663466b9
+Zkamal98/Agentic-AI-Workflow	docs/Agentic-AI-Workflow-blueprint.json	6b2d940f4283125f3281d0caf4c89262f4a9b8be
+aayu22010/ConsultBae-AI-Automation-Assignment	task2_make_flow.json	39282f60476b803652364ed87d1c59e9b18bce22
+ac4lv0p1/NoCode-Automation-Insights	examples/complex-automation/JuanMecanicoAutomation.json	12d387f650d95a9a129c3f5aec06e191c1efac4e
+adetuyisamuel/whatsapp-lead-qualification	whatsapp_lead_qualification_blueprint.json	769f2817ddef50ab472c8ffa36ea038d8a264508
+afshansif/Feedback_Router_Google_Forms_to_Gmail_Automation	Integration Google Forms.blueprint.json	2041cc7f922e3b69cb1eae2be8a265e85f37b2d6
+afshansif/Weather-Alert-Webhook	Weather Alert Webhook.blueprint.json	7820d0dedd9397517cfe5b3c5fbad03ca0343ca4
+alexanderafolabi1-afk/Glotemp	make-blueprints/glotemp-instagram-facebook-daily-post.blueprint.json	e950cd9f077ff9bf230761e77f88636cab8cf7cf
+antonio86itna/smetti-di-chattare-hub	download/w021.json	89f086e5720c33c9d9da0b0076e6fbba49b130f0
+areeshausmani/Slack-Alerts-using-Make.com	Slack-Alerts.json	97861ed8a799e6956389cacc4edca64304425d82
+ariapioquinto/multichannel-ai-assistant-crm-flow	multichannel_ai_assistant_crm_flow.json	40cbc46a279e4086a4b5be241932f3e29994d2af
+askjohngeorge/sales-prompt-creator	docs/SalesBot Prompt Flow.json	79e43b725027dbd3a59cc315591b9f71bc2ff17d
+baruchiro/BcsStudent	public/static/files/Gmail-OpenAI-Integration-Blueprint.json	d12106ab9f5797dd2d68c66f145b9de00c9d8611
+bgillis99-pixel/Mobile-CARB-Compliance-app	make-blueprints/claude-content-reviewer.json	6e6988d9f7077db5e648de1af680b706b2d893cc
+bluefound/automation-templates	automation for Client Onboarding Email Automation.json	e8f7d39888e05bfb867457e5ef6fa22f26525a85
+brentvanroelen/questify	make-scenarios/painting-funfact-blueprint.json	2fe5483e1a3a43b7598c8b3c598c64656cb32c3b
+ceyre-boop/email-automation	make/phase1_triage_scenario.json	bb0083102d0470e95a6d1b318d33f6dcd297294f
+chengyunm1313/hsiang-gege-drink	docs/享哥哥手搖飲店 vibecoding.blueprint.json	ac926d6e8646074b73c0b5ca238b53c7a92278e6
+chibbss/linkedin-content-gen	blueprint-4.json	0653b1f38f77dabcf113488210f5abb91edfb46d
+christ0pher/lifehack-automations	make_com_blueprints/LinkedIn-Ghostwriter/ghostwriter.json	6eeb8446319ea27e2057f7af2f1308f4b8b60afd
+cljrami/magos	PRODUCCION/flujo.json	81d6e161cf835e99545908393144154eb56dc8f4
+cljrami/soulinmotion	flujo.json	ada1f412d5e65c03584aa865c96caa0c33e2e1af
+cljrami/soyautomama	AutoMama.json	b9a7678accb66b049e4f8a1e5681ab0823f5561d
+clubajedrezdelasrozas/peondedama-metrics	Scenarios/Controlar BOT Instagram.blueprint (2).json	e1ba0ed3de88da2a3b1fc6292a232c406eaf67ee
+coder360-crypto/Phone_Call_Assistant	Appointment Booking Automation.blueprint.json	d3252997e04b6f1e59e1777fcd80adced3f5493e
+codesandesh/Hyperscaler-all	CMS-Module1-Content-Management-System.json	84328144e2853829d8676848a5d09276a8f575bd
+codyforbes44/super-connector-app	docs/make/call-missed-email.json	376072656b5ecee51cfffb37fab78a70e78e509a
+csw48/cnb-calculator	Workflow-CNB-Kalkulacka.json	a778f19462a8ce43f23e246ea2f84dbdb44f5c2c
+darkmagicYT/DesarrolloSustentable	2.1(Ecosistema)/Codigo/Ecosistema.blueprint.json	96844b8ab4289b90175e17608a35de393bf5e28c
+degregar/michalkukla-astro	public/blueprints/messy-thoughts.json	502c6d3f0c63badd56a130da934d1d959eea12df
+dsd228/-QueHago-	QueHago-Google-Calendar.blueprint.json	36b77c5ca313daa7e5650794089af9561841a1d3
+earlyaidopters/gumroad-resources	resources/boltnew-dating-app-a-z-build/files/Bolt_Cancellation_Demo_Sanitized.json	0eeaac84b1466688f9c9a271745e5152a4380b55
+eleyrot/signals-newsletter	make/flow-a-blueprint.json	0e6e06bbd2264263125e5ddc9615b74dcc842aa9
+elior1324/reviewwise-hub	make-blueprints/integration-webhooks-routed.json	09d74887d893f57433ea8b5e1885383480bbe65d
+enigmat/Workflow	Make-blue print/Integration Google Sheets PT 2.json	a1e5da1cf8dfb18f66bc0e7982ae41dc1987899d
+eriksjaastad/Smart-Invoice-Follow-Up-Workflow	Integration HTTP, Google Sheets, Tools, Gmail.blueprint.json	7a4464239bda2583a9e1eca15ecd3b117a1d53cf
+ev45ive/medagent-landing	Medagent.blueprint.json	9bae1ee0a4c2ce59ae35519449feed75d2ddb36f
+eyalway2cu/eyal_scripts	Make/Blueprints/serverless_html_form.json	b7969447034aefe10fc79888f34576ca19ad4584
+fcesitler/YZTA_Hackathon_NCLC_Team_326	make-flows/flow-notify.blueprint.json	e491c2b221c926ce3e54a2f50ca61f9998aa98af
+fernandoxavier02/workflow-automation-showcase	workflows/make-blueprint.sanitized.json	6927aefdbf7754dc551ea4023dc74e5c20eaa959
+firstlinkai/Social-Media-Automation	Social-Media-Automation.json	66a968482c7a3fbccec5cf9854896a9a3e6d0456
+fluxaimarketingdigital-ship-it/fluxai-site	docs/make_blueprints/06_FLUXAI_META_SYNC_OFICIAL.blueprint.json	19a588e633327739895e23e8050bb172e5cf7701
+fsystemweb/dip-detector	blueprint.json	1165815dcc65bf2e0d47958614f5ff6cfaafc7e5
+gittradeanchor/Flowio-react-V01	make-blueprints/S1-crm-router.json	e34b63fdab80ca2c0446c8429998841cd889d947
+gtron/clockify-make-integration	Scenari/2025 OK - Ferie OK - v20250403.blueprint.json	ace9e5ed0d26930e7477e41b5a77b26b61c2a775
+hamzaaoudin-commits/Strawberry-Prod	make/architecture-narrative-blueprint.json	c20d055d47750f87c8d8fe162bf398c8426326f0
+harsh817/boostspace-cli	examples/sample-workflow-agreement-generator-no-ai.json	50cc5f6c555198c2587444a1743ad876503d1784
+hcthisen/BAM-VPS-Public	Make Scripts/00 - ABC Cloning BAM - 00/01 - Site Initiation - Get Info.json	40ca3ffa683484f54df8bec5498c545bf0437e3b
+heritagecraftmedia-commits/HCM_Main_Website_Files	hcm-drive-setup/make-scenarios/scenario-1-siding-reminder.json	ec7320b7db03c3d7c43edd03fc45c9e51b12aea3
+houseofichigo/json	0qf0blCB4Mc_2.json	9c343c86a13082274ac87f12bee2586499fec2c5
+humaila0/Remote-Job-Scraper	Blueprint.json	71a6861f8fb49fb8f3d2d1767dfb8deee4947234
+iNherjer/GA-Dispatcher-Alpha	tools/bug-tracker/Integration Webhooks, Gmail - Bugreports fertig.blueprint.json	192694bd17dbfa5c3403373abe9e1bce24d4668e
+iamyogik/Netflix-Cookies-Extractor	Integromat/gist-blueprint.json	04e7d0b86b4de2ee75df7948f9ce0a7f525d5271
+idokraicer/optimate-make-cli	tests/fixtures/simple-blueprint.json	653ae44ddeb77534425d4e907ddeae1197579298
+imbadar/ai-dental-front-desk-agent	Integration Webhooks, Google Gemini AI.blueprint.json	4489bac4fe5bf902496c7e5529ae1600172a1ac9
+inemavip/inemavip	data/files/Gerador de Post Canva.blueprint.json	5e62e84c8a756b78116e9eb1c502ff73af755311
+jansentanlim-ai/my-automations-project	airtable-openai-vapi-panda/blueprint.json	50ea52a3ef90152ff1601e01667c6c259641a8fc
+jayalath-jknr/QQuest	blueprints/QQuest-Quest-Completion-Alert.blueprint.json	afba4cbc5b4f403ba1eacb4a7afb7c95b3b1fd9b
+karenpineda-ai/make-automation-flow	flows/Ai-customer-support.json	89b979675a8809313516d68150686d0488e28d2c
+kenetbc-afk/hirecar-marketwatch	automation-configs/make-scenarios/credit-dispute-enrollment-scenario.json	b5020e39243152d1c2057f2c506e96d14619c65d
+khalid2866/Fashion-Hub-Ai-Automation-Make.com	Blueprint/Fashion Hub.blueprint.json	3e9eddead35a74ba326f414da9750a6282426f12
+koti-pavan-kumar/avotangi-whatsapp-ai-stylist	make-com-workflow/scenario-blueprint.json	948865d2c06499487eebee1bcbc06bfdb8e46b9f
+leanderziehm-wemakefuture/workflows	public/workflows/send_notification.json	eab274a2eca75c57dbffacec0db5392354654186
+limmieo/brandflow-Ai	automation/print.json	20f2662c6b43d40c6cee128bd8e98b638171245e
+lionzawlwin/LION-JOBS-PLATFORM	make-blueprint.json	af00c3a46edba6fa5c5df2cbcc56d80a26e7a4dd
+lipetomasz00-beep/v16	cashmaker_make_scenario.json	6e284cbcdbc3687895b7ecaf22c56e6c01805cc5
+llkd33/nc_new	make-com-scenario-fixed.json	e7c6935b48f177550118dd68f4061b758318c64f
+loliba92/Scenario	assets/make/scenario-weekly.blueprint.json	108a213bf9f9db70d77ff61c2bbe9a12e4494d37
+mahwoussa-boop/mahwous-scraper-v2	bp1_fixed.json	4ac096397bb1e5628ba21eec4f971d1d4dd985b1
+mahwousstore-png/52KB	make/new_products_blueprint.json	0a805ea093aba1e5d4c180cc09e3bd114786e93a
+mahwousstore-png/perfume-erp	mahwous_studio_complete_blueprint.json	4943d68b35a0cb7c595ced24b73e4362e79ef488
+mairothugo/Hackaton_WTTJ	blueprint_message.json	10605e4f9d7bf03a9b4a364673217d6007e386e3
+majestikmagik/Automation_Create_post_Instagram_Facebook	From Google sheets, to IG & FB (only image).blueprint.json	2984699b40799519eedece6a07c2470b6b5e3c4c
+majestikmagik/Automation_Invoice_manage_Make	blueprint.json	32d4cda3f99e548383a588e3b5090b93d4e05fb2
+marcc16/portfolioanasdef	src/data/make-dieta.json	f192cdc211eafab7d7cac42ad00895572130badd
+marequest/lead-outreach-research-system	blueprints/1_1_Blog_Research_--_Start_and_call_1_2_blueprint.json	af6f2e1a0292d5dcea322f49423ab377354e4514
+masterDakill/valuecollection	make-scenario-minimal.json	35b0d2d28fceb9a8d9f0365ad830af88cc376adc
+mediablink8-star/clinic	backend/make/workflow_1_appointment_confirmation.json	48c4982b2719f313cebd35e5489cef6dafbf1b90
+mhalder-dev/managerium-customer-bot	Multiclient version 2.0.json	ad8a244f4f66f196da3ff14365fe5d28635795f6
+mlynnf123/AI-SMS	make-check-leads-supabase.json	f5c7bfff3f8dc94a66b320fe27fd9c2353522dce
+mohsin1782005/modabot-ai-whatsapp-ecommerce-chatbot	ModaBot_Ecom_Whatsapp_Chatbot.json	0e0c38a7b1ec8565a0f6b10c0a414df1fbb1f479
+mohsin1782005/monday.com-zapier-iot-operations	pipeline-A.json	5a73a1147340245d6eb737825d2a75d7924a1d9b
+moshehbenavraham/txt2crs	make-scenarios/[STUDY] Create Course Material from Plain Text (2-3).blueprint.json	789cab7b731a5ee053d551ea67b8952a9c5f2b0b
+mrlmbrown/make-blueprints	Student Engagement Monitor Automation.blueprint.json	e34f74ca99a3f547c6ed1e46ada43fc873349565
+mvxif1/idp	escenario-get-compras-make.json	0d6628cf413de855fdfc0d0769ccad791bdd42e3
+n-ishfaq/Vapi-Call-Agent	VAPI --- GHL .blueprint (2).json	d78c7cb67c034b6810ea6aa40d4808bc6f84b2ec
+neilastephenson/files	UserAPIMakeBlueprint-2.json	13844225bdf586a7330d64acbe699388888819cb
+next-identity/integrations	ni-get-user-blueprint.json	f516a3c3af96263425e16b3eade5acb604516bca
+nini0119/Office-pulse-for-WTJ	création_message.json	3fd17db5b65e59c62a79907a6e47e2e83e831d23
+nirkons/Basic-Hass-Dash	Old API (Pre Long Lived Token HASS)/Integromat Automatic Cloud/Action.json	5bb4f0be23ab5b5afdbdef5153aa71eb0883013c
+notm33na/morningmarket	blueprints/MarketMorning.blueprint.json	d3ecc51f84141ccd36bc6058bd7559faad745353
+notquite28/ai-job-agent	bot.json	f334651e3975733deb357249d0d4b89cd51a8770
+nswitzer/cf-omnichannel	blueprint.json	2fb3bed9cc79e611ce9af57c1e4799d0c4d24c95
+nwtsrash-lgtm/mahwous-salla-pipeline	make/update_quantity_blueprint.json	b5c09c54a5db64c7424abb39021660a6129e7191
+ochnios/aidevs	api_tasks/assets/C05L03_google_blueprint.json	72f46d386dfb72372c5bc6f63b29f985eb71a581
+olenapetrova-da/lublin-events-hub	integrations/make/2025-11-20_lublin-events_one-http.blueprint_sanitized.json	367a9b055e61e1286fe2a7cd71676bcb74665eba
+onunosousa-lang/ai-chatbot-widget	make-blueprint.json	d9005a9bfc78c10beaff79b7e7a548e58f3e1ec3
+pablofelipe01/Vos-a-datos	base_vos_a_Datos.json	912933c0efa4c9c82cd569f68dee25d8a9a9ca07
+pandaluvly/google-review-auto-reply	make-blueprints/04_verify_replies.blueprint.json	c71b3e654b163aad155e3196a14bd14d126bb997
+patel-y/resume-screening-automation	make_com_resume_screening_workflow.blueprint.json	0472f366b2e3b2e138b65c50e7f95d5a989ab2d9
+peewweee/novacare	novacare-make-blueprint-phase0.json	02031f99365105a12f30bae22ea30cc897aea892
+pidemo/make-scenarios	webflow-chatgpt-blueprint.json	65e0f47b7d10df0be8f56237f5594088acda011c
+plusz/LLM_to_kindle	blueprint_make_kindle.json	c21ef2e093981ad7183a5ff0959b8ef148514a70
+psapir/mwd-25-agentforce-workshop	make/Integration Webhooks, Google Docs.blueprint.json	f5ec785a63ec9a6b055bde87e8c49fb34d85450b
+rajkonkret/chat_gpt_excel_24_10_2025	Integration Tools, Google Sheets, CSV, Gmail.blueprint (1).json	9108d7d8bc119d85e10cc0d668f9858102d57a4d
+rajkonkret/chtgptexcel_7-11-2025	Integration Google Sheets.blueprint.json	8bc0c809b26bfa3371d4d3fb7a7b0162958c425a
+rawdela/og-studios-donation-automation	automation/make/make-blueprint-sanitized.json	830bf95c3736bc269e4f9a418cb7505c7f61fb49
+rcoco78/reality-academy-audit	automatisation-make-blueprints/Calendly Esteban.blueprint.json	64048807239342dec839ba4abdca36082d99080d
+redlanternstudios/thelanterndaily	make-blueprints/04_beehiiv_sync.json	705189dc9461aa961bfb4f448841780ce3c51195
+rehmanul/Employer-Profile-Automation	COMPLETE_BLUEPRINT.json	ec1da5672cd5cc346d54e8a074050de4d61962eb
+rileyrichter/okforok	submit-a-business.json	c68e2a360abceb61f426898fddb2f4f04758741e

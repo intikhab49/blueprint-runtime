@@ -1,0 +1,13 @@
+{
+  "case": "C-07-qty-string",
+  "items": [
+    {
+      "name": "s",
+      "qty": "4"
+    },
+    {
+      "name": "t",
+      "qty": "0"
+    }
+  ]
+}

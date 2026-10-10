@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872039,
+  "runId": "baf200923a654623b058d19efb84a343",
+  "recordedAt": "2026-10-10T01:07:07.640Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "D-04-empties",
+          "s": "",
+          "n": 42,
+          "sn": "42",
+          "f": 3.7,
+          "eu": "1.234,56",
+          "html": "<b>Hi</b> & <i>you</i>",
+          "b": false,
+          "empty": "",
+          "nul": null,
+          "arr": [],
+          "dup": [
+            "x",
+            "y",
+            "x",
+            1,
+            "1"
+          ],
+          "nested": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              [
+                4
+              ]
+            ]
+          ],
+          "nums": [
+            1,
+            2,
+            3,
+            10
+          ],
+          "people": [],
+          "obj": {},
+          "d": "2026-01-31",
+          "iso": "2026-01-31T15:04:05.000Z",
+          "eom": "2026-01-31T00:00:00.000Z",
+          "pad": ""
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "body": "upper=<<>>\nlower=<<>>\ncapitalize=<<>>\nstartcase=<<>>\nlength_s=<<0>>\ntrim=<<>>\nsubstring=<<>>\nindexOf_bare=<<-1>>\nindexOf_q=<<-1>>\nreplace_bare=<<>>\nreplace_q=<<>>\nreplace_regex=<<>>\ncontains_s=<<false>>\nsplit=<<>>\nsplit_len=<<0>>\ntoString_n=<<42>>\nencodeURL=<<>>\ndecodeURL=<<>>\nescapeHTML=<<&lt;b&gt;Hi&lt;/b&gt; &amp; &lt;i&gt;you&lt;/i&gt;>>\nstripHTML=<<Hi & you>>\nbase64=<<>>\nmd5=<<d41d8cd98f00b204e9800998ecf8427e>>\nsha1=<<da39a3ee5e6b4b0d3255bfef95601890afd80709>>\nsha256=<<e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855>>\nascii=<<>>\nescapeMarkdown=<<>>\ntoBinary_hex=<<>>\nplus=<<43>>\nconcat_plus=<<1>>\nminus=<<41.5>>\ntimes=<<126>>\ndiv=<<14>>\ndiv0=<<Infinity>>\nmod=<<0>>\nsn_plus=<<421>>\nsn_times=<<42>>\nround=<<4>>\nround_neg=<<-2>>\nround_half=<<3>>\nceil=<<4>>\nfloor=<<3>>\nmax=<<42>>\nmin=<<3>>\nsum=<<16>>\naverage=<<4>>\nmax_arr=<<10>>\nparseNumber=<<1234.56>>\nformatNumber=<<3,70>>\nfloat_add=<<0.3>>\neq=<<true>>\neq_str=<<true>>\nneq=<<false>>\ngt=<<true>>\ngt_str=<<true>>\nand=<<false>>\nor=<<false>>\nif_true=<<no>>\nif_empty_str=<<no>>\nif_zero=<<no>>\nifempty_empty=<<fallback>>\nifempty_null=<<fallback>>\nifempty_missing=<<fallback>>\nswitch=<<other>>\narr_join=<<>>\narr_len=<<0>>\narr_first=<<>>\narr_last=<<>>\narr_reverse=<<>>\narr_sort=<<>>\narr_sort_desc=<<>>\narr_slice=<<>>\narr_contains=<<false>>\narr_dedupe=<<x,y,1>>\narr_add=<<z>>\narr_remove=<<>>\narr_index=<<>>\narr_merge=<<x,y,x,1,1>>\narr_flatten=<<1,2,3,4>>\narr_raw=<<>>\nnums_raw=<<1, 2, 3, 10>>\nmap=<<>>\nmap_filter=<<>>\nkeys=<<>>\nget=<<>>\nget_path=<<>>\nobj_raw=<<{}>>\ntoArray=<<0>>\nnull_raw=<<>>\nmissing_raw=<<>>\nbool_raw=<<false>>\nparseDate=<<2026-01-30T19:00:00.000Z>>\nformatDate=<<31.01.2026 20:04>>\nformatDate_tz=<<2026-01-31 15:04 +00:00>>\naddDays=<<2026-02-01T15:04:05.000Z>>\naddMonths_eom=<<2026-02-28>>\naddHours=<<2026-01-31T10:04:05.000Z>>\nsetDay=<<2026-01-26>>\ndate_raw=<<2026-01-31T15:04:05.000Z>>\ndate_cmp=<<true>>\nformatDate_X=<<1769871845>>\nliteral_quoted=<<quoted>>\nempty_call=<<0>>\nnested=<<>>\npick=<<>>\nomit=<<>>\nemptystring_kw=<<0>>\nspace_kw=<<1>>",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "upper=<<>>\nlower=<<>>\ncapitalize=<<>>\nstartcase=<<>>\nlength_s=<<0>>\ntrim=<<>>\nsubstring=<<>>\nindexOf_bare=<<-1>>\nindexOf_q=<<-1>>\nreplace_bare=<<>>\nreplace_q=<<>>\nreplace_regex=<<>>\ncontains_s=<<false>>\nsplit=<<>>\nsplit_len=<<0>>\ntoString_n=<<42>>\nencodeURL=<<>>\ndecodeURL=<<>>\nescapeHTML=<<&lt;b&gt;Hi&lt;/b&gt; &amp; &lt;i&gt;you&lt;/i&gt;>>\nstripHTML=<<Hi & you>>\nbase64=<<>>\nmd5=<<d41d8cd98f00b204e9800998ecf8427e>>\nsha1=<<da39a3ee5e6b4b0d3255bfef95601890afd80709>>\nsha256=<<e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855>>\nascii=<<>>\nescapeMarkdown=<<>>\ntoBinary_hex=<<>>\nplus=<<43>>\nconcat_plus=<<1>>\nminus=<<41.5>>\ntimes=<<126>>\ndiv=<<14>>\ndiv0=<<Infinity>>\nmod=<<0>>\nsn_plus=<<421>>\nsn_times=<<42>>\nround=<<4>>\nround_neg=<<-2>>\nround_half=<<3>>\nceil=<<4>>\nfloor=<<3>>\nmax=<<42>>\nmin=<<3>>\nsum=<<16>>\naverage=<<4>>\nmax_arr=<<10>>\nparseNumber=<<1234.56>>\nformatNumber=<<3,70>>\nfloat_add=<<0.3>>\neq=<<true>>\neq_str=<<true>>\nneq=<<false>>\ngt=<<true>>\ngt_str=<<true>>\nand=<<false>>\nor=<<false>>\nif_true=<<no>>\nif_empty_str=<<no>>\nif_zero=<<no>>\nifempty_empty=<<fallback>>\nifempty_null=<<fallback>>\nifempty_missing=<<fallback>>\nswitch=<<other>>\narr_join=<<>>\narr_len=<<0>>\narr_first=<<>>\narr_last=<<>>\narr_reverse=<<>>\narr_sort=<<>>\narr_sort_desc=<<>>\narr_slice=<<>>\narr_contains=<<false>>\narr_dedupe=<<x,y,1>>\narr_add=<<z>>\narr_remove=<<>>\narr_index=<<>>\narr_merge=<<x,y,x,1,1>>\narr_flatten=<<1,2,3,4>>\narr_raw=<<>>\nnums_raw=<<1, 2, 3, 10>>\nmap=<<>>\nmap_filter=<<>>\nkeys=<<>>\nget=<<>>\nget_path=<<>>\nobj_raw=<<{}>>\ntoArray=<<0>>\nnull_raw=<<>>\nmissing_raw=<<>>\nbool_raw=<<false>>\nparseDate=<<2026-01-30T19:00:00.000Z>>\nformatDate=<<31.01.2026 20:04>>\nformatDate_tz=<<2026-01-31 15:04 +00:00>>\naddDays=<<2026-02-01T15:04:05.000Z>>\naddMonths_eom=<<2026-02-28>>\naddHours=<<2026-01-31T10:04:05.000Z>>\nsetDay=<<2026-01-26>>\ndate_raw=<<2026-01-31T15:04:05.000Z>>\ndate_cmp=<<true>>\nformatDate_X=<<1769871845>>\nliteral_quoted=<<quoted>>\nempty_call=<<0>>\nnested=<<>>\npick=<<>>\nomit=<<>>\nemptystring_kw=<<0>>\nspace_kw=<<1>>"
+  }
+}

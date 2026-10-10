@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "f235f44e32584ba7b52aae72a061b759",
+  "recordedAt": "2026-10-10T11:04:55.624Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "E-json-02-status-201",
+          "name": "w",
+          "status": 201
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "ca": null,
+          "qs": [],
+          "url": "https://echo.example.test/hook",
+          "data": "{\"name\":\"w\",\"status\":201}",
+          "gzip": true,
+          "method": "post",
+          "headers": [],
+          "timeout": null,
+          "useMtls": false,
+          "authPass": null,
+          "authUser": null,
+          "bodyType": "raw",
+          "contentType": "application/json",
+          "serializeUrl": false,
+          "shareCookies": false,
+          "parseResponse": true,
+          "followRedirect": true,
+          "useQuerystring": false,
+          "followAllRedirects": false,
+          "rejectUnauthorized": true
+        }
+      ],
+      "output": [
+        {
+          "statusCode": 201,
+          "headers": [
+            {
+              "name": "date",
+              "value": "Sat, 10 Oct 2026 11:04:55 GMT"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "name": "content-length",
+              "value": "33"
+            },
+            {
+              "name": "connection",
+              "value": "keep-alive"
+            },
+            {
+              "name": "server",
+              "value": "cloudflare"
+            },
+            {
+              "name": "x-powered-by",
+              "value": "Make Gateway/production"
+            },
+            {
+              "name": "access-control-allow-origin",
+              "value": "*"
+            },
+            {
+              "name": "x-make-scenario-execution-id",
+              "value": "<execution-id>"
+            },
+            {
+              "name": "make-actual-status",
+              "value": "200"
+            },
+            {
+              "name": "strict-transport-security",
+              "value": "max-age=31536000; includeSubDomains"
+            },
+            {
+              "name": "cf-cache-status",
+              "value": "DYNAMIC"
+            },
+            {
+              "name": "set-cookie",
+              "value": "__cf_bm=<redacted>; HttpOnly; SameSite=None; Secure; Path=/; Domain=eu1.make.com; Expires=Sat, 10 Oct 2026 11:34:55 GMT"
+            },
+            {
+              "name": "cf-ray",
+              "value": "a48525a44c79be01-DUB"
+            }
+          ],
+          "cookieHeaders": [
+            "__cf_bm=<redacted>; HttpOnly; SameSite=None; Secure; Path=/; Domain=eu1.make.com; Expires=Sat, 10 Oct 2026 11:34:55 GMT"
+          ],
+          "data": {
+            "echo": "w",
+            "n": 2,
+            "list": [
+              1,
+              "b"
+            ]
+          },
+          "fileSize": 33
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[201][w]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[201][w]"
+  }
+}

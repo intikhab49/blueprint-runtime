@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "f04b2de5866d44688f763adfee54b3c0",
+  "recordedAt": "2026-10-10T01:01:16.660Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "C-11-pipe-in-name",
+          "items": [
+            {
+              "name": "a|b",
+              "qty": 1
+            },
+            {
+              "name": "c",
+              "qty": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            {
+              "name": "a|b",
+              "qty": 1
+            },
+            {
+              "name": "c",
+              "qty": 1
+            }
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "a|b",
+          "qty": 1,
+          "__IMTINDEX__": 1,
+          "__IMTLENGTH__": 2
+        },
+        {
+          "name": "c",
+          "qty": 1,
+          "__IMTINDEX__": 2,
+          "__IMTLENGTH__": 2
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "a|b:2"
+        }
+      ],
+      "output": [
+        {
+          "line": "a|b:2"
+        }
+      ]
+    },
+    {
+      "kind": "filter",
+      "moduleId": 3,
+      "passed": true,
+      "report": [
+        [
+          true
+        ]
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "c:2"
+        }
+      ],
+      "output": [
+        {
+          "line": "c:2"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "a|b:2"
+        },
+        {
+          "value": "c:2"
+        }
+      ],
+      "output": [
+        {
+          "text": "a|b:2|c:2"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[a|b:2|c:2]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[a|b:2|c:2]"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "blueprint-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Run and test Make scenario blueprints offline. Every behavior is checked against real recorded Make runs, not guesses.",
+  "keywords": [
+    "make",
+    "make.com",
+    "integromat",
+    "blueprint",
+    "automation",
+    "testing",
+    "offline",
+    "no-code"
+  ],
+  "homepage": "https://github.com/intikhab49/blueprint-runtime#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/intikhab49/blueprint-runtime.git"
+  },
+  "bugs": {
+    "url": "https://github.com/intikhab49/blueprint-runtime/issues"
+  },
+  "author": "Intikhab Azam",
+  "type": "module",
+  "bin": {
+    "bpr": "dist/src/cli.js"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "bpr": "node src/cli.ts"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "typescript": "7.0.2"
+  }
+}

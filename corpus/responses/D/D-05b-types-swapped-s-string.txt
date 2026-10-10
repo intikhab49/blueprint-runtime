@@ -1,0 +1,5 @@
+HTTP 500 body: "Scenario failed to complete."
+Module 2 error (Make editor run panel, 2026-10-10):
+  Failed to map 'body': Function 'first' finished with error! 'notarray' is not a valid array.
+  Code: DataError
+Payload: arr = "notarray" (string). Probes before first() in body order (arr_join = join(1.arr;"-"), arr_len = length(1.arr)) did NOT throw.

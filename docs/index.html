@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test Make.com scenarios offline · blueprint-runtime</title>
+<meta name="description" content="Offline test runner for Make.com (Integromat) scenario blueprints. Replay real Make runs locally or in CI and catch broken mappings before you deploy. 71 of 79 real runs reproduced exactly, 0 differ.">
+<link rel="canonical" href="https://intikhab49.github.io/blueprint-runtime/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="blueprint-runtime: test Make.com scenarios offline">
+<meta property="og:description" content="Replay real Make runs locally or in CI and see the first value that changed. No Make account, no credits, no network.">
+<meta property="og:url" content="https://intikhab49.github.io/blueprint-runtime/">
+<meta property="og:image" content="https://intikhab49.github.io/blueprint-runtime/social.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "blueprint-runtime",
+      "alternateName": "bpr",
+      "description": "Offline test runner and blueprint validator for Make.com (formerly Integromat) scenarios. Replays runs recorded in real Make and reports the first module input or output that differs.",
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "Test runner",
+      "operatingSystem": "Windows, macOS, Linux (Node.js 24+)",
+      "license": "https://opensource.org/licenses/MIT",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "url": "https://intikhab49.github.io/blueprint-runtime/",
+      "downloadUrl": "https://github.com/intikhab49/blueprint-runtime",
+      "softwareVersion": "0.3.1",
+      "keywords": "Make.com, Integromat, Make scenario testing, Make blueprint validator, no-code testing, workflow automation, regression testing, CI",
+      "author": { "@type": "Person", "name": "Intikhab Azam", "url": "https://github.com/intikhab49" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I test a Make.com scenario without running it in Make?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Export the scenario's blueprint, save a sample input, and run bpr run blueprint.json --input input.json > expected.json to snapshot every module's output. A test case pointing at that snapshot fails the moment an edit changes any module's output. For proof against Make itself, the expected run can be one recorded in Make." } },
+        { "@type": "Question", "name": "Does it work with Integromat blueprints?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Integromat is Make's former name and the blueprint format is the same. Exports wrapped as {\"blueprint\": ...} or Make API responses are unwrapped automatically." } },
+        { "@type": "Question", "name": "Can I validate or lint a Make blueprint before importing it?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. bpr inspect blueprint.json checks the structure strictly (duplicate keys, broken routes, references to modules that do not run first), lists every expression, and names everything it cannot vouch for. Exit code 0 means it can run offline." } },
+        { "@type": "Question", "name": "Does it call Make, Google Sheets, OpenAI or any other API?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. HTTP and app modules run from fixtures you write, a missing fixture fails the test, and nothing goes over the network. No Make account or API token is needed." } },
+        { "@type": "Question", "name": "What does [] mean in a Make mapping like {{1.choices[].message.content}}?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It reads the first element, not all of them. This was recorded in real Make runs and blueprint-runtime does the same. Make's map() function reads every element." } },
+        { "@type": "Question", "name": "Is blueprint-runtime an official Make tool?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. It is an independent MIT-licensed open source project. Every behavior it supports comes from runs recorded in a real Make account." } }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root { --ink:#16202c; --muted:#5a6675; --blue:#2a78d6; --green:#1baf7a; --bg:#fbfcfd; --code:#0f1722; --line:#e3e8ee; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:760px; margin:0 auto; padding:40px 22px 64px; }
+  img { max-width:100%; height:auto; }
+  h1 { font-size:2.1rem; line-height:1.2; margin:28px 0 12px; }
+  h2 { font-size:1.35rem; margin:44px 0 10px; }
+  h3 { font-size:1.02rem; margin:22px 0 4px; }
+  p.lead { font-size:1.12rem; color:var(--muted); }
+  a { color:var(--blue); }
+  .cta { display:inline-block; margin:8px 10px 0 0; padding:11px 18px; border-radius:8px; background:var(--blue); color:#fff; text-decoration:none; font-weight:600; }
+  .cta.alt { background:transparent; color:var(--blue); border:1.5px solid var(--blue); }
+  pre { background:var(--code); color:#dfe7ef; padding:16px 18px; border-radius:8px; overflow-x:auto; font-size:.88rem; line-height:1.5; }
+  code { font-family:ui-monospace,"Cascadia Code",Consolas,monospace; }
+  p code, li code { background:#eef2f6; padding:1px 5px; border-radius:4px; font-size:.9em; }
+  .stat { color:var(--green); font-weight:700; }
+  ul { padding-left:22px; }
+  footer { margin-top:56px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+<img src="header.svg" alt="blueprint-runtime: run and test Make scenario blueprints offline. 71 of 79 real Make runs reproduced exactly, 0 differ." width="760" height="215">
+
+<h1>Test Make.com scenarios offline, before you deploy</h1>
+<p class="lead">blueprint-runtime (<code>bpr</code>) is an open source test runner for Make.com (formerly Integromat) scenario blueprints. It replays real Make runs on your machine or in CI and points at the first value that changed. No Make account, no credits, no network.</p>
+<a class="cta" href="https://github.com/intikhab49/blueprint-runtime">View on GitHub</a>
+<a class="cta alt" href="https://github.com/intikhab49/blueprint-runtime#quick-start">Quick start</a>
+
+<h2>The problem</h2>
+<p>You build a scenario in Make and it works. Then someone edits a mapping, and the only way to know what broke is to run it again in Make, with real data and real credits. <code>bpr</code> runs the exported blueprint locally instead. It compares every module's input and output bundles, every filter decision and the webhook response with what Make actually produced:</p>
+<pre><code>$ bpr test examples/broken-mapping
+FAIL  A-002-plain   module 2 input bundle 1 at /value: Make had "ADA LOVELACE", the local run "Ada Lovelace"</code></pre>
+<p>Someone changed <code>upper(1.name)</code> to <code>capitalize(1.name)</code>. The test caught it at module 2.</p>
+
+<h2>Measured against real Make</h2>
+<p><span class="stat">71 of 79</span> runs recorded in a real Make account are reproduced exactly, and <span class="stat">0 differ</span>. The other 8 use behavior that was never observed, so <code>bpr</code> refuses them and names the reason instead of guessing. Every supported behavior has a recording in the <a href="https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md">corpus</a>.</p>
+<img src="demo.gif" alt="Terminal demo: bpr test replays recorded Make runs and catches a broken mapping" loading="lazy">
+
+<h2>What you can do with it</h2>
+<ul>
+  <li><strong>Regression-test Make scenarios in CI.</strong> Run <code>bpr test</code> in GitHub Actions on every change to an exported blueprint.</li>
+  <li><strong>Snapshot-test a scenario.</strong> <code>bpr run</code> saves everything a scenario produces; any later edit that changes an output fails the test.</li>
+  <li><strong>Validate a blueprint before import.</strong> <code>bpr inspect</code> catches duplicate keys, broken routes and references to modules that have not run yet.</li>
+  <li><strong>Test HTTP and app modules without calling them.</strong> They run from fixtures you write, and a missing fixture fails closed.</li>
+</ul>
+
+<h2>Quick start</h2>
+<pre><code>git clone https://github.com/intikhab49/blueprint-runtime
+cd blueprint-runtime
+npm ci
+npm run build &amp;&amp; npm link
+
+bpr test corpus/reference --allow-unsupported   # replay all 79 recorded Make runs
+bpr test examples/broken-mapping                # a broken mapping, caught
+bpr inspect your-scenario.blueprint.json        # can it run offline?</code></pre>
+<p>Requires Node 24 or newer. MIT licensed, zero runtime dependencies.</p>
+
+<h2>FAQ</h2>
+<h3>How do I test a Make.com scenario without running it in Make?</h3>
+<p>Export the blueprint (scenario menu → Export blueprint), save a sample input, and run <code>bpr run blueprint.json --input input.json &gt; expected.json</code>. A test case pointing at that snapshot fails as soon as an edit changes any module's output.</p>
+<h3>Does it work with Integromat blueprints?</h3>
+<p>Yes. Integromat is Make's former name and the format is the same. Wrapped exports and Make API responses are unwrapped automatically.</p>
+<h3>Does it call Make, Google Sheets, OpenAI or any other API?</h3>
+<p>No. Nothing goes over the network, and no Make account or API token is needed.</p>
+<h3>What does <code>[]</code> mean in a mapping like <code>{{1.choices[].message.content}}</code>?</h3>
+<p>It reads the first element only. That was recorded in real Make runs. Use <code>map()</code> to read every element.</p>
+<h3>What doesn't it support yet?</h3>
+<p>It covers a narrow slice of Make, and most public blueprints still use something outside it. The most common gaps are error-handler routes, <code>json:ParseJSON</code> and <code>util:SetVariables</code>. <code>bpr inspect</code> tells you up front whether your blueprint can run offline.</p>
+<h3>Is it an official Make tool?</h3>
+<p>No. It is an independent open source project.</p>
+
+<footer>
+  blueprint-runtime · MIT · by <a href="https://github.com/intikhab49">Intikhab Azam</a> · <a href="https://github.com/intikhab49/blueprint-runtime">Source</a> · <a href="llms.txt">llms.txt</a><br>
+  Make and Integromat are trademarks of their owners. This project is not affiliated with Make.
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# blueprint-runtime
+
+> Offline test runner for Make.com (formerly Integromat) scenario blueprints. It runs an exported blueprint locally, replays runs recorded in real Make, and reports the first module input or output that differs. No Make account, no credits, no network. MIT licensed, Node 24+, zero runtime dependencies. Independent project, not made by Make.
+
+Every behavior it supports was observed in a real Make run; anything else is refused with a named reason, never guessed. Measured result: 71 of 79 recorded Make runs reproduced exactly, 0 differ (8 refused as unsupported).
+
+## Use it for
+
+- Testing a Make.com scenario before deploying a change ("did my edit break the mapping?")
+- Regression and snapshot testing of Make scenarios in CI (GitHub Actions)
+- Validating or linting a Make blueprint JSON before importing it (`bpr inspect`)
+- Checking how Make evaluates an expression such as `{{1.choices[].message.content}}` (`[]` reads the first element only; `map()` reads all)
+
+## Commands
+
+- `bpr test <case|dir>`: replay recorded runs, report the first divergence (exit 0 pass, 1 fail)
+- `bpr inspect <blueprint.json>`: strict structural check, expression list, what can and cannot run offline (exit 0 runnable)
+- `bpr run <blueprint.json> --input input.json [--fixtures f.json]`: run locally; HTTP and app modules run from fixtures
+
+## Links
+
+- [Repository and README](https://github.com/intikhab49/blueprint-runtime)
+- [Recorded Make behavior (NOTES)](https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md)
+- [Broken-mapping example](https://github.com/intikhab49/blueprint-runtime/tree/main/examples/broken-mapping)
+- [HTTP fixture example](https://github.com/intikhab49/blueprint-runtime/tree/main/examples/http-fixture)
+
+## Limits
+
+- Covers a narrow slice of Make: custom webhook and Basic trigger (third-party app triggers take their bundles as case input), routers, filters (31 operators), iterators with a Text aggregator, Set variable, Webhook response, Sleep, HTTP "Make a request" v3 and app modules from fixtures, and 58 recorded expression functions. Most public blueprints still use something unsupported (error-handler routes, json:ParseJSON, util:SetVariables).
+- A fixture proves your scenario's handling of a response, not the third-party service.
+- Recorded on one account, region eu1, October 2026.

@@ -50,9 +50,9 @@ Generated from real command output by [`docs/make_demo.py`](docs/make_demo.py).
 
 On top of the runs, 225 single formulas were recorded through probe sets (D2, D3, F1) and are replayed in the tests.
 
-![36 of 221 public blueprints pass inspect: 36 eligible, 164 not yet supported, 21 invalid exports. Most common blockers: json:ParseJSON 32, error-handler routes 31, util:SetVariables 25, HTTP states-as-errors off 24, other modules per iterator bundle 23, array aggregator 20.](docs/charts/2_survey.png)
+![38 of 221 public blueprints pass inspect: 38 eligible, 175 not yet supported, 8 invalid exports. Most common blockers: error-handler routes 34, json:ParseJSON 33, util:SetVariables 26, other modules per iterator bundle 26, HTTP states-as-errors off 25, other first module 23, array aggregator 21, response headers 19.](docs/charts/2_survey.png)
 
-**How much of the real world runs today: 35 of 221 public Make blueprints on GitHub (16%), all with fixtures** (36 pass `inspect`; one is refused at run time for `md5()` of a date). It was 18 at v0.1.0: polling and app triggers (v0.2) and `[]` plus `now` (v0.3) were the biggest blockers. The chart on the right is the roadmap. Method, full table and per-file results: [`corpus/survey/`](corpus/survey/README.md).
+**How much of the real world runs today: 37 of 221 public Make blueprints on GitHub (17%), all with fixtures** (38 pass `inspect`; one is refused at run time for `md5()` of a date). It was 18 at v0.1.0: polling and app triggers (v0.2) and `[]` plus `now` (v0.3) were the biggest blockers. The chart on the right is the roadmap. Method, full table and per-file results: [`corpus/survey/`](corpus/survey/README.md).
 
 ## Quick start
 

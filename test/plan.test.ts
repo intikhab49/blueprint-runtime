@@ -44,7 +44,11 @@ describe('loadBlueprint: bounded import (BR-008)', () => {
   it('rejects invalid routes', () => {
     assert.ok(codes(loadBlueprint(enc({ flow: [router(1, [{ nope: [] }])] }))).includes('BP_FLOW_NOT_ARRAY'));
     assert.ok(codes(loadBlueprint(enc({ flow: [{ ...mod(1), routes: [] }] }))).includes('BP_ROUTES_ON_NON_ROUTER'));
-    assert.ok(codes(loadBlueprint(enc({ flow: [{ id: 1, module: 'builtin:BasicRouter', version: 1 }] }))).includes('BP_ROUTER_WITHOUT_ROUTES'));
+    // Make exports a router with nothing attached without "routes", and its empty module slot
+    // with "id": null and no version (public survey): valid files, refused later by inspect.
+    assert.deepEqual(codes(loadBlueprint(enc({ flow: [{ id: 1, module: 'builtin:BasicRouter', version: 1 }] }))), []);
+    assert.deepEqual(codes(loadBlueprint(enc({ flow: [{ id: null, module: 'placeholder:Placeholder' }] }))), []);
+    assert.ok(codes(loadBlueprint(enc({ flow: [{ id: null, module: 'util:SetVariable2', version: 1 }] }))).includes('BP_BAD_MODULE_ID'));
     assert.ok(codes(loadBlueprint(enc({ flow: [router(1, [{ flow: [] }]), mod(2)] }))).includes('BP_MODULE_AFTER_ROUTER'));
     assert.ok(codes(loadBlueprint(enc({ flow: [router(1, [{ flow: [] }], { parameters: { else: 1 } })] }))).includes('BP_BAD_ELSE_ROUTE'));
   });

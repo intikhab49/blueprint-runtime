@@ -51,42 +51,42 @@
   },
   "survey": {
     "files": 221,
-    "eligible": 36,
-    "unsupported": 164,
-    "invalid": 21,
+    "eligible": 38,
+    "unsupported": 175,
+    "invalid": 8,
     "eligibleRefusedAtRuntime": 3,
     "topBlockers": [
       [
-        "module json:ParseJSON",
-        32
+        "ERROR_HANDLER_UNSUPPORTED",
+        34
       ],
       [
-        "ERROR_HANDLER_UNSUPPORTED",
-        31
+        "module json:ParseJSON",
+        33
       ],
       [
         "module util:SetVariables",
-        25
-      ],
-      [
-        "MODULE_CONFIG_UNSUPPORTED: \"\u2026\" switched off has not been observed in Make",
-        24
+        26
       ],
       [
         "ITERATOR_SCOPE_UNSUPPORTED",
+        26
+      ],
+      [
+        "MODULE_CONFIG_UNSUPPORTED: \"\u2026\" switched off has not been observed in Make",
+        25
+      ],
+      [
+        "a polling or app trigger instead of a Custom webhook",
         23
       ],
       [
         "module builtin:BasicAggregator",
-        20
+        21
       ],
       [
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
-        18
-      ],
-      [
-        "a polling or app trigger instead of a Custom webhook",
-        17
+        19
       ]
     ],
     "surveyedAt": "2026-10-10"

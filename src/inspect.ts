@@ -128,7 +128,9 @@ export function inspectBytes(file: string, bytes: Uint8Array, limits: LoadLimits
         report.fixtures.push({ moduleId: m.id, module: m.module, mode });
         add({ code: 'FIXTURE_REQUIRED', severity: 'warning', message: `Module ${m.id} (${m.module}) runs offline only from ${mode === 'http' ? 'an HTTP fixture (the request it builds is checked)' : 'a module fixture (its mapped input is checked; the connector itself is not verified)'}`, pointer: `${m.pointer}/module` });
       }
-      if (!support && !opaque) {
+      if (m.module === 'placeholder:Placeholder') {
+        add({ code: 'MODULE_PLACEHOLDER', severity: 'unsupported', message: `Module ${m.id} is an empty module slot (placeholder:Placeholder): the scenario cannot run until it is filled in`, pointer: `${m.pointer}/module` });
+      } else if (!support && !opaque) {
         add({ code: 'MODULE_UNSUPPORTED', severity: 'unsupported', message: `Module ${m.id} uses ${m.module}, which has no recorded Make behavior in this runtime yet`, pointer: `${m.pointer}/module` });
       } else if (support && !versionOk) {
         add({ code: 'MODULE_VERSION_UNSUPPORTED', severity: 'unsupported', message: `Module ${m.id}: ${m.module} version ${m.version} is not covered (known: ${support.versions.join(', ')})`, pointer: `${m.pointer}/version` });
@@ -153,6 +155,7 @@ export function inspectBytes(file: string, bytes: Uint8Array, limits: LoadLimits
       }
       if (m.module === 'builtin:BasicRouter') {
         const count = m.routeCount ?? 0;
+        if (count === 0) add({ code: 'ROUTER_SHAPE_UNSUPPORTED', severity: 'unsupported', message: `Router ${m.id} has no routes; a router with nothing attached has not been observed in Make`, pointer: m.pointer });
         if (m.elseRoute !== undefined && m.elseRoute !== count - 1) add({ code: 'ROUTER_SHAPE_UNSUPPORTED', severity: 'unsupported', message: `Router ${m.id}: a fallback that is not the last route has not been observed in Make`, pointer: `${m.pointer}/parameters` });
         for (let r = 0; r < count; r++) {
           if (!plan.modules.some((x) => x.branch.length === m.branch.length + 1 && x.branch.at(-1)?.owner === m.id && x.branch.at(-1)?.index === r)) {

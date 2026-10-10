@@ -290,7 +290,7 @@ const httpRequest: ModuleHandler = {
  * Apps whose modules run inside Make. They are engine behavior and must be
  * implemented and recorded, never replaced by a fixture.
  */
-const LOCAL_APPS = new Set(['builtin', 'util', 'gateway', 'json', 'regexp', 'http', 'datastore', 'tools', 'csv', 'xml', 'markdown', 'code', 'scenario-service']);
+const LOCAL_APPS = new Set(['builtin', 'util', 'gateway', 'json', 'regexp', 'http', 'datastore', 'tools', 'csv', 'xml', 'markdown', 'code', 'scenario-service', 'placeholder']);
 
 /** A third-party app module (e.g. google-sheets:addRow): runs only from an opaque module fixture. */
 export const isOpaqueModule = (module: string): boolean => !LOCAL_APPS.has(module.slice(0, module.indexOf(':')));

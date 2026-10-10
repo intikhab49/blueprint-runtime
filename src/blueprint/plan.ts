@@ -100,8 +100,10 @@ export function buildPlan(doc: JsonObject, limits: PlanLimits, base = ''): { pla
         err('BP_MODULE_NOT_OBJECT', 'Expected a module object', p);
         return;
       }
-      const id = raw['id'];
-      if (typeof id !== 'number' || !Number.isSafeInteger(id) || id < 1) {
+      // Make exports the editor's empty module slot with "id": null (public survey); give it a
+      // negative id of its own so it cannot collide with, or be referenced as, a real module.
+      const id = raw['id'] === null && raw['module'] === 'placeholder:Placeholder' ? -(modules.length + 1) : raw['id'];
+      if (typeof id !== 'number' || !Number.isSafeInteger(id) || (id < 1 && raw['module'] !== 'placeholder:Placeholder')) {
         err('BP_BAD_MODULE_ID', `Module id must be a positive integer, got ${JSON.stringify(id ?? null)}`, `${p}/id`);
         return;
       }
@@ -118,9 +120,13 @@ export function buildPlan(doc: JsonObject, limits: PlanLimits, base = ''): { pla
         err('BP_BAD_MODULE_NAME', `Module ${id}: "module" must look like "app:name", got ${JSON.stringify(moduleName ?? null)}`, `${p}/module`);
         return;
       }
-      const version = raw['version'];
-      if (typeof version !== 'number' || !Number.isSafeInteger(version) || version < 1) {
-        err('BP_BAD_MODULE_VERSION', `Module ${id}: "version" must be a positive integer, got ${JSON.stringify(version ?? null)}`, `${p}/version`);
+      // Make's own exports contain version 0 (its AI Agent module, ai-local-agent:RunLocalAIAgent)
+      // and no version at all on placeholder:Placeholder, the empty module slot of the editor
+      // (public survey, 2026-10-10). Anything else must be a whole number.
+      const rawVersion = raw['version'];
+      const version = rawVersion === undefined && moduleName === 'placeholder:Placeholder' ? 0 : rawVersion;
+      if (typeof version !== 'number' || !Number.isSafeInteger(version) || version < 0) {
+        err('BP_BAD_MODULE_VERSION', `Module ${id}: "version" must be a whole number, got ${JSON.stringify(version ?? null)}`, `${p}/version`);
         return;
       }
       if (i > 0 && modules.length > 0) {
@@ -182,7 +188,8 @@ export function buildPlan(doc: JsonObject, limits: PlanLimits, base = ''): { pla
           }
         }
       } else if (moduleName === 'builtin:BasicRouter') {
-        err('BP_ROUTER_WITHOUT_ROUTES', `Router ${id} has no "routes" array`, p);
+        // Make exports a router with no routes attached without a "routes" key (public survey).
+        pm.routeCount = 0;
       }
 
       const onerror = raw['onerror'];

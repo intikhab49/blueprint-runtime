@@ -161,11 +161,11 @@
       "repo": "Activi-AI/Lead-aIi-Hoiusefinder--merge",
       "path": "docs/merged_local_docs/make-lead-ai-blueprint.json",
       "sha": "fc209f466f5812be4574500fbc7ad5343704ee9a",
-      "verdict": "invalid",
-      "modules": 0,
+      "verdict": "unsupported",
+      "modules": 2,
       "fixtures": [],
       "blockers": [
-        "BP_ROUTER_WITHOUT_ROUTES"
+        "ROUTER_SHAPE_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -173,13 +173,13 @@
       "repo": "AlfonsoSBLA/esic-skills-pack",
       "path": "skills/vendor/make-official/skills/make-module-configuring/examples/ai-agent-full-blueprint.json",
       "sha": "c5708edc54c8e8aaebf9b8227c6c485be9a4deda",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
-      "blockers": [
-        "BP_BAD_MODULE_VERSION"
+      "verdict": "eligible",
+      "modules": 3,
+      "fixtures": [
+        "2 module"
       ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "AllianceStrategicHoldings/coin-appraisal-register",
@@ -588,11 +588,24 @@
       "repo": "Dhananjay-Yadav-00/social-media-chat-model",
       "path": "make.com/social-leaf-analytics-sync.json",
       "sha": "009eca9edadca07648b8f97922abfc18f42e788e",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "2 http",
+        "8 module",
+        "9 module",
+        "10 module",
+        "11 module",
+        "12 module"
+      ],
       "blockers": [
-        "BP_ROUTER_WITHOUT_ROUTES"
+        "a polling or app trigger instead of a Custom webhook",
+        "module builtin:BasicTrigger",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
+        "ROUTER_SHAPE_UNSUPPORTED",
+        "module builtin:BasicFilter",
+        "FILTER_OPERATOR_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -722,11 +735,29 @@
       "repo": "EricTechPro/Ai-Agent-templates",
       "path": "Make-Daily-Job-Collector.json",
       "sha": "20dd53422fbe59a9e26b05fa8bf85d87186de5fd",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 22,
+      "fixtures": [
+        "1 module",
+        "18 module",
+        "19 http",
+        "20 module",
+        "38 module",
+        "2 module",
+        "71 module",
+        "72 module",
+        "73 http",
+        "79 module",
+        "81 module",
+        "83 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_ID"
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_PLACEHOLDER",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Ignore",
+        "REF_NOT_UPSTREAM",
+        "keyword timestamp"
       ],
       "smoke": null
     },
@@ -1112,11 +1143,23 @@
       "repo": "Julien218/oliviertrevis-site",
       "path": "incoming_files/170c448f6_IntegrationWebhooksInstagramforBusinessFacebookloginFacebookPagesYouTubeblueprint.json",
       "sha": "9d834a83f013befacff00051181754ed8fdb074c",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 13,
+      "fixtures": [
+        "1 trigger",
+        "13 module",
+        "14 module",
+        "12 module",
+        "11 module",
+        "2 module",
+        "4 module",
+        "6 module",
+        "8 module",
+        "9 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_VERSION"
+        "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
+        "MODULE_PLACEHOLDER"
       ],
       "smoke": null
     },
@@ -1370,11 +1413,16 @@
       "repo": "Nexus-It-today/nexus-intake",
       "path": "reference/make/blueprints/2a -CTNI Woocommerce Data Refresh.blueprint.json",
       "sha": "d237908cd19656508c1f1c3975fcf2426835c5a7",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 5,
+      "fixtures": [
+        "1 trigger",
+        "3 module",
+        "5 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_VERSION"
+        "FILTER_SHAPE_UNSUPPORTED",
+        "MODULE_PLACEHOLDER"
       ],
       "smoke": null
     },
@@ -1538,11 +1586,15 @@
       "repo": "Percy-O/Slack-AI-Researcher",
       "path": "Slack AI Researcher.blueprint.json",
       "sha": "a6ae3cb60d6aa4eb9424d3fdbe72562395bd78f7",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 4,
+      "fixtures": [
+        "3 module",
+        "6 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_VERSION"
+        "module json:ParseJSON",
+        "REF_UNKNOWN_MODULE"
       ],
       "smoke": null
     },
@@ -1884,11 +1936,19 @@
       "repo": "Tanavud-mgts/meeting-system",
       "path": "Integration Webhooks.blueprint_v2.json",
       "sha": "841595f76b7d3f3c4fd46007f4c6248da58ba282",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "4 module",
+        "5 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_VERSION"
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module datastore:ExistRecord",
+        "module datastore:GetRecord",
+        "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded",
+        "MODULE_PLACEHOLDER"
       ],
       "smoke": null
     },
@@ -2541,13 +2601,17 @@
       "repo": "darkmagicYT/DesarrolloSustentable",
       "path": "2.1(Ecosistema)/Codigo/Ecosistema.blueprint.json",
       "sha": "96844b8ab4289b90175e17608a35de393bf5e28c",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
-      "blockers": [
-        "BP_BAD_MODULE_VERSION"
+      "verdict": "eligible",
+      "modules": 6,
+      "fixtures": [
+        "1 trigger",
+        "3 module",
+        "5 module",
+        "6 module",
+        "4 module"
       ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "degregar/michalkukla-astro",
@@ -2687,11 +2751,21 @@
       "repo": "eriksjaastad/Smart-Invoice-Follow-Up-Workflow",
       "path": "Integration HTTP, Google Sheets, Tools, Gmail.blueprint.json",
       "sha": "7a4464239bda2583a9e1eca15ecd3b117a1d53cf",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 9,
+      "fixtures": [
+        "4 module",
+        "18 module",
+        "20 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_VERSION"
+        "a polling or app trigger instead of a Custom webhook",
+        "module http:MakeRequest",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "FILTER_OPERATOR_UNSUPPORTED",
+        "EXPRESSION_SYNTAX: Unexpected character \"…\"",
+        "MODULE_PLACEHOLDER",
+        "function dateDifference()"
       ],
       "smoke": null
     },
@@ -2789,11 +2863,22 @@
       "repo": "fluxaimarketingdigital-ship-it/fluxai-site",
       "path": "docs/make_blueprints/06_FLUXAI_META_SYNC_OFICIAL.blueprint.json",
       "sha": "19a588e633327739895e23e8050bb172e5cf7701",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 14,
+      "fixtures": [
+        "9 module",
+        "11 module",
+        "10 module",
+        "42 module",
+        "8 module",
+        "30 module",
+        "5 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_VERSION"
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_PLACEHOLDER",
+        "module http:MakeRequest",
+        "ITERATOR_SCOPE_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -2975,11 +3060,30 @@
       "repo": "houseofichigo/json",
       "path": "0qf0blCB4Mc_2.json",
       "sha": "9c343c86a13082274ac87f12bee2586499fec2c5",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 22,
+      "fixtures": [
+        "75 module",
+        "77 http",
+        "80 http",
+        "18 http",
+        "41 http",
+        "19 http",
+        "28 http",
+        "33 http",
+        "72 module",
+        "73 http",
+        "71 http",
+        "70 http",
+        "35 http",
+        "31 http",
+        "66 http"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_ID"
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_PLACEHOLDER",
+        "module util:SetVariables",
+        "module json:TransformToJSON"
       ],
       "smoke": null
     },
@@ -3464,11 +3568,24 @@
       "repo": "marequest/lead-outreach-research-system",
       "path": "blueprints/1_1_Blog_Research_--_Start_and_call_1_2_blueprint.json",
       "sha": "af6f2e1a0292d5dcea322f49423ab377354e4514",
-      "verdict": "invalid",
-      "modules": 0,
-      "fixtures": [],
+      "verdict": "unsupported",
+      "modules": 12,
+      "fixtures": [
+        "67 module",
+        "62 module",
+        "63 module",
+        "58 module",
+        "33 module"
+      ],
       "blockers": [
-        "BP_BAD_MODULE_VERSION"
+        "a polling or app trigger instead of a Custom webhook",
+        "MODULE_PLACEHOLDER",
+        "ERROR_HANDLER_UNSUPPORTED",
+        "module builtin:Resume",
+        "ITERATOR_SCOPE_UNSUPPORTED",
+        "module builtin:BasicAggregator",
+        "module scenario-service:CallSubscenario",
+        "module http:MakeRequest"
       ],
       "smoke": null
     },

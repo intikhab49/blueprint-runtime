@@ -6,7 +6,7 @@ import { inspectBytes } from '../inspect.ts';
 import { isObject, JsonParseError, parseJson, type JsonValue } from '../json/parse.ts';
 import { compareExecutions, type Divergence } from './compare.ts';
 import { FixtureError, FixtureSet } from './fixtures.ts';
-import { LimitExceededError, runScenario } from './scheduler.ts';
+import { InvalidInputError, LimitExceededError, runScenario } from './scheduler.ts';
 import type { Reference, Trace } from './trace.ts';
 
 /**
@@ -94,6 +94,7 @@ export function runCase(file: string): CaseResult {
       fixtures.assertAllUsed();
     } catch (e) {
       if (e instanceof FixtureError) return { ...base, verdict: 'fixture', message: e.message };
+      if (e instanceof InvalidInputError) return { ...base, verdict: 'invalid', message: e.message };
       if (e instanceof UnsupportedError) return { ...base, verdict: 'unsupported', message: e.message };
       if (e instanceof LimitExceededError) return { ...base, verdict: 'limit', message: e.message };
       throw e;

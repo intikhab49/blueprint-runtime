@@ -312,6 +312,38 @@ const opaqueModule: ModuleHandler = {
   },
 };
 
+/**
+ * Basic trigger (Tools): emits the bundles written in its settings, each a collection of
+ * name/value text pairs, in order. Values stay text, empty text included (T-08); no
+ * __IMTINDEX__ is added (T-01). Only text values have been recorded.
+ */
+export function basicTriggerBundles(module: PlanModule): JsonObject[] {
+  onlyKeys(module, 'parameters', ['values']);
+  if (isObject(module.mapper) && Object.keys(module.mapper).length > 0) throw new UnsupportedError(`Basic trigger ${module.id}: mapped fields have not been observed in Make`);
+  const values = module.parameters['values'];
+  if (!Array.isArray(values)) throw new UnsupportedError(`Basic trigger ${module.id}: bundles that are not a list have not been observed in Make`);
+  return values.map((item, i) => {
+    const spec = isObject(item) ? item['spec'] : undefined;
+    if (!Array.isArray(spec)) throw new UnsupportedError(`Basic trigger ${module.id}: bundle ${i + 1} has no item list`);
+    const bundle: JsonObject = {};
+    for (const s of spec) {
+      if (!isObject(s) || typeof s['name'] !== 'string' || typeof s['value'] !== 'string') throw new UnsupportedError(`Basic trigger ${module.id}: bundle ${i + 1} has an item that is not a text name and value; only text has been observed in Make`);
+      if (s['name'] in bundle) throw new UnsupportedError(`Basic trigger ${module.id}: bundle ${i + 1} repeats the name "${s['name']}"; that has not been observed in Make`);
+      bundle[s['name']] = s['value'];
+    }
+    return bundle;
+  });
+}
+
+const basicTrigger: ModuleHandler = {
+  check(module) {
+    basicTriggerBundles(module);
+  },
+  run() {
+    throw new Error('the trigger is handled by the scheduler');
+  },
+};
+
 /** The handler for a module, or undefined if it cannot run. */
 export function handlerFor(module: string): ModuleHandler | undefined {
   return HANDLERS[module] ?? (isOpaqueModule(module) ? opaqueModule : undefined);
@@ -323,4 +355,5 @@ export const HANDLERS: Readonly<Record<string, ModuleHandler>> = {
   'gateway:WebhookRespond': webhookRespond,
   'builtin:BasicFeeder': iterator,
   'http:ActionSendData': httpRequest,
+  'util:BasicTrigger': basicTrigger,
 };

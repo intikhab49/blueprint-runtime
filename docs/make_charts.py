@@ -39,6 +39,7 @@ FAMILIES = [
     ("C", "C  iterator + aggregator"),
     ("C2", "C2 iterator probes"),
     ("E", "E  HTTP from fixtures"),
+    ("T", "T  multi-bundle trigger"),
     ("D", "D  formula probes"),
 ]
 
@@ -113,7 +114,7 @@ def survey():
 
 
 SHORT = {
-    "a polling or app trigger instead of a Custom webhook": "polling / app trigger",
+    "a polling or app trigger instead of a Custom webhook": "other first module (mail hook, HTTP, …)",
     "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make": "[] array mapping",
     "keyword now": "now keyword",
     "module json:ParseJSON": "json:ParseJSON",
@@ -121,6 +122,7 @@ SHORT = {
     "module util:SetVariables": "util:SetVariables",
     'MODULE_CONFIG_UNSUPPORTED: "…" switched off has not been observed in Make': "HTTP \"states as errors\" off",
     "ITERATOR_SCOPE_UNSUPPORTED": "other modules per iterator bundle",
+    "module builtin:BasicAggregator": "array aggregator",
 }
 
 
@@ -142,7 +144,9 @@ def chart_survey(s):
     a2.set_title("what holds the rest back (files)")
     a2.grid(axis="y", visible=False)
     a2.tick_params(axis="y", labelsize=9)
-    caption(fig, f'GitHub code search {s["surveyedAt"]}; every eligible file also runs through the scheduler with 0 refusals')
+    n = s["eligibleRefusedAtRuntime"]
+    caption(fig, f'GitHub code search {s["surveyedAt"]}; every eligible file was also run through the scheduler: '
+                 + (f'{n} refused on stub test data (reasons in corpus/survey)' if n else '0 refusals'))
     fig.tight_layout(rect=(0, 0, 1, 0.95))
     fig.savefig(OUT / "charts" / "2_survey.png")
     plt.close(fig)

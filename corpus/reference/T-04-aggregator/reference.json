@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "94651bdbd4fa43058a92f2415171b9ed",
+  "recordedAt": "2026-10-10T12:11:37.031Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "name": "a",
+          "qty": "1"
+        },
+        {
+          "name": "b",
+          "qty": "2"
+        },
+        {
+          "name": "c",
+          "qty": "3"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "a:2"
+        }
+      ],
+      "output": [
+        {
+          "line": "a:2"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "b:4"
+        }
+      ],
+      "output": [
+        {
+          "line": "b:4"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": "c:6"
+        }
+      ],
+      "output": [
+        {
+          "line": "c:6"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "value": "a:2"
+        },
+        {
+          "value": "b:4"
+        },
+        {
+          "value": "c:6"
+        }
+      ],
+      "output": [
+        {
+          "text": "a:2|b:4|c:6"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "name": "after",
+          "value": "[a:2|b:4|c:6]()()"
+        }
+      ],
+      "output": [
+        {
+          "after": "[a:2|b:4|c:6]()()"
+        }
+      ]
+    }
+  ]
+}

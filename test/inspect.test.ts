@@ -91,7 +91,7 @@ describe('inspect findings', () => {
   it('applies the runtime setting-based refusals, so eligible means runnable (public survey)', () => {
     const codes = (flow: unknown[]) => inspectBytes('t.json', enc({ flow })).findings.filter((f) => f.severity === 'unsupported').map((f) => f.code);
     const http = (mapper: Record<string, unknown>, parameters: Record<string, unknown> = { handleErrors: true }) => ({ id: 2, module: 'http:ActionSendData', version: 3, parameters, mapper: { url: 'https://x.test', method: 'get', parseResponse: true, ...mapper } });
-    assert.deepEqual(codes([{ id: 1, module: 'google-sheets:watchRows', version: 2, mapper: {} }]), ['TRIGGER_UNSUPPORTED']);
+    assert.deepEqual(codes([{ id: 1, module: 'gateway:CustomMailHook', version: 1, mapper: {} }]), ['TRIGGER_UNSUPPORTED', 'MODULE_UNSUPPORTED']);
     assert.deepEqual(codes([hook, http({}, { handleErrors: false })]), ['MODULE_CONFIG_UNSUPPORTED']);
     assert.deepEqual(codes([hook, http({ headers: [{ name: 'a', value: 'b' }] })]), ['MODULE_CONFIG_UNSUPPORTED']);
     assert.deepEqual(codes([hook, http({ headers: '{{1.h}}' })]), []);
@@ -110,9 +110,19 @@ describe('inspect findings', () => {
     }
   });
 
-  it('only allows an upstream iterator as an aggregator source', () => {
-    const doc = { flow: [hook, { id: 2, module: 'util:TextAggregator', version: 1, parameters: { feeder: 1 }, mapper: { value: 'x' } }] };
-    assert.deepEqual(inspectBytes('t.json', enc(doc)).findings.map((f) => f.code), ['AGGREGATOR_SOURCE_UNSUPPORTED', 'AGGREGATOR_SEPARATOR_UNSUPPORTED']);
+  it('only allows an iterator or the trigger as an aggregator source (T-04)', () => {
+    const agg = (feeder: number) => ({ id: 2, module: 'util:TextAggregator', version: 1, parameters: { feeder, rowSeparator: 'other', otherRowSeparator: '|' }, mapper: { value: 'x' } });
+    assert.deepEqual(inspectBytes('t.json', enc({ flow: [hook, agg(9)] })).findings.map((f) => f.code), ['AGGREGATOR_SOURCE_UNSUPPORTED']);
+    assert.deepEqual(inspectBytes('t.json', enc({ flow: [hook, agg(1)] })).findings.map((f) => f.code), []);
+  });
+
+  it('treats a third-party app trigger as input-fed and the Basic trigger as supported', () => {
+    const r = inspectBytes('t.json', enc({ flow: [{ id: 1, module: 'google-sheets:watchRows', version: 2, parameters: {}, mapper: {} }, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'a', value: '{{1.x}}' } }] }));
+    assert.equal(r.verdict, 'eligible');
+    assert.deepEqual(r.fixtures, [{ moduleId: 1, module: 'google-sheets:watchRows', mode: 'trigger' }]);
+    assert.deepEqual(r.findings.map((f) => f.code), ['TRIGGER_FROM_INPUT']);
+    const basic = { id: 1, module: 'util:BasicTrigger', version: 1, parameters: { values: [{ spec: [{ name: 'a', value: 1 }] }] }, mapper: {} };
+    assert.deepEqual(inspectBytes('t.json', enc({ flow: [basic] })).findings.map((f) => f.code), ['MODULE_CONFIG_UNSUPPORTED']);
   });
 
   it('flags iterator structure the scheduler would refuse', () => {

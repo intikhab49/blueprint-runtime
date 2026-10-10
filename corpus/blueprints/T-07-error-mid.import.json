@@ -1,0 +1,108 @@
+{
+  "name": "bpr Scenario T-07-error-mid",
+  "flow": [
+    {
+      "id": 1,
+      "module": "util:BasicTrigger",
+      "version": 1,
+      "parameters": {
+        "values": [
+          {
+            "spec": [
+              {
+                "name": "name",
+                "value": "a"
+              },
+              {
+                "name": "qty",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "spec": [
+              {
+                "name": "name",
+                "value": "b"
+              },
+              {
+                "name": "qty",
+                "value": "2"
+              }
+            ]
+          },
+          {
+            "spec": [
+              {
+                "name": "name",
+                "value": "c"
+              },
+              {
+                "name": "qty",
+                "value": "3"
+              }
+            ]
+          }
+        ]
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "util:SetVariable2",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "name": "line",
+        "value": "{{if(1.name = \"b\"; first(1.name); 1.name)}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 600,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 3,
+      "module": "util:SetVariable2",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "name": "second",
+        "value": "{{2.line}}!"
+      },
+      "metadata": {
+        "designer": {
+          "x": 900,
+          "y": 0
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "designer": {
+      "orphans": []
+    },
+    "scenario": {
+      "dlq": false,
+      "slots": null,
+      "dataloss": false,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "roundtrips": 1,
+      "sequential": false,
+      "confidential": false,
+      "freshVariables": false,
+      "autoCommitTriggerLast": true
+    }
+  }
+}

@@ -26,6 +26,7 @@ export const MODULES: Readonly<Record<string, ModuleSupport>> = {
   'builtin:BasicFeeder': { versions: [1], role: 'iterator', evidence: 'C-01..C-16' },
   'util:TextAggregator': { versions: [1], role: 'aggregator', evidence: 'C-01..C-16, C2-*' },
   'http:ActionSendData': { versions: [3], role: 'http', fixture: 'http', evidence: 'E-*' },
+  'util:BasicTrigger': { versions: [1], role: 'trigger', evidence: 'T-01..T-08' },
 };
 
 /** Filter operators the scheduler implements (src/run/operators.ts), each matched against recorded Make runs. */

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "T-07-error-mid",
+  "blueprint": "../../blueprints/T-07-error-mid.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "T-06-one",
+  "blueprint": "../../blueprints/T-06-one.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

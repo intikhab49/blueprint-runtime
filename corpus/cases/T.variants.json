@@ -1,0 +1,72 @@
+{
+  "name": "T",
+  "scenarioId": 7872022,
+  "run": "api",
+  "restore": "corpus/engine-logs/C.live.blueprint.json",
+  "variants": [
+    {
+      "blueprint": "corpus/blueprints/T-01-three.import.json",
+      "payloads": [
+        {
+          "case": "T-01-three"
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/blueprints/T-02-filter.import.json",
+      "payloads": [
+        {
+          "case": "T-02-filter"
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/blueprints/T-03-router.import.json",
+      "payloads": [
+        {
+          "case": "T-03-router"
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/blueprints/T-04-aggregator.import.json",
+      "payloads": [
+        {
+          "case": "T-04-aggregator"
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/blueprints/T-05-zero.import.json",
+      "payloads": [
+        {
+          "case": "T-05-zero"
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/blueprints/T-06-one.import.json",
+      "payloads": [
+        {
+          "case": "T-06-one"
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/blueprints/T-07-error-mid.import.json",
+      "payloads": [
+        {
+          "case": "T-07-error-mid"
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/blueprints/T-08-types.import.json",
+      "payloads": [
+        {
+          "case": "T-08-types"
+        }
+      ]
+    }
+  ]
+}

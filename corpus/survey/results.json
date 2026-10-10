@@ -27,13 +27,12 @@
       "verdict": "unsupported",
       "modules": 7,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "3 http",
         "2 module",
         "10 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:ParseJSON",
@@ -50,7 +49,7 @@
       "verdict": "unsupported",
       "modules": 11,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "9 module",
         "5 module",
@@ -61,7 +60,6 @@
         "13 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
       ],
       "smoke": null
@@ -87,16 +85,14 @@
       "repo": "Abdifatah-Adam/Email-AI-Agent-Automation",
       "path": "workflow.json.json",
       "sha": "25813c9c0c9ddc23e5fbc44c20feecd5c2a5a8f9",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 2,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "5 module"
       ],
-      "blockers": [
-        "a polling or app trigger instead of a Custom webhook"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "AbuAli85/Contract-Management-System",
@@ -128,7 +124,7 @@
       "verdict": "unsupported",
       "modules": 12,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "3 module",
         "7 module",
         "9 module",
@@ -136,7 +132,6 @@
         "12 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:SetVariables",
         "EXPRESSION_SYNTAX: Expected a field name after \"…\"",
         "module builtin:ArrayAggregator",
@@ -420,7 +415,7 @@
       "verdict": "unsupported",
       "modules": 13,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "3 module",
         "5 module",
@@ -434,7 +429,6 @@
         "13 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "FILTER_OPERATOR_UNSUPPORTED",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "keyword now",
@@ -467,7 +461,7 @@
       "verdict": "unsupported",
       "modules": 8,
       "fixtures": [
-        "2 module",
+        "2 trigger",
         "4 module",
         "5 module",
         "6 module",
@@ -476,7 +470,6 @@
         "10 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "keyword now"
       ],
       "smoke": null
@@ -488,7 +481,7 @@
       "verdict": "unsupported",
       "modules": 12,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "10 module",
         "18 module",
         "13 module",
@@ -501,7 +494,6 @@
         "29 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "keyword now",
         "keyword newline",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
@@ -563,7 +555,7 @@
       "verdict": "unsupported",
       "modules": 21,
       "fixtures": [
-        "17 module",
+        "17 trigger",
         "18 module",
         "3 module",
         "4 module",
@@ -584,7 +576,6 @@
         "25 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
         "REF_UNKNOWN_MODULE",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
@@ -717,10 +708,10 @@
       "repo": "DuranJr/ARI-Flow",
       "path": "ari-flow.blueprint.json",
       "sha": "5da4fd2e7a80f1f6c1249b53211786875fc5be10",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 8,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "5 module",
         "11 module",
@@ -728,10 +719,8 @@
         "14 module",
         "12 module"
       ],
-      "blockers": [
-        "a polling or app trigger instead of a Custom webhook"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "Elimeleth/bookingBot",
@@ -740,12 +729,11 @@
       "verdict": "unsupported",
       "modules": 3,
       "fixtures": [
-        "24 module",
+        "24 trigger",
         "25 module",
         "26 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
       ],
       "smoke": null
@@ -769,7 +757,7 @@
       "verdict": "unsupported",
       "modules": 13,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "4 http",
         "6 module",
@@ -779,7 +767,6 @@
         "13 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:SetVariables",
         "REF_NOT_UPSTREAM",
         "keyword now",
@@ -853,12 +840,11 @@
       "verdict": "unsupported",
       "modules": 6,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 http",
         "13 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
         "ITERATOR_SCOPE_UNSUPPORTED",
         "module builtin:BasicAggregator"
@@ -974,7 +960,7 @@
       "verdict": "unsupported",
       "modules": 36,
       "fixtures": [
-        "57 module",
+        "57 trigger",
         "59 module",
         "61 module",
         "29 module",
@@ -992,7 +978,6 @@
         "54 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:FunctionSleep",
         "module util:SetVariables",
         "EXPRESSION_SYNTAX: Expected \"…\"",
@@ -1019,7 +1004,7 @@
       "verdict": "unsupported",
       "modules": 12,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "4 module",
         "22 module",
@@ -1028,7 +1013,6 @@
         "21 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:SetVariables",
         "module datastore:UpdateRecord",
         "keyword now",
@@ -1130,14 +1114,13 @@
       "verdict": "unsupported",
       "modules": 7,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "4 module",
         "7 module",
         "8 module",
         "11 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "keyword now",
         "module json:ParseJSON"
@@ -1192,11 +1175,10 @@
       "verdict": "unsupported",
       "modules": 4,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "4 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
         "EXPRESSION_SYNTAX: Unexpected \"…\""
       ],
@@ -1253,14 +1235,13 @@
       "verdict": "unsupported",
       "modules": 8,
       "fixtures": [
-        "43 module",
+        "43 trigger",
         "11 module",
         "17 module",
         "45 module",
         "46 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module builtin:BasicAggregator"
       ],
       "smoke": null
@@ -1272,7 +1253,7 @@
       "verdict": "unsupported",
       "modules": 15,
       "fixtures": [
-        "3 module",
+        "3 trigger",
         "2 module",
         "4 module",
         "9 module",
@@ -1280,7 +1261,6 @@
         "1 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ITERATOR_SCOPE_UNSUPPORTED",
         "module datastore:AddRecord"
       ],
@@ -1293,7 +1273,7 @@
       "verdict": "unsupported",
       "modules": 8,
       "fixtures": [
-        "3 module",
+        "3 trigger",
         "7 module",
         "17 module",
         "10 module",
@@ -1301,7 +1281,6 @@
         "16 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module builtin:BasicAggregator",
         "ERROR_HANDLER_UNSUPPORTED",
         "REF_NOT_UPSTREAM",
@@ -1367,12 +1346,11 @@
       "verdict": "unsupported",
       "modules": 5,
       "fixtures": [
-        "3 module",
+        "3 trigger",
         "4 module",
         "6 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ERROR_HANDLER_UNSUPPORTED",
         "keyword now",
         "module builtin:Break"
@@ -1443,7 +1421,7 @@
       "verdict": "unsupported",
       "modules": 18,
       "fixtures": [
-        "2 module",
+        "2 trigger",
         "5 module",
         "7 module",
         "8 module",
@@ -1461,7 +1439,6 @@
         "125 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module builtin:BasicAggregator",
         "ROUTER_SHAPE_UNSUPPORTED",
         "keyword now"
@@ -1584,7 +1561,7 @@
       "verdict": "unsupported",
       "modules": 8,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "23 module",
         "19 module",
         "21 module",
@@ -1593,7 +1570,6 @@
         "30 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "keyword now",
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
@@ -1749,13 +1725,12 @@
       "verdict": "unsupported",
       "modules": 5,
       "fixtures": [
-        "36 module",
+        "36 trigger",
         "46 module",
         "38 module",
         "63 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "FILTER_SHAPE_UNSUPPORTED"
       ],
       "smoke": null
@@ -1779,11 +1754,10 @@
       "verdict": "unsupported",
       "modules": 3,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Rollback"
       ],
@@ -1796,7 +1770,7 @@
       "verdict": "unsupported",
       "modules": 13,
       "fixtures": [
-        "6 module",
+        "6 trigger",
         "14 module",
         "17 module",
         "18 module",
@@ -1806,7 +1780,6 @@
         "25 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:GetVariable2",
         "module util:SetVariables",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
@@ -1822,7 +1795,7 @@
       "verdict": "unsupported",
       "modules": 47,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "11 module",
         "12 module",
         "13 module",
@@ -1856,7 +1829,6 @@
         "69 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ITERATOR_SCOPE_UNSUPPORTED",
         "FILTER_OPERATOR_UNSUPPORTED",
         "module json:ParseJSON",
@@ -1900,7 +1872,7 @@
       "verdict": "unsupported",
       "modules": 44,
       "fixtures": [
-        "3 module",
+        "3 trigger",
         "56 module",
         "22 module",
         "57 module",
@@ -1926,7 +1898,6 @@
         "21 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Resume",
@@ -1951,18 +1922,16 @@
       "repo": "Talhashabir9t/AI_Automation",
       "path": "3. Create Master sheet (API + Slac).json",
       "sha": "74c73d41add1f18173367edf58342c20c9aaf0b0",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 5,
       "fixtures": [
-        "10 module",
+        "10 trigger",
         "11 module",
         "14 module",
         "16 module"
       ],
-      "blockers": [
-        "a polling or app trigger instead of a Custom webhook"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "Tanavud-mgts/meeting-system",
@@ -2001,7 +1970,7 @@
       "verdict": "unsupported",
       "modules": 13,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "5 module",
         "7 module",
         "9 module",
@@ -2010,7 +1979,6 @@
         "13 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "REF_NOT_UPSTREAM",
         "module datastore:ActionSearchRecords",
         "module datastore:ActionAddRecord",
@@ -2027,7 +1995,7 @@
       "verdict": "unsupported",
       "modules": 7,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "5 module",
         "2 module",
         "9 module",
@@ -2036,7 +2004,6 @@
         "11 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ERROR_HANDLER_UNSUPPORTED",
         "REF_NOT_UPSTREAM"
       ],
@@ -2080,13 +2047,11 @@
       "verdict": "unsupported",
       "modules": 3,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "3 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "keyword now",
-        "AGGREGATOR_SOURCE_UNSUPPORTED",
         "AGGREGATOR_SEPARATOR_UNSUPPORTED"
       ],
       "smoke": null
@@ -2098,14 +2063,13 @@
       "verdict": "unsupported",
       "modules": 12,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "4 module",
         "6 module",
         "23 module",
         "7 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:FunctionSleep",
         "ERROR_HANDLER_UNSUPPORTED",
         "keyword now",
@@ -2155,7 +2119,7 @@
       "repo": "Zkamal98/Agentic-AI-Workflow",
       "path": "docs/Agentic-AI-Workflow-blueprint.json",
       "sha": "6b2d940f4283125f3281d0caf4c89262f4a9b8be",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 5,
       "fixtures": [
         "4 module",
@@ -2163,11 +2127,8 @@
         "9 module",
         "22 module"
       ],
-      "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
-        "module util:BasicTrigger"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "aayu22010/ConsultBae-AI-Automation-Assignment",
@@ -2191,7 +2152,7 @@
       "verdict": "unsupported",
       "modules": 21,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "20 module",
         "3 module",
         "23 module",
@@ -2204,7 +2165,6 @@
         "58 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:Switcher",
         "module http:ActionSendDataAPIKeyAuth",
         "module util:SetVariables",
@@ -2244,13 +2204,12 @@
       "verdict": "unsupported",
       "modules": 5,
       "fixtures": [
-        "3 module",
+        "3 trigger",
         "5 module",
         "6 module",
         "11 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
       ],
       "smoke": null
@@ -2351,12 +2310,11 @@
       "verdict": "unsupported",
       "modules": 3,
       "fixtures": [
-        "6 module",
+        "6 trigger",
         "8 module",
         "9 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
       ],
       "smoke": null
@@ -2368,14 +2326,12 @@
       "verdict": "unsupported",
       "modules": 6,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "4 module",
         "12 module",
         "11 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
-        "AGGREGATOR_SOURCE_UNSUPPORTED",
         "AGGREGATOR_SEPARATOR_UNSUPPORTED"
       ],
       "smoke": null
@@ -2410,12 +2366,11 @@
       "verdict": "unsupported",
       "modules": 7,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "3 module",
         "5 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:SetVariables",
         "module util:FunctionSleep"
       ],
@@ -2444,7 +2399,7 @@
       "verdict": "unsupported",
       "modules": 8,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "5 module",
         "6 module",
@@ -2452,7 +2407,6 @@
         "8 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
         "module json:ParseJSON",
@@ -2583,7 +2537,7 @@
       "verdict": "unsupported",
       "modules": 11,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "10 module",
         "13 module",
         "15 module",
@@ -2591,7 +2545,6 @@
         "19 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ROUTER_SHAPE_UNSUPPORTED",
         "module scenario-service:CallSubscenario"
       ],
@@ -2751,20 +2704,18 @@
       "repo": "eleyrot/signals-newsletter",
       "path": "make/flow-a-blueprint.json",
       "sha": "0e6e06bbd2264263125e5ddc9615b74dcc842aa9",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 6,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "3 module",
         "4 module",
         "5 module",
         "6 module"
       ],
-      "blockers": [
-        "a polling or app trigger instead of a Custom webhook"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "REFUSED: formatDate(): missing as a date (argument 1) has not been observed in Make"
     },
     {
       "repo": "elior1324/reviewwise-hub",
@@ -2790,7 +2741,7 @@
       "verdict": "unsupported",
       "modules": 25,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "19 module",
         "22 module",
@@ -2811,7 +2762,6 @@
         "10 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module util:GetVariable2"
       ],
@@ -2853,7 +2803,7 @@
       "fixtures": [],
       "blockers": [
         "module json:ParseJSON",
-        "AGGREGATOR_SOURCE_UNSUPPORTED",
+        "ITERATOR_SCOPE_UNSUPPORTED",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
       ],
       "smoke": null
@@ -2901,7 +2851,7 @@
       "verdict": "unsupported",
       "modules": 17,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "19 module",
         "22 module",
@@ -2916,7 +2866,6 @@
         "7 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module util:GetVariable2"
       ],
@@ -2982,8 +2931,6 @@
         "36 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
-        "module util:BasicTrigger",
         "module util:SetVariables",
         "keyword now",
         "ERROR_HANDLER_UNSUPPORTED",
@@ -3132,16 +3079,14 @@
       "repo": "humaila0/Remote-Job-Scraper",
       "path": "Blueprint.json",
       "sha": "71a6861f8fb49fb8f3d2d1767dfb8deee4947234",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 2,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module"
       ],
-      "blockers": [
-        "a polling or app trigger instead of a Custom webhook"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "iNherjer/GA-Dispatcher-Alpha",
@@ -3232,7 +3177,7 @@
       "verdict": "unsupported",
       "modules": 19,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "30 module",
         "32 http",
         "34 http",
@@ -3246,7 +3191,6 @@
         "47 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module regexp:Replace",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
         "module util:FunctionSleep",
@@ -3284,14 +3228,13 @@
       "verdict": "unsupported",
       "modules": 7,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "5 module",
         "6 module",
         "7 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
         "module json:parseJSON",
         "keyword now"
@@ -3326,7 +3269,7 @@
       "verdict": "unsupported",
       "modules": 10,
       "fixtures": [
-        "2 module",
+        "2 trigger",
         "3 module",
         "15 module",
         "13 module",
@@ -3334,7 +3277,6 @@
         "18 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module builtin:BasicIfElse",
         "module builtin:BasicMerge",
@@ -3378,7 +3320,7 @@
       "verdict": "unsupported",
       "modules": 24,
       "fixtures": [
-        "37 module",
+        "37 trigger",
         "7 http",
         "63 http",
         "68 module",
@@ -3400,7 +3342,6 @@
         "59 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module json:ParseJSON",
         "module http:ActionGetFile",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
@@ -3431,7 +3372,7 @@
       "verdict": "unsupported",
       "modules": 14,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "99 module",
         "274 module",
         "407 module",
@@ -3439,7 +3380,6 @@
         "409 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module json:ParseJSON",
         "module http:MakeRequest",
         "module util:FunctionSleep",
@@ -3456,13 +3396,12 @@
       "verdict": "unsupported",
       "modules": 5,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 http",
         "4 module",
         "5 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
         "keyword now"
       ],
@@ -3475,14 +3414,13 @@
       "verdict": "unsupported",
       "modules": 6,
       "fixtures": [
-        "4 module",
+        "4 trigger",
         "7 module",
         "8 module",
         "11 module",
         "12 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "keyword newline"
       ],
       "smoke": null
@@ -3550,7 +3488,7 @@
       "verdict": "unsupported",
       "modules": 16,
       "fixtures": [
-        "2 module",
+        "2 trigger",
         "4 module",
         "7 module",
         "9 module",
@@ -3563,7 +3501,6 @@
         "24 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ITERATOR_SCOPE_UNSUPPORTED",
         "module builtin:BasicAggregator",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
@@ -3577,14 +3514,13 @@
       "verdict": "unsupported",
       "modules": 8,
       "fixtures": [
-        "4 module",
+        "4 trigger",
         "2 module",
         "14 module",
         "9 module",
         "16 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
       ],
       "smoke": null
@@ -3593,10 +3529,10 @@
       "repo": "majestikmagik/Automation_Invoice_manage_Make",
       "path": "blueprint.json",
       "sha": "32d4cda3f99e548383a588e3b5090b93d4e05fb2",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 8,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "3 module",
         "4 module",
@@ -3604,10 +3540,8 @@
         "7 module",
         "10 module"
       ],
-      "blockers": [
-        "a polling or app trigger instead of a Custom webhook"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "marcc16/portfolioanasdef",
@@ -3616,7 +3550,7 @@
       "verdict": "unsupported",
       "modules": 12,
       "fixtures": [
-        "13 module",
+        "13 trigger",
         "17 module",
         "19 module",
         "31 module",
@@ -3629,7 +3563,6 @@
         "41 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "keyword now"
       ],
@@ -3687,7 +3620,7 @@
       "verdict": "unsupported",
       "modules": 38,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "3 module",
         "16 module",
         "19 http",
@@ -3705,7 +3638,6 @@
         "86 http"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Ignore",
         "module util:GetVariable2",
@@ -3738,7 +3670,7 @@
       "verdict": "unsupported",
       "modules": 10,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "4 module",
         "2 module",
         "3 module",
@@ -3747,7 +3679,6 @@
         "10 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "AGGREGATOR_SOURCE_UNSUPPORTED",
         "AGGREGATOR_SEPARATOR_UNSUPPORTED",
         "module json:ParseJSON",
@@ -3815,7 +3746,7 @@
       "verdict": "unsupported",
       "modules": 16,
       "fixtures": [
-        "2 module",
+        "2 trigger",
         "27 module",
         "14 module",
         "30 module",
@@ -3830,7 +3761,6 @@
         "22 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_SYNTAX: Expected \"…\"",
         "keyword now",
         "module util:ComposeTransformer",
@@ -3955,7 +3885,7 @@
       "verdict": "unsupported",
       "modules": 34,
       "fixtures": [
-        "2 module",
+        "2 trigger",
         "14 module",
         "7 module",
         "8 module",
@@ -3966,7 +3896,6 @@
         "13 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ERROR_HANDLER_UNSUPPORTED",
         "EXPRESSION_UNSUPPORTED: \"…\" is not a module reference; how Make reads it has not been recorded",
         "module builtin:Ignore",
@@ -4045,7 +3974,7 @@
       "verdict": "unsupported",
       "modules": 11,
       "fixtures": [
-        "16 module",
+        "16 trigger",
         "19 module",
         "26 module",
         "20 module",
@@ -4053,7 +3982,6 @@
         "23 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "ROUTER_SHAPE_UNSUPPORTED",
         "FILTER_SHAPE_UNSUPPORTED",
         "module util:SetVariables",
@@ -4112,13 +4040,12 @@
       "verdict": "unsupported",
       "modules": 6,
       "fixtures": [
-        "1 module",
+        "1 trigger",
         "2 module",
         "6 module",
         "9 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "keyword now",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Resume"
@@ -4227,8 +4154,6 @@
         "10 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
-        "module util:BasicTrigger",
         "module csv:ParseCSV",
         "module builtin:BasicAggregator"
       ],
@@ -4246,8 +4171,6 @@
         "7 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
-        "module util:BasicTrigger",
         "module csv:ParseCSV",
         "module builtin:BasicAggregator",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
@@ -4277,7 +4200,7 @@
       "verdict": "unsupported",
       "modules": 23,
       "fixtures": [
-        "38 module",
+        "38 trigger",
         "19 module",
         "34 module",
         "57 module",
@@ -4290,7 +4213,6 @@
         "54 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:SetVariables",
         "keyword newline",
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
@@ -4344,11 +4266,10 @@
       "verdict": "unsupported",
       "modules": 7,
       "fixtures": [
-        "20 module",
+        "20 trigger",
         "17 http"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
         "module util:SetVariable",
         "EXPRESSION_SYNTAX: Expected \"…\"",
         "module util:ComposeTransformer",

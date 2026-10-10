@@ -8,7 +8,7 @@ import { inspectBytes, renderInspect, type InspectReport } from './inspect.ts';
 import { parseJson } from './json/parse.ts';
 import { runCase, type CaseResult } from './run/case.ts';
 import { FixtureError, FixtureSet } from './run/fixtures.ts';
-import { LimitExceededError, runScenario } from './run/scheduler.ts';
+import { InvalidInputError, LimitExceededError, runScenario } from './run/scheduler.ts';
 
 const USAGE = `blueprint-runtime (bpr): run and test Make.com scenario blueprints offline
 
@@ -143,6 +143,10 @@ function run(args: string[]): number {
     if (e instanceof FixtureError) {
       process.stderr.write(`fixture: ${e.message}\n`);
       return EXIT.fixtureMismatch;
+    }
+    if (e instanceof InvalidInputError) {
+      process.stderr.write(`${e.message}\n`);
+      return EXIT.invalidInput;
     }
     if (e instanceof UnsupportedError) {
       process.stderr.write(`not supported yet: ${e.message}\n`);

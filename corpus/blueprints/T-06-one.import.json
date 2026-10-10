@@ -1,0 +1,68 @@
+{
+  "name": "bpr Scenario T-06-one",
+  "flow": [
+    {
+      "id": 1,
+      "module": "util:BasicTrigger",
+      "version": 1,
+      "parameters": {
+        "values": [
+          {
+            "spec": [
+              {
+                "name": "name",
+                "value": "solo"
+              },
+              {
+                "name": "qty",
+                "value": "7"
+              }
+            ]
+          }
+        ]
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "util:SetVariable2",
+      "version": 1,
+      "parameters": {},
+      "mapper": {
+        "name": "line",
+        "value": "{{1.name}}:{{1.qty * 2}}"
+      },
+      "metadata": {
+        "designer": {
+          "x": 600,
+          "y": 0
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "designer": {
+      "orphans": []
+    },
+    "scenario": {
+      "dlq": false,
+      "slots": null,
+      "dataloss": false,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "roundtrips": 1,
+      "sequential": false,
+      "confidential": false,
+      "freshVariables": false,
+      "autoCommitTriggerLast": true
+    }
+  }
+}

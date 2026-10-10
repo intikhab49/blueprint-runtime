@@ -2,8 +2,8 @@ import type { BranchStep, Plan, PlanModule } from '../blueprint/plan.ts';
 import { DataError, UnsupportedError } from '../expr/errors.ts';
 import { evaluateMapper, type EvalContext } from '../expr/evaluate.ts';
 import { fromJson, MISSING, type Value } from '../expr/values.ts';
-import type { JsonObject, JsonValue } from '../json/parse.ts';
-import { handlerFor, ModuleFailure, textAggregatorResult, textAggregatorRow, textAggregatorSeparator } from './modules.ts';
+import { isObject, type JsonObject, type JsonValue } from '../json/parse.ts';
+import { basicTriggerBundles, handlerFor, isOpaqueModule, ModuleFailure, textAggregatorResult, textAggregatorRow, textAggregatorSeparator } from './modules.ts';
 import { FixtureSet } from './fixtures.ts';
 import { OPERATORS } from './operators.ts';
 import type { FilterStep, Step, Trace } from './trace.ts';
@@ -33,14 +33,41 @@ const branchKey = (b: BranchStep[]) => b.map((s) => `${s.owner}:${s.kind}:${s.in
  * Runs a scenario that starts with a Custom webhook: the main flow, router routes in
  * order, and filters. Every route whose filter passes runs; the fallback route runs
  * only when no other route did (corpus B). An iterator sends each bundle through the
- * rest of its flow, or up to the Text aggregator that collects it (corpus C, C2).
+ * rest of its flow, or up to the Text aggregator that collects it (corpus C, C2), and
+ * so does a trigger that emits several bundles (corpus T).
  */
+/** The case's input does not fit the scenario's trigger. Bad test data, not a Make behavior: exit 2. */
+export class InvalidInputError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'InvalidInputError';
+  }
+}
+
+/**
+ * The bundles the trigger emits, from the case input ("trigger output from a file", spec 2):
+ * - Custom webhook: the input is the payload, one bundle.
+ * - Basic trigger: the bundles written in the blueprint; the input is not used (T-01..T-08).
+ * - a third-party app trigger (Google Sheets "Watch rows", RSS, Typeform, …): the input is
+ *   the list of bundles it emitted. The connector itself is not verified, as with module
+ *   fixtures; how a run processes the bundles was recorded with the Basic trigger.
+ */
+function triggerBundles(trigger: PlanModule, input: JsonValue): JsonValue[] {
+  if (trigger.module === 'gateway:CustomWebHook') return [input];
+  if (trigger.module === 'util:BasicTrigger') return basicTriggerBundles(trigger);
+  if (isOpaqueModule(trigger.module)) {
+    if (!Array.isArray(input) || !input.every(isObject)) {
+      throw new InvalidInputError(`the scenario starts with ${trigger.module}: the input must be the list of bundles it emitted (a JSON array of objects)`);
+    }
+    return input;
+  }
+  throw new UnsupportedError(`the scenario starts with ${trigger.module}; only a Custom webhook, the Basic trigger or a third-party app trigger can start a run yet`);
+}
+
 export function runScenario(plan: Plan, payload: JsonValue, options: RunOptions): Trace {
   const [trigger] = plan.modules;
-  if (!trigger || trigger.module !== 'gateway:CustomWebHook') {
-    throw new UnsupportedError(`only scenarios that start with a Custom webhook can run yet (this one starts with ${trigger?.module ?? 'nothing'})`);
-  }
-  for (const m of plan.modules) {
+  if (!trigger) throw new UnsupportedError('the scenario has no modules');
+  for (const m of plan.modules.slice(1)) {
     if (m.hasErrorHandler) throw new UnsupportedError(`module ${m.id} has an error handler; error handlers do not run yet`);
     if (m.module !== 'builtin:BasicRouter' && m.module !== 'util:TextAggregator' && !handlerFor(m.module)) throw new UnsupportedError(`module ${m.id} (${m.module}) cannot run yet`);
   }
@@ -154,27 +181,39 @@ export function runScenario(plan: Plan, payload: JsonValue, options: RunOptions)
   };
 
   /**
-   * An iterator. Each bundle runs the modules after it, depth-first, before the next
-   * bundle starts (C2-noagg-01 logged 3,4,3,4,3,4). They run up to the Text aggregator
-   * that collects the iterator, or to the end of the flow if there is none. The
-   * aggregator then runs once with the rows that reached it: 1 operation, even with
-   * none (C-03, C-04). After it, the iterator and the modules in between read as
-   * missing (C2-after-01, -02). Returns the index of the last module it ran.
+   * Sends each bundle of a feeder (an iterator, or the trigger) down the modules after
+   * it, depth-first: one bundle finishes before the next starts (iterator C2-noagg-01,
+   * trigger T-01). They run up to the Text aggregator that collects the feeder, or to the
+   * end of the flow if there is none. The aggregator then runs once with the rows that
+   * reached it: 1 operation, even with none (C-03, C-04). After it, the feeder and the
+   * modules in between read as missing (C2-after, T-04). Returns the index in `rest` of
+   * the last module it ran.
+   *
+   * wholeFlow (the trigger): without an aggregator each bundle runs the rest of the flow
+   * as a normal flow, routers included (T-03). Otherwise only Set variable has been
+   * observed running per bundle.
    */
-  const runIteration = (flow: PlanModule[], i: number): number => {
-    const feeder = flow[i]!;
-    const j = flow.findIndex((m, k) => k > i && m.module === 'util:TextAggregator' && m.parameters['feeder'] === feeder.id);
-    const aggregator = j < 0 ? null : flow[j]!;
-    const scope = j < 0 ? flow.slice(i + 1) : flow.slice(i + 1, j);
-    for (const m of scope) {
-      if (m.module !== 'util:SetVariable2') throw new UnsupportedError(`module ${m.id} (${m.module}) running once per bundle of iterator ${feeder.id} has not been observed in Make`);
+  const fanOut = (feeder: PlanModule, bundles: JsonValue[], rest: PlanModule[], wholeFlow: boolean): number => {
+    const j = rest.findIndex((m) => m.module === 'util:TextAggregator' && m.parameters['feeder'] === feeder.id);
+    const aggregator = j < 0 ? null : rest[j]!;
+    const scope = j < 0 ? rest : rest.slice(0, j);
+    const what = wholeFlow ? `bundle of trigger ${feeder.id}` : `bundle of iterator ${feeder.id}`;
+    if (!wholeFlow || aggregator) {
+      for (const m of scope) {
+        if (m.module !== 'util:SetVariable2') throw new UnsupportedError(`module ${m.id} (${m.module}) running once per ${what}${aggregator ? ' before its aggregator' : ''} has not been observed in Make`);
+      }
     }
     if (aggregator?.filter) throw new UnsupportedError(`aggregator ${aggregator.id}: a filter on an aggregator has not been observed in Make`);
+    if (aggregator && wholeFlow && bundles.length === 0) throw new UnsupportedError(`aggregator ${aggregator.id}: a trigger with no bundles followed by an aggregator has not been observed in Make (with no bundles nothing after the trigger ran, T-05)`);
     const separator = aggregator ? textAggregatorSeparator(aggregator) : '';
 
     const rows: JsonObject[] = [];
-    for (const bundle of runModule(feeder)) {
+    for (const bundle of bundles) {
       outputs.set(feeder.id, fromJson(bundle));
+      if (wholeFlow && !aggregator) {
+        runFlow(scope, false);
+        continue;
+      }
       const reached = scope.every((m) => {
         if (m.filter && !evalFilter(m, false)) return false;
         runModule(m);
@@ -188,13 +227,15 @@ export function runScenario(plan: Plan, payload: JsonValue, options: RunOptions)
         throw e;
       }
     }
-    if (!aggregator) return flow.length - 1;
+    if (!aggregator) return rest.length - 1;
     for (const m of [feeder, ...scope]) outputs.delete(m.id);
     const result = textAggregatorResult(rows, separator);
     steps.push({ kind: 'module', id: aggregator.id, operation: nextOperation(aggregator.id), input: result.input, output: result.output });
     outputs.set(aggregator.id, fromJson(result.output[0]));
     return j;
   };
+
+  const runIteration = (flow: PlanModule[], i: number): number => i + 1 + fanOut(flow[i]!, runModule(flow[i]!), flow.slice(i + 1), false);
 
   /** Runs a flow from its first module. Returns false if the first module's filter stopped the bundle. */
   const runFlow = (flow: PlanModule[], isFallback: boolean): boolean => {
@@ -215,17 +256,23 @@ export function runScenario(plan: Plan, payload: JsonValue, options: RunOptions)
     return true;
   };
 
-  // The trigger's single output bundle is the payload as Make parsed it.
-  steps.push({ kind: 'module', id: trigger.id, operation: nextOperation(trigger.id), input: [], output: [payload] });
-  outputs.set(trigger.id, fromJson(payload));
+  // The trigger is 1 operation and logs all its bundles at once (T-01); with none it logs
+  // an empty output and nothing else runs (T-05). Each bundle then runs the main flow.
+  const bundles = triggerBundles(trigger, payload);
+  steps.push({ kind: 'module', id: trigger.id, operation: nextOperation(trigger.id), input: [], output: bundles });
   try {
-    runFlow((flows.get('') ?? []).slice(1), false);
+    const main = (flows.get('') ?? []).slice(1);
+    const last = fanOut(trigger, bundles, main, true);
+    // After an aggregator on the trigger, the rest of the flow runs once (T-04).
+    if (last < main.length - 1) runFlow(main.slice(last + 1), false);
   } catch (e) {
+    // An error stops the whole run: later bundles never start (T-07).
     if (!(e instanceof RunStopped)) throw e;
   }
 
   if (fixtures.uses.length) trace.fixtures = fixtures.uses;
-  if (!trace.response) {
+  // Only a webhook has a caller waiting for an answer.
+  if (trigger.module === 'gateway:CustomWebHook' && !trace.response) {
     // What the webhook caller gets when no Webhook response module answered (corpus B, D-05).
     trace.response = trace.status === 'error' ? { status: 500, body: 'Scenario failed to complete.' } : { status: 200, body: 'Accepted' };
   }

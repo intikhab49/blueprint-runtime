@@ -78,7 +78,9 @@ async function main() {
     let smoke: string | null = null;
     if (r.verdict === 'eligible') {
       try {
-        smoke = `ran (${runScenario(loadBlueprint(bytes).plan!, {}, { timezone: 'UTC', fixtures: new AnyFixture() }).status})`;
+        // An app trigger's input is the list of bundles it emitted: one empty bundle here.
+        const input = r.fixtures.some((f) => f.mode === 'trigger') ? [{}] : {};
+        smoke = `ran (${runScenario(loadBlueprint(bytes).plan!, input, { timezone: 'UTC', fixtures: new AnyFixture() }).status})`;
       } catch (e) {
         if (!(e instanceof UnsupportedError)) throw e;
         smoke = `REFUSED: ${e.message}`;
@@ -95,7 +97,8 @@ async function main() {
   console.log(`  not yet supported: ${n((r) => r.verdict === 'unsupported')}`);
   console.log(`  invalid:           ${n((r) => r.verdict === 'invalid')} (structure Make itself could not have exported)`);
   const refused = eligible.filter((r) => !r.smoke?.startsWith('ran'));
-  console.log(`  eligible but refused by the runtime: ${refused.length}${refused.length ? ` (${refused.map((r) => r.repo).join(', ')})` : ''}`);
+  console.log(`  eligible but refused by the runtime on stub data: ${refused.length}`);
+  for (const r of refused) console.log(`    ${r.repo}: ${r.smoke?.replace(/^REFUSED: /, '')}`);
   const count = new Map<string, number>();
   for (const r of results) if (r.verdict === 'unsupported') for (const b of r.blockers) count.set(b, (count.get(b) ?? 0) + 1);
   console.log('\n  most common blockers (files):');

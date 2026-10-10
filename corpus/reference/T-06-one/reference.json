@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "cab43f40ec9646a3b5f79a9703a7e07a",
+  "recordedAt": "2026-10-10T12:13:40.335Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "name": "solo",
+          "qty": "7"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "solo:14"
+        }
+      ],
+      "output": [
+        {
+          "line": "solo:14"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "cab228a57222421d84f3006971f9567e",
+  "recordedAt": "2026-10-10T12:13:56.489Z",
+  "timezone": "Asia/Karachi",
+  "status": "error",
+  "error": {
+    "moduleId": 2,
+    "name": "DataError",
+    "message": "Failed to map 'value': Function 'if' finished with error! Function 'first' finished with error! 'b' is not a valid array."
+  },
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "name": "a",
+          "qty": "1"
+        },
+        {
+          "name": "b",
+          "qty": "2"
+        },
+        {
+          "name": "c",
+          "qty": "3"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "a"
+        }
+      ],
+      "output": [
+        {
+          "line": "a"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "second",
+          "value": "a!"
+        }
+      ],
+      "output": [
+        {
+          "second": "a!"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 2,
+      "input": [],
+      "output": [
+        null
+      ]
+    }
+  ]
+}

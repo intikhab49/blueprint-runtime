@@ -1,0 +1,154 @@
+{
+  "name": "bpr Scenario T-03-router",
+  "flow": [
+    {
+      "id": 1,
+      "module": "util:BasicTrigger",
+      "version": 1,
+      "parameters": {
+        "values": [
+          {
+            "spec": [
+              {
+                "name": "name",
+                "value": "a"
+              },
+              {
+                "name": "qty",
+                "value": "1"
+              }
+            ]
+          },
+          {
+            "spec": [
+              {
+                "name": "name",
+                "value": "b"
+              },
+              {
+                "name": "qty",
+                "value": "50"
+              }
+            ]
+          },
+          {
+            "spec": [
+              {
+                "name": "name",
+                "value": "c"
+              },
+              {
+                "name": "qty",
+                "value": "200"
+              }
+            ]
+          }
+        ]
+      },
+      "mapper": {},
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    },
+    {
+      "id": 2,
+      "module": "builtin:BasicRouter",
+      "version": 1,
+      "mapper": null,
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        }
+      },
+      "routes": [
+        {
+          "flow": [
+            {
+              "id": 3,
+              "module": "util:SetVariable2",
+              "version": 1,
+              "parameters": {},
+              "mapper": {
+                "name": "big",
+                "value": "{{1.name}}"
+              },
+              "filter": {
+                "name": "{{1.qty}} > 100",
+                "conditions": [
+                  [
+                    {
+                      "a": "{{1.qty}}",
+                      "o": "number:greater",
+                      "b": "100"
+                    }
+                  ]
+                ]
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": 0
+                }
+              }
+            }
+          ]
+        },
+        {
+          "flow": [
+            {
+              "id": 4,
+              "module": "util:SetVariable2",
+              "version": 1,
+              "parameters": {},
+              "mapper": {
+                "name": "small",
+                "value": "{{1.name}}"
+              },
+              "filter": {
+                "name": "{{1.qty}} < 100",
+                "conditions": [
+                  [
+                    {
+                      "a": "{{1.qty}}",
+                      "o": "number:less",
+                      "b": "100"
+                    }
+                  ]
+                ]
+              },
+              "metadata": {
+                "designer": {
+                  "x": 600,
+                  "y": 0
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "instant": true,
+    "version": 1,
+    "designer": {
+      "orphans": []
+    },
+    "scenario": {
+      "dlq": false,
+      "slots": null,
+      "dataloss": false,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "roundtrips": 1,
+      "sequential": false,
+      "confidential": false,
+      "freshVariables": false,
+      "autoCommitTriggerLast": true
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "3142a11ebe9d4aa592a30bd3108c3597",
+  "recordedAt": "2026-10-10T12:10:48.516Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "name": "a",
+          "qty": "1"
+        },
+        {
+          "name": "b",
+          "qty": "2"
+        },
+        {
+          "name": "c",
+          "qty": "3"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "a:2"
+        }
+      ],
+      "output": [
+        {
+          "line": "a:2"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "second",
+          "value": "a:2#a"
+        }
+      ],
+      "output": [
+        {
+          "second": "a:2#a"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "b:4"
+        }
+      ],
+      "output": [
+        {
+          "line": "b:4"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "second",
+          "value": "b:4#b"
+        }
+      ],
+      "output": [
+        {
+          "second": "b:4#b"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 3,
+      "input": [
+        {
+          "name": "line",
+          "value": "c:6"
+        }
+      ],
+      "output": [
+        {
+          "line": "c:6"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 3,
+      "input": [
+        {
+          "name": "second",
+          "value": "c:6#c"
+        }
+      ],
+      "output": [
+        {
+          "second": "c:6#c"
+        }
+      ]
+    }
+  ]
+}

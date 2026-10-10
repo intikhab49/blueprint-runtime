@@ -1,16 +1,18 @@
 # Public blueprint survey (2026-10-10)
 
-**18 of 221 public Make blueprints (8%) can run in bpr today, all of them with fixtures.** 182 use something without recorded Make behavior, and 21 are not valid exports.
+**25 of 221 public Make blueprints (11%) can run in bpr today, all of them with fixtures.** 175 use something without recorded Make behavior, and 21 are not valid exports.
+
+*Updated 2026-10-10 for v0.2 (polling and app triggers). The first count, at v0.1.0, was 18; polling and app triggers blocked 83 files.*
 
 | Verdict | Files | Meaning |
 |---|---:|---|
-| Eligible | 18 | every module, expression, filter and setting has recorded Make behavior; all 18 need at least one fixture (an HTTP or third-party app call) |
-| Not yet supported | 182 | valid Make, but uses something bpr refuses instead of guessing |
+| Eligible | 25 | every module, expression, filter and setting has recorded Make behavior; all 25 need at least one fixture or trigger input (an HTTP or third-party app call) |
+| Not yet supported | 175 | valid Make, but uses something bpr refuses instead of guessing |
 | Invalid | 21 | structure Make itself could not have exported (module `version: null`, `flow:Router`, a filter given as text): hand-written or AI-generated files |
 
-Every file counted as eligible was also run through the scheduler with a stub that answers any fixture: **0 of the 18 were refused at run time**, so `inspect` and the runtime agree. This shows that nothing is refused, not that the output is right; that takes a real Make run (see `corpus/reference/`).
+Every file counted as eligible was also run through the scheduler with a stub that answers any fixture and, for an app trigger, one empty bundle: **24 of the 25 ran without a refusal**. The 25th (`eleyrot/signals-newsletter`) calls `formatDate()` on a field of the RSS bundle, which the empty stub bundle does not have; a real RSS bundle carries it. This shows that nothing is refused by a rule, not that the output is right; that takes a real Make run (see `corpus/reference/`).
 
-The eligible files are small: 2 to 6 modules each, and 8 of them are just "webhook → one app module". The larger scenarios are what the blockers below hold back.
+The 18 files eligible at v0.1.0 were small: 2 to 6 modules each, and 8 of them were just "webhook → one app module". The larger scenarios are what the blockers below hold back.
 
 ## What blocks the rest
 
@@ -18,7 +20,6 @@ Files affected (one file can have several blockers):
 
 | Files | Blocker |
 |---:|---|
-| 83 | a polling or app trigger (Google Sheets, RSS, Gmail, …) instead of a Custom webhook |
 | 61 | mapping over an array with `[]` (`{{2.choices[].message.content}}`) |
 | 52 | the `now` keyword |
 | 32 | `json:ParseJSON` |
@@ -26,9 +27,10 @@ Files affected (one file can have several blockers):
 | 30 | expressions bpr cannot read (single quotes, doubled `""` quotes, `\"` escapes) |
 | 25 | `util:SetVariables` (several variables at once) |
 | 24 | HTTP with "Evaluate all states as errors" switched off |
-| 22 | modules other than Set variable running once per iterator bundle |
+| 23 | modules other than Set variable running once per iterator or trigger bundle |
 | 20 | `builtin:BasicAggregator` (array aggregator) |
 | 18 | Webhook response with custom headers |
+| 17 | a first module that is neither a webhook nor an app trigger (mail hook, HTTP, Set variable, note) |
 | 15 | `http:MakeRequest` (the newer HTTP module) |
 | 15 | `util:FunctionSleep` |
 | 12 | HTTP with custom request headers |

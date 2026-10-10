@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "T-05-zero",
+  "blueprint": "../../blueprints/T-05-zero.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

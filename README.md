@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="docs/header.svg" alt="blueprint-runtime: run and test Make scenario blueprints offline. 60 of 68 real Make runs reproduced exactly, 0 differ." width="100%">
+<img src="docs/header.svg" alt="blueprint-runtime: run and test Make scenario blueprints offline. 68 of 76 real Make runs reproduced exactly, 0 differ." width="100%">
 
 # blueprint-runtime — run and test Make scenarios offline
 
@@ -8,8 +8,8 @@
 
 [![License](https://img.shields.io/badge/license-MIT-2a78d6?style=for-the-badge)](LICENSE)
 [![Node](https://img.shields.io/badge/node-24%2B-2a78d6?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![Make runs](https://img.shields.io/badge/real%20Make%20runs-60%2F68%20match%2C%200%20differ-1baf7a?style=for-the-badge)](corpus/NOTES.md)
-[![Tests](https://img.shields.io/badge/tests-413%20passing-1baf7a?style=for-the-badge)](test/)
+[![Make runs](https://img.shields.io/badge/real%20Make%20runs-68%2F76%20match%2C%200%20differ-1baf7a?style=for-the-badge)](corpus/NOTES.md)
+[![Tests](https://img.shields.io/badge/tests-425%20passing-1baf7a?style=for-the-badge)](test/)
 [![Dependencies](https://img.shields.io/badge/runtime%20deps-0-eb6834?style=for-the-badge)](package.json)
 
 [Demo](#demo) · [Results](#results) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Supported](#what-runs-today) · [Fixtures](#fixtures-http-and-third-party-modules) · [Limitations](#limitations)
@@ -41,16 +41,16 @@ Generated from real command output by [`docs/make_demo.py`](docs/make_demo.py).
 
 ## Results
 
-![60 of 68 real Make runs reproduced exactly, 0 differ. A straight line 9/9, B router and filters 16/16, C iterator and aggregator 17/17, C2 iterator probes 13/14, E HTTP from fixtures 5/5, D formula probes 0/7 refused.](docs/charts/1_conformance.png)
+![68 of 76 real Make runs reproduced exactly, 0 differ. A straight line 9/9, B router and filters 16/16, C iterator and aggregator 17/17, C2 iterator probes 13/14, E HTTP from fixtures 5/5, T multi-bundle trigger 8/8, D formula probes 0/7 refused.](docs/charts/1_conformance.png)
 
-68 runs were recorded in a free Make account across six scenario families. 60 are reproduced exactly and **none differ**. The 8 that are refused, not failed:
+76 runs were recorded in a free Make account across seven scenario families. 68 are reproduced exactly and **none differ**. The 8 that are refused, not failed:
 
 - **D (7):** the formula-probe blueprint contains `replace(s; /o/g; "0")`. Make ignored that regex in a real run for a reason nobody has recorded, so `bpr` refuses the file. The engine still matches 530 of 535 recorded formula results from these runs, plus 66 of 67 from the D2 probe set.
 - **C2 (1):** the bundle `0` read the previous bundle's value in Make. That is refused rather than modeled.
 
-![18 of 221 public blueprints run today: 18 eligible, 182 not yet supported, 21 invalid exports. Most common blockers: polling or app trigger 83, [] array mapping 61, now keyword 52, json:ParseJSON 32, error-handler routes 31, util:SetVariables 25, HTTP states-as-errors off 24, other modules per iterator bundle 22.](docs/charts/2_survey.png)
+![25 of 221 public blueprints run today: 25 eligible, 175 not yet supported, 21 invalid exports. Most common blockers: [] array mapping 61, now keyword 52, json:ParseJSON 32, error-handler routes 31, util:SetVariables 25, HTTP states-as-errors off 24, other modules per iterator bundle 23, array aggregator 20.](docs/charts/2_survey.png)
 
-**How much of the real world runs today: 18 of 221 public Make blueprints on GitHub (8%), all with fixtures.** They are small (2 to 6 modules). The chart on the right is the roadmap. Method, full table and per-file results: [`corpus/survey/`](corpus/survey/README.md).
+**How much of the real world runs today: 25 of 221 public Make blueprints on GitHub (11%), all with fixtures.** Most are small. Polling and app triggers (Google Sheets, RSS, Typeform, …) were the biggest blocker (83 files) until v0.2. The chart on the right is the roadmap. Method, full table and per-file results: [`corpus/survey/`](corpus/survey/README.md).
 
 ## Quick start
 
@@ -62,7 +62,7 @@ cd blueprint-runtime
 npm ci
 npm run build && npm link        # puts `bpr` on your PATH (or use `node src/cli.ts` everywhere below)
 
-bpr test corpus/reference --allow-unsupported      # replay all 68 recorded Make runs
+bpr test corpus/reference --allow-unsupported      # replay all 76 recorded Make runs
 bpr test examples/broken-mapping                   # a broken mapping, caught
 bpr inspect corpus/blueprints/B.blueprint.json     # what a blueprint uses, and whether it can run
 ```
@@ -104,7 +104,7 @@ flowchart LR
 bpr test <case.json | folder>... [--json] [--allow-unsupported]
 ```
 
-A case names a blueprint, an input payload, optional fixtures and the run Make actually produced:
+A case names a blueprint, an input, optional fixtures and the run Make actually produced. The input is the webhook payload, or, for a third-party app trigger such as Google Sheets "Watch rows", the list of bundles the trigger emitted (the connector itself is not verified; how a run processes several bundles was recorded with Make's Basic trigger, corpus T):
 
 ```json
 { "schemaVersion": 1, "name": "A-002-plain", "blueprint": "../../blueprints/A.blueprint.json",
@@ -127,7 +127,7 @@ It lists every module, where it sits (main flow, route, fallback, error handler)
 
 | | Supported (recorded in Make) | Not yet (refused with the reason) |
 |---|---|---|
-| **Triggers** | Custom webhook | polling and app triggers (Google Sheets, RSS, Gmail, …) |
+| **Triggers** | Custom webhook; Basic trigger; any third-party app trigger (Google Sheets, RSS, Typeform, …) with its bundles as the case input; several bundles per run, each through the whole flow | mail hooks, scenarios that start with an action (HTTP, Set variable), an aggregator on a trigger that emitted nothing |
 | **Flow** | routers (every passing route, fallback route), filters with 31 operators and Make's short-circuiting, iterators with or without a Text aggregator (`\n`, `\t` or custom separator) | error-handler routes, array aggregator, repeaters, routers or responses running once per iterator bundle, multi-cycle runs |
 | **Modules** | Set variable, Webhook response, HTTP "Make a request" v3 (from fixtures: 200, 201, 404 recorded), any third-party app module from a fixture | `json:ParseJSON`, `util:SetVariables`, Sleep, Ignore, the newer `http:MakeRequest`, code modules, data stores |
 | **Expressions** | 58 functions, operators with Make's precedence and decimal arithmetic, 1-based indexes, Make's text conversion of arrays and objects | `[]` array mapping, the `now` keyword, `var.*` custom variables, regex literals, single-quoted text |
@@ -169,7 +169,7 @@ Everything in [`corpus/`](corpus/NOTES.md) comes from a free Make account. Scena
 ```
 npm ci
 npm run typecheck
-npm test                         # 413 tests, including every recorded Make run
+npm test                         # 425 tests, including every recorded Make run
 npm run build
 python docs/make_charts.py && python docs/make_header.py && python docs/make_demo.py   # README images
 ```

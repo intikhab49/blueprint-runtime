@@ -35,19 +35,21 @@
       "matched": 5,
       "differ": 0,
       "refused": 0
+    },
+    "T": {
+      "recorded": 8,
+      "matched": 8,
+      "differ": 0,
+      "refused": 0
     }
   },
   "survey": {
     "files": 221,
-    "eligible": 18,
-    "unsupported": 182,
+    "eligible": 25,
+    "unsupported": 175,
     "invalid": 21,
-    "eligibleRefusedAtRuntime": 0,
+    "eligibleRefusedAtRuntime": 1,
     "topBlockers": [
-      [
-        "a polling or app trigger instead of a Custom webhook",
-        83
-      ],
       [
         "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         61
@@ -74,7 +76,11 @@
       ],
       [
         "ITERATOR_SCOPE_UNSUPPORTED",
-        22
+        23
+      ],
+      [
+        "module builtin:BasicAggregator",
+        20
       ]
     ],
     "surveyedAt": "2026-10-10"

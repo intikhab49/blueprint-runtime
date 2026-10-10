@@ -6,7 +6,7 @@ import { loadBlueprint } from '../src/blueprint/load.ts';
 import { UnsupportedError } from '../src/expr/errors.ts';
 import { runCase } from '../src/run/case.ts';
 import { compareExecutions, firstDifference } from '../src/run/compare.ts';
-import { LimitExceededError, runScenario } from '../src/run/scheduler.ts';
+import { InvalidInputError, LimitExceededError, runScenario } from '../src/run/scheduler.ts';
 import { OPERATORS } from '../src/run/operators.ts';
 import type { Execution } from '../src/run/trace.ts';
 import { fromJson, MISSING } from '../src/expr/values.ts';
@@ -19,10 +19,10 @@ const planOf = (doc: unknown) => {
 const hook = { id: 1, module: 'gateway:CustomWebHook', version: 1, parameters: {}, mapper: {} };
 const respond = (body: string, id = 2) => ({ id, module: 'gateway:WebhookRespond', version: 1, parameters: {}, mapper: { body, status: '200', headers: [] } });
 
-describe('scenarios A, B, C, the C2 iterator probes and the E HTTP probes against every recorded Make run', () => {
+describe('scenarios A, B, C and the C2, E and T probes against every recorded Make run', () => {
   // C2-nl-02: for the bare bundle 0, Make read the previous bundle's value; refused, not modeled.
   const refused = new Set(['C2-nl-02-numbers']);
-  for (const c of readdirSync('corpus/reference').filter((d) => /^(A|B|C|C2|E)-/.test(d))) {
+  for (const c of readdirSync('corpus/reference').filter((d) => /^(A|B|C|C2|E|T)-/.test(d))) {
     it(c, () => {
       const r = runCase(`corpus/reference/${c}/case.json`);
       assert.equal(r.verdict, refused.has(c) ? 'unsupported' : 'pass', r.message);
@@ -105,6 +105,28 @@ describe('iterator and text aggregator', () => {
     refused([iterator, line, agg({ rowSeparator: 'comma' })], [], /row separator/);
     refused([iterator, line, agg()], ['a', { name: 'b' }], /mixes collections/);
     refused([iterator, line, agg()], [1, 0], /previous bundle/);
+  });
+});
+
+describe('triggers that emit several bundles', () => {
+  const sheets = { id: 1, module: 'google-sheets:watchRows', version: 2, parameters: {}, mapper: {} };
+  const line = { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'line', value: '{{1.name}}' } };
+  const run = (flow: unknown[], input: unknown) => runScenario(planOf({ flow }), input as never, { timezone: null });
+
+  it('runs the flow once per bundle of an app trigger, from the input (T-01 semantics)', () => {
+    const t = run([sheets, line], [{ name: 'a' }, { name: 'b' }]);
+    assert.deepEqual(t.steps.map((s) => (s.kind === 'module' ? `${s.id}#${s.operation}` : 'filter')), ['1#1', '2#1', '2#2']);
+    assert.equal(t.response, undefined);
+  });
+
+  it('rejects an input that is not a list of bundles', () => {
+    assert.throws(() => run([sheets, line], { name: 'a' }), InvalidInputError);
+  });
+
+  it('refuses an aggregator on a trigger that emitted nothing (not recorded)', () => {
+    const agg = { id: 3, module: 'util:TextAggregator', version: 1, parameters: { feeder: 1, rowSeparator: 'other', otherRowSeparator: '|' }, mapper: { value: '{{2.line}}' } };
+    assert.throws(() => run([sheets, line, agg], []), UnsupportedError);
+    assert.equal(run([sheets, line], []).steps.length, 1);
   });
 });
 

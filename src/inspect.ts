@@ -49,7 +49,7 @@ export interface InspectReport {
   functions: { name: string; count: number; supported: boolean }[];
   filterOperators: { operator: string; count: number; supported: boolean }[];
   /** Modules that need a fixture to run offline, with the fixture mode. */
-  fixtures: { moduleId: number; module: string; mode: 'http' | 'module' }[];
+  fixtures: { moduleId: number; module: string; mode: 'http' | 'module' | 'trigger' }[];
   findings: Finding[];
   verdict: Verdict;
   exitCode: number;
@@ -109,14 +109,18 @@ export function inspectBytes(file: string, bytes: Uint8Array, limits: LoadLimits
     const opCounts = new Map<string, number>();
 
     const trigger = plan.modules[0];
-    if (trigger && trigger.module !== 'gateway:CustomWebHook') {
-      add({ code: 'TRIGGER_UNSUPPORTED', severity: 'unsupported', message: `The scenario starts with ${trigger.module}; only a Custom webhook trigger can run yet (how Make feeds a polling or app trigger's bundles through a run has not been recorded)`, pointer: `${trigger.pointer}/module` });
+    const appTrigger = trigger !== undefined && isOpaqueModule(trigger.module);
+    if (appTrigger) {
+      report.fixtures.push({ moduleId: trigger.id, module: trigger.module, mode: 'trigger' });
+      add({ code: 'TRIGGER_FROM_INPUT', severity: 'warning', message: `The scenario starts with ${trigger.module}: a case's input is the list of bundles this trigger emitted (the connector itself is not verified)`, pointer: `${trigger.pointer}/module` });
+    } else if (trigger && trigger.module !== 'gateway:CustomWebHook' && trigger.module !== 'util:BasicTrigger') {
+      add({ code: 'TRIGGER_UNSUPPORTED', severity: 'unsupported', message: `The scenario starts with ${trigger.module}; only a Custom webhook, the Basic trigger or a third-party app trigger can start a run yet`, pointer: `${trigger.pointer}/module` });
     }
     for (const m of plan.modules) {
       const support = MODULES[m.module];
       const versionOk = support?.versions.includes(m.version) ?? false;
       const opaque = !support && isOpaqueModule(m.module);
-      if (opaque || support?.fixture) {
+      if ((opaque && m !== trigger) || support?.fixture) {
         const mode = opaque ? 'module' : support!.fixture!;
         report.fixtures.push({ moduleId: m.id, module: m.module, mode });
         add({ code: 'FIXTURE_REQUIRED', severity: 'warning', message: `Module ${m.id} (${m.module}) runs offline only from ${mode === 'http' ? 'an HTTP fixture (the request it builds is checked)' : 'a module fixture (its mapped input is checked; the connector itself is not verified)'}`, pointer: `${m.pointer}/module` });
@@ -162,8 +166,16 @@ export function inspectBytes(file: string, bytes: Uint8Array, limits: LoadLimits
       if (m.module === 'util:TextAggregator') {
         const feeder = m.parameters['feeder'];
         const source = typeof feeder === 'number' ? byId.get(feeder) : undefined;
-        if (!source || !m.upstream.includes(source.id) || source.module !== 'builtin:BasicFeeder' || !sameFlow(source)) {
-          add({ code: 'AGGREGATOR_SOURCE_UNSUPPORTED', severity: 'unsupported', message: `Aggregator ${m.id}: only an iterator (builtin:BasicFeeder) earlier in the same flow as the source is supported, got ${JSON.stringify(feeder ?? null)}`, pointer: `${m.pointer}/parameters/feeder` });
+        const fromTrigger = source !== undefined && source === trigger && m.branch.length === 0; // T-04
+        if (!source || (!fromTrigger && (!m.upstream.includes(source.id) || source.module !== 'builtin:BasicFeeder' || !sameFlow(source)))) {
+          add({ code: 'AGGREGATOR_SOURCE_UNSUPPORTED', severity: 'unsupported', message: `Aggregator ${m.id}: only an iterator earlier in the same flow, or the trigger, as the source is supported, got ${JSON.stringify(feeder ?? null)}`, pointer: `${m.pointer}/parameters/feeder` });
+        }
+        if (fromTrigger) {
+          for (const x of plan.modules) {
+            if (x.order > trigger.order && x.order < m.order && x.branch.length === 0 && x.module !== 'util:SetVariable2') {
+              add({ code: 'ITERATOR_SCOPE_UNSUPPORTED', severity: 'unsupported', message: `Module ${x.id} (${x.module}) runs once per trigger bundle before aggregator ${m.id}: only Set variable has recorded Make behavior there`, pointer: x.pointer });
+            }
+          }
         }
         if (!['other', '\n', '\t'].includes(m.parameters['rowSeparator'] as string)) {
           add({ code: 'AGGREGATOR_SEPARATOR_UNSUPPORTED', severity: 'unsupported', message: `Aggregator ${m.id}: row separator ${JSON.stringify(m.parameters['rowSeparator'] ?? null)} has no recorded Make behavior yet`, pointer: `${m.pointer}/parameters/rowSeparator` });

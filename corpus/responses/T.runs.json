@@ -1,0 +1,91 @@
+{
+  "name": "T",
+  "scenarioId": 7872022,
+  "recordedAt": "2026-10-10T12:12:28.228Z",
+  "runs": [
+    {
+      "case": "T-01-three",
+      "blueprint": "corpus/blueprints/T-01-three.import.json",
+      "runId": "3142a11ebe9d4aa592a30bd3108c3597",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"3142a11ebe9d4aa592a30bd3108c3597\",\"status\":1}"
+      },
+      "error": null
+    },
+    {
+      "case": "T-02-filter",
+      "blueprint": "corpus/blueprints/T-02-filter.import.json",
+      "runId": "95f0d478be5b4e93a36c643117b9b8c7",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"95f0d478be5b4e93a36c643117b9b8c7\",\"status\":1}"
+      },
+      "error": null
+    },
+    {
+      "case": "T-03-router",
+      "blueprint": "corpus/blueprints/T-03-router.import.json",
+      "runId": "c5c3528427284821a08a00e677627b8b",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"c5c3528427284821a08a00e677627b8b\",\"status\":1}"
+      },
+      "error": null
+    },
+    {
+      "case": "T-04-aggregator",
+      "blueprint": "corpus/blueprints/T-04-aggregator.import.json",
+      "runId": "94651bdbd4fa43058a92f2415171b9ed",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"94651bdbd4fa43058a92f2415171b9ed\",\"status\":1}"
+      },
+      "error": null
+    },
+    {
+      "case": "T-05-zero",
+      "blueprint": "corpus/blueprints/T-05-zero.import.json",
+      "runId": "8ff80ecd5a844f139dcf31aead34ec42",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"8ff80ecd5a844f139dcf31aead34ec42\",\"status\":1}"
+      },
+      "error": null,
+      "notInLog": true
+    },
+    {
+      "case": "T-06-one",
+      "blueprint": "corpus/blueprints/T-06-one.import.json",
+      "runId": "cab43f40ec9646a3b5f79a9703a7e07a",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"cab43f40ec9646a3b5f79a9703a7e07a\",\"status\":1}"
+      },
+      "error": null
+    },
+    {
+      "case": "T-07-error-mid",
+      "blueprint": "corpus/blueprints/T-07-error-mid.import.json",
+      "runId": "cab228a57222421d84f3006971f9567e",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"cab228a57222421d84f3006971f9567e\",\"status\":3,\"error\":{\"message\":\"Failed to map 'value': Function 'if' finished with error! Function 'first' finished with error! 'b' is not a valid array.\",\"name\":\"DataError\"}}"
+      },
+      "error": {
+        "name": "DataError",
+        "message": "Failed to map 'value': Function 'if' finished with error! Function 'first' finished with error! 'b' is not a valid array."
+      }
+    },
+    {
+      "case": "T-08-types",
+      "blueprint": "corpus/blueprints/T-08-types.import.json",
+      "runId": "31a6d615e5b44dfbad3c599dfcf56c5f",
+      "response": {
+        "status": 200,
+        "body": "{\"executionId\":\"31a6d615e5b44dfbad3c599dfcf56c5f\",\"status\":1}"
+      },
+      "error": null
+    }
+  ]
+}

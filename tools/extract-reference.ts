@@ -41,18 +41,25 @@ const runs = new Map<string, RawRun>();
 for (const [id, r] of Object.entries(bundles)) runs.set(id, { ...r, log: logs[id]?.log });
 for (const [id, r] of Object.entries(aRuns)) runs.set(id, r);
 // Variant runs made with tools/make-variant-run.ts on scenario C's slot: C2 (iterator
-// probes) and E (HTTP module probes). The live copies the tool sent carry webhook ids;
-// the tracked blueprint is the same file under corpus/blueprints/.
+// probes), E (HTTP module probes) and T (Basic trigger probes, started with Make's
+// "run once" API: no webhook, so no response, and the bundles are in the blueprint, so
+// the case input is null). The live copies the tool sent carry webhook ids; the tracked
+// blueprint is the same file under corpus/blueprints/.
 type VariantRuns = { runs: { case: string; blueprint: string; runId: string; response: { status: number; body: string } }[] };
-const variantSets: [string, VariantRuns][] = [
-  ['corpus/engine-logs/make-C2-runs-14.json', read('corpus/responses/C2.runs.json')],
-  ['corpus/engine-logs/make-E-runs-5.json', read('corpus/responses/E.runs.json')],
+const variantSets: [string, VariantRuns, 'webhook' | 'api'][] = [
+  ['corpus/engine-logs/make-C2-runs-14.json', read('corpus/responses/C2.runs.json'), 'webhook'],
+  ['corpus/engine-logs/make-E-runs-5.json', read('corpus/responses/E.runs.json'), 'webhook'],
+  ['corpus/engine-logs/make-T-runs-8.json', read('corpus/responses/T.runs.json'), 'api'],
 ];
-for (const [file, set] of variantSets) {
+const caseOfRun = new Map<string, string>();
+const apiRuns = new Set<string>();
+for (const [file, set, mode] of variantSets) {
   const raw: Record<string, RawRun> = read(file);
   for (const r of set.runs) {
     if (!raw[r.runId]) throw new Error(`no engine data for ${r.case} (${r.runId})`);
     runs.set(r.runId, { ...raw[r.runId]!, blueprint: `../../blueprints/${r.blueprint.split('/').pop()!.replace(/^live-/, '')}` });
+    caseOfRun.set(r.runId, r.case);
+    if (mode === 'api') apiRuns.add(r.runId);
   }
 }
 
@@ -105,7 +112,7 @@ for (const c of ['D-01-base', 'D-02-unicode', 'D-03-numbers-edge', 'D-04-empties
   responses.set(c, { status: 200, body: readFileSync(`corpus/responses/D/${c}.txt`, 'utf8') });
 }
 for (const c of ['D-05-types-swapped', 'D-05b-types-swapped-s-string']) responses.set(c, { status: 500, body: 'Scenario failed to complete.' });
-for (const [, set] of variantSets) for (const r of set.runs) responses.set(r.case, r.response);
+for (const [, set, mode] of variantSets) if (mode === 'webhook') for (const r of set.runs) responses.set(r.case, r.response);
 
 rmSync('corpus/reference', { recursive: true, force: true });
 let n = 0;
@@ -138,7 +145,7 @@ for (const [runId, run] of runs) {
   const modules = steps.filter((s): s is { kind: 'module'; id: number; output: { case?: string }[] } => (s as { kind: string }).kind === 'module');
   const failed = events.find((e) => e.type === 6 && e.error);
   const payload = modules.find((m) => m.id === 1)?.output[0];
-  const caseName: string = payload?.case ?? `${scenario.letter}-001`;
+  const caseName: string = caseOfRun.get(runId) ?? payload?.case ?? `${scenario.letter}-001`;
   const blueprint = run.blueprint ?? scenario.blueprint;
   const started = events.find((e) => e.type === 24)?.timestamp ?? null;
 
@@ -159,7 +166,7 @@ for (const [runId, run] of runs) {
   const http = modules.find((m) => m.id === 2 && /E-/.test(blueprint));
   const fixtures = http ? httpFixture((http as unknown as { input: Record<string, unknown>[] }).input[0]!, (http.output[0] ?? null) as Record<string, unknown> | null, payload as Record<string, unknown>) : null;
   const write = (file: string, value: unknown) => writeFileSync(`${dir}/${file}`, scrub(`${JSON.stringify(value, null, 2)}\n`));
-  write('input.json', payload);
+  write('input.json', apiRuns.has(runId) ? null : payload);
   write('reference.json', reference);
   if (fixtures) write('fixtures.json', fixtures);
   write('case.json', {

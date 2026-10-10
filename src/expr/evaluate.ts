@@ -65,7 +65,21 @@ export function evaluate(node: Node, ctx: EvalContext): Value {
       }
       // if() evaluates only the branch it picks: if(true; "picked"; first(bad)) gave "picked" (corpus D2).
       if (node.name === 'if') {
-        return evaluate(truthy(evaluate(node.args[0]!, ctx)) ? node.args[1]! : node.args[2]!, ctx);
+        let condition: Value;
+        try {
+          condition = evaluate(node.args[0]!, ctx);
+        } catch (e) {
+          if (e instanceof DataError) throw new UnsupportedError(`an error inside an if() condition has not been observed in Make (${e.message})`);
+          throw e;
+        }
+        // An error in the branch if() picked is wrapped once more, as Make reported it:
+        // "Function 'if' finished with error! Function 'first' finished with error! …" (corpus T-07).
+        try {
+          return evaluate(truthy(condition) ? node.args[1]! : node.args[2]!, ctx);
+        } catch (e) {
+          if (e instanceof DataError) throw new DataError(`Function 'if' finished with error! ${e.message}`);
+          throw e;
+        }
       }
       // Every other function gets all arguments evaluated first. Whether Make skips
       // unused arguments elsewhere (ifempty, switch) has not been observed.

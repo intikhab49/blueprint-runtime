@@ -2,9 +2,9 @@
 
 <img src="docs/header.svg" alt="blueprint-runtime: run and test Make scenario blueprints offline. 71 of 79 real Make runs reproduced exactly, 0 differ." width="100%">
 
-# blueprint-runtime — run and test Make scenarios offline
+# blueprint-runtime — test Make.com scenarios offline
 
-**Replay real Make runs on your own machine and see the first value that changed: no Make account, no credits, no network. Every behavior it claims was recorded in a real Make run; anything else is refused, never guessed.**
+**An offline test runner for Make.com (formerly Integromat) scenario blueprints. Replay real Make runs on your own machine, in CI, and see the first value that changed: no Make account, no credits, no network. Every behavior it claims was recorded in a real Make run; anything else is refused, never guessed.**
 
 [![License](https://img.shields.io/badge/license-MIT-2a78d6?style=for-the-badge)](LICENSE)
 [![Node](https://img.shields.io/badge/node-24%2B-2a78d6?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
@@ -12,7 +12,7 @@
 [![Tests](https://img.shields.io/badge/tests-472%20passing-1baf7a?style=for-the-badge)](test/)
 [![Dependencies](https://img.shields.io/badge/runtime%20deps-0-eb6834?style=for-the-badge)](package.json)
 
-[Demo](#demo) · [Results](#results) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Supported](#what-runs-today) · [Fixtures](#fixtures-http-and-third-party-modules) · [Limitations](#limitations)
+[Demo](#demo) · [Results](#results) · [Quick start](#quick-start) · [CI](#run-it-in-ci-github-actions) · [How it works](#how-it-works) · [Supported](#what-runs-today) · [Fixtures](#fixtures-http-and-third-party-modules) · [FAQ](#faq) · [Limitations](#limitations)
 
 </div>
 
@@ -71,6 +71,27 @@ bpr inspect corpus/blueprints/B.blueprint.json     # what a blueprint uses, and 
 
 No Make account is needed for any of this. The recorded runs are in the repository.
 
+## Run it in CI (GitHub Actions)
+
+Keep your exported blueprints and a few cases (snapshots or recorded Make runs) in a repository, and every change to a scenario gets checked before anyone imports it into Make:
+
+```yaml
+# .github/workflows/make-scenarios.yml
+name: make-scenarios
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npx --yes github:intikhab49/blueprint-runtime test cases/
+```
+
+The exit code is the verdict: `0` every case matches, `1` a mapping changed what Make would produce, `3` the blueprint uses something without recorded Make behavior, `5` a fixture is missing or wrong. `bpr inspect` works the same way as a blueprint linter: exit `0` eligible, `2` invalid file, `3` unsupported.
+
 ## How it works
 
 ```mermaid
@@ -115,6 +136,8 @@ A case names a blueprint, an input, optional fixtures and the run Make actually 
 
 If the blueprint uses `now`, give the case a clock: `"environment": { "now": "2026-10-10T12:00:00.000Z" }`. Every module then reads that instant. In Make, `now` is the time each module starts, so it moves on during a run; a recorded reference can use `"now": "recorded"` to replay Make's own start times.
 
+**Snapshots.** You don't need a recorded Make run to start: `bpr run blueprint.json --input input.json > expected.json` saves what the scenario produces today, and a case with `"expected": "./expected.json"` turns that into a regression test. Differences are then reported against "the snapshot", not against Make, because a snapshot proves consistency, not Make compatibility.
+
 Exit codes: `0` all matched · `1` a case differs · `2` invalid case · `3` something without recorded Make behavior (`--allow-unsupported` lets those pass) · `5` a fixture is missing, wrong or unused · `6` local limit.
 
 `bpr run <blueprint.json> --input <payload.json> [--fixtures <fixtures.json>] [--timezone <IANA>]` prints the local trace.
@@ -156,6 +179,26 @@ A case can add `"fixtures": "./fixtures.json"`. There are two modes:
 ```
 
 `occurrence` is the module's invocation number, because an iterator makes a module run several times. Fixtures fail closed: no fixture, a different request or input, a fixture of the wrong mode, two fixtures for one invocation, or a fixture never used all stop the case with exit `5`. There is no network fallback. Modules that run inside Make (`json`, `regexp`, `util`, …) can never be replaced by a fixture. See [examples/http-fixture](examples/http-fixture/).
+
+## FAQ
+
+**How do I test a Make.com scenario without running it in Make?**
+Export the scenario's blueprint (scenario menu → Export blueprint) and save a sample input. `bpr run blueprint.json --input input.json > expected.json` saves a snapshot of everything the scenario produces; a case pointing at it fails the moment an edit changes any module's output (see [`bpr test`](#bpr-test)). For proof against Make itself, the expected run can be one recorded in Make instead: that is how the 79 cases in `corpus/reference/` were made, with the tools in [`tools/`](tools/). Those need a Make account and API token, and a one-command recorder is not built yet.
+
+**Does it work with Integromat blueprints?**
+Integromat is Make's former name, and the blueprint format is the same. Exports wrapped as `{"blueprint": …}` or Make API responses are unwrapped automatically.
+
+**Can it validate or lint a blueprint before I import it?**
+Yes: `bpr inspect blueprint.json` checks the structure strictly (duplicate keys, broken routes, references to modules that do not run first), lists every expression, and names everything it cannot vouch for. Exit code `0` means it can run offline.
+
+**Does it call Make, Google Sheets, OpenAI or any other API?**
+No. HTTP and app modules run from fixtures you write, a missing fixture fails the test, and nothing ever goes over the network. No Make account or API token is needed.
+
+**What does `[]` mean in a Make mapping like `{{1.choices[].message.content}}`?**
+It reads the first element, not all of them; this was recorded in Make, and bpr does the same. Make's `map()` function reads every element.
+
+**Is it an official Make tool?**
+No. It is an independent open source project that works with Make blueprints; every behavior comes from runs recorded in a real Make account (see [`corpus/`](corpus/NOTES.md)).
 
 ## How the evidence was collected
 

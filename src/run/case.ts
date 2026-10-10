@@ -33,6 +33,8 @@ export interface CaseResult {
   message?: string;
   divergence?: Divergence;
   trace?: Trace;
+  /** What the expected run is: a run recorded in Make, or a snapshot saved from `bpr run`. */
+  against?: 'make' | 'snapshot';
 }
 
 class CaseError extends Error {}
@@ -122,6 +124,7 @@ export function runCase(file: string): CaseResult {
       throw e;
     }
     const divergence = compareExecutions(expected, trace);
+    base.against = (expected as unknown as { source?: string }).source === 'blueprint-runtime' ? 'snapshot' : 'make';
     return divergence ? { ...base, verdict: 'fail', divergence, message: divergence.message, trace } : { ...base, verdict: 'pass', trace };
   } catch (e) {
     if (e instanceof CaseError) return { ...base, verdict: 'invalid', message: e.message };

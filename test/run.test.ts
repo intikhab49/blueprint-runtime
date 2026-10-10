@@ -30,6 +30,17 @@ describe('scenarios A, B, C and the C2, E, T and N probes against every recorded
   }
 });
 
+describe('snapshots saved from bpr run', () => {
+  it('pass unchanged, and a change is reported against the snapshot, never against Make', () => {
+    const doc = { flow: [hook, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'v', value: '{{upper(1.name)}}' } }] };
+    const snapshot = runScenario(planOf(doc), { name: 'ada' }, { timezone: null });
+    assert.equal(compareExecutions(snapshot, runScenario(planOf(doc), { name: 'ada' }, { timezone: null })), null);
+    const edited = { flow: [hook, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'v', value: '{{capitalize(1.name)}}' } }] };
+    const d = compareExecutions(snapshot, runScenario(planOf(edited), { name: 'ada' }, { timezone: null }));
+    assert.match(d!.message, /the snapshot had "ADA"/);
+  });
+});
+
 describe('a broken mapping is caught at the first difference', () => {
   it('upper → capitalize differs at module 2 input /value', () => {
     const r = runCase('examples/broken-mapping/cases/A-002-plain/case.json');

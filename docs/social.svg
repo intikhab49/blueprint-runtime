@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img"
+     aria-label="blueprint-runtime: test Make.com scenarios offline. 71 of 79 real Make runs reproduced exactly, 0 differ.">
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFB020"/>
+      <stop offset="55%" stop-color="#FF6B4A"/>
+      <stop offset="100%" stop-color="#FF4E88"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF6B4A" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0A0A14" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0 L0 0 0 28" fill="none" stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1280" height="640" fill="#0A0A14"/>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+  <circle cx="1100" cy="110" r="330" fill="url(#fade)"/>
+
+  <text x="72" y="118" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" letter-spacing="4" fill="#A3E635">OPEN SOURCE &#183; MAKE.COM &#183; INTEGROMAT</text>
+  <text x="68" y="214" font-family="Georgia,'Times New Roman',serif" font-size="78" font-weight="700" fill="url(#grad)">blueprint-runtime</text>
+  <text x="72" y="282" font-family="-apple-system,Segoe UI,Helvetica,sans-serif" font-size="38" font-weight="600" fill="#E8E8F0">Test Make.com scenarios offline.</text>
+  <text x="72" y="336" font-family="-apple-system,Segoe UI,Helvetica,sans-serif" font-size="25" fill="#8B8BA7">Replay real Make runs. Catch a broken mapping</text>
+  <text x="72" y="370" font-family="-apple-system,Segoe UI,Helvetica,sans-serif" font-size="25" fill="#8B8BA7">before you deploy. No account, no credits.</text>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="17">
+    <rect x="72" y="430" width="230" height="44" rx="22" fill="none" stroke="#FFB020" stroke-opacity="0.6"/>
+    <text x="187" y="458" fill="#FFB020" text-anchor="middle">71/79 RUNS MATCH</text>
+    <rect x="316" y="430" width="136" height="44" rx="22" fill="none" stroke="#A3E635" stroke-opacity="0.6"/>
+    <text x="384" y="458" fill="#A3E635" text-anchor="middle">0 DIFFER</text>
+    <rect x="466" y="430" width="170" height="44" rx="22" fill="none" stroke="#5B9BFF" stroke-opacity="0.6"/>
+    <text x="551" y="458" fill="#5B9BFF" text-anchor="middle">NO NETWORK</text>
+    <rect x="650" y="430" width="140" height="44" rx="22" fill="none" stroke="#FF4E88" stroke-opacity="0.6"/>
+    <text x="720" y="458" fill="#FF4E88" text-anchor="middle">CI READY</text>
+  </g>
+
+  <text x="72" y="566" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" fill="#8B8BA7">github.com/intikhab49/blueprint-runtime</text>
+
+  <text x="880" y="430" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" letter-spacing="2" fill="#8B8BA7">REAL MAKE RUNS REPRODUCED</text>
+  <g transform="translate(880 446) scale(1.0)">
+    <rect x="0" y="0.0" width="79.4" height="13.5" rx="3" fill="url(#grad)"/>
+    <text x="89.4" y="10.8" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">9/9  A straight line</text>
+    <rect x="0" y="19.5" width="141.2" height="13.5" rx="3" fill="url(#grad)"/>
+    <text x="151.2" y="30.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">16/16  B router</text>
+    <rect x="0" y="39.0" width="150.0" height="13.5" rx="3" fill="url(#grad)"/>
+    <text x="160.0" y="49.8" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">17/17  C iterator</text>
+    <rect x="0" y="58.5" width="114.7" height="13.5" rx="3" fill="url(#grad)"/>
+    <rect x="114.7" y="58.5" width="8.8" height="13.5" rx="3" fill="#8B8BA7" opacity="0.35"/>
+    <text x="133.5" y="69.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#8B8BA7" font-weight="400">13/14  C2 probes</text>
+    <rect x="0" y="78.0" width="44.1" height="13.5" rx="3" fill="url(#grad)"/>
+    <text x="54.1" y="88.8" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">5/5  E HTTP</text>
+    <rect x="0" y="97.5" width="70.6" height="13.5" rx="3" fill="url(#grad)"/>
+    <text x="80.6" y="108.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">8/8  T triggers</text>
+    <rect x="0" y="117.0" width="26.5" height="13.5" rx="3" fill="url(#grad)"/>
+    <text x="36.5" y="127.8" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#FFFFFF" font-weight="700">3/3  N now / []</text>
+    <rect x="0.0" y="136.5" width="61.8" height="13.5" rx="3" fill="#8B8BA7" opacity="0.35"/>
+    <text x="71.8" y="147.2" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="12" fill="#8B8BA7" font-weight="400">0/7  D formulas</text>
+  </g>
+</svg>

@@ -2,16 +2,28 @@
   "name": "blueprint-runtime",
   "version": "0.3.1",
   "private": true,
-  "description": "Run and test Make scenario blueprints offline. Every behavior is checked against real recorded Make runs, not guesses.",
+  "description": "Test Make.com (Integromat) scenarios offline: run exported blueprints locally, replay real Make runs and catch broken mappings before deploy. CLI test runner and blueprint validator, CI ready.",
   "keywords": [
     "make",
     "make.com",
+    "makecom",
     "integromat",
+    "make-scenario",
+    "make-blueprint",
     "blueprint",
+    "scenario-testing",
+    "no-code",
+    "low-code",
     "automation",
+    "workflow-automation",
     "testing",
+    "test-runner",
+    "regression-testing",
     "offline",
-    "no-code"
+    "validator",
+    "linter",
+    "ci",
+    "cli"
   ],
   "homepage": "https://github.com/intikhab49/blueprint-runtime#readme",
   "repository": {
@@ -22,10 +34,16 @@
     "url": "https://github.com/intikhab49/blueprint-runtime/issues"
   },
   "author": "Intikhab Azam",
+  "license": "MIT",
   "type": "module",
   "bin": {
     "bpr": "dist/src/cli.js"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "engines": {
     "node": ">=24"
   },
@@ -33,9 +51,9 @@
     "typecheck": "tsc -p tsconfig.json",
     "build": "tsc -p tsconfig.build.json",
     "test": "node --test \"test/**/*.test.ts\"",
-    "bpr": "node src/cli.ts"
+    "bpr": "node src/cli.ts",
+    "prepare": "tsc -p tsconfig.build.json"
   },
-  "license": "MIT",
   "devDependencies": {
     "@types/node": "24.19.2",
     "typescript": "7.0.2"

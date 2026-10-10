@@ -48,6 +48,8 @@ export function firstDifference(expected: JsonValue | undefined, actual: JsonVal
 }
 
 export function compareExecutions(expected: Execution, actual: Execution): Divergence | null {
+  // A snapshot made with `bpr run` is not Make evidence; say whose run it was.
+  const who = (expected as { source?: string }).source === 'blueprint-runtime' ? 'the snapshot' : 'Make';
   const n = Math.max(expected.steps.length, actual.steps.length);
   for (let i = 0; i < n; i++) {
     const e = expected.steps[i];
@@ -59,7 +61,7 @@ export function compareExecutions(expected: Execution, actual: Execution): Diver
         step: i + 1,
         expected: e ? (e.kind === 'module' ? e.id : `filter ${e.moduleId}`) : null,
         actual: a ? (a.kind === 'module' ? a.id : `filter ${a.moduleId}`) : null,
-        message: !a ? `step ${i + 1}: Make did ${describeStep(e)}, the local run had stopped` : !e ? `step ${i + 1}: the local run did ${describeStep(a)}, which Make did not` : `step ${i + 1}: Make did ${describeStep(e)}, the local run did ${describeStep(a)}`,
+        message: !a ? `step ${i + 1}: ${who} did ${describeStep(e)}, the local run had stopped` : !e ? `step ${i + 1}: the local run did ${describeStep(a)}, which ${who} did not` : `step ${i + 1}: ${who} did ${describeStep(e)}, the local run did ${describeStep(a)}`,
       };
     }
     if (e.kind === 'filter' && a.kind === 'filter') {
@@ -70,7 +72,7 @@ export function compareExecutions(expected: Execution, actual: Execution): Diver
           moduleId: e.moduleId,
           expected: { passed: e.passed, report: e.report },
           actual: { passed: a.passed, report: a.report },
-          message: `step ${i + 1}, filter before module ${e.moduleId}: Make ${e.passed ? 'passed' : 'stopped'} the bundle ${show(e.report)}, the local run ${a.passed ? 'passed' : 'stopped'} it ${show(a.report)}`,
+          message: `step ${i + 1}, filter before module ${e.moduleId}: ${who} ${e.passed ? 'passed' : 'stopped'} the bundle ${show(e.report)}, the local run ${a.passed ? 'passed' : 'stopped'} it ${show(a.report)}`,
         };
       }
       continue;
@@ -80,7 +82,7 @@ export function compareExecutions(expected: Execution, actual: Execution): Diver
       const eb = e[side];
       const ab = a[side];
       if (eb.length !== ab.length) {
-        return { where: side, step: i + 1, moduleId: e.id, operation: e.operation, expected: eb.length, actual: ab.length, message: `${describeStep(e)} ${side}: Make had ${eb.length} bundle(s), the local run ${ab.length}` };
+        return { where: side, step: i + 1, moduleId: e.id, operation: e.operation, expected: eb.length, actual: ab.length, message: `${describeStep(e)} ${side}: ${who} had ${eb.length} bundle(s), the local run ${ab.length}` };
       }
       for (let b = 0; b < eb.length; b++) {
         const d = firstDifference(eb[b], ab[b]);
@@ -94,7 +96,7 @@ export function compareExecutions(expected: Execution, actual: Execution): Diver
             pointer: d.pointer,
             expected: d.expected,
             actual: d.actual,
-            message: `${describeStep(e)} ${side} bundle ${b + 1} at ${d.pointer || '(whole bundle)'}: Make had ${show(d.expected)}, the local run ${show(d.actual)}`,
+            message: `${describeStep(e)} ${side} bundle ${b + 1} at ${d.pointer || '(whole bundle)'}: ${who} had ${show(d.expected)}, the local run ${show(d.actual)}`,
           };
         }
       }
@@ -104,13 +106,13 @@ export function compareExecutions(expected: Execution, actual: Execution): Diver
   const outcome = (x: Execution) => (x.status === 'error' ? { status: x.status, ...x.error } : { status: x.status });
   const od = firstDifference(outcome(expected) as JsonValue, outcome(actual) as JsonValue);
   if (od) {
-    return { where: 'outcome', pointer: od.pointer, expected: od.expected, actual: od.actual, message: `run outcome ${od.pointer}: Make had ${show(od.expected)}, the local run ${show(od.actual)}` };
+    return { where: 'outcome', pointer: od.pointer, expected: od.expected, actual: od.actual, message: `run outcome ${od.pointer}: ${who} had ${show(od.expected)}, the local run ${show(od.actual)}` };
   }
 
   if (expected.response) {
     const rd = firstDifference(expected.response as unknown as JsonValue, (actual.response ?? null) as unknown as JsonValue);
     if (rd) {
-      return { where: 'response', pointer: rd.pointer, expected: rd.expected, actual: rd.actual, message: `webhook response ${rd.pointer}: Make sent ${show(rd.expected)}, the local run ${show(rd.actual)}` };
+      return { where: 'response', pointer: rd.pointer, expected: rd.expected, actual: rd.actual, message: `webhook response ${rd.pointer}: ${who} sent ${show(rd.expected)}, the local run ${show(rd.actual)}` };
     }
   }
   return null;

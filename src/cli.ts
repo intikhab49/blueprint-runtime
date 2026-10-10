@@ -18,7 +18,7 @@ usage:
   bpr run <blueprint.json> --input <payload.json> [--fixtures <fixtures.json>] [--timezone <IANA name>]
 
 exit codes:
-  0  success (inspect: eligible; test: every case matched Make)
+  0  success (inspect: eligible; test: every case matched its expected run)
   1  a test case differs from Make's recorded run
   2  invalid input (bad JSON, broken structure, unreadable file)
   3  uses something without recorded Make behavior
@@ -107,7 +107,9 @@ function test(args: string[]): number {
     const why = r.verdict === 'pass' ? '' : r.verdict === 'unsupported' ? `  not supported yet: ${r.message}` : `  ${r.message}`;
     process.stdout.write(`${`${label[r.verdict]}  ${r.name.padEnd(width)}${why}`.trimEnd()}\n`);
   }
-  process.stdout.write(`\n${results.length} cases: ${count('pass')} matched Make, ${count('fail')} differ, ${count('unsupported')} not supported yet, ${count('invalid')} invalid${count('fixture') ? `, ${count('fixture')} fixture problem${count('fixture') > 1 ? 's' : ''}` : ''}${count('limit') ? `, ${count('limit')} over a limit` : ''}\n`);
+  const snapshots = results.filter((r) => r.verdict === 'pass' && r.against === 'snapshot').length;
+  const matched = snapshots ? `${count('pass')} matched (${count('pass') - snapshots} Make runs, ${snapshots} snapshots)` : `${count('pass')} matched Make`;
+  process.stdout.write(`\n${results.length} cases: ${matched}, ${count('fail')} differ, ${count('unsupported')} not supported yet, ${count('invalid')} invalid${count('fixture') ? `, ${count('fixture')} fixture problem${count('fixture') > 1 ? 's' : ''}` : ''}${count('limit') ? `, ${count('limit')} over a limit` : ''}\n`);
   return exitCode;
 }
 

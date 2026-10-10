@@ -19,10 +19,10 @@ const planOf = (doc: unknown) => {
 const hook = { id: 1, module: 'gateway:CustomWebHook', version: 1, parameters: {}, mapper: {} };
 const respond = (body: string, id = 2) => ({ id, module: 'gateway:WebhookRespond', version: 1, parameters: {}, mapper: { body, status: '200', headers: [] } });
 
-describe('scenarios A, B, C and the C2, E and T probes against every recorded Make run', () => {
+describe('scenarios A, B, C and the C2, E, T and N probes against every recorded Make run', () => {
   // C2-nl-02: for the bare bundle 0, Make read the previous bundle's value; refused, not modeled.
   const refused = new Set(['C2-nl-02-numbers']);
-  for (const c of readdirSync('corpus/reference').filter((d) => /^(A|B|C|C2|E|T)-/.test(d))) {
+  for (const c of readdirSync('corpus/reference').filter((d) => /^(A|B|C|C2|E|T|N)-/.test(d))) {
     it(c, () => {
       const r = runCase(`corpus/reference/${c}/case.json`);
       assert.equal(r.verdict, refused.has(c) ? 'unsupported' : 'pass', r.message);
@@ -127,6 +127,28 @@ describe('triggers that emit several bundles', () => {
     const agg = { id: 3, module: 'util:TextAggregator', version: 1, parameters: { feeder: 1, rowSeparator: 'other', otherRowSeparator: '|' }, mapper: { value: '{{2.line}}' } };
     assert.throws(() => run([sheets, line, agg], []), UnsupportedError);
     assert.equal(run([sheets, line], []).steps.length, 1);
+  });
+});
+
+describe('now and Sleep', () => {
+  const setNow = (id: number, extra: Record<string, unknown> = {}) => ({ id, module: 'util:SetVariable2', version: 1, mapper: { name: 'at', value: '{{now}}' }, ...extra });
+  const clock = (id: number, op: number) => Date.UTC(2026, 9, 10, 12, 0, id, op);
+
+  it('reads the clock of the module that is mapping (corpus N-01)', () => {
+    const t = runScenario(planOf({ flow: [hook, setNow(2), setNow(3)] }), {}, { timezone: null, clock });
+    const outs = t.steps.filter((s) => s.kind === 'module' && s.id > 1).map((s) => (s.kind === 'module' ? s.output[0] : null));
+    assert.deepEqual(outs, [{ at: '2026-10-10T12:00:02.001Z' }, { at: '2026-10-10T12:00:03.001Z' }]);
+  });
+
+  it('refuses now without a clock, and in a filter', () => {
+    assert.throws(() => runScenario(planOf({ flow: [hook, setNow(2)] }), {}, { timezone: null }), /needs a clock/);
+    const filtered = setNow(2, { filter: { name: 'f', conditions: [[{ a: '{{now}}', o: 'text:equal', b: 'x' }]] } });
+    assert.throws(() => runScenario(planOf({ flow: [hook, filtered] }), {}, { timezone: null, clock }), /in a filter or an aggregator/);
+  });
+
+  it('Sleep records its duration as a number and one null output (corpus N-01)', () => {
+    const t = runScenario(planOf({ flow: [hook, { id: 2, module: 'util:FunctionSleep', version: 1, mapper: { duration: '3' } }] }), {}, { timezone: null });
+    assert.deepEqual(t.steps[1], { kind: 'module', id: 2, operation: 1, input: [{ duration: 3 }], output: [null] });
   });
 });
 

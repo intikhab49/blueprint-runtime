@@ -50,6 +50,7 @@ const variantSets: [string, VariantRuns, 'webhook' | 'api'][] = [
   ['corpus/engine-logs/make-C2-runs-14.json', read('corpus/responses/C2.runs.json'), 'webhook'],
   ['corpus/engine-logs/make-E-runs-5.json', read('corpus/responses/E.runs.json'), 'webhook'],
   ['corpus/engine-logs/make-T-runs-8.json', read('corpus/responses/T.runs.json'), 'api'],
+  ['corpus/engine-logs/make-N-runs-3.json', read('corpus/responses/N.runs.json'), 'webhook'],
 ];
 const caseOfRun = new Map<string, string>();
 const apiRuns = new Set<string>();
@@ -120,6 +121,8 @@ for (const [runId, run] of runs) {
   const scenario = SCENARIOS[run.scenarioId];
   if (!scenario) continue;
   const events = run.log?.logs ?? [];
+  const blueprintFile = (run.blueprint ?? scenario.blueprint).replace('../../', 'corpus/');
+  const usesNow = /\{\{[^}]*\bnow\b/.test(readFileSync(blueprintFile, 'utf8'));
   // Steps in Make's execution order, from the run log: filter decisions (event 14 = stopped,
   // 18 = passed) and module operations (event 5 = input, 6 = output; one operation per
   // module start). Bundles come from the per-module data, matched by operation number.
@@ -137,7 +140,8 @@ for (const [runId, run] of runs) {
       const op = (opCount.get(id) ?? 0) + 1;
       opCount.set(id, op);
       openOp.set(id, e.type === 5);
-      steps.push({ kind: 'module', id, operation: op, input: bundlesOf(id, op, true), output: bundlesOf(id, op, false) });
+      // `now` reads the time each module starts (N-01): keep it for blueprints that use `now`.
+      steps.push({ kind: 'module', id, operation: op, ...(usesNow && e.type === 5 && e.timestamp ? { startedAt: e.timestamp } : {}), input: bundlesOf(id, op, true), output: bundlesOf(id, op, false) });
     } else if (e.type === 6) {
       openOp.set(id, false);
     }
@@ -171,7 +175,7 @@ for (const [runId, run] of runs) {
   if (fixtures) write('fixtures.json', fixtures);
   write('case.json', {
     schemaVersion: 1, name: caseName, blueprint, input: './input.json', ...(fixtures ? { fixtures: './fixtures.json' } : {}),
-    environment: { timezone: 'Asia/Karachi' }, expected: './reference.json',
+    environment: { timezone: 'Asia/Karachi', ...(usesNow ? { now: 'recorded' } : {}) }, expected: './reference.json',
   });
   n++;
 }

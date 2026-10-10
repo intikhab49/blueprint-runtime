@@ -23,7 +23,7 @@ AMBER, CORAL, PINK = "#FFB020", "#FF6B4A", "#FF4E88"
 LIME, BLUE, DIM = "#A3E635", "#5B9BFF", "#8B8BA7"
 MONO = "ui-monospace,SFMono-Regular,Menlo,monospace"
 
-ROWS = [("A", "straight line"), ("B", "router"), ("C", "iterator"), ("C2", "probes"), ("E", "HTTP"), ("T", "triggers"), ("D", "formulas")]
+ROWS = [("A", "straight line"), ("B", "router"), ("C", "iterator"), ("C2", "probes"), ("E", "HTTP"), ("T", "triggers"), ("N", "now / []"), ("D", "formulas")]
 MATCHED = sum(f["matched"] for f in FAM.values())
 RECORDED = sum(f["recorded"] for f in FAM.values())
 DIFFER = sum(f["differ"] for f in FAM.values())

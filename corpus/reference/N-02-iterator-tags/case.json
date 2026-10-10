@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "N-02-iterator-tags",
+  "blueprint": "../../blueprints/N-02-iterator-tags.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

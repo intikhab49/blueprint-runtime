@@ -1,6 +1,6 @@
 {
   "name": "blueprint-runtime",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Run and test Make scenario blueprints offline. Every behavior is checked against real recorded Make runs, not guesses.",
   "keywords": [

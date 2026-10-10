@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import * as dates from './dates.ts';
 import { UnsupportedError } from './errors.ts';
-import { arr, bool, date, describe, MISSING, num, obj, str, toText, type Value } from './values.ts';
+import { arr, bool, date, describe, MISSING, num, numberText, obj, str, toText, type Value } from './values.ts';
 
 /**
  * Make's built-in functions. Each one accepts only the argument types it was
@@ -12,6 +12,15 @@ import { arr, bool, date, describe, MISSING, num, obj, str, toText, type Value }
 export interface FnContext {
   /** Scenario timezone (IANA name). Date functions refuse to run without it. */
   timezone: string | null;
+}
+
+/** JavaScript's Date.prototype.toString() on a server running in UTC. */
+export function utcDateString(ms: number): string {
+  const d = new Date(ms);
+  const p = (n: number) => String(n).padStart(2, '0');
+  const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getUTCDay()]!;
+  const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getUTCMonth()]!;
+  return `${day} ${month} ${p(d.getUTCDate())} ${String(d.getUTCFullYear()).padStart(4, '0')} ${p(d.getUTCHours())}:${p(d.getUTCMinutes())}:${p(d.getUTCSeconds())} GMT+0000 (Coordinated Universal Time)`;
 }
 
 /** A failure Make itself reports. The evaluator wraps it as "Function 'x' finished with error! ...". */
@@ -141,6 +150,11 @@ const DEFS: Record<string, (fn: string) => FnDef> = {
     impl: ([v]) => {
       if (v?.kind === 'string' || v?.kind === 'array') return num(v.value.length); // UTF-16 units: an emoji counts 2 (corpus D-02)
       if (v?.kind === 'missing' || v?.kind === 'null') return num(0); // length(1.nope) = 0 (corpus D2)
+      // JavaScript's String() of the value: a collection is "[object Object]" (15, D3 a_whole_len),
+      // a date "Sat Oct 10 2026 12:30:28 GMT+0000 (Coordinated Universal Time)" (62, D3 n_length).
+      if (v?.kind === 'object') return num('[object Object]'.length);
+      if (v?.kind === 'number') return num(numberText(v.value).length); // length(1) = 1 (corpus D3)
+      if (v?.kind === 'date') return num(utcDateString(v.value).length);
       return unsupported(fn, describe(v ?? MISSING));
     },
   }),
@@ -214,7 +228,14 @@ const DEFS: Record<string, (fn: string) => FnDef> = {
   floor: (fn) => ({ min: 1, max: 1, impl: ([n]) => num(Math.floor(number(fn, n, 0))) }),
   max: (fn) => ({ min: 1, max: Infinity, impl: (a) => num(Math.max(...numbersOf(fn, a))) }), // max([]) = -Infinity (corpus D-03)
   min: (fn) => ({ min: 1, max: Infinity, impl: (a) => num(Math.min(...numbersOf(fn, a))) }),
-  sum: (fn) => ({ min: 1, max: 1, impl: ([a]) => num(array(fn, a, 0).reduce((t, v, i) => t + number(fn, v, i), 0)) }),
+  sum: (fn) => ({
+    min: 1,
+    max: 1,
+    impl: ([a]) => {
+      if (a?.kind === 'number') return a; // sum(30) = 30 (corpus D3 a_ages_sum)
+      return num(array(fn, a, 0).reduce((t, v, i) => t + number(fn, v, i), 0));
+    },
+  }),
   average: (fn) => ({
     min: 1,
     max: 1,
@@ -277,6 +298,7 @@ const DEFS: Record<string, (fn: string) => FnDef> = {
     max: 2,
     impl: ([a, sep]) => {
       if (a?.kind === 'missing' || a?.kind === 'null') return str('');
+      if (a?.kind === 'string') return str(''); // join("Ann"; "|") = "" (corpus D3, what [] passes it)
       return str(deepFlatten(array(fn, a, 0)).map((v) => (v.kind === 'missing' || v.kind === 'null' ? '' : primitiveText(fn, v))).join(text(fn, sep, 1)));
     },
   }),
@@ -288,7 +310,14 @@ const DEFS: Record<string, (fn: string) => FnDef> = {
       return array(fn, a, 0)[0] ?? MISSING;
     },
   }),
-  last: (fn) => ({ min: 1, max: 1, impl: ([a]) => array(fn, a, 0).at(-1) ?? MISSING }),
+  last: (fn) => ({
+    min: 1,
+    max: 1,
+    impl: ([a]) => {
+      if (a?.kind === 'string') throw new FnFailure(`'${a.value}' is not a valid array.`); // corpus D3 a_names_last
+      return array(fn, a, 0).at(-1) ?? MISSING;
+    },
+  }),
   reverse: (fn) => ({ min: 1, max: 1, impl: ([a]) => arr([...array(fn, a, 0)].reverse()) }),
   // Text sorts by UTF-16 code units: [é, e, z, É] → e, z, É, é (corpus D-02).
   // Numbers sort numerically: [1, 2, 3, 10] stays 1, 2, 3, 10 (corpus D2). Mixed arrays are refused.
@@ -335,7 +364,9 @@ const DEFS: Record<string, (fn: string) => FnDef> = {
         const fk = text(fn, fkey, 2);
         items = items.filter((m) => fvals.some((fv) => sameValue(fn, m.get(fk) ?? MISSING, fv)));
       }
-      return arr(items.map((m) => m.get(k) ?? unsupported(fn, `an item without the key ${JSON.stringify(k)}`)));
+      // An item without the key stays in the result as an empty entry: join(map(people; "name"); "|")
+      // gave "Ann|Bob||" and length() 4 for [Ann, Bob, {age}, {name: null}] (corpus D3).
+      return arr(items.map((m) => m.get(k) ?? MISSING));
     },
   }),
   keys: (fn) => ({ min: 1, max: 1, impl: ([o]) => arr([...object(fn, o, 0).keys()].map(str)) }),

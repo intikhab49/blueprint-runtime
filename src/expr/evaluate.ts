@@ -3,11 +3,16 @@ import { DataError, UnsupportedError } from './errors.ts';
 import { decAdd, decDiv, decMod, decMul, decSub } from './decimal.ts';
 import { FnFailure, FUNCTIONS, truthy, type FnContext } from './functions.ts';
 import { parseTemplate, type BinaryOp, type Node, type TemplatePart } from './parser.ts';
-import { arr, bool, describe, fromJson, MISSING, num, obj, str, toText, type Value } from './values.ts';
+import { arr, bool, date, describe, fromJson, MISSING, num, obj, str, toText, type Value } from './values.ts';
 
 export interface EvalContext extends FnContext {
   /** Output bundle of a module that already ran, or MISSING. */
   output(moduleId: number): Value;
+  /**
+   * The instant `now` reads, in ms. Make gives each module the time it starts, so `now`
+   * moves on during a run (corpus N-01). Absent: `now` is refused.
+   */
+  now?(): number;
 }
 
 /** Keywords whose values were observed in Make (corpus D). Other known keywords are refused. */
@@ -17,7 +22,7 @@ const KEYWORDS: Record<string, Value> = {
   emptystring: str(''),
   space: str(' '),
 };
-const UNOBSERVED_KEYWORDS = new Set(['null', 'now', 'timestamp', 'random', 'uuid', 'pi', 'nbsp', 'tab', 'newline', 'carriagereturn', 'emptyarray']);
+const UNOBSERVED_KEYWORDS = new Set(['null', 'timestamp', 'random', 'uuid', 'pi', 'nbsp', 'tab', 'newline', 'carriagereturn', 'emptyarray']);
 
 export function evaluate(node: Node, ctx: EvalContext): Value {
   switch (node.type) {
@@ -26,6 +31,10 @@ export function evaluate(node: Node, ctx: EvalContext): Value {
     case 'string':
       return str(node.value);
     case 'word': {
+      if (node.name === 'now') {
+        if (!ctx.now) throw new UnsupportedError('`now` needs a clock: give the case environment a "now" (Make uses the time each module starts, corpus N-01)');
+        return date(ctx.now());
+      }
       const k = KEYWORDS[node.name];
       if (k) return k;
       if (UNOBSERVED_KEYWORDS.has(node.name)) throw new UnsupportedError(`the keyword "${node.name}" has not been observed in Make`);
@@ -34,9 +43,26 @@ export function evaluate(node: Node, ctx: EvalContext): Value {
     }
     case 'ref': {
       let cur = ctx.output(node.moduleId);
+      let afterFirst = false;
       for (const [i, seg] of node.path.entries()) {
-        if ('all' in seg) throw new UnsupportedError('mapping over an array with [] has not been observed in Make');
+        // [] reads the FIRST element, wherever it is used: 1.people[].name gave "Ann" as text,
+        // as a function argument (first() then failed: 'Ann' is not a valid array) and in an
+        // iterator's array field (corpus D3, N-02, N-03). Make's map() is what reads them all.
+        // On an object it reads as missing, on text it is the text itself (D3 a_obj, a_notarr).
+        if ('all' in seg) {
+          if (cur.kind === 'missing' || cur.kind === 'null' || cur.kind === 'object') return MISSING;
+          if (cur.kind === 'array') cur = cur.value[0] ?? MISSING;
+          else if (cur.kind !== 'string') throw new UnsupportedError(`[] on ${describe(cur)} has not been observed in Make`);
+          afterFirst = true;
+          continue;
+        }
         if (cur.kind === 'missing' || cur.kind === 'null') return MISSING;
+        // After [], a field of a plain value is the value itself: 1.nums[].x gave 1 and
+        // 1.notarr[].name gave "str" (D3). For 0 or false, see the bare-bundle quirk below.
+        if (afterFirst && 'key' in seg && (cur.kind === 'string' || cur.kind === 'number' || cur.kind === 'boolean')) {
+          if (cur.value === 0 || cur.value === false || cur.value === '') throw new UnsupportedError(`reading a field of ${JSON.stringify(cur.value)} after [] has not been observed in Make`);
+          continue;
+        }
         // An iterator over plain values emits bare bundles. Any field of a bare text, number
         // or boolean reads as the value itself: 2.value and 2.__IMTINDEX__ gave "a" (C2-nl-01,
         // C2-noagg-01), and 2.qty on "hello" failed qty > 0 (C-13). A field of a bare array
@@ -164,6 +190,11 @@ function binary(op: BinaryOp, a: Value, b: Value): Value {
     }
     case '=':
     case '!=': {
+      // Two dates are two objects to Make: now = now gave false (corpus D3 n_eq).
+      if (a.kind === 'date' && b.kind === 'date') {
+        if (op === '=') return bool(false);
+        throw new UnsupportedError('"!=" between two dates has not been observed in Make');
+      }
       // JavaScript's loose equality: 0 = false, null = missing and "42.0" = 42 are true,
       // true = "true" and null = "" are false (corpus D-01, D-03, D2).
       const eq = primitive(op, a) == primitive(op, b);

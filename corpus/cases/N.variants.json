@@ -1,0 +1,239 @@
+{
+  "name": "N",
+  "scenarioId": 7872022,
+  "hook": "C",
+  "restore": "corpus/engine-logs/C.live.blueprint.json",
+  "variants": [
+    {
+      "blueprint": "corpus/engine-logs/live-N-01-now-sleep.import.json",
+      "payloads": [
+        {
+          "case": "N-01-now-sleep",
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30,
+              "tags": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "name": "Bob",
+              "age": 25,
+              "tags": [
+                "c"
+              ]
+            },
+            {
+              "age": 40
+            },
+            {
+              "name": null,
+              "age": 5
+            }
+          ],
+          "items": [],
+          "nested": [
+            {
+              "x": [
+                {
+                  "y": 1
+                },
+                {
+                  "y": 2
+                }
+              ]
+            },
+            {
+              "x": [
+                {
+                  "y": 3
+                }
+              ]
+            }
+          ],
+          "obj": {
+            "k": {
+              "name": "v"
+            }
+          },
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "mixed": [
+            {
+              "name": "A"
+            },
+            "plain",
+            5
+          ],
+          "notarr": "str",
+          "choices": [
+            {
+              "message": {
+                "content": "hi"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/engine-logs/live-N-02-iterator-tags.import.json",
+      "payloads": [
+        {
+          "case": "N-02-iterator-tags",
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30,
+              "tags": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "name": "Bob",
+              "age": 25,
+              "tags": [
+                "c"
+              ]
+            },
+            {
+              "age": 40
+            },
+            {
+              "name": null,
+              "age": 5
+            }
+          ],
+          "items": [],
+          "nested": [
+            {
+              "x": [
+                {
+                  "y": 1
+                },
+                {
+                  "y": 2
+                }
+              ]
+            },
+            {
+              "x": [
+                {
+                  "y": 3
+                }
+              ]
+            }
+          ],
+          "obj": {
+            "k": {
+              "name": "v"
+            }
+          },
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "mixed": [
+            {
+              "name": "A"
+            },
+            "plain",
+            5
+          ],
+          "notarr": "str",
+          "choices": [
+            {
+              "message": {
+                "content": "hi"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "blueprint": "corpus/engine-logs/live-N-03-iterator-names.import.json",
+      "payloads": [
+        {
+          "case": "N-03-iterator-names",
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30,
+              "tags": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "name": "Bob",
+              "age": 25,
+              "tags": [
+                "c"
+              ]
+            },
+            {
+              "age": 40
+            },
+            {
+              "name": null,
+              "age": 5
+            }
+          ],
+          "items": [],
+          "nested": [
+            {
+              "x": [
+                {
+                  "y": 1
+                },
+                {
+                  "y": 2
+                }
+              ]
+            },
+            {
+              "x": [
+                {
+                  "y": 3
+                }
+              ]
+            }
+          ],
+          "obj": {
+            "k": {
+              "name": "v"
+            }
+          },
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "mixed": [
+            {
+              "name": "A"
+            },
+            "plain",
+            5
+          ],
+          "notarr": "str",
+          "choices": [
+            {
+              "message": {
+                "content": "hi"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

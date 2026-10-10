@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "ee0f0a3a6426486c94a61d7963ce2e60",
+  "recordedAt": "2026-10-10T12:32:25.861Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "N-02-iterator-tags",
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30,
+              "tags": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "name": "Bob",
+              "age": 25,
+              "tags": [
+                "c"
+              ]
+            },
+            {
+              "age": 40
+            },
+            {
+              "name": null,
+              "age": 5
+            }
+          ],
+          "items": [],
+          "nested": [
+            {
+              "x": [
+                {
+                  "y": 1
+                },
+                {
+                  "y": 2
+                }
+              ]
+            },
+            {
+              "x": [
+                {
+                  "y": 3
+                }
+              ]
+            }
+          ],
+          "obj": {
+            "k": {
+              "name": "v"
+            }
+          },
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "mixed": [
+            {
+              "name": "A"
+            },
+            "plain",
+            5
+          ],
+          "notarr": "str",
+          "choices": [
+            {
+              "message": {
+                "content": "hi"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "output": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "a"
+        }
+      ],
+      "output": [
+        {
+          "line": "a"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 2,
+      "input": [
+        {
+          "name": "line",
+          "value": "b"
+        }
+      ],
+      "output": [
+        {
+          "line": "b"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "a"
+        },
+        {
+          "value": "b"
+        }
+      ],
+      "output": [
+        {
+          "text": "a|b"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[a|b]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[a|b]"
+  }
+}

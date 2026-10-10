@@ -27,6 +27,7 @@ export const MODULES: Readonly<Record<string, ModuleSupport>> = {
   'util:TextAggregator': { versions: [1], role: 'aggregator', evidence: 'C-01..C-16, C2-*' },
   'http:ActionSendData': { versions: [3], role: 'http', fixture: 'http', evidence: 'E-*' },
   'util:BasicTrigger': { versions: [1], role: 'trigger', evidence: 'T-01..T-08' },
+  'util:FunctionSleep': { versions: [1], role: 'action', evidence: 'N-01' },
 };
 
 /** Filter operators the scheduler implements (src/run/operators.ts), each matched against recorded Make runs. */
@@ -44,6 +45,7 @@ export const KEYWORDS: Readonly<Record<string, string>> = {
   false: 'D-01..D-06',
   emptystring: 'D-01..D-06',
   space: 'D-01..D-06',
+  now: 'D3, N-01 (needs a clock: environment.now)',
 };
 
 /** Keys a module object may carry in an exported blueprint. Others are reported. */

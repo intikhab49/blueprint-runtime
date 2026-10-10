@@ -1,0 +1,37 @@
+{
+  "name": "N",
+  "scenarioId": 7872022,
+  "recordedAt": "2026-10-10T12:32:50.668Z",
+  "runs": [
+    {
+      "case": "N-01-now-sleep",
+      "blueprint": "corpus/engine-logs/live-N-01-now-sleep.import.json",
+      "runId": "a85ee983ffd6431a9623d8cc7f26d807",
+      "response": {
+        "status": 200,
+        "body": "2026-10-10T12:32:08.953Z|2026-10-10T12:32:11.960Z|2026-10-10T12:32:11.963Z"
+      },
+      "error": null
+    },
+    {
+      "case": "N-02-iterator-tags",
+      "blueprint": "corpus/engine-logs/live-N-02-iterator-tags.import.json",
+      "runId": "ee0f0a3a6426486c94a61d7963ce2e60",
+      "response": {
+        "status": 200,
+        "body": "[a|b]"
+      },
+      "error": null
+    },
+    {
+      "case": "N-03-iterator-names",
+      "blueprint": "corpus/engine-logs/live-N-03-iterator-names.import.json",
+      "runId": "1d42ae09c3f8422384f0909cfcf8e774",
+      "response": {
+        "status": 200,
+        "body": "[Ann]"
+      },
+      "error": null
+    }
+  ]
+}

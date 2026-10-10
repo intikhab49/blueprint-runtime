@@ -40,6 +40,7 @@ FAMILIES = [
     ("C2", "C2 iterator probes"),
     ("E", "E  HTTP from fixtures"),
     ("T", "T  multi-bundle trigger"),
+    ("N", "N  now, [] in fields"),
     ("D", "D  formula probes"),
 ]
 

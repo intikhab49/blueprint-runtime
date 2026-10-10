@@ -30,8 +30,8 @@ export function recorded(caseName: string): Map<string, string> {
   return new Map([...t.matchAll(/^(\w+)=<<(.*?)>>$/gms)].map((m) => [m[1]!, m[2]!]));
 }
 
-export function evalProbe(expr: string, input: ReturnType<typeof payload>): string {
-  const ctx = { timezone: TIMEZONE, output: (id: number) => (id === 1 ? input : MISSING) };
+export function evalProbe(expr: string, input: ReturnType<typeof payload>, now?: number): string {
+  const ctx = { timezone: TIMEZONE, output: (id: number) => (id === 1 ? input : MISSING), ...(now === undefined ? {} : { now: () => now }) };
   return toText(evaluateTemplate(parseTemplate(`{{${expr}}}`), ctx));
 }
 
@@ -46,13 +46,17 @@ export function loadSet(name: string): RecordedSet {
   return JSON.parse(readFileSync(`corpus/responses/${name}.json`, 'utf8'));
 }
 
-export function runSet(set: RecordedSet): Map<string, Outcome | { status: 'rejected-by-make'; got: string }> {
+/**
+ * clock: the instant `now` read for a probe. Each probe ran in its own module of a real
+ * Make run, so a timestamp answer is that instant itself (corpus D3).
+ */
+export function runSet(set: RecordedSet, clock?: (key: string) => number | undefined): Map<string, Outcome | { status: 'rejected-by-make'; got: string }> {
   const input = fromJson(parseJson(JSON.stringify(set.payload), 64).value);
   const out = new Map<string, Outcome | { status: 'rejected-by-make'; got: string }>();
   for (const [key, a] of Object.entries(set.answers)) {
     let got: string | Error;
     try {
-      got = evalProbe(a.expr, input);
+      got = evalProbe(a.expr, input, clock?.(key));
     } catch (e) {
       if (!(e instanceof Error)) throw e;
       got = e;
@@ -63,6 +67,11 @@ export function runSet(set: RecordedSet): Map<string, Outcome | { status: 'rejec
       continue;
     }
     const expected = a.value ?? `error: ${a.error?.message}`;
+    // Probes sit in the webhook response body, so Make's errors carry "Failed to map 'body': ".
+    if (got instanceof DataError && a.error && `Failed to map 'body': ${got.message}` === a.error.message) {
+      out.set(key, { status: 'match', got: `error: ${a.error.message}` });
+      continue;
+    }
     if (got instanceof UnsupportedError) out.set(key, { status: 'unsupported', reason: got.message });
     else if (got instanceof Error) out.set(key, { status: 'error', kind: got.name, message: got.message, expected });
     else out.set(key, got === expected ? { status: 'match', got } : { status: 'mismatch', got, expected });

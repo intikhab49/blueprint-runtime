@@ -15,6 +15,11 @@ export interface RunOptions {
   maxOperations?: number;
   /** Stand-ins for HTTP and third-party modules. Without one, such a module fails with FixtureError. */
   fixtures?: FixtureSet;
+  /**
+   * What `now` reads in a module's mapping, in ms. Make gives each module the time its
+   * operation starts (corpus N-01). Without a clock, `now` is refused.
+   */
+  clock?: (moduleId: number, operation: number) => number;
 }
 
 export class LimitExceededError extends Error {
@@ -83,7 +88,17 @@ export function runScenario(plan: Plan, payload: JsonValue, options: RunOptions)
   const fixtures = options.fixtures ?? new FixtureSet();
   const outputs = new Map<number, Value>();
   const operations = new Map<number, number>();
-  const ctx: EvalContext = { timezone: options.timezone, output: (id) => outputs.get(id) ?? MISSING };
+  /** The module whose mapping is being evaluated: only there has `now` been recorded. */
+  let mapping: { id: number; operation: number } | null = null;
+  const ctx: EvalContext = {
+    timezone: options.timezone,
+    output: (id) => outputs.get(id) ?? MISSING,
+    now: () => {
+      if (!mapping) throw new UnsupportedError('`now` in a filter or an aggregator has not been observed in Make (only in a module\'s mapping)');
+      if (!options.clock) throw new UnsupportedError('`now` needs a clock: give the case environment a "now" (Make uses the time each module starts, corpus N-01)');
+      return options.clock(mapping.id, mapping.operation);
+    },
+  };
   const steps: Step[] = [];
   const trace: Trace = { schemaVersion: 2, source: 'blueprint-runtime', status: 'success', steps };
   let total = 0;
@@ -140,7 +155,13 @@ export function runScenario(plan: Plan, payload: JsonValue, options: RunOptions)
   const runModule = (m: PlanModule): JsonValue[] => {
     const operation = nextOperation(m.id);
     try {
-      const result = handlerFor(m.module)!.run(m, ctx, { operation, fixtures });
+      mapping = { id: m.id, operation };
+      let result;
+      try {
+        result = handlerFor(m.module)!.run(m, ctx, { operation, fixtures });
+      } finally {
+        mapping = null;
+      }
       steps.push({ kind: 'module', id: m.id, operation, input: result.input, output: result.output });
       const first = result.output[0];
       outputs.set(m.id, first === undefined ? MISSING : fromJson(first));

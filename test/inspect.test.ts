@@ -46,7 +46,7 @@ describe('inspect findings', () => {
         hook,
         { id: 2, module: 'json:ParseJSON', version: 1, mapper: { json: '{{1.url}}' } },
         { id: 3, module: 'util:SetVariable2', version: 9, mapper: { value: '{{formatDuration(1.x)}}' } },
-        { id: 4, module: 'util:SetVariable2', version: 1, mapper: { value: '{{now}}' }, filter: { conditions: [[{ a: '{{1.a}}', o: 'text:contains', b: 'x' }]] }, onerror: [] },
+        { id: 4, module: 'util:SetVariable2', version: 1, mapper: { value: '{{uuid}}' }, filter: { conditions: [[{ a: '{{1.a}}', o: 'text:contains', b: 'x' }]] }, onerror: [] },
       ],
     };
     const r = inspectBytes('t.json', enc(doc));
@@ -97,7 +97,11 @@ describe('inspect findings', () => {
     assert.deepEqual(codes([hook, http({ headers: '{{1.h}}' })]), []);
     assert.deepEqual(codes([hook, { id: 2, module: 'gateway:WebhookRespond', version: 1, mapper: { status: '200', body: 'x', headers: [{ key: 'a', value: 'b' }] } }]), ['MODULE_CONFIG_UNSUPPORTED']);
     assert.deepEqual(codes([hook, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'a', value: 'x' }, filter: { name: 'f', conditions: [[]] } }]), ['FILTER_SHAPE_UNSUPPORTED']);
-    assert.deepEqual(codes([hook, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'a', value: '{{1.items[].name}}' } }]), ['EXPRESSION_UNSUPPORTED']);
+    assert.deepEqual(codes([hook, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'a', value: '{{1.items[].name}}' } }]), []);
+    assert.deepEqual(codes([hook, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'a', value: 'x' }, filter: { name: 'f', conditions: [[{ a: '{{now}}', o: 'date:greater', b: '{{1.d}}' }]] } }]), ['KEYWORD_UNSUPPORTED']);
+    const clock = inspectBytes('t.json', enc({ flow: [hook, { id: 2, module: 'util:SetVariable2', version: 1, mapper: { name: 'a', value: '{{now}}' } }] }));
+    assert.equal(clock.verdict, 'eligible');
+    assert.equal(clock.needsClock, true);
     assert.deepEqual(codes([hook, { id: 2, module: 'slack:CreateMessage', version: 4, mapper: null }]), ['MODULE_CONFIG_UNSUPPORTED']);
   });
 

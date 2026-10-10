@@ -1,0 +1,253 @@
+{
+  "name": "D3-arrays-now",
+  "recordedAt": "2026-10-10T12:30:31.826Z",
+  "timezone": "Asia/Karachi",
+  "payload": {
+    "case": "D3-01",
+    "people": [
+      {
+        "name": "Ann",
+        "age": 30,
+        "tags": [
+          "a",
+          "b"
+        ]
+      },
+      {
+        "name": "Bob",
+        "age": 25,
+        "tags": [
+          "c"
+        ]
+      },
+      {
+        "age": 40
+      },
+      {
+        "name": null,
+        "age": 5
+      }
+    ],
+    "items": [],
+    "nested": [
+      {
+        "x": [
+          {
+            "y": 1
+          },
+          {
+            "y": 2
+          }
+        ]
+      },
+      {
+        "x": [
+          {
+            "y": 3
+          }
+        ]
+      }
+    ],
+    "obj": {
+      "k": {
+        "name": "v"
+      }
+    },
+    "nums": [
+      1,
+      2,
+      3
+    ],
+    "mixed": [
+      {
+        "name": "A"
+      },
+      "plain",
+      5
+    ],
+    "notarr": "str",
+    "choices": [
+      {
+        "message": {
+          "content": "hi"
+        }
+      }
+    ]
+  },
+  "answers": {
+    "a_names": {
+      "expr": "1.people[].name",
+      "value": "Ann"
+    },
+    "a_names_len": {
+      "expr": "length(1.people[].name)",
+      "value": "3"
+    },
+    "a_names_join": {
+      "expr": "join(1.people[].name; \"|\")",
+      "value": ""
+    },
+    "a_names_first": {
+      "expr": "first(1.people[].name)",
+      "error": {
+        "name": "DataError",
+        "message": "Failed to map 'body': Function 'first' finished with error! 'Ann' is not a valid array."
+      }
+    },
+    "a_names_last": {
+      "expr": "last(1.people[].name)",
+      "error": {
+        "name": "DataError",
+        "message": "Failed to map 'body': Function 'last' finished with error! 'Ann' is not a valid array."
+      }
+    },
+    "a_map_join": {
+      "expr": "join(map(1.people; \"name\"); \"|\")",
+      "value": "Ann|Bob||"
+    },
+    "a_map_len": {
+      "expr": "length(map(1.people; \"name\"))",
+      "value": "4"
+    },
+    "a_ages_sum": {
+      "expr": "sum(1.people[].age)",
+      "value": "30"
+    },
+    "a_ages": {
+      "expr": "1.people[].age",
+      "value": "30"
+    },
+    "a_tags": {
+      "expr": "1.people[].tags",
+      "value": "a, b"
+    },
+    "a_tags_len": {
+      "expr": "length(1.people[].tags)",
+      "value": "2"
+    },
+    "a_tags_flat_len": {
+      "expr": "length(flatten(1.people[].tags))",
+      "value": "2"
+    },
+    "a_whole": {
+      "expr": "1.people[]",
+      "value": "{\"name\":\"Ann\",\"age\":30,\"tags\":[\"a\",\"b\"]}"
+    },
+    "a_whole_len": {
+      "expr": "length(1.people[])",
+      "value": "15"
+    },
+    "a_empty": {
+      "expr": "1.items[].name",
+      "value": ""
+    },
+    "a_empty_len": {
+      "expr": "length(1.items[].name)",
+      "value": "0"
+    },
+    "a_nested": {
+      "expr": "1.nested[].x[].y",
+      "value": "1"
+    },
+    "a_nested_len": {
+      "expr": "length(1.nested[].x[].y)",
+      "value": "1"
+    },
+    "a_nested_one": {
+      "expr": "1.nested[].x",
+      "value": "{\"y\":1}, {\"y\":2}"
+    },
+    "a_nums": {
+      "expr": "1.nums[]",
+      "value": "1"
+    },
+    "a_nums_field": {
+      "expr": "1.nums[].x",
+      "value": "1"
+    },
+    "a_nums_field_len": {
+      "expr": "length(1.nums[].x)",
+      "value": "1"
+    },
+    "a_mixed": {
+      "expr": "join(1.mixed[].name; \"|\")",
+      "value": ""
+    },
+    "a_mixed_len": {
+      "expr": "length(1.mixed[].name)",
+      "value": "1"
+    },
+    "a_obj": {
+      "expr": "1.obj[].name",
+      "value": ""
+    },
+    "a_obj_len": {
+      "expr": "length(1.obj[].k)",
+      "value": "0"
+    },
+    "a_notarr": {
+      "expr": "1.notarr[].name",
+      "value": "str"
+    },
+    "a_notarr_len": {
+      "expr": "length(1.notarr[])",
+      "value": "3"
+    },
+    "a_missing": {
+      "expr": "1.nope[].name",
+      "value": ""
+    },
+    "a_missing_len": {
+      "expr": "length(1.nope[].name)",
+      "value": "0"
+    },
+    "a_contains": {
+      "expr": "contains(1.people[].name; \"Ann\")",
+      "value": "true"
+    },
+    "a_choice": {
+      "expr": "1.choices[].message.content",
+      "value": "hi"
+    },
+    "a_choice_first": {
+      "expr": "first(1.choices[].message.content)",
+      "error": {
+        "name": "DataError",
+        "message": "Failed to map 'body': Function 'first' finished with error! 'hi' is not a valid array."
+      }
+    },
+    "n_text": {
+      "expr": "now",
+      "value": "2026-10-10T12:30:10.869Z"
+    },
+    "n_again": {
+      "expr": "now",
+      "value": "2026-10-10T12:30:20.089Z"
+    },
+    "n_fmt": {
+      "expr": "formatDate(now; \"YYYY-MM-DD\")",
+      "value": "2026-10-10"
+    },
+    "n_fmt_utc": {
+      "expr": "formatDate(now; \"YYYY-MM-DD HH:mm\"; \"UTC\")",
+      "value": "2026-10-10 12:30"
+    },
+    "n_eq": {
+      "expr": "now = now",
+      "value": "false"
+    },
+    "n_plus_day": {
+      "expr": "formatDate(addDays(now; 1); \"YYYY-MM-DD\")",
+      "value": "2026-10-11"
+    },
+    "n_length": {
+      "expr": "length(now)",
+      "value": "62"
+    },
+    "n_concat": {
+      "expr": "now + \"\"",
+      "value": "2026-10-10T12:30:29.130Z"
+    }
+  },
+  "missing": []
+}

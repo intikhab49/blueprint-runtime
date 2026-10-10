@@ -48,6 +48,8 @@ export interface InspectReport {
   expressions: InspectExpression[];
   functions: { name: string; count: number; supported: boolean }[];
   filterOperators: { operator: string; count: number; supported: boolean }[];
+  /** The blueprint reads `now`: a case needs environment.now (a fixed test clock). */
+  needsClock: boolean;
   /** Modules that need a fixture to run offline, with the fixture mode. */
   fixtures: { moduleId: number; module: string; mode: 'http' | 'module' | 'trigger' }[];
   findings: Finding[];
@@ -91,6 +93,7 @@ export function inspectBytes(file: string, bytes: Uint8Array, limits: LoadLimits
     expressions: [],
     functions: [],
     filterOperators: [],
+    needsClock: false,
     fixtures: [],
     findings,
     verdict: 'eligible',
@@ -250,6 +253,12 @@ export function inspectBytes(file: string, bytes: Uint8Array, limits: LoadLimits
             for (const f of x.functions) fnCounts.set(f, (fnCounts.get(f) ?? 0) + 1);
             for (const k of x.keywords) {
               if (!(k in KEYWORDS)) add({ code: 'KEYWORD_UNSUPPORTED', severity: 'unsupported', message: `Module ${m.id}: keyword "${k}" has no recorded Make behavior yet`, pointer });
+              else if (k === 'now') {
+                // Recorded only in a module's mapping, where it is the time the module starts (N-01).
+                if (pointer.includes('/filter/') || m.module === 'util:TextAggregator') {
+                  add({ code: 'KEYWORD_UNSUPPORTED', severity: 'unsupported', message: `Module ${m.id}: "now" in a ${m.module === 'util:TextAggregator' ? 'Text aggregator' : 'filter'} has not been observed in Make (only in a module's mapping)`, pointer });
+                } else report.needsClock = true;
+              }
             }
             for (const r of x.refs) {
               if (!byId.has(r.moduleId)) {

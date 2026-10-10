@@ -80,7 +80,7 @@ async function main() {
       try {
         // An app trigger's input is the list of bundles it emitted: one empty bundle here.
         const input = r.fixtures.some((f) => f.mode === 'trigger') ? [{}] : {};
-        smoke = `ran (${runScenario(loadBlueprint(bytes).plan!, input, { timezone: 'UTC', fixtures: new AnyFixture() }).status})`;
+        smoke = `ran (${runScenario(loadBlueprint(bytes).plan!, input, { timezone: 'UTC', fixtures: new AnyFixture(), clock: () => Date.UTC(2026, 9, 10) }).status})`;
       } catch (e) {
         if (!(e instanceof UnsupportedError)) throw e;
         smoke = `REFUSED: ${e.message}`;

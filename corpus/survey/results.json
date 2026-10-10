@@ -34,7 +34,6 @@
       ],
       "blockers": [
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:ParseJSON",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Ignore",
@@ -46,7 +45,7 @@
       "repo": "2ChatCo/Tutorials",
       "path": "openai/2Chat-OpenAi-Assistant-blueprint.json",
       "sha": "149e660b788c207460ffa272a4812a1564460fad",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 11,
       "fixtures": [
         "1 trigger",
@@ -59,10 +58,8 @@
         "8 module",
         "13 module"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "REFUSED: substring(): missing as argument 1 has not been observed in Make"
     },
     {
       "repo": "AIEINC/liquidity_agentic_terraforming_io",
@@ -136,7 +133,6 @@
         "EXPRESSION_SYNTAX: Expected a field name after \"…\"",
         "module builtin:ArrayAggregator",
         "EXPRESSION_SYNTAX: Unexpected text after the expression",
-        "keyword now",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
         "function gradient()",
         "function rgba()"
@@ -204,7 +200,6 @@
       ],
       "blockers": [
         "module util:SetVariables",
-        "keyword now",
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
         "EXPRESSION_SYNTAX: Expected \"…\"",
         "keyword null",
@@ -307,8 +302,7 @@
         "4 module"
       ],
       "blockers": [
-        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make",
-        "keyword now"
+        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make"
       ],
       "smoke": null
     },
@@ -342,8 +336,7 @@
       "blockers": [
         "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
-        "ITERATOR_SCOPE_UNSUPPORTED",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "ITERATOR_SCOPE_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -430,8 +423,6 @@
       ],
       "blockers": [
         "FILTER_OPERATOR_UNSUPPORTED",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now",
         "function uuid()"
       ],
       "smoke": null
@@ -449,7 +440,6 @@
         "9 module"
       ],
       "blockers": [
-        "module util:FunctionSleep",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
       ],
       "smoke": null
@@ -494,9 +484,7 @@
         "29 module"
       ],
       "blockers": [
-        "keyword now",
-        "keyword newline",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "keyword newline"
       ],
       "smoke": null
     },
@@ -523,13 +511,11 @@
       ],
       "blockers": [
         "module http:ActionGetFile",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module regexp:HTMLToText",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Ignore",
         "module csv:ParseCSV",
-        "keyword newline",
-        "module util:FunctionSleep"
+        "keyword newline"
       ],
       "smoke": null
     },
@@ -537,16 +523,14 @@
       "repo": "ChinmayBitne/OTT-Voice-Agent",
       "path": "scenarios/faq.sanitized.blueprint.json",
       "sha": "5cc00cf6fee8f8726986abaa43fc10b614fd8850",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 4,
       "fixtures": [
         "4 module",
         "6 module"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "Chuchi254/automation-workflows",
@@ -577,8 +561,7 @@
       ],
       "blockers": [
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
-        "REF_UNKNOWN_MODULE",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "REF_UNKNOWN_MODULE"
       ],
       "smoke": null
     },
@@ -670,7 +653,6 @@
       ],
       "blockers": [
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "ITERATOR_SCOPE_UNSUPPORTED"
       ],
       "smoke": null
@@ -726,17 +708,15 @@
       "repo": "Elimeleth/bookingBot",
       "path": "calendly-make.json",
       "sha": "117ef7d302371edc57f85c7af46c32c1c27131a5",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 3,
       "fixtures": [
         "24 trigger",
         "25 module",
         "26 module"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "EricTechPro/Ai-Agent-templates",
@@ -769,10 +749,8 @@
       "blockers": [
         "module util:SetVariables",
         "REF_NOT_UPSTREAM",
-        "keyword now",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
         "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module builtin:Aggregator",
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
         "ITERATOR_SCOPE_UNSUPPORTED"
@@ -797,8 +775,6 @@
         "module builtin:BasicIterator",
         "module builtin:MathOperations",
         "module builtin:ArrayAggregator",
-        "keyword now",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "function parseFloat()"
       ],
       "smoke": null
@@ -891,7 +867,6 @@
       "blockers": [
         "ITERATOR_SCOPE_UNSUPPORTED",
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
-        "module util:FunctionSleep",
         "module regexp:HTMLParser",
         "module builtin:BasicAggregator"
       ],
@@ -920,8 +895,7 @@
       ],
       "blockers": [
         "module regexp:HTMLTableParser2",
-        "module builtin:BasicAggregator",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module builtin:BasicAggregator"
       ],
       "smoke": null
     },
@@ -947,7 +921,6 @@
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
         "module builtin:BasicIterator",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
-        "keyword now",
         "EXPRESSION_SYNTAX: Unexpected text after the expression",
         "function parseJSON()"
       ],
@@ -978,13 +951,11 @@
         "54 module"
       ],
       "blockers": [
-        "module util:FunctionSleep",
         "module util:SetVariables",
         "EXPRESSION_SYNTAX: Expected \"…\"",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Break",
         "module markdown:Compile",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "ITERATOR_SCOPE_UNSUPPORTED",
         "keyword newline",
         "keyword random",
@@ -992,8 +963,7 @@
         "AGGREGATOR_SOURCE_UNSUPPORTED",
         "module regexp:Replace",
         "module json:ParseJSON",
-        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
-        "keyword now"
+        "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make"
       ],
       "smoke": null
     },
@@ -1015,7 +985,6 @@
       "blockers": [
         "module util:SetVariables",
         "module datastore:UpdateRecord",
-        "keyword now",
         "module datastore:GetRecord",
         "module http:MakeRequest"
       ],
@@ -1036,7 +1005,6 @@
         "ITERATOR_SCOPE_UNSUPPORTED",
         "module http:MakeRequest",
         "ERROR_HANDLER_UNSUPPORTED",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "AGGREGATOR_SOURCE_UNSUPPORTED"
       ],
       "smoke": null
@@ -1097,13 +1065,13 @@
       "blockers": [
         "module util:SetVariables",
         "ERROR_HANDLER_UNSUPPORTED",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module builtin:Ignore",
         "ITERATOR_SCOPE_UNSUPPORTED",
         "FILTER_OPERATOR_UNSUPPORTED",
         "module builtin:BasicAggregator",
         "module http:MakeRequest",
-        "FILTER_SHAPE_UNSUPPORTED"
+        "FILTER_SHAPE_UNSUPPORTED",
+        "EXPRESSION_SYNTAX: Unexpected \"…\""
       ],
       "smoke": null
     },
@@ -1121,7 +1089,6 @@
         "11 module"
       ],
       "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "keyword now",
         "module json:ParseJSON"
       ],
@@ -1283,8 +1250,7 @@
       "blockers": [
         "module builtin:BasicAggregator",
         "ERROR_HANDLER_UNSUPPORTED",
-        "REF_NOT_UPSTREAM",
-        "keyword now"
+        "REF_NOT_UPSTREAM"
       ],
       "smoke": null
     },
@@ -1318,8 +1284,7 @@
       "blockers": [
         "a polling or app trigger instead of a Custom webhook",
         "module builtin:BasicTrigger",
-        "MODULE_CONFIG_UNSUPPORTED: the parameters field \"…\" has not been observed in Make",
-        "keyword now"
+        "MODULE_CONFIG_UNSUPPORTED: the parameters field \"…\" has not been observed in Make"
       ],
       "smoke": null
     },
@@ -1384,7 +1349,6 @@
       "blockers": [
         "module http:MakeRequest",
         "EXPRESSION_SYNTAX: Expected \"…\"",
-        "keyword now",
         "function addSeconds()",
         "function escapeJSON()"
       ],
@@ -1440,8 +1404,7 @@
       ],
       "blockers": [
         "module builtin:BasicAggregator",
-        "ROUTER_SHAPE_UNSUPPORTED",
-        "keyword now"
+        "ROUTER_SHAPE_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -1514,9 +1477,7 @@
       ],
       "blockers": [
         "module util:SetVariables",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:TransformToJSON",
-        "module util:FunctionSleep",
         "module http:ActionSendDataAPIKeyAuth",
         "function Account()",
         "function Avatar()",
@@ -1549,8 +1510,7 @@
         "module code:ExecuteCode",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Break",
-        "module util:GetVariables",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module util:GetVariables"
       ],
       "smoke": null
     },
@@ -1570,8 +1530,6 @@
         "30 module"
       ],
       "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now",
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make"
       ],
       "smoke": null
@@ -1620,7 +1578,6 @@
       ],
       "blockers": [
         "module util:SetVariables",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:CreateJSON",
         "module util:GetVariable2",
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
@@ -1628,7 +1585,6 @@
         "module util:FunctionAggregator2",
         "AGGREGATOR_SOURCE_UNSUPPORTED",
         "EXPRESSION_SYNTAX: Expected \"…\"",
-        "keyword now",
         "module builtin:BasicRepeater",
         "module json:AggregateToJSON",
         "module json:ParseJSON",
@@ -1649,8 +1605,7 @@
         "8 module"
       ],
       "blockers": [
-        "a polling or app trigger instead of a Custom webhook",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "a polling or app trigger instead of a Custom webhook"
       ],
       "smoke": null
     },
@@ -1669,7 +1624,6 @@
       "blockers": [
         "a polling or app trigger instead of a Custom webhook",
         "MODULE_CONFIG_UNSUPPORTED: the parameters field \"…\" has not been observed in Make",
-        "keyword now",
         "FILTER_OPERATOR_UNSUPPORTED",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
         "function addMinutes()"
@@ -1782,8 +1736,6 @@
       "blockers": [
         "module util:GetVariable2",
         "module util:SetVariables",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now",
         "module datastore:AddRecord"
       ],
       "smoke": null
@@ -1832,9 +1784,7 @@
         "ITERATOR_SCOPE_UNSUPPORTED",
         "FILTER_OPERATOR_UNSUPPORTED",
         "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "EXPRESSION_SYNTAX: Unexpected text after the expression",
-        "keyword now",
         "keyword uuid",
         "EXPRESSION_SYNTAX: Expected \"…\"",
         "keyword null",
@@ -1860,8 +1810,7 @@
       ],
       "blockers": [
         "module builtin:BasicAggregator",
-        "EXPRESSION_SYNTAX: Unexpected \"…\"",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "EXPRESSION_SYNTAX: Unexpected \"…\""
       ],
       "smoke": null
     },
@@ -1898,10 +1847,8 @@
         "21 module"
       ],
       "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Resume",
-        "module util:FunctionSleep",
         "module builtin:Break"
       ],
       "smoke": null
@@ -1958,8 +1905,7 @@
       "blockers": [
         "a polling or app trigger instead of a Custom webhook",
         "module gateway:CustomWebhook",
-        "FILTER_SHAPE_UNSUPPORTED",
-        "keyword now"
+        "FILTER_SHAPE_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -1983,8 +1929,7 @@
         "module datastore:ActionSearchRecords",
         "module datastore:ActionAddRecord",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
-        "module datastore:ActionUpdateRecord",
-        "keyword now"
+        "module datastore:ActionUpdateRecord"
       ],
       "smoke": null
     },
@@ -2051,7 +1996,6 @@
         "3 module"
       ],
       "blockers": [
-        "keyword now",
         "AGGREGATOR_SEPARATOR_UNSUPPORTED"
       ],
       "smoke": null
@@ -2070,9 +2014,7 @@
         "7 module"
       ],
       "blockers": [
-        "module util:FunctionSleep",
         "ERROR_HANDLER_UNSUPPORTED",
-        "keyword now",
         "EXPRESSION_SYNTAX: Unexpected \"…\"",
         "module regexp:Parser",
         "REF_NOT_UPSTREAM",
@@ -2140,8 +2082,7 @@
         "4 module"
       ],
       "blockers": [
-        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
       ],
       "smoke": null
     },
@@ -2168,7 +2109,6 @@
         "module util:Switcher",
         "module http:ActionSendDataAPIKeyAuth",
         "module util:SetVariables",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module regexp:AdvancedParser"
       ],
       "smoke": null
@@ -2191,9 +2131,7 @@
       ],
       "blockers": [
         "module util:SetVariables2",
-        "keyword now",
-        "module util:FunctionCall",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module util:FunctionCall"
       ],
       "smoke": null
     },
@@ -2201,7 +2139,7 @@
       "repo": "afshansif/Feedback_Router_Google_Forms_to_Gmail_Automation",
       "path": "Integration Google Forms.blueprint.json",
       "sha": "2041cc7f922e3b69cb1eae2be8a265e85f37b2d6",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 5,
       "fixtures": [
         "3 trigger",
@@ -2209,10 +2147,8 @@
         "6 module",
         "11 module"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "afshansif/Weather-Alert-Webhook",
@@ -2247,17 +2183,15 @@
       "repo": "antonio86itna/smetti-di-chattare-hub",
       "path": "download/w021.json",
       "sha": "89f086e5720c33c9d9da0b0076e6fbba49b130f0",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 4,
       "fixtures": [
         "2 module",
         "3 module",
         "4 module"
       ],
-      "blockers": [
-        "keyword now"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "areeshausmani/Slack-Alerts-using-Make.com",
@@ -2270,8 +2204,7 @@
         "4 module"
       ],
       "blockers": [
-        "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module json:ParseJSON"
       ],
       "smoke": null
     },
@@ -2298,8 +2231,7 @@
         "module builtin:Break",
         "module regexp:Replace",
         "keyword newline",
-        "module regexp:Parser",
-        "keyword now"
+        "module regexp:Parser"
       ],
       "smoke": null
     },
@@ -2307,17 +2239,15 @@
       "repo": "askjohngeorge/sales-prompt-creator",
       "path": "docs/SalesBot Prompt Flow.json",
       "sha": "79e43b725027dbd3a59cc315591b9f71bc2ff17d",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 3,
       "fixtures": [
         "6 trigger",
         "8 module",
         "9 module"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "baruchiro/BcsStudent",
@@ -2353,7 +2283,6 @@
         "module json:ParseJSON",
         "FILTER_OPERATOR_UNSUPPORTED",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
-        "keyword now",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
         "function toJSON()"
       ],
@@ -2371,8 +2300,7 @@
         "5 module"
       ],
       "blockers": [
-        "module util:SetVariables",
-        "module util:FunctionSleep"
+        "module util:SetVariables"
       ],
       "smoke": null
     },
@@ -2387,8 +2315,7 @@
         "3 module"
       ],
       "blockers": [
-        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "MODULE_CONFIG_UNSUPPORTED: the mapper field \"…\" has not been observed in Make"
       ],
       "smoke": null
     },
@@ -2409,9 +2336,7 @@
       "blockers": [
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
-        "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now"
+        "module json:ParseJSON"
       ],
       "smoke": null
     },
@@ -2427,8 +2352,7 @@
         "3 module"
       ],
       "blockers": [
-        "FILTER_SHAPE_UNSUPPORTED",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "FILTER_SHAPE_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -2464,9 +2388,7 @@
       ],
       "blockers": [
         "ERROR_HANDLER_UNSUPPORTED",
-        "module builtin:Ignore",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now"
+        "module builtin:Ignore"
       ],
       "smoke": null
     },
@@ -2488,9 +2410,7 @@
       ],
       "blockers": [
         "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
-        "module util:FunctionSleep",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
         "keyword newline"
@@ -2510,7 +2430,6 @@
       ],
       "blockers": [
         "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
       ],
       "smoke": null
@@ -2662,7 +2581,6 @@
       ],
       "blockers": [
         "ROUTER_SHAPE_UNSUPPORTED",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:ParseJSON",
         "ERROR_HANDLER_UNSUPPORTED",
         "FILTER_SHAPE_UNSUPPORTED"
@@ -2695,8 +2613,7 @@
       ],
       "blockers": [
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
-        "module regexp:AdvancedParser",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module regexp:AdvancedParser"
       ],
       "smoke": null
     },
@@ -2762,7 +2679,6 @@
         "10 module"
       ],
       "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module util:GetVariable2"
       ],
       "smoke": null
@@ -2822,7 +2738,6 @@
         "4 http"
       ],
       "blockers": [
-        "keyword now",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
         "EXPRESSION_SYNTAX: Unexpected character \"…\""
       ],
@@ -2866,7 +2781,6 @@
         "7 module"
       ],
       "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module util:GetVariable2"
       ],
       "smoke": null
@@ -2904,17 +2818,15 @@
       "repo": "gittradeanchor/Flowio-react-V01",
       "path": "make-blueprints/S1-crm-router.json",
       "sha": "e34b63fdab80ca2c0446c8429998841cd889d947",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 5,
       "fixtures": [
         "3 module",
         "4 module",
         "5 module"
       ],
-      "blockers": [
-        "keyword now"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "gtron/clockify-make-integration",
@@ -2932,7 +2844,6 @@
       ],
       "blockers": [
         "module util:SetVariables",
-        "keyword now",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Resume",
         "module builtin:BasicRepeater",
@@ -3036,18 +2947,15 @@
       "blockers": [
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "ITERATOR_SCOPE_UNSUPPORTED",
         "module builtin:BasicAggregator",
         "module json:TransformToJSON",
-        "module util:FunctionSleep",
         "module util:ComposeTransformer",
         "keyword newline",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Break",
         "module util:GetVariable2",
-        "module json:ParseJSON",
-        "keyword now"
+        "module json:ParseJSON"
       ],
       "smoke": null
     },
@@ -3140,11 +3048,9 @@
       ],
       "blockers": [
         "module util:SetVariables",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:ParseJSON",
         "module builtin:BasicAggregator",
         "FILTER_SHAPE_UNSUPPORTED",
-        "keyword now",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
         "module util:FunctionIncrement",
         "function addMinutes()"
@@ -3193,11 +3099,8 @@
       "blockers": [
         "module regexp:Replace",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
-        "module util:FunctionSleep",
-        "keyword now",
         "module regexp:Parser",
-        "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module json:ParseJSON"
       ],
       "smoke": null
     },
@@ -3236,8 +3139,7 @@
       ],
       "blockers": [
         "MODULE_CONFIG_UNSUPPORTED: a mapper that is not an object has not been observed in Make",
-        "module json:parseJSON",
-        "keyword now"
+        "module json:parseJSON"
       ],
       "smoke": null
     },
@@ -3277,7 +3179,6 @@
         "18 module"
       ],
       "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module builtin:BasicIfElse",
         "module builtin:BasicMerge",
         "module http:DownloadFile"
@@ -3296,8 +3197,7 @@
         "6 module"
       ],
       "blockers": [
-        "module http:MakeRequest",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module http:MakeRequest"
       ],
       "smoke": null
     },
@@ -3344,8 +3244,7 @@
       "blockers": [
         "module json:ParseJSON",
         "module http:ActionGetFile",
-        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
-        "keyword now"
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make"
       ],
       "smoke": null
     },
@@ -3382,10 +3281,8 @@
       "blockers": [
         "module json:ParseJSON",
         "module http:MakeRequest",
-        "module util:FunctionSleep",
         "ERROR_HANDLER_UNSUPPORTED",
-        "module builtin:Ignore",
-        "keyword now"
+        "module builtin:Ignore"
       ],
       "smoke": null
     },
@@ -3402,8 +3299,7 @@
         "5 module"
       ],
       "blockers": [
-        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
-        "keyword now"
+        "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make"
       ],
       "smoke": null
     },
@@ -3502,8 +3398,7 @@
       ],
       "blockers": [
         "ITERATOR_SCOPE_UNSUPPORTED",
-        "module builtin:BasicAggregator",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module builtin:BasicAggregator"
       ],
       "smoke": null
     },
@@ -3547,7 +3442,7 @@
       "repo": "marcc16/portfolioanasdef",
       "path": "src/data/make-dieta.json",
       "sha": "f192cdc211eafab7d7cac42ad00895572130badd",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 12,
       "fixtures": [
         "13 trigger",
@@ -3562,11 +3457,8 @@
         "40 module",
         "41 module"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "marequest/lead-outreach-research-system",
@@ -3590,7 +3482,6 @@
         "2 module"
       ],
       "blockers": [
-        "keyword now",
         "EXPRESSION_SYNTAX: Expected \"…\"",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
         "EXPRESSION_SYNTAX: Unexpected character \"…\""
@@ -3644,10 +3535,8 @@
         "MODULE_CONFIG_UNSUPPORTED: \"…\" switched off has not been observed in Make",
         "FILTER_SHAPE_UNSUPPORTED",
         "MODULE_CONFIG_UNSUPPORTED: headers has not been observed in Make",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module builtin:BasicRepeater",
-        "module builtin:Commit",
-        "module util:FunctionSleep"
+        "module builtin:Commit"
       ],
       "smoke": null
     },
@@ -3681,9 +3570,7 @@
       "blockers": [
         "AGGREGATOR_SOURCE_UNSUPPORTED",
         "AGGREGATOR_SEPARATOR_UNSUPPORTED",
-        "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now"
+        "module json:ParseJSON"
       ],
       "smoke": null
     },
@@ -3709,7 +3596,6 @@
         "REF_UNKNOWN_MODULE",
         "REF_NOT_UPSTREAM",
         "module json:ParseJSON",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "EXPRESSION_SYNTAX: Unexpected character \"…\"",
         "function escape()",
         "function lookup()"
@@ -3720,7 +3606,7 @@
       "repo": "moshehbenavraham/txt2crs",
       "path": "make-scenarios/[STUDY] Create Course Material from Plain Text (2-3).blueprint.json",
       "sha": "789cab7b731a5ee053d551ea67b8952a9c5f2b0b",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 13,
       "fixtures": [
         "27 module",
@@ -3734,10 +3620,8 @@
         "36 module",
         "33 http"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "mrlmbrown/make-blueprints",
@@ -3762,7 +3646,6 @@
       ],
       "blockers": [
         "EXPRESSION_SYNTAX: Expected \"…\"",
-        "keyword now",
         "module util:ComposeTransformer",
         "ERROR_HANDLER_UNSUPPORTED",
         "module builtin:Ignore"
@@ -3798,7 +3681,6 @@
       ],
       "blockers": [
         "module util:SetVariables",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "ERROR_HANDLER_UNSUPPORTED",
         "AGGREGATOR_SEPARATOR_UNSUPPORTED",
         "module json:ParseJSON",
@@ -3857,8 +3739,7 @@
       "blockers": [
         "a polling or app trigger instead of a Custom webhook",
         "module util:SetVariables",
-        "AGGREGATOR_SOURCE_UNSUPPORTED",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "AGGREGATOR_SOURCE_UNSUPPORTED"
       ],
       "smoke": null
     },
@@ -3903,9 +3784,7 @@
         "module builtin:Resume",
         "module xml:ParseXML",
         "keyword emptyarray",
-        "module util:FunctionSleep",
-        "module json:ParseJSON",
-        "keyword now"
+        "module json:ParseJSON"
       ],
       "smoke": null
     },
@@ -3985,7 +3864,6 @@
         "ROUTER_SHAPE_UNSUPPORTED",
         "FILTER_SHAPE_UNSUPPORTED",
         "module util:SetVariables",
-        "keyword now",
         "keyword newline"
       ],
       "smoke": null
@@ -4028,7 +3906,6 @@
         "90 module"
       ],
       "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "EXPRESSION_SYNTAX: Expected \"…\""
       ],
       "smoke": null
@@ -4067,7 +3944,6 @@
       "blockers": [
         "module util:SetVariables",
         "module builtin:BasicAggregator",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:ParseJSON",
         "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make"
       ],
@@ -4094,15 +3970,13 @@
       "repo": "pidemo/make-scenarios",
       "path": "webflow-chatgpt-blueprint.json",
       "sha": "65e0f47b7d10df0be8f56237f5594088acda011c",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 3,
       "fixtures": [
         "2 module"
       ],
-      "blockers": [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "ran (success)"
     },
     {
       "repo": "plusz/LLM_to_kindle",
@@ -4123,9 +3997,7 @@
       "blockers": [
         "a polling or app trigger instead of a Custom webhook",
         "EXPRESSION_SYNTAX: Expected \"…\"",
-        "keyword now",
         "module regexp:Replace",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
         "module json:ParseJSON"
       ],
       "smoke": null
@@ -4172,8 +4044,7 @@
       ],
       "blockers": [
         "module csv:ParseCSV",
-        "module builtin:BasicAggregator",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make"
+        "module builtin:BasicAggregator"
       ],
       "smoke": null
     },
@@ -4181,17 +4052,15 @@
       "repo": "rawdela/og-studios-donation-automation",
       "path": "automation/make/make-blueprint-sanitized.json",
       "sha": "830bf95c3736bc269e4f9a418cb7505c7f61fb49",
-      "verdict": "unsupported",
+      "verdict": "eligible",
       "modules": 5,
       "fixtures": [
         "3 module",
         "4 module",
         "6 module"
       ],
-      "blockers": [
-        "keyword now"
-      ],
-      "smoke": null
+      "blockers": [],
+      "smoke": "REFUSED: md5(): date as argument 1 has not been observed in Make"
     },
     {
       "repo": "rcoco78/reality-academy-audit",
@@ -4215,9 +4084,6 @@
       "blockers": [
         "module util:SetVariables",
         "keyword newline",
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        "keyword now",
-        "module util:FunctionSleep",
         "module util:GetVariables"
       ],
       "smoke": null

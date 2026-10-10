@@ -1,16 +1,16 @@
 # Public blueprint survey (2026-10-10)
 
-**25 of 221 public Make blueprints (11%) can run in bpr today, all of them with fixtures.** 175 use something without recorded Make behavior, and 21 are not valid exports.
+**35 of 221 public Make blueprints (16%) can run in bpr today, all of them with fixtures.** 36 pass `inspect`, 164 use something without recorded Make behavior, and 21 are not valid exports.
 
-*Updated 2026-10-10 for v0.2 (polling and app triggers). The first count, at v0.1.0, was 18; polling and app triggers blocked 83 files.*
+*Updated 2026-10-10 for v0.3 (`[]` and `now`). History: 18 at v0.1.0; 25 at v0.2 (polling and app triggers, which blocked 83 files); 36 at v0.3 (`[]` blocked 61 files, `now` 52).*
 
 | Verdict | Files | Meaning |
 |---|---:|---|
-| Eligible | 25 | every module, expression, filter and setting has recorded Make behavior; all 25 need at least one fixture or trigger input (an HTTP or third-party app call) |
-| Not yet supported | 175 | valid Make, but uses something bpr refuses instead of guessing |
+| Eligible | 36 | every module, expression, filter and setting has recorded Make behavior; all 36 need at least one fixture or trigger input (an HTTP or third-party app call) |
+| Not yet supported | 164 | valid Make, but uses something bpr refuses instead of guessing |
 | Invalid | 21 | structure Make itself could not have exported (module `version: null`, `flow:Router`, a filter given as text): hand-written or AI-generated files |
 
-Every file counted as eligible was also run through the scheduler with a stub that answers any fixture and, for an app trigger, one empty bundle: **24 of the 25 ran without a refusal**. The 25th (`eleyrot/signals-newsletter`) calls `formatDate()` on a field of the RSS bundle, which the empty stub bundle does not have; a real RSS bundle carries it. This shows that nothing is refused by a rule, not that the output is right; that takes a real Make run (see `corpus/reference/`).
+Every file counted as eligible was also run through the scheduler with a stub that answers any fixture, one empty bundle for an app trigger, and a fixed clock: **33 of the 36 ran without a refusal**. Of the other 3, two read a field the empty stub bundle does not have (`substring()` in `2ChatCo/Tutorials`, `formatDate()` in `eleyrot/signals-newsletter`); real trigger data carries it. The third (`rawdela/og-studios-donation-automation`) is a real refusal: it takes `md5()` of a date, which has not been recorded, and `inspect` cannot see argument types. So **35** run. This shows that nothing is refused by a rule, not that the output is right; that takes a real Make run (see `corpus/reference/`).
 
 The 18 files eligible at v0.1.0 were small: 2 to 6 modules each, and 8 of them were just "webhook → one app module". The larger scenarios are what the blockers below hold back.
 
@@ -20,19 +20,17 @@ Files affected (one file can have several blockers):
 
 | Files | Blocker |
 |---:|---|
-| 61 | mapping over an array with `[]` (`{{2.choices[].message.content}}`) |
-| 52 | the `now` keyword |
 | 32 | `json:ParseJSON` |
 | 31 | error-handler routes |
-| 30 | expressions bpr cannot read (single quotes, doubled `""` quotes, `\"` escapes) |
+| 31 | expressions bpr cannot read (single quotes, doubled `""` quotes, `\"` escapes) |
 | 25 | `util:SetVariables` (several variables at once) |
 | 24 | HTTP with "Evaluate all states as errors" switched off |
 | 23 | modules other than Set variable running once per iterator or trigger bundle |
 | 20 | `builtin:BasicAggregator` (array aggregator) |
+| 20 | other keywords (`timestamp`, `uuid`, …) or `now` in a filter |
 | 18 | Webhook response with custom headers |
 | 17 | a first module that is neither a webhook nor an app trigger (mail hook, HTTP, Set variable, note) |
 | 15 | `http:MakeRequest` (the newer HTTP module) |
-| 15 | `util:FunctionSleep` |
 | 12 | HTTP with custom request headers |
 | 12 | `builtin:Ignore` |
 

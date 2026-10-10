@@ -13,6 +13,8 @@ import type { FixtureUse } from './fixtures.ts';
 export interface ModuleStep {
   kind: 'module';
   id: number;
+  /** References only: when Make started this operation. `now` reads exactly this (corpus N-01). */
+  startedAt?: string;
   /** 1-based count of this module's operations in the run (an iterator makes later modules run several times). */
   operation: number;
   input: JsonValue[];

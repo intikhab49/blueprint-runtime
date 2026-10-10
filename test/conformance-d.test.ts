@@ -54,6 +54,26 @@ describe('probe set D2 replay', () => {
   }
 });
 
+/**
+ * Probe set D3: [] (reads the first element), and the `now` keyword. A probe whose answer
+ * is a timestamp read the clock itself; the others use the instant n_text recorded (all
+ * probes ran within a minute, on the same day).
+ */
+describe('probe set D3 replay ([] and now)', () => {
+  const set = loadSet('D3-arrays-now');
+  const iso = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
+  const base = Date.parse(set.answers['n_text']!.value!);
+  const results = runSet(set, (key) => {
+    const v = set.answers[key]!.value;
+    return v !== undefined && iso.test(v) ? Date.parse(v) : base;
+  });
+  for (const [key, a] of Object.entries(set.answers)) {
+    it(`${key}: {{${a.expr}}} → ${a.value === undefined ? `error ${a.error?.message}` : JSON.stringify(a.value)}`, () => {
+      assert.equal(results.get(key)!.status, 'match', JSON.stringify(results.get(key)));
+    });
+  }
+});
+
 describe('Make errors reproduced word for word (corpus D-05, D-05b)', () => {
   it('contains() on a number', () => {
     assert.throws(() => evalProbe('contains(1.s; "ell")', payload('D-05-types-swapped')), (e: unknown) => e instanceof DataError && e.message === "Function 'contains' finished with error! array.indexOf is not a function");

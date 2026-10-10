@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "name": "N-01-now-sleep",
+  "blueprint": "../../blueprints/N-01-now-sleep.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi",
+    "now": "recorded"
+  },
+  "expected": "./reference.json"
+}

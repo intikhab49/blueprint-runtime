@@ -1,0 +1,72 @@
+{
+  "case": "N-01-now-sleep",
+  "people": [
+    {
+      "name": "Ann",
+      "age": 30,
+      "tags": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "name": "Bob",
+      "age": 25,
+      "tags": [
+        "c"
+      ]
+    },
+    {
+      "age": 40
+    },
+    {
+      "name": null,
+      "age": 5
+    }
+  ],
+  "items": [],
+  "nested": [
+    {
+      "x": [
+        {
+          "y": 1
+        },
+        {
+          "y": 2
+        }
+      ]
+    },
+    {
+      "x": [
+        {
+          "y": 3
+        }
+      ]
+    }
+  ],
+  "obj": {
+    "k": {
+      "name": "v"
+    }
+  },
+  "nums": [
+    1,
+    2,
+    3
+  ],
+  "mixed": [
+    {
+      "name": "A"
+    },
+    "plain",
+    5
+  ],
+  "notarr": "str",
+  "choices": [
+    {
+      "message": {
+        "content": "hi"
+      }
+    }
+  ]
+}

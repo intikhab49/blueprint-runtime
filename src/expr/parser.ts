@@ -155,7 +155,7 @@ export function parseExpression(src: string, base = 0): Node {
           p++;
           path.push({ index: t.v });
         } else if (t.t === 'op' && t.v === ']') {
-          throw new UnsupportedError('mapping over an array with [] has not been observed in Make');
+          path.push({ all: true });
         } else throw new ExprSyntaxError('Expected a whole number or nothing inside [ ]', t.s);
         expectOp(']');
       } else return path;

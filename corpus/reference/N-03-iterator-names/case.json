@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "N-03-iterator-names",
+  "blueprint": "../../blueprints/N-03-iterator-names.import.json",
+  "input": "./input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "./reference.json"
+}

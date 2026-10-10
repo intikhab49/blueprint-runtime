@@ -344,6 +344,27 @@ const basicTrigger: ModuleHandler = {
   },
 };
 
+/**
+ * Sleep (Tools): input {duration} as a number of seconds, one null output bundle (corpus
+ * N-01: the mapped "3" was recorded as 3). Offline it does not wait; the clock for `now`
+ * comes from the case, not from the wall.
+ */
+const sleep: ModuleHandler = {
+  check(module) {
+    mapperIsObject(module);
+    onlyKeys(module, 'mapper', ['duration']);
+  },
+  run(module, ctx) {
+    sleep.check!(module);
+    const input = mapInput(module.mapper, ctx);
+    const d = input['duration'];
+    const seconds = typeof d === 'number' ? d : typeof d === 'string' && /^\d+$/.test(d) ? Number(d) : NaN;
+    if (!Number.isInteger(seconds) || seconds < 1) throw new UnsupportedError(`Sleep ${module.id}: a duration of ${JSON.stringify(d ?? null)} has not been observed in Make`);
+    input['duration'] = seconds;
+    return { input: [input], output: [null] };
+  },
+};
+
 /** The handler for a module, or undefined if it cannot run. */
 export function handlerFor(module: string): ModuleHandler | undefined {
   return HANDLERS[module] ?? (isOpaqueModule(module) ? opaqueModule : undefined);
@@ -356,4 +377,5 @@ export const HANDLERS: Readonly<Record<string, ModuleHandler>> = {
   'builtin:BasicFeeder': iterator,
   'http:ActionSendData': httpRequest,
   'util:BasicTrigger': basicTrigger,
+  'util:FunctionSleep': sleep,
 };

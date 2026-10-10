@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "1d42ae09c3f8422384f0909cfcf8e774",
+  "recordedAt": "2026-10-10T12:32:40.102Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "input": [],
+      "output": [
+        {
+          "case": "N-03-iterator-names",
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30,
+              "tags": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "name": "Bob",
+              "age": 25,
+              "tags": [
+                "c"
+              ]
+            },
+            {
+              "age": 40
+            },
+            {
+              "name": null,
+              "age": 5
+            }
+          ],
+          "items": [],
+          "nested": [
+            {
+              "x": [
+                {
+                  "y": 1
+                },
+                {
+                  "y": 2
+                }
+              ]
+            },
+            {
+              "x": [
+                {
+                  "y": 3
+                }
+              ]
+            }
+          ],
+          "obj": {
+            "k": {
+              "name": "v"
+            }
+          },
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "mixed": [
+            {
+              "name": "A"
+            },
+            "plain",
+            5
+          ],
+          "notarr": "str",
+          "choices": [
+            {
+              "message": {
+                "content": "hi"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "input": [
+        {
+          "array": "Ann"
+        }
+      ],
+      "output": [
+        "Ann"
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "input": [
+        {
+          "name": "line",
+          "value": "Ann"
+        }
+      ],
+      "output": [
+        {
+          "line": "Ann"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "input": [
+        {
+          "value": "Ann"
+        }
+      ],
+      "output": [
+        {
+          "text": "Ann"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "input": [
+        {
+          "body": "[Ann]",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "[Ann]"
+  }
+}

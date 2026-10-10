@@ -84,7 +84,7 @@ describe('values and references', () => {
 
   it('refuses paths Make was not seen handling', () => {
     refuses(() => run('1.s.x', { 1: { s: 'text' } }));
-    refuses(() => run('1.arr[].x', { 1: { arr: [] } }));
+    refuses(() => run('1.n[].x', { 1: { n: 5 } }));
   });
 
   it('writes values into text the way Make did', () => {

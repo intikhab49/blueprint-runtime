@@ -36,6 +36,12 @@
       "differ": 0,
       "refused": 0
     },
+    "N": {
+      "recorded": 3,
+      "matched": 3,
+      "differ": 0,
+      "refused": 0
+    },
     "T": {
       "recorded": 8,
       "matched": 8,
@@ -45,19 +51,11 @@
   },
   "survey": {
     "files": 221,
-    "eligible": 25,
-    "unsupported": 175,
+    "eligible": 36,
+    "unsupported": 164,
     "invalid": 21,
-    "eligibleRefusedAtRuntime": 1,
+    "eligibleRefusedAtRuntime": 3,
     "topBlockers": [
-      [
-        "EXPRESSION_UNSUPPORTED: mapping over an array with [] has not been observed in Make",
-        61
-      ],
-      [
-        "keyword now",
-        52
-      ],
       [
         "module json:ParseJSON",
         32
@@ -81,6 +79,14 @@
       [
         "module builtin:BasicAggregator",
         20
+      ],
+      [
+        "MODULE_CONFIG_UNSUPPORTED: custom headers have not been observed in Make",
+        18
+      ],
+      [
+        "a polling or app trigger instead of a Custom webhook",
+        17
       ]
     ],
     "surveyedAt": "2026-10-10"

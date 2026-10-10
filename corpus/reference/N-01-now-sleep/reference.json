@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "source": "make",
+  "scenarioId": 7872022,
+  "runId": "a85ee983ffd6431a9623d8cc7f26d807",
+  "recordedAt": "2026-10-10T12:32:08.856Z",
+  "timezone": "Asia/Karachi",
+  "status": "success",
+  "steps": [
+    {
+      "kind": "module",
+      "id": 1,
+      "operation": 1,
+      "startedAt": "2026-10-10T12:32:08.940Z",
+      "input": [],
+      "output": [
+        {
+          "case": "N-01-now-sleep",
+          "people": [
+            {
+              "name": "Ann",
+              "age": 30,
+              "tags": [
+                "a",
+                "b"
+              ]
+            },
+            {
+              "name": "Bob",
+              "age": 25,
+              "tags": [
+                "c"
+              ]
+            },
+            {
+              "age": 40
+            },
+            {
+              "name": null,
+              "age": 5
+            }
+          ],
+          "items": [],
+          "nested": [
+            {
+              "x": [
+                {
+                  "y": 1
+                },
+                {
+                  "y": 2
+                }
+              ]
+            },
+            {
+              "x": [
+                {
+                  "y": 3
+                }
+              ]
+            }
+          ],
+          "obj": {
+            "k": {
+              "name": "v"
+            }
+          },
+          "nums": [
+            1,
+            2,
+            3
+          ],
+          "mixed": [
+            {
+              "name": "A"
+            },
+            "plain",
+            5
+          ],
+          "notarr": "str",
+          "choices": [
+            {
+              "message": {
+                "content": "hi"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 2,
+      "operation": 1,
+      "startedAt": "2026-10-10T12:32:08.953Z",
+      "input": [
+        {
+          "name": "a",
+          "value": "2026-10-10T12:32:08.953Z"
+        }
+      ],
+      "output": [
+        {
+          "a": "2026-10-10T12:32:08.953Z"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 3,
+      "operation": 1,
+      "startedAt": "2026-10-10T12:32:08.957Z",
+      "input": [
+        {
+          "duration": 3
+        }
+      ],
+      "output": [
+        null
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 4,
+      "operation": 1,
+      "startedAt": "2026-10-10T12:32:11.960Z",
+      "input": [
+        {
+          "name": "b",
+          "value": "2026-10-10T12:32:11.960Z"
+        }
+      ],
+      "output": [
+        {
+          "b": "2026-10-10T12:32:11.960Z"
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 5,
+      "operation": 1,
+      "startedAt": "2026-10-10T12:32:11.961Z",
+      "input": [
+        {
+          "name": "c",
+          "value": [
+            "a",
+            "b"
+          ]
+        }
+      ],
+      "output": [
+        {
+          "c": [
+            "a",
+            "b"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "module",
+      "id": 6,
+      "operation": 1,
+      "startedAt": "2026-10-10T12:32:11.963Z",
+      "input": [
+        {
+          "body": "2026-10-10T12:32:08.953Z|2026-10-10T12:32:11.960Z|2026-10-10T12:32:11.963Z",
+          "status": 200,
+          "headers": []
+        }
+      ],
+      "output": [
+        null
+      ]
+    }
+  ],
+  "response": {
+    "status": 200,
+    "body": "2026-10-10T12:32:08.953Z|2026-10-10T12:32:11.960Z|2026-10-10T12:32:11.963Z"
+  }
+}

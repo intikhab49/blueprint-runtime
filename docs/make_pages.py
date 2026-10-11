@@ -128,8 +128,9 @@ def behaviors_page() -> str:
         {"@type": "TechArticle", "@id": path + "#article", "headline": "How Make.com actually evaluates mappings, "
          "filters and routers", "description": desc, "url": path, "mainEntityOfPage": path, "inLanguage": "en",
          "datePublished": PUBLISHED, "dateModified": TODAY, "author": AUTHOR, "publisher": AUTHOR,
-         "about": {"@type": "SoftwareApplication", "name": "Make", "alternateName": ["Make.com", "Integromat"],
-                   "url": "https://www.make.com/"},
+         "image": SITE + "social.png",
+         "about": {"@type": "Thing", "name": "Make", "alternateName": ["Make.com", "Integromat"],
+                   "sameAs": "https://www.make.com/"},
          "isBasedOn": NOTES, "isPartOf": {"@id": SITE + "#website"}},
         {"@type": "FAQPage", "@id": path + "#faq", "mainEntity": [
             {"@type": "Question", "name": plain(q),

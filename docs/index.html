@@ -4,13 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Test Make.com scenarios offline · blueprint-runtime</title>
-<meta name="description" content="Offline test runner for Make.com (Integromat) scenario blueprints. Replay real Make runs locally or in CI and catch broken mappings before you deploy. 71 of 79 real runs reproduced exactly, 0 differ.">
+<meta name="description" content="Test Make.com (Integromat) scenarios offline: replay real Make runs in CI and catch broken mappings before you deploy. 71 of 79 runs reproduced exactly.">
 <link rel="canonical" href="https://intikhab49.github.io/blueprint-runtime/">
+<meta name="author" content="Intikhab Azam">
+<link rel="icon" href="https://intikhab49.github.io/blueprint-runtime/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="blueprint-runtime">
 <meta property="og:title" content="blueprint-runtime: test Make.com scenarios offline">
 <meta property="og:description" content="Replay real Make runs locally or in CI and see the first value that changed. No Make account, no credits, no network.">
 <meta property="og:url" content="https://intikhab49.github.io/blueprint-runtime/">
 <meta property="og:image" content="https://intikhab49.github.io/blueprint-runtime/social.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="blueprint-runtime: test Make.com scenarios offline. 71 of 79 real Make runs reproduced exactly, 0 differ.">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="text/plain" href="llms.txt" title="llms.txt">
 <script type="application/ld+json">
@@ -18,7 +24,16 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://intikhab49.github.io/blueprint-runtime/#website",
+      "url": "https://intikhab49.github.io/blueprint-runtime/",
+      "name": "blueprint-runtime",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://github.com/intikhab49" }
+    },
+    {
       "@type": "SoftwareApplication",
+      "@id": "https://intikhab49.github.io/blueprint-runtime/#app",
       "name": "blueprint-runtime",
       "alternateName": "bpr",
       "description": "Offline test runner and blueprint validator for Make.com (formerly Integromat) scenarios. Replays runs recorded in real Make and reports the first module input or output that differs.",
@@ -29,26 +44,34 @@
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
       "url": "https://intikhab49.github.io/blueprint-runtime/",
       "downloadUrl": "https://www.npmjs.com/package/blueprint-runtime",
-      "codeRepository": "https://github.com/intikhab49/blueprint-runtime",
+      "installUrl": "https://www.npmjs.com/package/blueprint-runtime",
+      "sameAs": ["https://github.com/intikhab49/blueprint-runtime", "https://www.npmjs.com/package/blueprint-runtime"],
+      "isAccessibleForFree": true,
       "softwareVersion": "0.3.1",
       "keywords": "Make.com, Integromat, Make scenario testing, Make blueprint validator, no-code testing, workflow automation, regression testing, CI",
-      "author": { "@type": "Person", "name": "Intikhab Azam", "url": "https://github.com/intikhab49" }
+      "author": { "@type": "Person", "@id": "https://github.com/intikhab49", "name": "Intikhab Azam", "url": "https://github.com/intikhab49" }
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "@id": "https://github.com/intikhab49/blueprint-runtime",
+      "name": "blueprint-runtime",
+      "codeRepository": "https://github.com/intikhab49/blueprint-runtime",
+      "programmingLanguage": "TypeScript",
+      "runtimePlatform": "Node.js 24",
+      "license": "https://opensource.org/licenses/MIT",
+      "targetProduct": { "@id": "https://intikhab49.github.io/blueprint-runtime/#app" },
+      "author": { "@id": "https://github.com/intikhab49" }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "How do I test a Make.com scenario without running it in Make?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Export the scenario's blueprint, save a sample input, and run bpr run blueprint.json --input input.json > expected.json to snapshot every module's output. A test case pointing at that snapshot fails the moment an edit changes any module's output. For proof against Make itself, the expected run can be one recorded in Make." } },
-        { "@type": "Question", "name": "Does it work with Integromat blueprints?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Integromat is Make's former name and the blueprint format is the same. Exports wrapped as {\"blueprint\": ...} or Make API responses are unwrapped automatically." } },
-        { "@type": "Question", "name": "Can I validate or lint a Make blueprint before importing it?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. bpr inspect blueprint.json checks the structure strictly (duplicate keys, broken routes, references to modules that do not run first), lists every expression, and names everything it cannot vouch for. Exit code 0 means it can run offline." } },
-        { "@type": "Question", "name": "Does it call Make, Google Sheets, OpenAI or any other API?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. HTTP and app modules run from fixtures you write, a missing fixture fails the test, and nothing goes over the network. No Make account or API token is needed." } },
-        { "@type": "Question", "name": "What does [] mean in a Make mapping like {{1.choices[].message.content}}?",
-          "acceptedAnswer": { "@type": "Answer", "text": "It reads the first element, not all of them. This was recorded in real Make runs and blueprint-runtime does the same. Make's map() function reads every element." } },
-        { "@type": "Question", "name": "Is blueprint-runtime an official Make tool?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. It is an independent MIT-licensed open source project. Every behavior it supports comes from runs recorded in a real Make account." } }
+        {"@type": "Question", "name": "How do I test a Make.com scenario without running it in Make?", "acceptedAnswer": {"@type": "Answer", "text": "Export the blueprint (scenario menu → Export blueprint), save a sample input, and run bpr run blueprint.json --input input.json > expected.json. A test case pointing at that snapshot fails as soon as an edit changes any module's output."}},
+        {"@type": "Question", "name": "Can I validate or lint a Make blueprint before importing it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. bpr inspect blueprint.json checks the structure strictly (duplicate keys, broken routes, references to modules that have not run yet), lists every expression, and names everything it can't vouch for. Exit code 0 means it can run offline."}},
+        {"@type": "Question", "name": "Does it work with Integromat blueprints?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Integromat is Make's former name and the format is the same. Wrapped exports and Make API responses are unwrapped automatically."}},
+        {"@type": "Question", "name": "Does it call Make, Google Sheets, OpenAI or any other API?", "acceptedAnswer": {"@type": "Answer", "text": "No. Nothing goes over the network, and no Make account or API token is needed."}},
+        {"@type": "Question", "name": "What does [] mean in a mapping like {{1.choices[].message.content}}?", "acceptedAnswer": {"@type": "Answer", "text": "It reads the first element only. That was recorded in real Make runs. Use map() to read every element."}},
+        {"@type": "Question", "name": "What doesn't it support yet?", "acceptedAnswer": {"@type": "Answer", "text": "It covers a narrow slice of Make, and most public blueprints still use something outside it. The most common gaps are error-handler routes, json:ParseJSON and util:SetVariables. bpr inspect tells you up front whether your blueprint can run offline."}},
+        {"@type": "Question", "name": "Is it an official Make tool?", "acceptedAnswer": {"@type": "Answer", "text": "No. It is an independent open source project."}}
       ]
     }
   ]
@@ -93,6 +116,7 @@ FAIL  A-002-plain   module 2 input bundle 1 at /value: Make had "ADA LOVELACE", 
 <h2>Measured against real Make</h2>
 <p><span class="stat">71 of 79</span> runs recorded in a real Make account are reproduced exactly, and <span class="stat">0 differ</span>. The other 8 use behavior that was never observed, so <code>bpr</code> refuses them and names the reason instead of guessing. Every supported behavior has a recording in the <a href="https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md">corpus</a>.</p>
 <img src="demo.gif" alt="Terminal demo: bpr test replays recorded Make runs and catches a broken mapping" loading="lazy">
+<p>The recordings also answer questions Make's docs don't, such as why <code>"42" + 1</code> gives <code>"421"</code>, whether every matching router route runs, and what <code>now</code> returns. They're collected in <a href="https://intikhab49.github.io/blueprint-runtime/make-behaviors/">how Make.com actually evaluates mappings, filters and routers</a>.</p>
 
 <h2>What you can do with it</h2>
 <ul>
@@ -118,6 +142,8 @@ bpr test examples/broken-mapping                # a broken mapping, caught</code
 <h2>FAQ</h2>
 <h3>How do I test a Make.com scenario without running it in Make?</h3>
 <p>Export the blueprint (scenario menu → Export blueprint), save a sample input, and run <code>bpr run blueprint.json --input input.json &gt; expected.json</code>. A test case pointing at that snapshot fails as soon as an edit changes any module's output.</p>
+<h3>Can I validate or lint a Make blueprint before importing it?</h3>
+<p>Yes. <code>bpr inspect blueprint.json</code> checks the structure strictly (duplicate keys, broken routes, references to modules that have not run yet), lists every expression, and names everything it can't vouch for. Exit code 0 means it can run offline.</p>
 <h3>Does it work with Integromat blueprints?</h3>
 <p>Yes. Integromat is Make's former name and the format is the same. Wrapped exports and Make API responses are unwrapped automatically.</p>
 <h3>Does it call Make, Google Sheets, OpenAI or any other API?</h3>
@@ -130,7 +156,7 @@ bpr test examples/broken-mapping                # a broken mapping, caught</code
 <p>No. It is an independent open source project.</p>
 
 <footer>
-  blueprint-runtime · MIT · by <a href="https://github.com/intikhab49">Intikhab Azam</a> · <a href="https://github.com/intikhab49/blueprint-runtime">Source</a> · <a href="llms.txt">llms.txt</a><br>
+  blueprint-runtime · MIT · by <a href="https://github.com/intikhab49">Intikhab Azam</a> · <a href="https://github.com/intikhab49/blueprint-runtime">Source</a> · <a href="make-behaviors/">Make.com behaviors</a> · <a href="llms.txt">llms.txt</a><br>
   Make and Integromat are trademarks of their owners. This project is not affiliated with Make.
 </footer>
 </main>

@@ -21,6 +21,7 @@ Every behavior it supports was observed in a real Make run; anything else is ref
 
 - [Repository and README](https://github.com/intikhab49/blueprint-runtime)
 - [npm package](https://www.npmjs.com/package/blueprint-runtime): `npm install -g blueprint-runtime` (Node 24+), or `npx blueprint-runtime inspect file.json`
+- [How Make.com evaluates mappings, filters and routers](https://intikhab49.github.io/blueprint-runtime/make-behaviors/): answers recorded from real runs, e.g. `[]` reads the first element, `"42"+1` is `"421"`, every matching router route runs
 - [Recorded Make behavior (NOTES)](https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md)
 - [Broken-mapping example](https://github.com/intikhab49/blueprint-runtime/tree/main/examples/broken-mapping)
 - [HTTP fixture example](https://github.com/intikhab49/blueprint-runtime/tree/main/examples/http-fixture)
@@ -30,3 +31,7 @@ Every behavior it supports was observed in a real Make run; anything else is ref
 - Covers a narrow slice of Make: custom webhook and Basic trigger (third-party app triggers take their bundles as case input), routers, filters (31 operators), iterators with a Text aggregator, Set variable, Webhook response, Sleep, HTTP "Make a request" v3 and app modules from fixtures, and 58 recorded expression functions. Most public blueprints still use something unsupported (error-handler routes, json:ParseJSON, util:SetVariables).
 - A fixture proves your scenario's handling of a response, not the third-party service.
 - Recorded on one account, region eu1, October 2026.
+
+## Optional
+
+- [llms-full.txt](https://intikhab49.github.io/blueprint-runtime/llms-full.txt): this file plus every recorded behavior and the full README

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Make.com evaluates mappings, filters and routers (recorded)</title>
+<meta name="description" content="Make.com behaviors recorded from real runs: [] reads the first element, if() truthiness, + joins text, filters, routers, iterators, now. With evidence.">
+<link rel="canonical" href="https://intikhab49.github.io/blueprint-runtime/make-behaviors/">
+<link rel="icon" href="https://intikhab49.github.io/blueprint-runtime/favicon.svg" type="image/svg+xml">
+<meta name="author" content="Intikhab Azam">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="blueprint-runtime">
+<meta property="og:title" content="How Make.com evaluates mappings, filters and routers (recorded)">
+<meta property="og:description" content="Make.com behaviors recorded from real runs: [] reads the first element, if() truthiness, + joins text, filters, routers, iterators, now. With evidence.">
+<meta property="og:url" content="https://intikhab49.github.io/blueprint-runtime/make-behaviors/">
+<meta property="og:image" content="https://intikhab49.github.io/blueprint-runtime/social.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/plain" href="https://intikhab49.github.io/blueprint-runtime/llms.txt" title="llms.txt">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "TechArticle",
+   "@id": "https://intikhab49.github.io/blueprint-runtime/make-behaviors/#article",
+   "headline": "How Make.com actually evaluates mappings, filters and routers",
+   "description": "Make.com behaviors recorded from real runs: [] reads the first element, if() truthiness, + joins text, filters, routers, iterators, now. With evidence.",
+   "url": "https://intikhab49.github.io/blueprint-runtime/make-behaviors/",
+   "mainEntityOfPage": "https://intikhab49.github.io/blueprint-runtime/make-behaviors/",
+   "inLanguage": "en",
+   "datePublished": "2026-10-12",
+   "dateModified": "2026-10-12",
+   "author": {
+    "@type": "Person",
+    "@id": "https://github.com/intikhab49",
+    "name": "Intikhab Azam",
+    "url": "https://github.com/intikhab49"
+   },
+   "publisher": {
+    "@type": "Person",
+    "@id": "https://github.com/intikhab49",
+    "name": "Intikhab Azam",
+    "url": "https://github.com/intikhab49"
+   },
+   "about": {
+    "@type": "SoftwareApplication",
+    "name": "Make",
+    "alternateName": [
+     "Make.com",
+     "Integromat"
+    ],
+    "url": "https://www.make.com/"
+   },
+   "isBasedOn": "https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md",
+   "isPartOf": {
+    "@id": "https://intikhab49.github.io/blueprint-runtime/#website"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://intikhab49.github.io/blueprint-runtime/make-behaviors/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "What does [] do in a Make.com mapping?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "[] reads the first element only. It does not map over the array: {{1.people[].name}} gave Ann, the first person's name, in a text field, as a function argument and in an iterator's array field. To read every element, use map(). It keeps items without the key as empty entries: join(map(people; \"name\"); \"|\") gave Ann|Bob||. [] on an empty array, a missing value or an object reads as missing. On text it returns the text itself. Array indexes start at 1: arr[2] is the second element."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How does if() decide what is true in Make?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It uses JavaScript truthiness. The texts \"false\", \"0\" and \"abc\", the number -1, [] and {} are all true. Empty text, 0, null and missing are false. if() is lazy: the branch it doesn't pick is never evaluated, so an error there doesn't fail the module. ifempty() falls back only on empty text, null and missing. [], {}, 0 and false come back unchanged."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How does = compare values in a Make expression?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Like JavaScript's loose ==: \"42\" = 42, 42 = \"42.0\", 0 = false and null = missing are all true. It is case-sensitive (\"a\" = \"A\" is false), true = \"true\" is false and missing = \"\" is false. Dates are compared as objects, so now = now is false."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Why does \"42\" + 1 give \"421\" in Make?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "+ adds only when both sides are numbers. Anything else is joined as text: \"42\"+1 is \"421\", true+1 is \"true1\" and missing+1 is \"1\". * converts like JavaScript, with missing as 0: \"42\"*1 is 42, \"abc\"*2 is NaN and missing*2 is 0. The operators +, - and * use exact decimal arithmetic (0.1+0.7 is 0.8, 1.005*1000 is 1005), but functions don't: sum() of 0.1 and 0.2 gives 0.30000000000000004. round(2.5) is 3 but round(-2.5) is -2, like JavaScript's Math.round. 42/0 is Infinity, not an error."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do arrays and empty values turn into text in Make?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "An array mapped into a text field is joined with a comma and a NO-BREAK SPACE (U+00A0), not a normal space: c, a, b. Functions convert arrays differently: upper() of the array a, b gives A,B, with a plain comma. A mapped field that evaluates to empty text is stored as null in the module's bundle. length() counts UTF-16 code units, so an emoji counts as 2. upper(\"ß\") is \"SS\". Text must be quoted. A bare word parses but isn't text: indexOf(s; o) returns -1. Backslash is not an escape character, and a \\\" inside a string made Make reject the whole scenario."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do Make filters compare text, numbers and empty values?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Text operators are case-sensitive unless you pick the case-insensitive variant, and they don't trim: \" a\" doesn't equal \"a\". Number operators read \"150\" as 150 and \"1e3\" as 1000, but empty text, null, missing, \"abc\" and \"150abc\" are not numbers, so every comparison with them is false. That matches neither JavaScript's Number() nor parseFloat(). Exists is false only for missing, null and empty text. 0 and an empty array [] exist. Conditions joined by AND stop at the first false one."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Does Make run every router route that matches?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes. Routes are checked in order, and every route whose filter passes runs, each one to the end before the next starts. The fallback route runs only when no other route passed. The router itself uses no operation."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "How do iterators and aggregators run in Make, and what do they cost?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Each bundle goes through the rest of the flow before the next bundle starts (depth-first). An empty or missing array gives 0 bundles, but a Text aggregator still outputs one bundle with empty text. A null element in the array fails the iterator: TypeError: Cannot convert undefined or null to object. After the aggregator, fields of the iterator and of the modules between them read as missing. Operations: the iterator counts 1 however many bundles it emits, each bundle through a later module counts 1, the aggregator 1, a router 0 and a module a filter stopped 0."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What does now return in Make?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The time each module starts, to the millisecond, not the time the scenario started. After a 3-second Sleep, the next module's now was 3 seconds later. parseDate() and formatDate() without a timezone use the organization's timezone. addMonths() clamps to the end of the month: January 31 plus one month is the last day of February."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens when an expression fails in Make?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The module fails and the run stops. A webhook caller gets HTTP 500 with Scenario failed to complete. Make lets you start a scenario with an expression it can't evaluate. The first run fails, Make switches the scenario off, and webhooks sent after that wait in the queue (50 on the free plan). A Webhook response with an empty body reaches the caller as 200 Accepted, the same text Make sends for a queued webhook. A trigger run that emits no bundles doesn't appear in the scenario's log at all."
+     }
+    }
+   ]
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "blueprint-runtime",
+     "item": "https://intikhab49.github.io/blueprint-runtime/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Make.com behaviors",
+     "item": "https://intikhab49.github.io/blueprint-runtime/make-behaviors/"
+    }
+   ]
+  }
+ ]
+}
+</script>
+<style>
+  :root { --ink:#16202c; --muted:#5a6675; --blue:#2a78d6; --green:#1baf7a; --bg:#fbfcfd; --line:#e3e8ee; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); }
+  main { max-width:760px; margin:0 auto; padding:40px 22px 64px; }
+  h1 { font-size:2rem; line-height:1.2; margin:18px 0 12px; }
+  h2 { font-size:1.25rem; margin:40px 0 8px; }
+  p.lead { font-size:1.1rem; color:var(--muted); }
+  a { color:var(--blue); }
+  .crumbs { font-size:.88rem; color:var(--muted); } .crumbs a { color:var(--muted); }
+  code { font-family:ui-monospace,"Cascadia Code",Consolas,monospace; background:#eef2f6; padding:1px 5px; border-radius:4px; font-size:.88em; }
+  li { margin:6px 0; }
+  .box { border:1px solid var(--line); background:#fff; border-radius:8px; padding:14px 18px; margin:22px 0; }
+  footer { margin-top:56px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<main>
+<p class="crumbs"><a href="https://intikhab49.github.io/blueprint-runtime/">blueprint-runtime</a> / Make.com behaviors</p>
+<h1>How Make.com actually evaluates mappings, filters and routers</h1>
+<p class="lead">Make doesn't publish a specification for its expression language. Everything below was recorded from
+real runs in a Make account (eu1, Free plan) in October 2026 while building blueprint-runtime, an open source offline
+test runner that reproduces 71 of 79 of those runs exactly. Each answer is backed by a recording listed in the
+project's <a href="https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md">evidence notes</a>.</p>
+<div class="box">Check your own scenario against these rules without running it in Make:
+<code>npx blueprint-runtime inspect your-scenario.blueprint.json</code> · <a href="https://intikhab49.github.io/blueprint-runtime/">What blueprint-runtime does</a></div>
+<ul><li><a href="#what-does-do-in-a-make-com-mapping">What does <code>[]</code> do in a Make.com mapping?</a></li><li><a href="#how-does-if-decide-what-is-true-in-make">How does <code>if()</code> decide what is true in Make?</a></li><li><a href="#how-does-compare-values-in-a-make-expression">How does <code>=</code> compare values in a Make expression?</a></li><li><a href="#why-does-42-1-give-421-in-make">Why does <code>"42" + 1</code> give <code>"421"</code> in Make?</a></li><li><a href="#how-do-arrays-and-empty-values-turn-into-text-in-make">How do arrays and empty values turn into text in Make?</a></li><li><a href="#how-do-make-filters-compare-text-numbers-and-empty-values">How do Make filters compare text, numbers and empty values?</a></li><li><a href="#does-make-run-every-router-route-that-matches">Does Make run every router route that matches?</a></li><li><a href="#how-do-iterators-and-aggregators-run-in-make-and-what-do-they-cost">How do iterators and aggregators run in Make, and what do they cost?</a></li><li><a href="#what-does-now-return-in-make">What does <code>now</code> return in Make?</a></li><li><a href="#what-happens-when-an-expression-fails-in-make">What happens when an expression fails in Make?</a></li></ul>
+<h2 id="what-does-do-in-a-make-com-mapping">What does <code>[]</code> do in a Make.com mapping?</h2><ul><li><code>[]</code> reads the first element only. It does not map over the array: <code>{{1.people[].name}}</code> gave <code>Ann</code>, the first person's name, in a text field, as a function argument and in an iterator's array field.</li><li>To read every element, use <code>map()</code>. It keeps items without the key as empty entries: <code>join(map(people; "name"); "|")</code> gave <code>Ann|Bob||</code>.</li><li><code>[]</code> on an empty array, a missing value or an object reads as missing. On text it returns the text itself.</li><li>Array indexes start at 1: <code>arr[2]</code> is the second element.</li></ul><h2 id="how-does-if-decide-what-is-true-in-make">How does <code>if()</code> decide what is true in Make?</h2><ul><li>It uses JavaScript truthiness. The texts <code>"false"</code>, <code>"0"</code> and <code>"abc"</code>, the number <code>-1</code>, <code>[]</code> and <code>{}</code> are all true. Empty text, <code>0</code>, null and missing are false.</li><li><code>if()</code> is lazy: the branch it doesn't pick is never evaluated, so an error there doesn't fail the module.</li><li><code>ifempty()</code> falls back only on empty text, null and missing. <code>[]</code>, <code>{}</code>, <code>0</code> and <code>false</code> come back unchanged.</li></ul><h2 id="how-does-compare-values-in-a-make-expression">How does <code>=</code> compare values in a Make expression?</h2><ul><li>Like JavaScript's loose <code>==</code>: <code>"42" = 42</code>, <code>42 = "42.0"</code>, <code>0 = false</code> and <code>null = missing</code> are all true.</li><li>It is case-sensitive (<code>"a" = "A"</code> is false), <code>true = "true"</code> is false and <code>missing = ""</code> is false.</li><li>Dates are compared as objects, so <code>now = now</code> is false.</li></ul><h2 id="why-does-42-1-give-421-in-make">Why does <code>"42" + 1</code> give <code>"421"</code> in Make?</h2><ul><li><code>+</code> adds only when both sides are numbers. Anything else is joined as text: <code>"42"+1</code> is <code>"421"</code>, <code>true+1</code> is <code>"true1"</code> and <code>missing+1</code> is <code>"1"</code>.</li><li><code>*</code> converts like JavaScript, with missing as 0: <code>"42"*1</code> is <code>42</code>, <code>"abc"*2</code> is <code>NaN</code> and <code>missing*2</code> is <code>0</code>.</li><li>The operators <code>+</code>, <code>-</code> and <code>*</code> use exact decimal arithmetic (<code>0.1+0.7</code> is <code>0.8</code>, <code>1.005*1000</code> is <code>1005</code>), but functions don't: <code>sum()</code> of 0.1 and 0.2 gives <code>0.30000000000000004</code>.</li><li><code>round(2.5)</code> is <code>3</code> but <code>round(-2.5)</code> is <code>-2</code>, like JavaScript's <code>Math.round</code>. <code>42/0</code> is <code>Infinity</code>, not an error.</li></ul><h2 id="how-do-arrays-and-empty-values-turn-into-text-in-make">How do arrays and empty values turn into text in Make?</h2><ul><li>An array mapped into a text field is joined with a comma and a NO-BREAK SPACE (U+00A0), not a normal space: <code>c, a, b</code>.</li><li>Functions convert arrays differently: <code>upper()</code> of the array a, b gives <code>A,B</code>, with a plain comma.</li><li>A mapped field that evaluates to empty text is stored as <code>null</code> in the module's bundle.</li><li><code>length()</code> counts UTF-16 code units, so an emoji counts as 2. <code>upper("ß")</code> is <code>"SS"</code>.</li><li>Text must be quoted. A bare word parses but isn't text: <code>indexOf(s; o)</code> returns <code>-1</code>. Backslash is not an escape character, and a <code>\"</code> inside a string made Make reject the whole scenario.</li></ul><h2 id="how-do-make-filters-compare-text-numbers-and-empty-values">How do Make filters compare text, numbers and empty values?</h2><ul><li>Text operators are case-sensitive unless you pick the case-insensitive variant, and they don't trim: <code>" a"</code> doesn't equal <code>"a"</code>.</li><li>Number operators read <code>"150"</code> as 150 and <code>"1e3"</code> as 1000, but empty text, null, missing, <code>"abc"</code> and <code>"150abc"</code> are not numbers, so every comparison with them is false. That matches neither JavaScript's <code>Number()</code> nor <code>parseFloat()</code>.</li><li><code>Exists</code> is false only for missing, null and empty text. <code>0</code> and an empty array <code>[]</code> exist.</li><li>Conditions joined by AND stop at the first false one.</li></ul><h2 id="does-make-run-every-router-route-that-matches">Does Make run every router route that matches?</h2><ul><li>Yes. Routes are checked in order, and every route whose filter passes runs, each one to the end before the next starts.</li><li>The fallback route runs only when no other route passed.</li><li>The router itself uses no operation.</li></ul><h2 id="how-do-iterators-and-aggregators-run-in-make-and-what-do-they-cost">How do iterators and aggregators run in Make, and what do they cost?</h2><ul><li>Each bundle goes through the rest of the flow before the next bundle starts (depth-first).</li><li>An empty or missing array gives 0 bundles, but a Text aggregator still outputs one bundle with empty text.</li><li>A <code>null</code> element in the array fails the iterator: <code>TypeError: Cannot convert undefined or null to object</code>.</li><li>After the aggregator, fields of the iterator and of the modules between them read as missing.</li><li>Operations: the iterator counts 1 however many bundles it emits, each bundle through a later module counts 1, the aggregator 1, a router 0 and a module a filter stopped 0.</li></ul><h2 id="what-does-now-return-in-make">What does <code>now</code> return in Make?</h2><ul><li>The time each module starts, to the millisecond, not the time the scenario started. After a 3-second Sleep, the next module's <code>now</code> was 3 seconds later.</li><li><code>parseDate()</code> and <code>formatDate()</code> without a timezone use the organization's timezone.</li><li><code>addMonths()</code> clamps to the end of the month: January 31 plus one month is the last day of February.</li></ul><h2 id="what-happens-when-an-expression-fails-in-make">What happens when an expression fails in Make?</h2><ul><li>The module fails and the run stops. A webhook caller gets HTTP 500 with <code>Scenario failed to complete.</code></li><li>Make lets you start a scenario with an expression it can't evaluate. The first run fails, Make switches the scenario off, and webhooks sent after that wait in the queue (50 on the free plan).</li><li>A Webhook response with an empty body reaches the caller as <code>200 Accepted</code>, the same text Make sends for a queued webhook.</li><li>A trigger run that emits no bundles doesn't appear in the scenario's log at all.</li></ul>
+<p>Make can change its behavior. These are dated observations from one account, not Make's documentation. Where no run
+showed how Make behaves, blueprint-runtime refuses the case instead of guessing.</p>
+<footer>
+  blueprint-runtime · MIT · by <a href="https://github.com/intikhab49">Intikhab Azam</a> · <a href="https://github.com/intikhab49/blueprint-runtime">Source</a> ·
+  <a href="https://github.com/intikhab49/blueprint-runtime/blob/main/corpus/NOTES.md">Evidence notes</a> · <a href="https://intikhab49.github.io/blueprint-runtime/llms.txt">llms.txt</a><br>
+  Make and Integromat are trademarks of their owners. This project is not affiliated with Make.
+</footer>
+</main>
+</body>
+</html>

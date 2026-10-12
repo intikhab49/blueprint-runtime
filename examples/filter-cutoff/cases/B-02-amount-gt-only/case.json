@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "B-02-amount-gt-only",
+  "blueprint": "../../scenario.blueprint.json",
+  "input": "../../../../corpus/reference/B-02-amount-gt-only/input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "../../../../corpus/reference/B-02-amount-gt-only/reference.json"
+}

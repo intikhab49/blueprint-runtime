@@ -186,6 +186,7 @@ npm run build && npm link        # puts `bpr` on your PATH (or use `node src/cli
 
 bpr test corpus/reference --allow-unsupported      # replay all 79 recorded Make runs
 bpr test examples/broken-mapping                   # a broken mapping, caught
+bpr test examples/filter-cutoff                    # a filter changed from > to >=, caught at the cutoff
 bpr inspect corpus/blueprints/B.blueprint.json     # what a blueprint uses, and whether it can run
 ```
 
@@ -257,6 +258,8 @@ A case names a blueprint, an input, optional fixtures and the run Make actually 
 If the blueprint uses `now`, give the case a clock: `"environment": { "now": "2026-10-10T12:00:00.000Z" }`. Every module then reads that instant. In Make, `now` is the time each module starts, so it moves on during a run; a recorded reference can use `"now": "recorded"` to replay Make's own start times.
 
 **Snapshots.** You don't need a recorded Make run to start: `bpr run blueprint.json --input input.json > expected.json` saves what the scenario produces today, and a case with `"expected": "./expected.json"` turns that into a regression test. Differences are then reported against "the snapshot", not against Make, because a snapshot proves consistency, not Make compatibility.
+
+**Test the edges, not just the usual input.** A filter that drops every bundle is not an error in Make, so the run still looks successful; a case catches it only if its input sits where the change matters. For every numeric filter, keep one case just below the cutoff, one exactly at it and one just above it. An edit from `>` to `>=` changes only the middle one, so a suite of typical inputs passes right through it. [examples/filter-cutoff](examples/filter-cutoff/) shows this with four recorded Make runs: only the one at exactly 100 fails.
 
 Exit codes: `0` all matched · `1` a case differs · `2` invalid case · `3` something without recorded Make behavior (`--allow-unsupported` lets those pass) · `5` a fixture is missing, wrong or unused · `6` local limit.
 

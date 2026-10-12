@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "B-06-amount-exactly-100",
+  "blueprint": "../../scenario.blueprint.json",
+  "input": "../../../../corpus/reference/B-06-amount-exactly-100/input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "../../../../corpus/reference/B-06-amount-exactly-100/reference.json"
+}

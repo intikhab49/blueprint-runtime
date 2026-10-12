@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "name": "B-12-amount-decimal-100.5",
+  "blueprint": "../../scenario.blueprint.json",
+  "input": "../../../../corpus/reference/B-12-amount-decimal-100.5/input.json",
+  "environment": {
+    "timezone": "Asia/Karachi"
+  },
+  "expected": "../../../../corpus/reference/B-12-amount-decimal-100.5/reference.json"
+}

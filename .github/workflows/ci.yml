@@ -30,3 +30,8 @@ jobs:
           set +e
           node dist/src/cli.js test examples/broken-mapping
           test $? -eq 1
+      - name: the filter-cutoff demo must be caught (exit 1, not a crash)
+        run: |
+          set +e
+          node dist/src/cli.js test examples/filter-cutoff
+          test $? -eq 1
